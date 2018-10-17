@@ -5,7 +5,7 @@ using UnityEngine;
 public class movimiento_objetos : MonoBehaviour
 {
 
-    public float Velocidad = 5f;
+    public float Velocidad = 500f;
 
 
 	// Use this for initialization
