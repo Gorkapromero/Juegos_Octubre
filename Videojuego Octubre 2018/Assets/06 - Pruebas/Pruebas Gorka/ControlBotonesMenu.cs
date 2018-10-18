@@ -34,5 +34,20 @@ public class ControlBotonesMenu : MonoBehaviour
 	{
 		SceneManager.LoadScene("Creditos"); 
 	}
-
+	public void cargarInstagram ()
+	{
+		Application.OpenURL ("https://www.instagram.com/studios_ikki/?hl=es");
+	}
+	public void cargarFacebook()
+	{
+		Application.OpenURL ("https://www.facebook.com/ikkiStudios/");
+	}
+	public void cargarTwitter ()
+	{
+		Application.OpenURL ("https://twitter.com/Studiosikki?lang=en");
+	}
+	public void cargarWeb ()
+	{
+		Application.OpenURL ("http://studiosikki.com/");
+	}
 }
