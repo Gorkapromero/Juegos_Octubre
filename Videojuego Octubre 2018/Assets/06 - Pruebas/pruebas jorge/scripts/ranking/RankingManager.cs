@@ -8,9 +8,13 @@ using System;
 
 public class RankingManager : MonoBehaviour
 {
-    public string rutaDB;
-    public string Conexion;
+    string rutaDB;
+    string Conexion;
     public string nombreDB;
+
+    public GameObject puntosPREF;
+    public Transform PuntosPadre;
+    public int topRank;
 
     IDbConnection conexionDB;
     IDbCommand comandosDB;
@@ -21,7 +25,7 @@ public class RankingManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		
+        MostrarRanking();
 	}
 	
     void AbrirDB()
@@ -50,6 +54,7 @@ public class RankingManager : MonoBehaviour
         leerDatos.Close();
         leerDatos = null;
         CerrarDB();
+        rankings.Sort();
     }
 
     void InsertarPuntos(string n, string s)
@@ -72,6 +77,24 @@ public class RankingManager : MonoBehaviour
 
         comandosDB.ExecuteScalar();
         CerrarDB();
+    }
+
+    void MostrarRanking()
+    {
+        ObtenerRanking();
+        for (int i = 0; i < topRank; i++)
+        {
+            if (i < rankings.Count)
+            {
+                GameObject tempPref = Instantiate(puntosPREF);
+                tempPref.transform.SetParent(PuntosPadre);
+                Ranking rankTemp = rankings[i];
+                tempPref.GetComponent<RankingScript>().PonerPuntos("3" + (i + 1).ToString(),
+                                                                    rankTemp.Nombre,
+                                                                    rankTemp.Score.ToString());
+            }
+           
+        }
     }
 
     void CerrarDB()
