@@ -12,8 +12,8 @@ public class RankingScript : MonoBehaviour {
     public void PonerPuntos(string pos, string nombre, string puntos)
     {
         this.posicion.GetComponent<Text>().text = pos;
-        this.posicion.GetComponent<Text>().text = nombre;
-        this.posicion.GetComponent<Text>().text = puntos;
+        this.Nombre.GetComponent<Text>().text = nombre;
+        this.Puntos.GetComponent<Text>().text = puntos;
     }
 
 }

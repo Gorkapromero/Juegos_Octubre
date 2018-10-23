@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class colisiones_objetos : MonoBehaviour {
+public class colisiones_objetos : MonoBehaviour
+{
+    Slider vidas;
 
 	// Use this for initialization
 	void Start ()
@@ -26,6 +29,10 @@ public class colisiones_objetos : MonoBehaviour {
 
             case "personaje":                       //objeto toca personaje
                 print("quitamos vida");
+                vidas = GameObject.Find("Vida").GetComponent<Slider>();
+                vidas.value++;
+                
+                Destroy(this.gameObject);
                 break;
         }
     }
