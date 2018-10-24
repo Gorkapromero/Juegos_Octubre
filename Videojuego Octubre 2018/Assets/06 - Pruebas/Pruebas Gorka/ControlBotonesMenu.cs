@@ -18,9 +18,9 @@ public class ControlBotonesMenu : MonoBehaviour
 	{
 		
 	}
-	public void CargarescenaPlay(string Nivel1)
+	public void CargarescenaPlay(string juego)
     {
-		SceneManager.LoadScene("Nivel 1"); 
+		SceneManager.LoadScene("juego"); 
     }
 	public void CargarescenaRanking(string Ranking)
 	{
