@@ -37,6 +37,7 @@ public class movimiento_personaje : MonoBehaviour
         if (vidas.value == vidas.maxValue)
         {
             Finpartida.SetActive(true);
+            GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
             GameObject.Find("creador_objetos").GetComponent<crar_objeto>().enabled = false;
             Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
         }

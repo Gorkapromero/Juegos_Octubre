@@ -7,17 +7,19 @@ public class Ctrl_Puntuacion : MonoBehaviour
 {
 
     public int Enemigos_Eliminados = 0;
-    int P_Final;
+    float P_Final;
 
     //public int Tiempo;
     //public int Total;
 
     public Text T_Enemigos;
     public Text TP_Final;
+    Timer tiempo;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
+        tiempo = GameObject.Find("Timer").GetComponent<Timer>();
         Actualizar_enemigos();
 	}
 	
@@ -34,7 +36,8 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     public void Puntuacion_final()
     {
-        P_Final = (Enemigos_Eliminados * 10); //+ el tiempo
-        TP_Final.text = P_Final.ToString();
+        tiempo.PararTiempo();
+        P_Final = (Enemigos_Eliminados * 10) + tiempo.Tiempo; //+ el tiempo
+        TP_Final.text = P_Final.ToString("f0");
     }
 }
