@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class colisiones_objetos : MonoBehaviour
 {
     Slider vidas;
+    Ctrl_Puntuacion Puntuacion;
 
 	// Use this for initialization
 	void Start ()
     {
-       
-	}
+        Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,6 +36,14 @@ public class colisiones_objetos : MonoBehaviour
                 
                 Destroy(this.gameObject);
                 break;
+
+            case "A_Basic(Clone)":
+                print("desruimos enemigo");
+                Puntuacion.Enemigos_Eliminados++;
+                Puntuacion.Actualizar_enemigos();
+                Destroy(this.gameObject);
+                break;
+                
         }
     }
 }
