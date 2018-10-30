@@ -55,6 +55,12 @@ ModelImporter:
     100098: pCube054
     100100: pCube055
     100102: Cylinder003
+    100104: Object005
+    100106: Object006
+    100108: Object007
+    100110: Box001
+    100112: Cylinder004
+    100114: Box002
     400000: Cylinder001
     400002: Cylinder002
     400004: //RootNode
@@ -107,6 +113,12 @@ ModelImporter:
     400098: pCube054
     400100: pCube055
     400102: Cylinder003
+    400104: Object005
+    400106: Object006
+    400108: Object007
+    400110: Box001
+    400112: Cylinder004
+    400114: Box002
     2100000: blanco_Accion
     2100002: lambert1
     2100004: gris_Decorado
@@ -171,6 +183,12 @@ ModelImporter:
     2300090: pCube054
     2300092: pCube055
     2300094: Cylinder003
+    2300096: Object005
+    2300098: Object006
+    2300100: Object007
+    2300102: Box001
+    2300104: Cylinder004
+    2300106: Box002
     3300000: Cylinder001
     3300002: Cylinder002
     3300004: pCube1
@@ -219,6 +237,12 @@ ModelImporter:
     3300090: pCube054
     3300092: pCube055
     3300094: Cylinder003
+    3300096: Object005
+    3300098: Object006
+    3300100: Object007
+    3300102: Box001
+    3300104: Cylinder004
+    3300106: Box002
     4300000: pCube1
     4300002: pPipe2
     4300004: pCube6
@@ -267,6 +291,12 @@ ModelImporter:
     4300090: pCube054
     4300092: pCube055
     4300094: Cylinder003
+    4300096: Object005
+    4300098: Object006
+    4300100: Object007
+    4300102: Cylinder004
+    4300104: Box001
+    4300106: Box002
   externalObjects: {}
   materials:
     importMaterials: 1
