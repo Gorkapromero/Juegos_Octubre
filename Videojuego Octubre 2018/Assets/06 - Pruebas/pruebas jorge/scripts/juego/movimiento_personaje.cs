@@ -9,7 +9,7 @@ public class movimiento_personaje : MonoBehaviour
     protected Joystick joystick;
     public float velocidad_inicial = 100f;
     public Slider vidas;
-    public float velocidad_fin;
+    float velocidad_fin;
     public GameObject Finpartida;
 
 	// Use this for initialization
@@ -34,7 +34,7 @@ public class movimiento_personaje : MonoBehaviour
                                          rigidbody.velocity.y,
                                          0);
 
-        if (vidas.value == vidas.maxValue)
+        if (vidas.value == vidas.minValue)
         {
             Finpartida.SetActive(true);
             GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
