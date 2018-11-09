@@ -10,6 +10,7 @@ public class movimiento_objetos : MonoBehaviour
     public float vision;
     public float Velocidad = 0.00001f;
     public float FuerzaSalto = 10.0f;
+    public float tiempoDeEspera;
 
     float dist;
 
@@ -31,11 +32,13 @@ public class movimiento_objetos : MonoBehaviour
         Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
         jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
         Destino = new Vector3(0, this.transform.position.y, this.transform.position.z);
+        
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        FuerzaSalto = Velocidad + 10;
         dist = Vector3.Distance(jugador.position, transform.position);
         if ((dist < vision|| Jvisto==true)&&!stop)   //vemos al jugador
         {
@@ -52,7 +55,7 @@ public class movimiento_objetos : MonoBehaviour
             Debug.DrawLine(transform.position, target, Color.green);
             
         }
-        else if (!Jvisto)      //no vemos jugador
+        else if (!Jvisto&&!stop)      //no vemos jugador
         {
             target = Destino;
             float fixedSpeed = Velocidad * Time.deltaTime;
@@ -103,9 +106,10 @@ public class movimiento_objetos : MonoBehaviour
         switch (other.tag)
         {
             case "jump":
+                print("jump");
                 stop = true;
                 Debug.DrawLine(transform.position, target, Color.green);
-                Invoke("saltar", 2);
+                Invoke("saltar", tiempoDeEspera);
                 break;
         }
     }
@@ -122,9 +126,15 @@ public class movimiento_objetos : MonoBehaviour
         {
            target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z);
         }
+        else
+        {
+            target = new Vector3(target.x, jugador.position.y, jugador.position.z);
+        }
         //rb.velocity = Vector3.up* FuerzaSalto ;
         rb.AddForce(Vector3.up * FuerzaSalto, ForceMode.Impulse);
+        //rb.AddForce(Vector3.forward * FuerzaSalto, ForceMode.Force);
         Salto = true;
+        //stop = false;
         Debug.DrawLine(transform.position, target, Color.green);
         
         print("saltamos");

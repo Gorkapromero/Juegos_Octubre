@@ -5,10 +5,20 @@ using UnityEngine;
 public class crar_objeto : MonoBehaviour
 {
     public Transform[] posiciones;
-    public GameObject Objetos;
-    public float tiempoCreacion = 2f, RangoCreacion = 2f;
+    //public GameObject Objetos;
+    public float tiempoCreacion = 2f;// RangoCreacion = 2f;
 
-	// Use this for initialization
+	[System.Serializable]
+    public class Enemigos
+    {
+        public string nombre;
+        public GameObject enemigo;
+        public int rareza;
+    }
+
+    public List<Enemigos> TablaEnemigos = new List<Enemigos>();
+    float total = 0;
+
 	void Start ()
     {
         InvokeRepeating("crear", 0.0f, tiempoCreacion);
@@ -21,11 +31,29 @@ public class crar_objeto : MonoBehaviour
 
     public void crear()
     {
-        int spawnPoint = Random.Range(0, posiciones.Length);
-        //Vector3 SpawnPosition = new Vector3(0, 0, 0);
-        //SpawnPosition = posiciones[0].transform.position;//this.transform.position + Random.onUnitSphere * RangoCreacion;
-        //SpawnPosition = new Vector3(SpawnPosition.x, this.transform.position.y, 0);
+        print("enemigo");
+        total = 0;
+        for (int i = 0; i < TablaEnemigos.Count; i++)
+        {
+            total += TablaEnemigos[i].rareza;
+        }
+        print("total " + total);
 
-        GameObject Objeto = Instantiate(Objetos, posiciones[spawnPoint].position, Quaternion.identity);
+        float randomPoint = Random.value * total;
+
+        for (int j = 0; j < TablaEnemigos.Count; j++)
+        {
+            if (randomPoint < TablaEnemigos[j].rareza)
+            {
+                int spawnPoint = Random.Range(0, posiciones.Length);
+                GameObject Objeto = Instantiate(TablaEnemigos[j].enemigo, posiciones[2].position, Quaternion.identity);
+                return;
+            }
+            else
+            {
+                randomPoint -= TablaEnemigos[j].rareza;
+            }
+        }
+
     }
 }
