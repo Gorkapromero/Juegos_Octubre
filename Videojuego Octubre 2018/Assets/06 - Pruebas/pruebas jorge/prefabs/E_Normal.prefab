@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vision: 70
-  Velocidad: 20
-  FuerzaSalto: 40
+  Velocidad: 15
+  FuerzaSalto: 10
   tiempoDeEspera: 1
   rb: {fileID: 54313026521070254}
 --- !u!135 &135126869149643494
@@ -124,7 +124,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340248824946342}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

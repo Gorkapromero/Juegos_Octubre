@@ -29,10 +29,26 @@ public class movimiento_personaje : MonoBehaviour
     {
         var rigidbody = GetComponent<Rigidbody>();
 
-        velocidad_fin = velocidad_inicial - (vidas.value * 20);
+        velocidad_fin = vidas.value * 20;
         rigidbody.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
                                          rigidbody.velocity.y,
                                          0);
+
+        if(joystick.Horizontal<0)
+        {
+            transform.eulerAngles = new Vector3(0, -90, 0);
+            GetComponent<Animation>().Play("Take 001 (1)");
+        }
+        if (joystick.Horizontal>0)
+        {
+            transform.eulerAngles = new Vector3(0, 90, 0);
+            GetComponent<Animation>().Play("Take 001 (1)");
+        }
+        if (joystick.Horizontal==0)
+        {
+            transform.eulerAngles = new Vector3(0,-180, 0);
+            GetComponent<Animation>().Play("Take 001");
+        }
 
         if (vidas.value == vidas.minValue)
         {

@@ -46,7 +46,7 @@ public class crar_objeto : MonoBehaviour
             if (randomPoint < TablaEnemigos[j].rareza)
             {
                 int spawnPoint = Random.Range(0, posiciones.Length);
-                GameObject Objeto = Instantiate(TablaEnemigos[j].enemigo, posiciones[2].position, Quaternion.identity);
+                GameObject Objeto = Instantiate(TablaEnemigos[j].enemigo, posiciones[spawnPoint].position, Quaternion.identity);
                 return;
             }
             else

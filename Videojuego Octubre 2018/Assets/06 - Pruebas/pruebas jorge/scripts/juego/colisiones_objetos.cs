@@ -57,8 +57,18 @@ public class colisiones_objetos : MonoBehaviour
         {
             case "suelo":                           //objeto toca suelo
                 print("chocamos con suelo");
-                Destroy(this.gameObject);
-                break;
+                switch (gameObject.name)
+                {
+                    case "E_Normal":
+                        Destroy(this.gameObject);
+                        break;
+                    case "E_bomb":
+                        break;
+                    case "E_Pegajoso":
+                        break;
+                }
+                
+            break;
 
             case "personaje":                       //objeto toca personaje
                 print("quitamos vida");

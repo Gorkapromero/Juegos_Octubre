@@ -8,7 +8,7 @@ public class movimiento_objetos : MonoBehaviour
 {
 
     public float vision;
-    public float Velocidad = 0.00001f;
+    public float Velocidad;
     public float FuerzaSalto = 10.0f;
     public float tiempoDeEspera;
 
@@ -17,6 +17,7 @@ public class movimiento_objetos : MonoBehaviour
     Transform jugador;
     Vector3 Destino;
     public Rigidbody rb;
+
 
     Slider vidas;
     Ctrl_Puntuacion Puntuacion;
@@ -38,14 +39,14 @@ public class movimiento_objetos : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        FuerzaSalto = Velocidad + 10;
+        //FuerzaSalto = Velocidad + 10;
         dist = Vector3.Distance(jugador.position, transform.position);
         if ((dist < vision|| Jvisto==true)&&!stop)   //vemos al jugador
         {
             if (!Jvisto)
             {
                 Jvisto = true;
-                target = jugador.position; // new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z);
+                target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
             }
             
 
@@ -67,23 +68,30 @@ public class movimiento_objetos : MonoBehaviour
         {
             float fixedSpeed = Velocidad * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
-
             Debug.DrawLine(transform.position, target, Color.green);
         }
         
 	}
-
-    private void OnCollisionEnter(Collision coli)
+    private void OnTriggerEnter(Collider other)
     {
-
-        switch (coli.gameObject.name)
+        switch (other.gameObject.tag)
         {
-            case "suelo":                           //objeto toca suelo
+            case "Suelo":                           //objeto toca suelo
                 print("chocamos con suelo");
-                Destroy(this.gameObject);
+                switch (gameObject.name)
+                {
+                    case "E_Normal":
+                        Destroy(this.gameObject);
+                        break;
+                    case "E_bomb":
+                        //stop = true;
+                        break;
+                    case "E_Pegajoso":
+                        break;
+                }
                 break;
 
-            case "personaje":                       //objeto toca personaje
+            case "Jugador":                       //objeto toca personaje
                 print("quitamos vida");
                 vidas = GameObject.Find("Vida").GetComponent<Slider>();
                 vidas.value--;
@@ -91,15 +99,50 @@ public class movimiento_objetos : MonoBehaviour
                 Destroy(this.gameObject);
                 break;
 
-            case "A_Basic(Clone)":
+            case "A_Basico":
                 print("desruimos enemigo");
                 Puntuacion.Enemigos_Eliminados++;
                 Puntuacion.Actualizar_enemigos();
                 Destroy(this.gameObject);
                 break;
 
+            case "jump":
+                print("tocamos estanteria");
+                rb.isKinematic = true;
+                break;
         }
     }
+    /*private void OnCollisionEnter(Collision coli)
+    {
+
+        switch (coli.gameObject.tag)
+        {
+            case "Suelo":                           //objeto toca suelo
+                print("chocamos con suelo");
+                Destroy(this.gameObject);
+                break;
+
+            case "Jugador":                       //objeto toca personaje
+                print("quitamos vida");
+                vidas = GameObject.Find("Vida").GetComponent<Slider>();
+                vidas.value--;
+
+                Destroy(this.gameObject);
+                break;
+
+            case "A_Basico":
+                print("desruimos enemigo");
+                Puntuacion.Enemigos_Eliminados++;
+                Puntuacion.Actualizar_enemigos();
+                Destroy(this.gameObject);
+                break;
+
+            case "jump":
+                print("tocamos estanteria");
+                rb.isKinematic = true;
+                break;
+        }
+    }*/
     private void OnTriggerExit(Collider other)
     {
         print("salimos coll");
@@ -122,13 +165,14 @@ public class movimiento_objetos : MonoBehaviour
 
     void saltar()
     {
+        rb.isKinematic = false;
         if (dist < vision)
         {
-           target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z);
+           target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z);
         }
         else
         {
-            target = new Vector3(target.x, jugador.position.y, jugador.position.z);
+            target = new Vector3(target.x, this.transform.position.y, jugador.position.z);
         }
         //rb.velocity = Vector3.up* FuerzaSalto ;
         rb.AddForce(Vector3.up * FuerzaSalto, ForceMode.Impulse);

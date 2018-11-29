@@ -20,7 +20,7 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void volverJugar()
     {
-        SceneManager.LoadScene("juego");
+        SceneManager.LoadScene("juego_def");
     }
 
     public void salir()
