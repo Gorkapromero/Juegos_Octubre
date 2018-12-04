@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33812044719706164}
   - component: {fileID: 23583192826410202}
   - component: {fileID: 135499209887758810}
+  - component: {fileID: 195382119301902758}
   - component: {fileID: 54568346493768034}
   - component: {fileID: 114973656421719362}
   m_Layer: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318831246343000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 115.299675, y: 7.8445864, z: 18.37}
+  m_LocalPosition: {x: 92.752495, y: -0.6, z: -32.24}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,10 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vision: 70
-  Velocidad: 15
   FuerzaSalto: 10
   tiempoDeEspera: 1
+  tiempoExplosion: 5
   rb: {fileID: 54568346493768034}
+  MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
 --- !u!135 &135499209887758810
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -129,3 +131,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &195382119301902758
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318831246343000}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 10
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
