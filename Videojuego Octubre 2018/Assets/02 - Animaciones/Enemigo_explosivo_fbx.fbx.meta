@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 4c58e2cba9786d94aacb4e083a6ab914
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: camera1
+    100002: camera1_aim
+    100004: camera1_group
+    100006: //RootNode
+    100008: Gpr_edificio
+    100010: left1
+    100012: Rigging_MalvaExplosive_ctl_cabeza
+    100014: Rigging_MalvaExplosive_ctl_malva_paracaidas
+    100016: Rigging_MalvaExplosive_ctl_paracaidas
+    100018: Rigging_MalvaExplosive_ctl_paracaidas 1
+    100020: Rigging_MalvaExplosive_ctl_todo
+    100022: Rigging_MalvaExplosive_geo_malvaBasic
+    100024: Rigging_MalvaExplosive_geo_mecha
+    100026: Rigging_MalvaExplosive_geo_paracaidas
+    100028: Rigging_MalvaExplosive_grp_Explosivo_geo
+    100030: Rigging_MalvaExplosive_grp_malvaBasic
+    100032: Rigging_MalvaExplosive_grp_malvaBasic_geo
+    100034: Rigging_MalvaExplosive_grp_move
+    100036: Rigging_MalvaExplosive_j_cabeza
+    100038: Rigging_MalvaExplosive_j_ojos
+    100040: Rigging_MalvaExplosive_j_paracaidas
+    100042: Rigging_MalvaExplosive_j_paracaidas1
+    100044: Rigging_MalvaExplosive_j_puntaCabeza
+    100046: Rigging_MalvaExplosive_j_todo
+    100048: Rigging_MalvaExplosive_Ojos
+    400000: camera1
+    400002: camera1_aim
+    400004: camera1_group
+    400006: //RootNode
+    400008: Gpr_edificio
+    400010: left1
+    400012: Rigging_MalvaExplosive_ctl_cabeza
+    400014: Rigging_MalvaExplosive_ctl_malva_paracaidas
+    400016: Rigging_MalvaExplosive_ctl_paracaidas
+    400018: Rigging_MalvaExplosive_ctl_paracaidas 1
+    400020: Rigging_MalvaExplosive_ctl_todo
+    400022: Rigging_MalvaExplosive_geo_malvaBasic
+    400024: Rigging_MalvaExplosive_geo_mecha
+    400026: Rigging_MalvaExplosive_geo_paracaidas
+    400028: Rigging_MalvaExplosive_grp_Explosivo_geo
+    400030: Rigging_MalvaExplosive_grp_malvaBasic
+    400032: Rigging_MalvaExplosive_grp_malvaBasic_geo
+    400034: Rigging_MalvaExplosive_grp_move
+    400036: Rigging_MalvaExplosive_j_cabeza
+    400038: Rigging_MalvaExplosive_j_ojos
+    400040: Rigging_MalvaExplosive_j_paracaidas
+    400042: Rigging_MalvaExplosive_j_paracaidas1
+    400044: Rigging_MalvaExplosive_j_puntaCabeza
+    400046: Rigging_MalvaExplosive_j_todo
+    400048: Rigging_MalvaExplosive_Ojos
+    2000000: camera1
+    2000002: left1
+    2100000: Rigging_MalvaExplosive_malvaExplosivo_text
+    2100002: Rigging_MalvaExplosive_ojos_trans
+    4300000: Rigging_MalvaExplosive_geo_malvaBasic
+    4300002: Rigging_MalvaExplosive_Ojos
+    4300004: Rigging_MalvaExplosive_geo_paracaidas
+    4300006: Rigging_MalvaExplosive_geo_mecha
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Rigging_MalvaExplosive_geo_malvaBasic
+    13700002: Rigging_MalvaExplosive_geo_mecha
+    13700004: Rigging_MalvaExplosive_geo_paracaidas
+    13700006: Rigging_MalvaExplosive_Ojos
+    6000828045688606266: camera1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
