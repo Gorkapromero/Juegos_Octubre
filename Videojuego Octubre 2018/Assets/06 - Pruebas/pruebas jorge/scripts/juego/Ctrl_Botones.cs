@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Ctrl_Botones : MonoBehaviour
 {
-    public InputField Nombre;
-    public RankingManager Ranking;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -28,6 +26,11 @@ public class Ctrl_Botones : MonoBehaviour
     public void salir()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void GuardarPuntuacion()
+    {
+
     }
 
 }

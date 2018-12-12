@@ -109,12 +109,12 @@ public class movimiento_objetos : MonoBehaviour
                 print("chocamos con suelo");
                 switch (gameObject.name)
                 {
-                    case "E_Normal(Clone)":
+                    case "E_Normal":
                         Destroy(this.gameObject);
                         break;
-                    case "E_Bomb(Clone)":
+                    case "E_Bomb":
                         break;
-                    case "E_Pega(Clone)":
+                    case "E_Pega":
                         Vector3 PosPoff = new Vector3(transform.position.x, -61.5f, transform.position.z);
                         vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
@@ -126,19 +126,16 @@ public class movimiento_objetos : MonoBehaviour
             case "Jugador":                       //objeto toca personaje
                 switch (gameObject.name)
                 {
-                    case "E_Normal(Clone)":
+                    case "E_Normal":
                         print("quitamos vida");
                         vidas = GameObject.Find("Vida").GetComponent<Slider>();
                         vidas.value--;
 
                         Destroy(this.gameObject);
                         break;
-                    case "E_Bomb(Clone)":
-                        vidas = GameObject.Find("Vida").GetComponent<Slider>();
-                        vidas.value--;
-                        explosion();
+                    case "E_Bomb":
                         break;
-                    case "E_Pega(Clone)":
+                    case "E_Pega":
                         Vector3 PosPoff = new Vector3(transform.position.x, -61.5f, transform.position.z);
                         vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, jugador.position, Quaternion.identity);

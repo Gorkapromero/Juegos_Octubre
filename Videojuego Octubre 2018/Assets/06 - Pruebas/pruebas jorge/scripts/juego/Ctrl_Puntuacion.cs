@@ -16,9 +16,6 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Text TP_Final;
     Timer tiempo;
 
-    public InputField Nombre;
-    public RankingManager Ranking;
-
     // Use this for initialization
     void Start ()
     {
@@ -42,10 +39,5 @@ public class Ctrl_Puntuacion : MonoBehaviour
         tiempo.PararTiempo();
         P_Final = (Enemigos_Eliminados * 10) + tiempo.Tiempo; //+ el tiempo
         TP_Final.text = P_Final.ToString("f0");
-    }
-
-    public void GuardarPuntuacion()
-    {
-        Ranking.InsertarPuntos(Nombre.text, P_Final.ToString("f0"));
     }
 }

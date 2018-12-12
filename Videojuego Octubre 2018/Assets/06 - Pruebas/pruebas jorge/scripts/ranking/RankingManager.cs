@@ -5,7 +5,6 @@ using System.Data;
 using System.IO;
 using Mono.Data.Sqlite;
 using System;
-using UnityEngine.SceneManagement;
 
 public class RankingManager : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class RankingManager : MonoBehaviour
     public GameObject puntosPREF;
     public Transform PuntosPadre;
     public int topRank;
-    public int LimiteRanking;
 
     IDbConnection conexionDB;
     IDbCommand comandosDB;
@@ -27,11 +25,7 @@ public class RankingManager : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        if (SceneManager.GetActiveScene().name == "Ranking")
-        {
-            BorrarPuntosExtra();
-            MostrarRanking();
-        }
+        MostrarRanking();
 	}
 	
     void AbrirDB()
@@ -64,7 +58,7 @@ public class RankingManager : MonoBehaviour
         print("obtenemos ranking");
     }
 
-    public void InsertarPuntos(string n, string s)
+    void InsertarPuntos(string n, string s)
     {
         AbrirDB();
         comandosDB = conexionDB.CreateCommand();
@@ -103,26 +97,6 @@ public class RankingManager : MonoBehaviour
                 print("#" + (i + 1) + rankTemp.Nombre +rankTemp.Score);
             }
            
-        }
-    }
-
-    void BorrarPuntosExtra()
-    {
-        ObtenerRanking();
-        if (LimiteRanking <= rankings.Count)
-        {
-            rankings.Reverse();
-            int diferencia = rankings.Count - LimiteRanking;
-            AbrirDB();
-            comandosDB = conexionDB.CreateCommand();
-            for (int i = 0; i < diferencia; i++)
-            {
-                string sqlQuery = "delete from Ranking where PlayerId =" + rankings[i].Id + "\"";
-                comandosDB.CommandText = sqlQuery;
-                comandosDB.ExecuteScalar();
-            }
-            
-            CerrarDB();
         }
     }
 

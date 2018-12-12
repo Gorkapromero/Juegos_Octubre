@@ -23,7 +23,7 @@ public class Ctrl_Pegar : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Jugador":                       //personaje toca pegajoso
-                Invoke("Pegar", 0.2f);
+                Invoke("Pegar", 0.3f);
                 break;
         }
     }
