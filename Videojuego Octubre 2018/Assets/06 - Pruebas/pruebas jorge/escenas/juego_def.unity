@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a21c33430eaaa4aa2a1a398a03d7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreDB: PruebaDB.db
+  nombreDB: RankingDB.db
   puntosPREF: {fileID: 0}
   PuntosPadre: {fileID: 0}
   topRank: 0
@@ -3775,7 +3775,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
@@ -4831,7 +4831,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2116802154
 MonoBehaviour:
   m_ObjectHideFlags: 0
