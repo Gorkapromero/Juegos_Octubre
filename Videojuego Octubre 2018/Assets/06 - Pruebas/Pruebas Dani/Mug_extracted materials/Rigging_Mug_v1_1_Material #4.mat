@@ -86,7 +86,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Outline: 27.69
-    - _OutlineSize: 0.29
+    - _OutlineSize: 0.1
     - _Parallax: 0.02
     - _RimIntensity: 0.5
     - _RimSize: 1.5
@@ -107,5 +107,5 @@ Material:
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ShadowColor: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}

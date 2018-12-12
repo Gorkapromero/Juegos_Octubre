@@ -79,11 +79,32 @@ public class RankingManager : MonoBehaviour
     {
         AbrirDB();
         comandosDB = conexionDB.CreateCommand();
-        string sqlQuery = "delete from Ranking where PlayerId =" + id + "\"";
+        string sqlQuery = "delete from Ranking where PlayerId =" + id;
         comandosDB.CommandText = sqlQuery;
 
         comandosDB.ExecuteScalar();
         CerrarDB();
+    }
+
+    public void BorrarTodo()
+    {
+
+        BorrarPuntos(1);
+        ObtenerRanking();
+        rankings.Reverse();
+        AbrirDB();
+        comandosDB = conexionDB.CreateCommand();
+        print(rankings.Count);
+        for (int i = 0; i < rankings.Count; i++)
+        {
+            string sqlQuery = "delete from Ranking where PlayerId =" + rankings[i].Id;
+            comandosDB.CommandText = sqlQuery;
+            comandosDB.ExecuteScalar();
+        }
+
+        CerrarDB();
+        MostrarRanking();
+        
     }
 
     void MostrarRanking()
@@ -117,7 +138,7 @@ public class RankingManager : MonoBehaviour
             comandosDB = conexionDB.CreateCommand();
             for (int i = 0; i < diferencia; i++)
             {
-                string sqlQuery = "delete from Ranking where PlayerId =" + rankings[i].Id + "\"";
+                string sqlQuery = "delete from Ranking where PlayerId =" + rankings[i].Id;
                 comandosDB.CommandText = sqlQuery;
                 comandosDB.ExecuteScalar();
             }
