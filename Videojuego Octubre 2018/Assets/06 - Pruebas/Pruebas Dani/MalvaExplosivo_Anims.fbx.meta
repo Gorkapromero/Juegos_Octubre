@@ -1,0 +1,232 @@
+fileFormatVersion: 2
+guid: 7394444ddaf0a0e4fb3fe78b01d34e18
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Rigging_MalvaExplosive_ctl_cabeza
+    100004: Rigging_MalvaExplosive_ctl_malva_paracaidas
+    100006: Rigging_MalvaExplosive_ctl_paracaidas
+    100008: Rigging_MalvaExplosive_ctl_paracaidas 1
+    100010: Rigging_MalvaExplosive_ctl_todo
+    100012: Rigging_MalvaExplosive_geo_malvaBasic
+    100014: Rigging_MalvaExplosive_geo_mecha
+    100016: Rigging_MalvaExplosive_geo_paracaidas
+    100018: Rigging_MalvaExplosive_grp_Explosivo_geo
+    100020: Rigging_MalvaExplosive_grp_malvaBasic_geo
+    100022: Rigging_MalvaExplosive_grp_move
+    100024: Rigging_MalvaExplosive_j_cabeza
+    100026: Rigging_MalvaExplosive_j_ojos
+    100028: Rigging_MalvaExplosive_j_paracaidas
+    100030: Rigging_MalvaExplosive_j_paracaidas1
+    100032: Rigging_MalvaExplosive_j_puntaCabeza
+    100034: Rigging_MalvaExplosive_j_todo
+    100036: Rigging_MalvaExplosive_Ojos
+    400000: //RootNode
+    400002: Rigging_MalvaExplosive_ctl_cabeza
+    400004: Rigging_MalvaExplosive_ctl_malva_paracaidas
+    400006: Rigging_MalvaExplosive_ctl_paracaidas
+    400008: Rigging_MalvaExplosive_ctl_paracaidas 1
+    400010: Rigging_MalvaExplosive_ctl_todo
+    400012: Rigging_MalvaExplosive_geo_malvaBasic
+    400014: Rigging_MalvaExplosive_geo_mecha
+    400016: Rigging_MalvaExplosive_geo_paracaidas
+    400018: Rigging_MalvaExplosive_grp_Explosivo_geo
+    400020: Rigging_MalvaExplosive_grp_malvaBasic_geo
+    400022: Rigging_MalvaExplosive_grp_move
+    400024: Rigging_MalvaExplosive_j_cabeza
+    400026: Rigging_MalvaExplosive_j_ojos
+    400028: Rigging_MalvaExplosive_j_paracaidas
+    400030: Rigging_MalvaExplosive_j_paracaidas1
+    400032: Rigging_MalvaExplosive_j_puntaCabeza
+    400034: Rigging_MalvaExplosive_j_todo
+    400036: Rigging_MalvaExplosive_Ojos
+    2100000: Rigging_MalvaExplosive_malvaExplosivo_text
+    2100002: Rigging_MalvaExplosive_ojos_trans
+    2300000: Rigging_MalvaExplosive_geo_malvaBasic
+    2300002: Rigging_MalvaExplosive_geo_mecha
+    2300004: Rigging_MalvaExplosive_geo_paracaidas
+    2300006: Rigging_MalvaExplosive_Ojos
+    3300000: Rigging_MalvaExplosive_geo_malvaBasic
+    3300002: Rigging_MalvaExplosive_geo_mecha
+    3300004: Rigging_MalvaExplosive_geo_paracaidas
+    3300006: Rigging_MalvaExplosive_Ojos
+    4300000: Rigging_MalvaExplosive_geo_malvaBasic
+    4300002: Rigging_MalvaExplosive_Ojos
+    4300004: Rigging_MalvaExplosive_geo_paracaidas
+    4300006: Rigging_MalvaExplosive_geo_mecha
+    7400000: Andar
+    7400002: Take 001 //// Rigging_MalvaExplosive_ctl_paracaidas 1
+    7400004: Take 001 //// Rigging_MalvaExplosive_j_paracaidas
+    7400006: Take 001 //// Rigging_MalvaExplosive_ctl_todo
+    7400008: Take 001 //// Rigging_MalvaExplosive_ctl_malva_paracaidas
+    7400010: Take 001 //// Rigging_MalvaExplosive_j_todo
+    7400012: Take 001 //// Rigging_MalvaExplosive_ctl_cabeza
+    7400014: Take 001 //// Rigging_MalvaExplosive_j_cabeza
+    7400016: Take 001 //// Rigging_MalvaExplosive_j_ojos
+    7400018: Take 001 //// Rigging_MalvaExplosive_geo_paracaidas
+    7400020: Andar //// Rigging_MalvaExplosive_grp_malvaBasic
+    7400022: Andar //// Rigging_MalvaExplosive_ctl_paracaidas 1
+    7400024: Andar //// Rigging_MalvaExplosive_j_paracaidas
+    7400026: Andar //// Rigging_MalvaExplosive_ctl_todo
+    7400028: Andar //// Rigging_MalvaExplosive_ctl_malva_paracaidas
+    7400030: Andar //// Rigging_MalvaExplosive_j_todo
+    7400032: Andar //// Rigging_MalvaExplosive_ctl_cabeza
+    7400034: Andar //// Rigging_MalvaExplosive_j_cabeza
+    7400036: Andar //// Rigging_MalvaExplosive_j_ojos
+    7400038: Andar //// Rigging_MalvaExplosive_geo_paracaidas
+    9500000: //RootNode
+    11100000: //RootNode
+    11100002: Rigging_MalvaExplosive_ctl_cabeza
+    11100004: Rigging_MalvaExplosive_ctl_malva_paracaidas
+    11100006: Rigging_MalvaExplosive_ctl_paracaidas
+    11100008: Rigging_MalvaExplosive_ctl_paracaidas 1
+    11100010: Rigging_MalvaExplosive_ctl_todo
+    11100012: Rigging_MalvaExplosive_geo_malvaBasic
+    11100014: Rigging_MalvaExplosive_geo_mecha
+    11100016: Rigging_MalvaExplosive_geo_paracaidas
+    11100018: Rigging_MalvaExplosive_grp_Explosivo_geo
+    11100020: Rigging_MalvaExplosive_grp_malvaBasic_geo
+    11100022: Rigging_MalvaExplosive_grp_move
+    11100024: Rigging_MalvaExplosive_j_cabeza
+    11100026: Rigging_MalvaExplosive_j_ojos
+    11100028: Rigging_MalvaExplosive_j_paracaidas
+    11100030: Rigging_MalvaExplosive_j_paracaidas1
+    11100032: Rigging_MalvaExplosive_j_puntaCabeza
+    11100034: Rigging_MalvaExplosive_j_todo
+    11100036: Rigging_MalvaExplosive_Ojos
+    13700000: Rigging_MalvaExplosive_geo_malvaBasic
+    13700002: Rigging_MalvaExplosive_geo_mecha
+    13700004: Rigging_MalvaExplosive_geo_paracaidas
+    13700006: Rigging_MalvaExplosive_Ojos
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rigging_MalvaExplosive_malvaExplosivo_text
+    second: {fileID: 2100000, guid: e8ba51a6e31eba44fac13f92722fa0fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rigging_MalvaExplosive_ojos_trans
+    second: {fileID: 2100000, guid: bc37976f68927954dafb7e053fb15cb7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Malva_Explosivo
+    second: {fileID: 2800000, guid: 6557faa8b2a398d4e98fd9d071a03066, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ojo01
+    second: {fileID: 2800000, guid: f113baea44deb734dbba3f6ae7c19435, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Andar
+      takeName: Take 001
+      firstFrame: 115
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 68
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
