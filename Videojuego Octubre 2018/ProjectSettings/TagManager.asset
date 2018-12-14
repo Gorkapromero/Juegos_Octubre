@@ -9,6 +9,8 @@ TagManager:
   - jump
   - Suelo
   - A_Basico
+  - A_chorro
+  - escudo
   layers:
   - Default
   - TransparentFX
