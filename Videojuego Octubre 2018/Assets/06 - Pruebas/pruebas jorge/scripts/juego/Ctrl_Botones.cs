@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Ctrl_Botones : MonoBehaviour
 {
-    public InputField Nombre;
-    public RankingManager Ranking;
+    //public InputField Nombre;
+    //public RankingManager Ranking;
 	// Use this for initialization
 	void Start ()
     {

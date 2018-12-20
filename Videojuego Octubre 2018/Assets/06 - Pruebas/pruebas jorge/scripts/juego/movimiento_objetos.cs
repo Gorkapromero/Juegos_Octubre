@@ -165,6 +165,12 @@ public class movimiento_objetos : MonoBehaviour
                 Destroy(this.gameObject);
                 break;
 
+            case "explosion":
+                Puntuacion.Enemigos_Eliminados++;
+                Puntuacion.Actualizar_enemigos();
+                Destroy(this.gameObject);
+                break;
+
             case "jump":
                 print("tocamos estanteria");
                 rb.isKinematic = true;

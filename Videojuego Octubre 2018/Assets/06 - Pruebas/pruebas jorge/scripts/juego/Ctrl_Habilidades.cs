@@ -74,7 +74,7 @@ public class Ctrl_Habilidades : MonoBehaviour
             //print(t1);
             if (t2 <= 0)
             {
-                t_chorro = false;
+                t_explosion = false;
                 t2 = tablahabilidades[2].T_enfriamiento;
                 tablahabilidades[2].tiempo.SetActive(false);
             }
@@ -94,7 +94,7 @@ public class Ctrl_Habilidades : MonoBehaviour
             //print(t1);
             if (t3 <= 0)
             {
-                t_chorro = false;
+                t_escudo = false;
                 t3 = tablahabilidades[1].T_enfriamiento;
                 tablahabilidades[3].tiempo.SetActive(false);
             }
@@ -114,6 +114,7 @@ public class Ctrl_Habilidades : MonoBehaviour
     public void chorro()
     {
         t_chorro = true;
+        GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = false;
         Vector3 SpawnPosition = new Vector3(0, 0, 0);
         SpawnPosition = this.transform.position;
         //SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);

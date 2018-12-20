@@ -11,6 +11,7 @@ TagManager:
   - A_Basico
   - A_chorro
   - escudo
+  - explosion
   layers:
   - Default
   - TransparentFX
