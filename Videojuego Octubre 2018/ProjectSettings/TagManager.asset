@@ -12,6 +12,7 @@ TagManager:
   - A_chorro
   - escudo
   - explosion
+  - puntaje
   layers:
   - Default
   - TransparentFX

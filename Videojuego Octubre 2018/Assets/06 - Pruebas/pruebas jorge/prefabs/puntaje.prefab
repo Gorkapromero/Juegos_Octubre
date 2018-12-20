@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114149797490147736}
   m_Layer: 5
   m_Name: puntaje
-  m_TagString: Untagged
+  m_TagString: puntaje
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

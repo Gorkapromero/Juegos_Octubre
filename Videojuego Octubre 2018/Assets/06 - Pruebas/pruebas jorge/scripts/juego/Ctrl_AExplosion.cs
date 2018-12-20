@@ -16,7 +16,7 @@ public class Ctrl_AExplosion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        colisionador.radius += velocidad * Time.deltaTime;
+        //colisionador.radius += velocidad * Time.deltaTime;
         //transform.localScale += transform.localScale * velocidad * Time.deltaTime;
 	}
 
