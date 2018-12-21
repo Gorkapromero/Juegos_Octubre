@@ -46,6 +46,15 @@ ModelImporter:
     100080: Rigging_Mug_v1_1_j_rodilla_izq
     100082: Rigging_Mug_v1_1_j_todo
     100084: Rigging_Mug_v1_1_transform_piernas
+    100086: chorro_SalpicaduraTronco
+    100088: chorro_Tronco
+    100090: grp_chorroCafe
+    100092: grp_ondaExpansiva_test
+    100094: pCylinder1
+    100096: pPlane1
+    100098: pSphere1
+    100100: pSphere3
+    100102: VFX
     400000: //RootNode
     400002: Rigging_Mug_v1_1_ctl_cabeza
     400004: Rigging_Mug_v1_1_ctl_cadera
@@ -89,11 +98,35 @@ ModelImporter:
     400080: Rigging_Mug_v1_1_j_rodilla_izq
     400082: Rigging_Mug_v1_1_j_todo
     400084: Rigging_Mug_v1_1_transform_piernas
+    400086: chorro_SalpicaduraTronco
+    400088: chorro_Tronco
+    400090: grp_chorroCafe
+    400092: grp_ondaExpansiva_test
+    400094: pCylinder1
+    400096: pPlane1
+    400098: pSphere1
+    400100: pSphere3
+    400102: VFX
     2100000: 'Rigging_Mug_v1_1_Material #3'
     2100002: 'Rigging_Mug_v1_1_Material #9'
     2100004: 'Rigging_Mug_v1_1_Material #8'
     2100006: 'Rigging_Mug_v1_1_Material #4'
     2100008: 'Rigging_Mug_v1_1_Material #6'
+    2100010: phong1
+    2100012: lambert2
+    2100014: useBackground1
+    2300000: chorro_SalpicaduraTronco
+    2300002: chorro_Tronco
+    2300004: pCylinder1
+    2300006: pPlane1
+    2300008: pSphere1
+    2300010: pSphere3
+    3300000: chorro_SalpicaduraTronco
+    3300002: chorro_Tronco
+    3300004: pCylinder1
+    3300006: pPlane1
+    3300008: pSphere1
+    3300010: pSphere3
     4300000: Rigging_Mug_v1_1_geo_pajarita
     4300002: Rigging_Mug_v1_1_geo_plano_cafe
     4300004: Rigging_Mug_v1_1_geo_cuerpo
@@ -102,6 +135,12 @@ ModelImporter:
     4300010: Rigging_Mug_v1_1_geo_zapato_izq
     4300012: Rigging_Mug_v1_1_geo_pierna_der
     4300014: Rigging_Mug_v1_1_geo_zapato_der
+    4300016: pPlane1
+    4300018: pCylinder1
+    4300020: chorro_Tronco
+    4300022: chorro_SalpicaduraTronco
+    4300024: pSphere1
+    4300026: pSphere3
     7400000: Reposo
     7400002: Correr
     7400004: "Habilidad_LanzarCaf\xE9"
@@ -147,6 +186,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: 'Rigging_Mug_v1_1_Material #9'
     second: {fileID: 2100000, guid: f8cbad6acd40cf64cb04b5951c01e46c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 1116e47b05ef74f4e97282a76d51331d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: 45ca069e5b09686429df0868bde15c52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: useBackground1
+    second: {fileID: 2100000, guid: da4687f3a6fd1974d886eb5f54ffa0ae, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
