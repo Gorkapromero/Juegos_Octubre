@@ -16,6 +16,8 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Text TP_Final;
     Timer tiempo;
 
+    public GameObject PantallaGuardar;
+
     public InputField Nombre;
     public RankingManager Ranking;
 
@@ -46,6 +48,17 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     public void GuardarPuntuacion()
     {
+        PantallaGuardar.SetActive(true);
+    }
+
+    public void cancelar()
+    {
+        PantallaGuardar.SetActive(false);
+    }
+
+    public void Guardar()
+    {
         Ranking.InsertarPuntos(Nombre.text, P_Final.ToString("f0"));
+        PantallaGuardar.SetActive(false);
     }
 }

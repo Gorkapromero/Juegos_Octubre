@@ -27,6 +27,7 @@ public class Ctrl_AChorro : MonoBehaviour {
         {
             case "Top":                           //ataque llega al techo
                 print("chocamos con " + coli);
+                GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = true;
                 Destroy(this.gameObject);
                 break;
 

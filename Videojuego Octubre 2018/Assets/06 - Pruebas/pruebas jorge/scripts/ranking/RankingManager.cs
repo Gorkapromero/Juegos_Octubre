@@ -36,7 +36,25 @@ public class RankingManager : MonoBehaviour
 	
     void AbrirDB()
     {
-        rutaDB = Application.dataPath + "/StreamingAssets/" + nombreDB;
+        //pc
+        if(Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            rutaDB = Application.dataPath + "/StreamingAssets/" + nombreDB;
+        }
+        //android
+        else if(Application.platform == RuntimePlatform.Android)
+        {
+            rutaDB = Application.persistentDataPath + "/" + nombreDB;
+            if (!File.Exists(rutaDB))
+            {
+                WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/" + nombreDB);
+                while(!loadDB.isDone)
+                {
+
+                }
+                File.WriteAllBytes(rutaDB, loadDB.bytes);
+            }
+        }
         Conexion = "URI=file:" + rutaDB;
         conexionDB = new SqliteConnection(Conexion);
         conexionDB.Open();
@@ -103,6 +121,7 @@ public class RankingManager : MonoBehaviour
         }
 
         CerrarDB();
+        Destroy(GameObject.FindGameObjectWithTag("puntaje"));
         MostrarRanking();
         
     }

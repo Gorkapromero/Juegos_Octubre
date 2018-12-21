@@ -20,7 +20,7 @@ public class ControlBotonesMenu : MonoBehaviour
 	}
 	public void CargarescenaPlay(string juego)
     {
-		SceneManager.LoadScene("juego"); 
+		SceneManager.LoadScene("juego_def"); 
     }
 	public void CargarescenaRanking(string Ranking)
 	{

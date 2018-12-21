@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Botones_rankin : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class Botones_rankin : MonoBehaviour
     public void no()
     {
         warning.SetActive(false);
+    }
+
+    public void volver()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 }
