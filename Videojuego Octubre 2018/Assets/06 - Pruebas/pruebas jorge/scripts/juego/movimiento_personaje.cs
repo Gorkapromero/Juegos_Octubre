@@ -9,7 +9,7 @@ public class movimiento_personaje : MonoBehaviour
     protected Joystick joystick;
     //public float velocidad_inicial = 100f;
     public Slider vidas;
-    float velocidad_fin;
+    public float velocidad_fin;
     public GameObject Finpartida;
     Rigidbody rb;
 
@@ -30,7 +30,7 @@ public class movimiento_personaje : MonoBehaviour
     {
 
         
-        velocidad_fin = vidas.value * 20;
+        //velocidad_fin = vidas.value * 20;
         rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
                                          rb.velocity.y,
                                          0);

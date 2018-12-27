@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d33215b64c7b4e4f87b513e4c8f11fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TiempoPeg: 10
+  TiempoPeg: 2
 --- !u!136 &136544051053203322
 CapsuleCollider:
   m_ObjectHideFlags: 1
