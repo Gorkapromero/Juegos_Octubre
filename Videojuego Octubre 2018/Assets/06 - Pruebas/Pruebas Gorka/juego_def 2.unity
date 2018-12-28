@@ -692,6 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: {fileID: 378673108}
+  velocidad_fin: 0
   Finpartida: {fileID: 584273809}
 --- !u!54 &194929548
 Rigidbody:
@@ -5676,6 +5677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: {fileID: 378673108}
+  velocidad_fin: 0
   Finpartida: {fileID: 584273809}
 --- !u!114 &1459013041
 MonoBehaviour:
@@ -6114,7 +6116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 42, y: -1.7}
+  m_AnchoredPosition: {x: 42, y: -1.7000122}
   m_SizeDelta: {x: -909.6, y: -226.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576057643
@@ -8206,7 +8208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -493, y: 398}
+  m_AnchoredPosition: {x: -207, y: 240}
   m_SizeDelta: {x: 957.4, y: 232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141513197
