@@ -8,7 +8,7 @@ public class movimiento_objetos : MonoBehaviour
 {
 
     public float vision;
-    float Velocidad;
+    public float Velocidad;
     public float FuerzaSalto = 10.0f;
     public float tiempoDeEspera;
     public float tiempoExplosion;
@@ -48,7 +48,7 @@ public class movimiento_objetos : MonoBehaviour
     {
         //nav.SetDestination(Destino);
         //FuerzaSalto = Velocidad + 10;
-        Velocidad = nav.speed;
+        //Velocidad = nav.speed;
         dist = Vector3.Distance(jugador.position, transform.position);
         if ((dist < vision|| Jvisto==true)&&!stop)   //vemos al jugador antes de saltar
         {
@@ -78,6 +78,11 @@ public class movimiento_objetos : MonoBehaviour
 
         else if (Salto)  //movimiento despues del salto
         {
+            if (dist < vision)
+            {
+                target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
+                Debug.DrawLine(transform.position, target, Color.green);
+            }
             float fixedSpeed = Velocidad * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             //nav.SetDestination(target);
@@ -204,7 +209,8 @@ public class movimiento_objetos : MonoBehaviour
         rb.isKinematic = false;
         if (dist < vision)
         {
-           target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z);  //vemos al jugador
+            //target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z);  //vemos al jugador
+            target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z);
         }
         else
         {
