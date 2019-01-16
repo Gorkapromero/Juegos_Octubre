@@ -36,7 +36,7 @@ public class movimiento_personaje : MonoBehaviour
                                          0);
         if (Saltando)
         {
-            rb.velocity = new Vector3(joystick.Horizontal* vidas.value * 70, rb.velocity.y, 0);
+            rb.velocity = new Vector3(joystick.Horizontal* vidas.value * 30, rb.velocity.y, 0);
         }
 
         //Para el movimiento
@@ -79,6 +79,12 @@ public class movimiento_personaje : MonoBehaviour
     {
         Saltando = true;
         print("Saltando = TRUE");
+
+    }
+
+    public void lanzarCafé()
+    {
+        GetComponent<Animator>().Play("Habilidad_LanzarCafé");
 
     }
 
