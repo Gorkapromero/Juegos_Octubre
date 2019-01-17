@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public Text T_Timer;
     public float Tiempo;
     private bool ActivarTiempo = true;
-    private float startTime;
+    public float startTime;
 
 	// Use this for initialization
 	void Start ()
@@ -22,19 +22,34 @@ public class Timer : MonoBehaviour
         if (ActivarTiempo == false)
             return;
 
-        Tiempo = Time.time-startTime;
+        Tiempo = Time.time+startTime;
 
-        string Minutos = ((int)Tiempo / 60).ToString();
-        string Segundos = (Tiempo % 60).ToString("f0");
+        string Minutos = ((int)Tiempo / 59).ToString("f0");
+        string Segundos = (Tiempo % 59).ToString("f0");
 
-        if((int)Tiempo/60==0)
+        /*if((int)Tiempo/59==0 && Tiempo % 59 < 59.5f)
         {
-            T_Timer.text = Segundos;
+            if (Tiempo%59 < 9.5f)
+            {
+                T_Timer.text = 0+Segundos;
+            }
+            else
+            {
+                T_Timer.text = Segundos;
+            }
         }
         else
-        {
-            T_Timer.text = Minutos + ":" + Segundos;
-        }
+        {*/
+            if (Tiempo % 59 < 9.5f)
+            {
+                T_Timer.text = Minutos + ":" + 0 + Segundos;
+            }
+            else
+            {
+                T_Timer.text = Minutos + ":" + Segundos;
+            }
+            
+       // }
 	}
 
     public void PararTiempo()
@@ -43,7 +58,7 @@ public class Timer : MonoBehaviour
     }
     public void iniciarTiempo()
     {
-        startTime = Time.time;
+        //startTime = Time.time;
         ActivarTiempo = true;
     }
 }

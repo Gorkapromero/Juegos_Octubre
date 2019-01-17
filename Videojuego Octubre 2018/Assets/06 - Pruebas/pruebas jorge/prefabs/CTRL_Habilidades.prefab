@@ -42,7 +42,7 @@ MonoBehaviour:
   - nombre: Ataque basico
     habilidad: {fileID: 1080059351610992, guid: 0a1dd97d39ad6464a847f9d2b9b46831,
       type: 2}
-    T_enfriamiento: 2
+    T_enfriamiento: 1
     tiempo: {fileID: 0}
     tiempo_texto: {fileID: 0}
   - nombre: ataque chorro

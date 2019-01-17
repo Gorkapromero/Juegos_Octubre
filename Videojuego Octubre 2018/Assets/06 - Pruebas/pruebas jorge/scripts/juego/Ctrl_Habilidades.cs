@@ -28,11 +28,12 @@ public class Ctrl_Habilidades : MonoBehaviour
     float t1;
     float t2;
     float t3;
-    float t4;
+    float t0;
 
 	// Use this for initialization
 	void Start ()
     {
+        t0 = tablahabilidades[0].T_enfriamiento;
         t1 = tablahabilidades[1].T_enfriamiento;
         t2 = tablahabilidades[2].T_enfriamiento;
         t3 = tablahabilidades[3].T_enfriamiento;
@@ -53,12 +54,12 @@ public class Ctrl_Habilidades : MonoBehaviour
                 tablahabilidades[0].tiempo.SetActive(true);
             }
             tablahabilidades[1].tiempo_texto.text = t1.ToString("f0");*/
-            t1 -= Time.deltaTime;
+            t0 -= Time.deltaTime;
             //print(t1);
-            if (t1 <= 0)
+            if (t0 <= 0)
             {
                 //t_chorro = false;
-                t4 = tablahabilidades[0].T_enfriamiento;
+                t0 = tablahabilidades[0].T_enfriamiento;
                 //tablahabilidades[0].tiempo.SetActive(false);
                 GameObject.Find("A_Basico").GetComponent<Button>().enabled = true;
             }
@@ -129,6 +130,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public void Ataque_Basico()
     {
+        t_basico = true;
         Vector3 SpawnPosition = new Vector3(0, 0, 0);
         SpawnPosition = this.transform.position;
         SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);

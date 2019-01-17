@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44466713, g: 0.49419087, b: 0.5734314, a: 1}
+  m_IndirectSpecularColor: {r: 0.4446673, g: 0.49419147, b: 0.5734323, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2423,6 +2423,11 @@ Prefab:
       propertyPath: tiempo
       value: 
       objectReference: {fileID: 254788843}
+    - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
+        type: 2}
+      propertyPath: tablahabilidades.Array.data[1].T_enfriamiento
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ad94a543deda746a5cb81f5b543601, type: 2}
   m_IsPrefabAsset: 0
@@ -3333,6 +3338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   T_Timer: {fileID: 884412814}
   Tiempo: 0
+  startTime: 0
 --- !u!114 &884412814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3353,7 +3359,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 03923a7c5c97f0e498e5b6a53899ec78, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -4766,7 +4772,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 03923a7c5c97f0e498e5b6a53899ec78, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -5920,6 +5926,34 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1498414405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100088, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
+--- !u!65 &1498414409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1498414405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1498414410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1498414405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7414b03868333f4f92f8e70475e318d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1534516361
 GameObject:
   m_ObjectHideFlags: 0
