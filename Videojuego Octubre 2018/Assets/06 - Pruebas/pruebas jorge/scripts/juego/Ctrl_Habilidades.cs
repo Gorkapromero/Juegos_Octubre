@@ -19,6 +19,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public float tiempoEscudo;
     public GameObject tiempo;
+	public GameObject Particulas; 
 
     bool t_basico = false;
     bool t_chorro = false;
@@ -30,6 +31,9 @@ public class Ctrl_Habilidades : MonoBehaviour
     float t3;
     float t0;
 
+
+
+
 	// Use this for initialization
 	void Start ()
     {
@@ -40,6 +44,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         tablahabilidades[1].tiempo.SetActive(false);
         tablahabilidades[2].tiempo.SetActive(false);
         tablahabilidades[3].tiempo.SetActive(false);
+
     }
 	
 	// Update is called once per frame
@@ -62,6 +67,7 @@ public class Ctrl_Habilidades : MonoBehaviour
                 t0 = tablahabilidades[0].T_enfriamiento;
                 //tablahabilidades[0].tiempo.SetActive(false);
                 GameObject.Find("A_Basico").GetComponent<Button>().enabled = true;
+		
             }
 
         }
@@ -87,21 +93,26 @@ public class Ctrl_Habilidades : MonoBehaviour
         }
         if (t_explosion == true)
         {
+		 
             print("tiempo chorro on");
             if (tablahabilidades[2].tiempo.activeSelf == false)
             {
                 print("activamos");
                 tablahabilidades[2].tiempo.SetActive(true);
+
             }
             tablahabilidades[2].tiempo_texto.text = t2.ToString("f0");
             t2 -= Time.deltaTime;
             //print(t1);
             if (t2 <= 0)
             {
+				
                 t_explosion = false;
                 t2 = tablahabilidades[2].T_enfriamiento;
                 tablahabilidades[2].tiempo.SetActive(false);
                 GameObject.Find("A_Explosion").GetComponent<Button>().enabled = true;
+
+
             }
 
         }
@@ -154,6 +165,7 @@ public class Ctrl_Habilidades : MonoBehaviour
     public void Explosion()
     {
         t_explosion = true;
+
         Vector3 SpawnPosition = new Vector3(0, 0, 0);
         SpawnPosition = this.transform.position;
         SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);

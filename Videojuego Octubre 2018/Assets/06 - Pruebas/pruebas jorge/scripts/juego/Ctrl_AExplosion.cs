@@ -7,16 +7,21 @@ public class Ctrl_AExplosion : MonoBehaviour
     SphereCollider colisionador;
 
     public float velocidad;
+	 
+
+
 	// Use this for initialization
 	void Start ()
     {
         colisionador = GetComponent<SphereCollider>();
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         colisionador.radius += velocidad * Time.deltaTime;
+
         //transform.localScale += transform.localScale * velocidad * Time.deltaTime;
 	}
 
