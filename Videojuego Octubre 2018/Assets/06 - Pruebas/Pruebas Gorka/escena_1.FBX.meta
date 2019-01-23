@@ -144,6 +144,18 @@ ModelImporter:
     100276: pCube074
     100278: pCube075
     100280: pCube076
+    100282: Box042
+    100284: Cylinder020
+    100286: Box044
+    100288: Box047
+    100290: Box048
+    100292: Box049
+    100294: Box050
+    100296: Box051
+    100298: Box052
+    100300: Box053
+    100302: Box054
+    100304: Box055
     400000: Cylinder001
     400002: Cylinder002
     400004: //RootNode
@@ -285,6 +297,18 @@ ModelImporter:
     400276: pCube074
     400278: pCube075
     400280: pCube076
+    400282: Box042
+    400284: Cylinder020
+    400286: Box044
+    400288: Box047
+    400290: Box048
+    400292: Box049
+    400294: Box050
+    400296: Box051
+    400298: Box052
+    400300: Box053
+    400302: Box054
+    400304: Box055
     2100000: blanco_Accion
     2100002: lambert1
     2100004: gris_Decorado
@@ -454,6 +478,18 @@ ModelImporter:
     2300266: pCube074
     2300268: pCube075
     2300270: pCube076
+    2300272: Box042
+    2300274: Cylinder020
+    2300276: Box044
+    2300278: Box047
+    2300280: Box048
+    2300282: Box049
+    2300284: Box050
+    2300286: Box051
+    2300288: Box052
+    2300290: Box053
+    2300292: Box054
+    2300294: Box055
     3300000: Cylinder001
     3300002: Cylinder002
     3300004: pCube1
@@ -590,6 +626,18 @@ ModelImporter:
     3300266: pCube074
     3300268: pCube075
     3300270: pCube076
+    3300272: Box042
+    3300274: Cylinder020
+    3300276: Box044
+    3300278: Box047
+    3300280: Box048
+    3300282: Box049
+    3300284: Box050
+    3300286: Box051
+    3300288: Box052
+    3300290: Box053
+    3300292: Box054
+    3300294: Box055
     4300000: pCube1
     4300002: pPipe2
     4300004: pCube6
@@ -726,6 +774,18 @@ ModelImporter:
     4300266: pCube074
     4300268: pCube075
     4300270: pCube076
+    4300272: Cylinder020
+    4300274: Box042
+    4300276: Box044
+    4300278: Box047
+    4300280: Box048
+    4300282: Box049
+    4300284: Box050
+    4300286: Box051
+    4300288: Box052
+    4300290: Box053
+    4300292: Box054
+    4300294: Box055
   externalObjects:
   - first:
       type: UnityEngine:Texture2D
@@ -736,32 +796,37 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: reloj_uvs
-    second: {fileID: 2800000, guid: 2c25048638c41724ca92876ed132bfd2, type: 3}
+    second: {fileID: 2800000, guid: 6eb5a1122985f8b4c982ac219b4ccc91, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_armario
-    second: {fileID: 2800000, guid: b4dc7e2065cfff54fa0ef0afcee47ee2, type: 3}
+    second: {fileID: 2800000, guid: 75e55b67bc0f9ae4ba4d8bb32854508d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_cocina
+    second: {fileID: 2800000, guid: c49a7bba16d8ae340b77dee13b3faec9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_encimera
-    second: {fileID: 2800000, guid: f2443d829506d2444a253376a33c5518, type: 3}
+    second: {fileID: 2800000, guid: 905ca72db41140e428b1ede0c62f68d2, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_estanterias
-    second: {fileID: 2800000, guid: e3da5c687ed8fb64897986f78a992cc5, type: 3}
+    second: {fileID: 2800000, guid: c125896423059334bb3f0b63fe726168, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_mesapuertasuelo_00
-    second: {fileID: 2800000, guid: 4c4c7677edb22b54295f8d189f037c76, type: 3}
+    second: {fileID: 2800000, guid: 6e47dd68de698084fa4c471419886821, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_nevera
-    second: {fileID: 2800000, guid: f715e6c3e2348a44badd3ed1280702cf, type: 3}
+    second: {fileID: 2800000, guid: 6f7a4ab8c15218940bdc1b4ca27f0938, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule

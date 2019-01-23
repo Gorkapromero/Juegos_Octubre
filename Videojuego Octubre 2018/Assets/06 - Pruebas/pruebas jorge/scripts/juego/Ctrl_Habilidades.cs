@@ -19,7 +19,8 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public float tiempoEscudo;
     public GameObject tiempo;
-	public GameObject Particulas; 
+	public GameObject ParticulasExplosion; 
+
 
     bool t_basico = false;
     bool t_chorro = false;
@@ -172,6 +173,8 @@ public class Ctrl_Habilidades : MonoBehaviour
 
         GameObject Objeto = Instantiate(tablahabilidades[2].habilidad, SpawnPosition, Quaternion.identity);
         GameObject.Find("A_Explosion").GetComponent<Button>().enabled = false;
+
+		//GameObject ParticulasExplosionInstancia = Instantiate(ParticulasExplosion, transform.position, transform.rotation);//
     }
 
     public void escudo()
