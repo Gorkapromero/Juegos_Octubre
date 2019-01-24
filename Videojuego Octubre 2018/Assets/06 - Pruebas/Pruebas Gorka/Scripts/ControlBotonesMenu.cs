@@ -12,27 +12,23 @@ public class ControlBotonesMenu : MonoBehaviour
 	{
 		
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
-	public void CargarescenaPlay(string juego)
+
+
+    public void CargarescenaPlay(string juego)
     {
-		SceneManager.LoadScene("juego_def"); 
+		SceneManager.LoadScene(1); 
     }
 	public void CargarescenaRanking(string Ranking)
 	{
-		SceneManager.LoadScene("Ranking"); 
+		SceneManager.LoadScene(3); 
 	}
 	public void CargarescenaAjustes(string Ajustes)
 	{
-		SceneManager.LoadScene("Ajustes"); 
+		SceneManager.LoadScene(2); 
 	}
 	public void CargarescenaCreditos(string Creditos)
 	{
-		SceneManager.LoadScene("Creditos"); 
+		SceneManager.LoadScene(4); 
 	}
 	public void cargarInstagram ()
 	{

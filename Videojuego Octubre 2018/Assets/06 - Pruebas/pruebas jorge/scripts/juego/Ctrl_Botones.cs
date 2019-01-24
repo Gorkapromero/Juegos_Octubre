@@ -14,20 +14,26 @@ public class Ctrl_Botones : MonoBehaviour
 		
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+
 
     public void volverJugar()
     {
-        SceneManager.LoadScene("juego_def");
+        SceneManager.LoadScene(1);
     }
 
-    public void salir()
+    public void pantallaAjustes()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(2);
+    }
+
+    public void pantallaRanking()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void CargarMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

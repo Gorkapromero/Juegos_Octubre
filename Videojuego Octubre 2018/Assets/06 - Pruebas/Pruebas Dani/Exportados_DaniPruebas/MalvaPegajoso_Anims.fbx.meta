@@ -43,6 +43,7 @@ ModelImporter:
     7400006: Splash
     7400008: Mirando
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Rigging_MalvaBasic_geo_malvaBasic
     13700002: Rigging_MalvaBasic_Ojos
     2186277476908879412: ImportLogs
@@ -91,7 +92,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -262,7 +263,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.59999996
+    previousCalculatedGlobalScale: 0.39999998
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

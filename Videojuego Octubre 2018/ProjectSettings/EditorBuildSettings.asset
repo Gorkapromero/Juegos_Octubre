@@ -18,24 +18,27 @@ EditorBuildSettings:
     path: Assets/06 - Pruebas/pruebas jorge/escenas/juego.unity
     guid: 034e1965541211948a6d21e3145fcd44
   - enabled: 0
-    path: Assets/00 - Escenas/Nivel 1.unity
-    guid: 90e0c4c2148c5d7488b983d23cf2e853
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/00 - Escenas/Ranking.unity
-    guid: ba0c9e30d57102f4bbf587e9e749d0cd
+    path: Assets/00 - Escenas/01_Juego.unity
+    guid: 44d815c7674de50408c8fa7f89ac3b4e
   - enabled: 0
-    path: Assets/00 - Escenas/Ajustes.unity
+    path: Assets/06 - Pruebas/pruebas jorge/escenas/juego_def.unity
+    guid: 64cc7c4443989bf46ac96bb954f7d60e
+  - enabled: 1
+    path: Assets/00 - Escenas/03_Ajustes.unity
     guid: 99c99b2c60095f9479eb95c3ceb25865
   - enabled: 0
-    path: Assets/00 - Escenas/Creditos.unity
+    path: Assets/00 - Escenas/04_Creditos.unity
     guid: 75f16f584bae586498ad206085c9372a
   - enabled: 0
     path: Assets/06 - Pruebas/Pruebas Gorka/Escenas/Escena_carga.unity
     guid: 8844c161df9af324599628c48f7e6a4a
   - enabled: 1
-    path: Assets/06 - Pruebas/pruebas jorge/escenas/juego_def.unity
-    guid: 64cc7c4443989bf46ac96bb954f7d60e
+    path: Assets/00 - Escenas/02_Ranking.unity
+    guid: ba0c9e30d57102f4bbf587e9e749d0cd
   - enabled: 0
-    path: Assets/06 - Pruebas/Pruebas Dani/juego_def 1.unity
+    path: Assets/06 - Pruebas/Pruebas Dani/Escenas_DaniPruebas/juego_def 1.unity
     guid: 8ca0d91eb2bafdf428d42598ce49bb9a
   m_configObjects: {}
