@@ -6,7 +6,7 @@ public class Ctrl_AExplosion : MonoBehaviour
 {
     SphereCollider colisionador;
 
-    public float velocidad;
+    public float tiempo;
 	 
 
 
@@ -20,6 +20,7 @@ public class Ctrl_AExplosion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        float velocidad = 150 / tiempo;
         colisionador.radius += velocidad * Time.deltaTime;
 
         //transform.localScale += transform.localScale * velocidad * Time.deltaTime;

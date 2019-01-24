@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Ctrl_AChorro : MonoBehaviour {
 
-    public float Velocidad;
-    public GameObject chorro;
+    //public float Velocidad;
+    //public GameObject chorro;
+    float y;
     // Use this for initialization
     void Start () {
 		
@@ -14,9 +15,9 @@ public class Ctrl_AChorro : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.position += transform.forward* (Velocidad*5) * Time.deltaTime;
-        transform.localScale += transform.up * (-Velocidad) * Time.deltaTime;
-        //transform.position += transform.up * (Velocidad * 5) * Time.deltaTime;
+        gameObject.GetComponent<BoxCollider>().size = new Vector3(2, transform.localScale.y,20);
+        y = (gameObject.GetComponent<BoxCollider>().size.y - 1) / 2;
+        gameObject.GetComponent<BoxCollider>().center = new Vector3(0, y, -6);
 
     }
 
@@ -25,11 +26,11 @@ public class Ctrl_AChorro : MonoBehaviour {
         print(coli.gameObject.name);
         switch (coli.gameObject.name)
         {
-            case "Top":                           //ataque llega al techo
+            /*case "Top":                           //ataque llega al techo
                 print("chocamos con " + coli);
                 GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = true;
                 Destroy(this.gameObject);
-                break;
+                break;*/
 
             /*case "objeto(Clone)":
                 print("desruimos enemigo");
