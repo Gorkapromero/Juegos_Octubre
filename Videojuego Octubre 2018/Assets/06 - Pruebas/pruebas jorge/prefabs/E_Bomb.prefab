@@ -651,7 +651,7 @@ Rigidbody:
   m_GameObject: {fileID: 1318831246343000}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 15
+  m_Drag: 7
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vision: 70
   Velocidad: 10
-  FuerzaSalto: 500
+  FuerzaSalto: 150
   tiempoDeEspera: 1
   tiempoExplosion: 5
   rb: {fileID: 54568346493768034}

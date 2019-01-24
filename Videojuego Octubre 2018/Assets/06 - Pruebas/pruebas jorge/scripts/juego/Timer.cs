@@ -7,13 +7,15 @@ public class Timer : MonoBehaviour
 {
     public Text T_Timer;
     public float Tiempo;
-    private bool ActivarTiempo = true;
+    private bool ActivarTiempo = false;
     public float startTime;
 
-	// Use this for initialization
-	void Start ()
+    public GameObject Grupo_cuenta;
+
+    // Use this for initialization
+    void Start ()
     {
-        iniciarTiempo();
+        Grupo_cuenta.SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -58,7 +60,7 @@ public class Timer : MonoBehaviour
     }
     public void iniciarTiempo()
     {
-        //startTime = Time.time;
+        startTime = -Time.time;
         ActivarTiempo = true;
     }
 }
