@@ -556,9 +556,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vision: 70
-  Velocidad: 30
+  Velocidad: 45
   FuerzaSalto: 30
-  tiempoDeEspera: 1
+  tiempoDeEspera: 0
   tiempoExplosion: 0
   rb: {fileID: 54694897519627992}
   MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}

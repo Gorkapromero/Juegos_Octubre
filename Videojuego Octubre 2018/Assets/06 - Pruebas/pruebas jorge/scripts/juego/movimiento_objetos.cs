@@ -32,15 +32,17 @@ public class movimiento_objetos : MonoBehaviour
     bool suelo = false;
     Vector3 target;
 
+    CapsuleCollider colBomb;
+
     // Use this for initialization
     void Start ()
     {
         Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
         jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
-        Destino = new Vector3(0, this.transform.position.y, this.transform.position.z);
+        Destino = GameObject.Find("destino").GetComponent<Transform>().position;//new Vector3(0, jugador.position.y, this.transform.position.z);
         nav = GetComponent<NavMeshAgent>();
-       
-        
+        colBomb = GetComponent<CapsuleCollider>();
+
     }
 	
 	// Update is called once per frame
@@ -50,12 +52,12 @@ public class movimiento_objetos : MonoBehaviour
         //FuerzaSalto = Velocidad + 10;
         //Velocidad = nav.speed;
         dist = Vector3.Distance(jugador.position, transform.position);
-        if ((dist < vision|| Jvisto==true)&&!stop)   //vemos al jugador antes de saltar
+        if ((dist < vision|| Jvisto==true)&&!stop&&!Salto)   //vemos al jugador antes de saltar
         {
             if (!Jvisto)
             {
                 Jvisto = true;
-                target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
+                target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z); //jugador.position;
             }
             
 
@@ -69,7 +71,7 @@ public class movimiento_objetos : MonoBehaviour
         else if (!Jvisto&&!stop&&!Salto)      //no vemos jugador
         {
             //print("no vemos jugador");
-            target = Destino;
+            target = new Vector3(Destino.x,Destino.y,jugador.position.z);
             float fixedSpeed = Velocidad * Time.deltaTime;
             //transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             nav.SetDestination(Destino);
@@ -78,9 +80,10 @@ public class movimiento_objetos : MonoBehaviour
 
         else if (Salto)  //movimiento despues del salto
         {
-            if (dist < vision)
+            Invoke("velDespuesSalto", 0.10f);
+            if (dist < vision && gameObject.name == "E_Bomb(Clone)")
             {
-                target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
+                target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z); //jugador.position;
                 Debug.DrawLine(transform.position, target, Color.green);
             }
             float fixedSpeed = Velocidad * Time.deltaTime;
@@ -89,7 +92,7 @@ public class movimiento_objetos : MonoBehaviour
             Debug.DrawLine(transform.position, target, Color.green);
         }
 
-        else if (suelo)
+        else if (suelo)   //movimiento en el suelo de bomba
         {
             if (dist < vision)
             {
@@ -120,7 +123,7 @@ public class movimiento_objetos : MonoBehaviour
                     case "E_Bomb(Clone)":
                         break;
                     case "E_Pega(Clone)":
-                        Vector3 PosPoff = new Vector3(transform.position.x, -61.5f, transform.position.z);
+                        Vector3 PosPoff = new Vector3(transform.position.x, -54f, transform.position.z);
                         vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
                         Destroy(this.gameObject);
@@ -214,9 +217,13 @@ public class movimiento_objetos : MonoBehaviour
         }
         else
         {
-            target = new Vector3(0, this.transform.position.y, jugador.position.z);                 //ultima direccion
+            //target = new Vector3(0, this.transform.position.y, jugador.position.z);                 //ultima direccion
         }
         rb.AddForce(Vector3.up * FuerzaSalto, ForceMode.Impulse);
+        if(gameObject.name == "E_Bomb(Clone)")
+        {
+            Velocidad = 100f;
+        }
         Salto = true;
         //stop = false;
         Debug.DrawLine(transform.position, target, Color.green);
@@ -226,6 +233,18 @@ public class movimiento_objetos : MonoBehaviour
 
     void explosion()
     {
-        Destroy(this.gameObject);
+        colBomb.radius += 25f * Time.deltaTime;
+        if(colBomb.radius >= 6f)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void velDespuesSalto()
+    {
+        if (gameObject.name == "E_Bomb(Clone)")
+        {
+            Velocidad = 15f;
+        }
     }
 }

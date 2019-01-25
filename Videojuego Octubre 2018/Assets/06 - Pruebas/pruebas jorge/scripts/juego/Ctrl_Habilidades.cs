@@ -161,6 +161,8 @@ public class Ctrl_Habilidades : MonoBehaviour
 
         GameObject Objeto = Instantiate(tablahabilidades[1].habilidad, SpawnPosition, tablahabilidades[1].habilidad.transform.rotation);
         GameObject.Find("A_chorro").GetComponent<Button>().enabled = false;
+
+        Invoke("move", 1f);
     }
 
     public void Explosion()
@@ -187,5 +189,10 @@ public class Ctrl_Habilidades : MonoBehaviour
     void escudooff()
     {
         tablahabilidades[3].habilidad.SetActive(false);
+    }
+
+    void move()
+    {
+        GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = true;
     }
 }

@@ -64,6 +64,7 @@ MonoBehaviour:
     tiempo_texto: {fileID: 0}
   tiempoEscudo: 10
   tiempo: {fileID: 0}
+  ParticulasExplosion: {fileID: 0}
 --- !u!224 &224448777849231944
 RectTransform:
   m_ObjectHideFlags: 1

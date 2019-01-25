@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44466713, g: 0.49419087, b: 0.5734314, a: 1}
+  m_IndirectSpecularColor: {r: 0.4446673, g: 0.49419147, b: 0.5734323, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -909,8 +909,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.13213784, y: 0.02943036, z: 0.03218682}
-  m_Center: {x: -0.004874136, y: -0.002153902, z: 0.016093446}
+  m_Size: {x: 0.24856065, y: 0.024106842, z: 0.03218682}
+  m_Center: {x: -0.065383025, y: 0.0005078574, z: 0.016093444}
 --- !u!65 &338574680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2415,11 +2415,6 @@ Prefab:
       propertyPath: tiempo
       value: 
       objectReference: {fileID: 254788843}
-    - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
-        type: 2}
-      propertyPath: tablahabilidades.Array.data[1].T_enfriamiento
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ad94a543deda746a5cb81f5b543601, type: 2}
   m_IsPrefabAsset: 0
@@ -6076,15 +6071,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4532429212418818, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 92.752495
+      value: 86.8
       objectReference: {fileID: 0}
     - target: {fileID: 4532429212418818, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: -49.4
       objectReference: {fileID: 0}
     - target: {fileID: 4532429212418818, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -32.24
+      value: -44.9
       objectReference: {fileID: 0}
     - target: {fileID: 4532429212418818, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6108,7 +6103,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
       propertyPath: m_Name
-      value: E_Bomb (1)
+      value: E_Bomb(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
       propertyPath: m_IsActive
@@ -6345,6 +6340,10 @@ Prefab:
     - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
@@ -7813,20 +7812,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1097844, y: 0.03219389, z: 0.02648509}
-  m_Center: {x: -0.01605084, y: -0.0035356535, z: 0.013242577}
---- !u!65 &1970870312
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1970870309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.14724563, y: 0.040235106, z: 0.0058729}
-  m_Center: {x: 0.0026799215, y: -0.0075562736, z: 0.0029364873}
+  m_Size: {x: 0.29031312, y: 0.026708826, z: 0.02648509}
+  m_Center: {x: -0.11378705, y: -0.0007931193, z: 0.013242575}
 --- !u!1 &2004832191
 GameObject:
   m_ObjectHideFlags: 0
@@ -8411,14 +8398,14 @@ MonoBehaviour:
   - {fileID: 1331909383}
   - {fileID: 1870429262}
   - {fileID: 320837967}
-  tiempoCreacion: 1
+  tiempoCreacion: 2
   TablaEnemigos:
   - nombre: Enemigo normal
     enemigo: {fileID: 1340248824946342, guid: 12cf407eba09fea44b0770eb362b916f, type: 2}
     rareza: 80
   - nombre: Enemigo Bomba
     enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
-    rareza: 10
+    rareza: 15
   - nombre: Enemigo pegajoso
     enemigo: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
     rareza: 5
