@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MAT_Paladin
+  m_Name: TEXT_Marshmallow
   m_Shader: {fileID: 4800000, guid: 9c6ece3d5ef8bb84db19471daaf6c788, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: bb3cd41f9f33cb242a7e93ea68fcbee9, type: 3}
+        m_Texture: {fileID: 2800000, guid: ea8da2788873fb045b8faa89b7ce0b53, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,10 +60,10 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.234
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LightSmoothness: 0.28
-    - _LightThreshold: 0.3
+    - _LightSmoothness: 0.44
+    - _LightThreshold: 0.2
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
@@ -81,14 +81,14 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineSize: 0.0015
     - _Parallax: 0.02
-    - _RimIntensity: 0.14
+    - _RimIntensity: 0.26
     - _RimSize: 1.5
-    - _RimSmoothness: 0.5
-    - _ShadowIntensity: 0.36
-    - _Shininess: 0.275
+    - _RimSmoothness: 0.6
+    - _ShadowIntensity: 0.82
+    - _Shininess: 0.3
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.75
+    - _SpecularIntensity: 0.46
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
@@ -98,5 +98,5 @@ Material:
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+    - _ShadowColor: {r: 0.21698111, g: 0.1484069, b: 0.1484069, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
