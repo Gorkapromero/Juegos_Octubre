@@ -407,7 +407,7 @@ MonoBehaviour:
   tablahabilidades: []
   tiempoEscudo: 0
   tiempo: {fileID: 0}
-  ParticulasExplosion: {fileID: 0}
+  ParticulasSalpicadura: {fileID: 0}
 --- !u!114 &194929547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,7 +2333,7 @@ Prefab:
     - target: {fileID: 224448777849231944, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 8.733227
+      value: 9.79
       objectReference: {fileID: 0}
     - target: {fileID: 224448777849231944, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 2}
@@ -4004,6 +4004,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: f819af173055d04489197137c43a0513, type: 3}
+      propertyPath: m_TagString
+      value: A_chorro
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11100000, guid: f819af173055d04489197137c43a0513, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f819af173055d04489197137c43a0513, type: 3}
@@ -5221,7 +5225,7 @@ MonoBehaviour:
   tablahabilidades: []
   tiempoEscudo: 0
   tiempo: {fileID: 0}
-  ParticulasExplosion: {fileID: 0}
+  ParticulasSalpicadura: {fileID: 0}
 --- !u!114 &1232494662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8398,14 +8402,14 @@ MonoBehaviour:
   - {fileID: 1331909383}
   - {fileID: 1870429262}
   - {fileID: 320837967}
-  tiempoCreacion: 2
+  tiempoCreacion: 10
   TablaEnemigos:
   - nombre: Enemigo normal
     enemigo: {fileID: 1340248824946342, guid: 12cf407eba09fea44b0770eb362b916f, type: 2}
     rareza: 80
   - nombre: Enemigo Bomba
     enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
-    rareza: 15
+    rareza: 10
   - nombre: Enemigo pegajoso
     enemigo: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
     rareza: 5

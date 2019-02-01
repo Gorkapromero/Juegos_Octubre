@@ -562,6 +562,9 @@ MonoBehaviour:
   tiempoExplosion: 0
   rb: {fileID: 54694897519627992}
   MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
+  Particulasboom: {fileID: 0}
+  ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
+    type: 2}
 --- !u!136 &136299082068452652
 CapsuleCollider:
   m_ObjectHideFlags: 1

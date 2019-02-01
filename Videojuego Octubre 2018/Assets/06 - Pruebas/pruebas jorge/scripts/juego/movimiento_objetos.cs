@@ -34,6 +34,9 @@ public class movimiento_objetos : MonoBehaviour
 
     CapsuleCollider colBomb;
 
+    public GameObject Particulasboom;
+    public GameObject ParticulasMuerte;
+
     // Use this for initialization
     void Start ()
     {
@@ -145,6 +148,7 @@ public class movimiento_objetos : MonoBehaviour
                         vidas = GameObject.Find("Vida").GetComponent<Slider>();
                         vidas.value--;
                         explosion();
+                        Destroy(this.gameObject);
                         break;
                     case "E_Pega(Clone)":
                         Vector3 PosPoff = new Vector3(transform.position.x, -61.5f, transform.position.z);
@@ -160,17 +164,17 @@ public class movimiento_objetos : MonoBehaviour
                 print("desruimos enemigo");
                 Puntuacion.Enemigos_Eliminados++;
                 Puntuacion.Actualizar_enemigos();
-                Destroy(this.gameObject);
+                Muerte();
                 break;
 
             case "A_chorro":
                 Puntuacion.Enemigos_Eliminados++;
                 Puntuacion.Actualizar_enemigos();
-                Destroy(this.gameObject);
+                Muerte();
                 break;
 
             case "escudo":
-                Destroy(this.gameObject);
+                Muerte();
                 break;
 
             case "explosion":
@@ -234,7 +238,8 @@ public class movimiento_objetos : MonoBehaviour
     void explosion()
     {
         colBomb.radius += 25f * Time.deltaTime;
-        if(colBomb.radius >= 6f)
+        GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
+        if (colBomb.radius >= 5f)
         {
             Destroy(this.gameObject);
         }
@@ -246,5 +251,11 @@ public class movimiento_objetos : MonoBehaviour
         {
             Velocidad = 15f;
         }
+    }
+
+    void Muerte()
+    {
+        GameObject ParticulasDead = Instantiate(ParticulasMuerte, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }

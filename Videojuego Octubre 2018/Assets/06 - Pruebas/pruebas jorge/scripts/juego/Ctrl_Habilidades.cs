@@ -19,7 +19,8 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public float tiempoEscudo;
     public GameObject tiempo;
-	public GameObject ParticulasExplosion; 
+    //public GameObject ParticulasExplosion; 
+    public GameObject ParticulasSalpicadura;
 
 
     bool t_basico = false;
@@ -144,10 +145,12 @@ public class Ctrl_Habilidades : MonoBehaviour
     {
         t_basico = true;
         Vector3 SpawnPosition = new Vector3(0, 0, 0);
+        Vector3 ParticulasPosition = new Vector3(this.transform.position.x, this.transform.position.y, -45f);
         SpawnPosition = this.transform.position;
         SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
 
         GameObject Objeto = Instantiate(tablahabilidades[0].habilidad, SpawnPosition, Quaternion.identity);
+        GameObject Psalpi = Instantiate(ParticulasSalpicadura, SpawnPosition, ParticulasSalpicadura.transform.rotation);
         GameObject.Find("A_Basico").GetComponent<Button>().enabled = false;
     }
 

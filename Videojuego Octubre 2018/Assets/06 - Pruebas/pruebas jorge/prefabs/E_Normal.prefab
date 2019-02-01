@@ -120,6 +120,9 @@ MonoBehaviour:
   tiempoExplosion: 0
   rb: {fileID: 54313026521070254}
   MalvaPoff: {fileID: 0}
+  Particulasboom: {fileID: 0}
+  ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
+    type: 2}
 --- !u!135 &135126869149643494
 SphereCollider:
   m_ObjectHideFlags: 1
