@@ -22,6 +22,7 @@ public class movimiento_objetos : MonoBehaviour
     //public Transform destino;
     public GameObject MalvaPoff;
 
+    Animator animatorEnemigo;
 
     Slider vidas;
     Ctrl_Puntuacion Puntuacion;
@@ -30,6 +31,7 @@ public class movimiento_objetos : MonoBehaviour
     bool Salto = false;
     bool stop = false;
     bool suelo = false;
+    public bool enElAire = false;
     Vector3 target;
 
     CapsuleCollider colBomb;
@@ -46,11 +48,30 @@ public class movimiento_objetos : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         colBomb = GetComponent<CapsuleCollider>();
 
+        if (gameObject.name != "E_Normal(Clone)")
+        {
+            print(gameObject.name); 
+            animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        //ANIMACIONES**********//
+        if (gameObject.name != "E_Normal(Clone)")
+        {
+            if (nav.velocity.x != 0)
+            {
+                animatorEnemigo.SetBool("andando", true);
+            }
+            else
+            {
+                animatorEnemigo.SetBool("andando", false);
+            }
+        }
+        //*********************//
+
         //nav.SetDestination(Destino);
         //FuerzaSalto = Velocidad + 10;
         //Velocidad = nav.speed;
@@ -64,7 +85,7 @@ public class movimiento_objetos : MonoBehaviour
             }
             
 
-            float fixedSpeed = Velocidad * Time.deltaTime;
+            //float fixedSpeed = Velocidad * Time.deltaTime;
             //transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             nav.SetDestination(target);
 
@@ -75,7 +96,7 @@ public class movimiento_objetos : MonoBehaviour
         {
             //print("no vemos jugador");
             target = new Vector3(Destino.x,Destino.y,jugador.position.z);
-            float fixedSpeed = Velocidad * Time.deltaTime;
+            //float fixedSpeed = Velocidad * Time.deltaTime;
             //transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             nav.SetDestination(Destino);
             Debug.DrawLine(transform.position, target, Color.green);
@@ -83,6 +104,7 @@ public class movimiento_objetos : MonoBehaviour
 
         else if (Salto)  //movimiento despues del salto
         {
+            //CONTROL DEL AGENTE
             Invoke("velDespuesSalto", 0.10f);
             if (dist < vision && gameObject.name == "E_Bomb(Clone)")
             {
@@ -93,10 +115,26 @@ public class movimiento_objetos : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
             //nav.SetDestination(target);
             Debug.DrawLine(transform.position, target, Color.green);
+
+
+            //ANIMACIONES
+            if (gameObject.name == "E_Bomb(Clone)")
+            {
+
+                print("Explosivo en el aire");
+
+                //enElAire = true;
+                animatorEnemigo.SetBool("enElAire",true);
+
+
+            }
+
         }
 
         else if (suelo)   //movimiento en el suelo de bomba
         {
+
+
             if (dist < vision)
             {
                 //nav.speed = 50;
@@ -114,14 +152,23 @@ public class movimiento_objetos : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Suelo":                           //objeto toca suelo
+
+                //ANIMACIONES
+                if (gameObject.name == "E_Bomb(Clone)")
+                {
+                    animatorEnemigo.SetBool("enElAire", false);
+                }
+
+                //CONTROL DEL AGENTE
                 suelo = true;
                 Salto = false;
                 nav.enabled = true;
+ 
                 print("chocamos con suelo");
                 switch (gameObject.name)
                 {
                     case "E_Normal(Clone)":
-                        Destroy(this.gameObject);
+                        Muerte(); //PARTÍCULAS TEMPORALES ...
                         break;
                     case "E_Bomb(Clone)":
                         break;

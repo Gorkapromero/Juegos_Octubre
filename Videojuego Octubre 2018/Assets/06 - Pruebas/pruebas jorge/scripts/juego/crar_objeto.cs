@@ -24,10 +24,6 @@ public class crar_objeto : MonoBehaviour
         InvokeRepeating("crear", 0.0f, tiempoCreacion);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void crear()
     {
