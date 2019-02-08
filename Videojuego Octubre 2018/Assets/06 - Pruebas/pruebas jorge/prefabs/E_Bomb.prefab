@@ -907,7 +907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vision: 70
   Velocidad: 15
-  FuerzaSalto: 250
+  FuerzaSalto: 50
   tiempoDeEspera: 1
   tiempoExplosion: 3
   rb: {fileID: 54568346493768034}
