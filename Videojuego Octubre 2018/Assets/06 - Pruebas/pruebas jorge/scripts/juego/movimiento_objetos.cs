@@ -31,7 +31,7 @@ public class movimiento_objetos : MonoBehaviour
     bool Salto = false;
     bool stop = false;
     bool suelo = false;
-    public bool enElAire = false;
+
     Vector3 target;
 
     CapsuleCollider colBomb;
@@ -118,10 +118,10 @@ public class movimiento_objetos : MonoBehaviour
 
 
             //ANIMACIONES
-            if (gameObject.name == "E_Bomb(Clone)")
+            if (gameObject.name != "E_Normal(Clone)")
             {
 
-                print("Explosivo en el aire");
+                print("ENEMIGO "+gameObject.name+" en el aire");
 
                 //enElAire = true;
                 animatorEnemigo.SetBool("enElAire",true);

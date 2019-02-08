@@ -617,7 +617,7 @@ Transform:
   m_GameObject: {fileID: 1318831246343000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 86.8, y: -49.4, z: -44.9}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4576011482958630}
   m_Father: {fileID: 0}
@@ -912,7 +912,6 @@ MonoBehaviour:
   tiempoExplosion: 3
   rb: {fileID: 54568346493768034}
   MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
-  enElAire: 0
   Particulasboom: {fileID: 1566757720475478, guid: abd6bfb80979f2547852b104f0e71950,
     type: 2}
   ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
