@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4063649695945516
 Transform:
   m_ObjectHideFlags: 1
@@ -912,6 +912,7 @@ MonoBehaviour:
   tiempoExplosion: 3
   rb: {fileID: 54568346493768034}
   MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
+  gObj_ParticulasMecha: {fileID: 1991097601903890}
   Particulasboom: {fileID: 1566757720475478, guid: abd6bfb80979f2547852b104f0e71950,
     type: 2}
   ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
