@@ -31,11 +31,12 @@ public class movimiento_objetos : MonoBehaviour
     bool Salto = false;
     bool stop = false;
     bool suelo = false;
-    public bool enElAire = false;
+
     Vector3 target;
 
     CapsuleCollider colBomb;
 
+    public GameObject gObj_ParticulasMecha;
     public GameObject Particulasboom;
     public GameObject ParticulasMuerte;
 
@@ -108,6 +109,9 @@ public class movimiento_objetos : MonoBehaviour
             Invoke("velDespuesSalto", 0.10f);
             if (dist < vision && gameObject.name == "E_Bomb(Clone)")
             {
+                //Activamos las partículas de la mecha del explosivo
+                gObj_ParticulasMecha.SetActive(true);
+
                 target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z); //jugador.position;
                 Debug.DrawLine(transform.position, target, Color.green);
             }
@@ -118,10 +122,10 @@ public class movimiento_objetos : MonoBehaviour
 
 
             //ANIMACIONES
-            if (gameObject.name == "E_Bomb(Clone)")
+            if (gameObject.name != "E_Normal(Clone)")
             {
 
-                print("Explosivo en el aire");
+                print("ENEMIGO "+gameObject.name+" en el aire");
 
                 //enElAire = true;
                 animatorEnemigo.SetBool("enElAire",true);
@@ -133,8 +137,6 @@ public class movimiento_objetos : MonoBehaviour
 
         else if (suelo)   //movimiento en el suelo de bomba
         {
-
-
             if (dist < vision)
             {
                 //nav.speed = 50;
@@ -142,6 +144,7 @@ public class movimiento_objetos : MonoBehaviour
                 target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
                 nav.SetDestination(target);
                 Debug.DrawLine(transform.position, target, Color.green);
+                                
                 Invoke("explosion", tiempoExplosion);
             }
         }

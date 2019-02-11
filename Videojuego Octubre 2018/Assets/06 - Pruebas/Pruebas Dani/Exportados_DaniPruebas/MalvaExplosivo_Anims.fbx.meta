@@ -182,7 +182,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Salto+Paracaidas
       takeName: Take 001
-      firstFrame: 148
+      firstFrame: 172
       lastFrame: 218
       wrapMode: 0
       orientationOffsetY: 0
