@@ -21,7 +21,7 @@ public class crar_objeto : MonoBehaviour
 
 	void Start ()
     {
-        InvokeRepeating("crear", 0.0f, tiempoCreacion);
+        //InvokeRepeating("crear", 0.0f, tiempoCreacion);
 	}
 	
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44466713, g: 0.49419087, b: 0.5734314, a: 1}
+  m_IndirectSpecularColor: {r: 0.4446673, g: 0.49419147, b: 0.5734323, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8048,6 +8048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2116802155}
   - component: {fileID: 2116802154}
+  - component: {fileID: 2116802156}
   m_Layer: 0
   m_Name: creador_objetos
   m_TagString: Untagged
@@ -8061,7 +8062,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2116802153}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaf4f70ffd2859d4995fc56670ebba71, type: 3}
   m_Name: 
@@ -8076,7 +8077,7 @@ MonoBehaviour:
   TablaEnemigos:
   - nombre: Enemigo normal
     enemigo: {fileID: 1340248824946342, guid: 12cf407eba09fea44b0770eb362b916f, type: 2}
-    rareza: 0
+    rareza: 80
   - nombre: Enemigo Bomba
     enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f, type: 2}
     rareza: 50
@@ -8101,6 +8102,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2116802156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116802153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa5b322fd905eb47bf2a39bf1d5a9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oleadas:
+  - nombre: Oleada aleatoria
+    numeroOleada: 0
+    enemigos:
+    - nombre: Enemigo normal
+      enemigo: {fileID: 1340248824946342, guid: 12cf407eba09fea44b0770eb362b916f,
+        type: 2}
+      rareza: 80
+    - nombre: Enemigo Bomba
+      enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f,
+        type: 2}
+      rareza: 50
+    - nombre: Enemigo pegajoso
+      enemigo: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396,
+        type: 2}
+      rareza: 10
+  - nombre: Oleada bomba
+    numeroOleada: 3
+    enemigos:
+    - nombre: Enemigo Bomba
+      enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f,
+        type: 2}
+      rareza: 100
+  NumeroEnemigos: 2
+  TiempoDescanso: 5
 --- !u!1 &2119929442
 GameObject:
   m_ObjectHideFlags: 0

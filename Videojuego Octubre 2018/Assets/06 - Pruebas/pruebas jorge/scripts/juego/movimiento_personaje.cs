@@ -84,7 +84,7 @@ public class movimiento_personaje : MonoBehaviour
         {
             Finpartida.SetActive(true);
             GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
-            GameObject.Find("creador_objetos").GetComponent<crar_objeto>().enabled = false;
+            GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
             Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
         }
     }
