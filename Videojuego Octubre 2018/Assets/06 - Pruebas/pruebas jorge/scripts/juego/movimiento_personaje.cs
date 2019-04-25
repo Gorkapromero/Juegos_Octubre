@@ -13,6 +13,13 @@ public class movimiento_personaje : MonoBehaviour
     public GameObject Finpartida;
     Rigidbody rb;
 
+    public bool isGrounded;
+    //public Collider Col_Personaje;
+    //public Transform feetPos;
+    public float checkRadius;
+    public LayerMask groundLayers;
+    public float FuerzaSalto;
+
     bool Saltando;
     bool salto;
 
@@ -21,6 +28,7 @@ public class movimiento_personaje : MonoBehaviour
     {
         joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody>();
+        //Col_Personaje = GetComponent<BoxCollider>();
         //var rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -53,8 +61,15 @@ public class movimiento_personaje : MonoBehaviour
         {
             GetComponent<Animator>().SetFloat("Speed", (float)System.Math.Round(joystick.Horizontal, 2));
         }
-        
+
         //Para el salto
+        isGrounded = Physics.Raycast(transform.position, -Vector3.up, checkRadius,groundLayers);
+
+        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = Vector3.up * FuerzaSalto;
+
+        }
         bool salto = Input.GetKeyDown(KeyCode.Space);
         
             GetComponent<Animator>().SetBool("Salto", salto);
@@ -116,4 +131,11 @@ public class movimiento_personaje : MonoBehaviour
         rb.velocity = new Vector3(0,0,0);
         GetComponent<Animator>().Play("Caida_Atras");
     }
-}
+
+    public void saltar()
+    {
+        if (isGrounded == true)
+        {
+            rb.velocity = Vector3.up * FuerzaSalto;
+        }
+    }

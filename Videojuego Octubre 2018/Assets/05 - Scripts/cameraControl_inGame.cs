@@ -18,7 +18,8 @@ public class cameraControl_inGame : MonoBehaviour {
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
 
-        transform.LookAt(targetLookAt);
+        Vector3 target2 = new Vector3(targetLookAt.position.x, 0, 0);
+        transform.LookAt(target2);
         //transform.rotation *= Quaternion.Euler(-30,0,0);
     }
 
