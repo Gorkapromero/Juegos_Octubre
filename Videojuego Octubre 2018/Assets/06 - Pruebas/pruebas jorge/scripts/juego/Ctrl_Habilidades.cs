@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Ctrl_Habilidades : MonoBehaviour
 {
+    public bool AtaqueBasico;
+    
+
     [System.Serializable]
     public class Habilidades
     {
@@ -54,7 +57,7 @@ public class Ctrl_Habilidades : MonoBehaviour
     {
         if (t_basico == true)
         {
-            print("tiempo chorro on");
+            print("tiempo basico on");
             /*if (tablahabilidades[0].tiempo.activeSelf == false)
             {
                 print("activamos");
@@ -96,7 +99,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         if (t_explosion == true)
         {
 		 
-            print("tiempo chorro on");
+            print("tiempo explosion on");
             if (tablahabilidades[2].tiempo.activeSelf == false)
             {
                 print("activamos");
@@ -121,7 +124,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
         if (t_escudo == true)
         {
-            print("tiempo chorro on");
+            print("tiempo escudo on");
             if (tablahabilidades[3].tiempo.activeSelf == false)
             {
                 print("activamos");
@@ -144,13 +147,7 @@ public class Ctrl_Habilidades : MonoBehaviour
     public void Ataque_Basico()
     {
         t_basico = true;
-        Vector3 SpawnPosition = new Vector3(0, 0, 0);
-        Vector3 ParticulasPosition = new Vector3(this.transform.position.x, this.transform.position.y, -45f);
-        SpawnPosition = this.transform.position;
-        SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-
-        GameObject Objeto = Instantiate(tablahabilidades[0].habilidad, SpawnPosition, Quaternion.identity);
-        GameObject Psalpi = Instantiate(ParticulasSalpicadura, SpawnPosition, ParticulasSalpicadura.transform.rotation);
+        AtaqueBasico = true;
         GameObject.Find("A_Basico").GetComponent<Button>().enabled = false;
     }
 

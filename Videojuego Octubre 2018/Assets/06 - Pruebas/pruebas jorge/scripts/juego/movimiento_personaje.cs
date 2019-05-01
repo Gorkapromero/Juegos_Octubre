@@ -24,7 +24,7 @@ public class movimiento_personaje : MonoBehaviour
     bool salto;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody>();
@@ -34,9 +34,9 @@ public class movimiento_personaje : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
-        
+
         //velocidad_fin = vidas.value * 20;
         rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
                                          rb.velocity.y,
@@ -47,32 +47,32 @@ public class movimiento_personaje : MonoBehaviour
         }
 
         //Para las animaciones de movimiento
-              //***Corrección "temporal" del solapado de animaciones de andar y correr ********
-                if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
-                {
-                    GetComponent<Animator>().SetFloat("Speed", 0.34f);
-                }
-                else if (joystick.Horizontal > -0.62 && joystick.Horizontal < -0.34)
-                {
-                    GetComponent<Animator>().SetFloat("Speed", -0.34f);
-                }
-             //*********************************************************************************
+        //***Corrección "temporal" del solapado de animaciones de andar y correr ********
+        if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
+        {
+            GetComponent<Animator>().SetFloat("Speed", 0.34f);
+        }
+        else if (joystick.Horizontal > -0.62 && joystick.Horizontal < -0.34)
+        {
+            GetComponent<Animator>().SetFloat("Speed", -0.34f);
+        }
+        //*********************************************************************************
         else
         {
             GetComponent<Animator>().SetFloat("Speed", (float)System.Math.Round(joystick.Horizontal, 2));
         }
 
         //Para el salto
-        isGrounded = Physics.Raycast(transform.position, -Vector3.up, checkRadius,groundLayers);
+        isGrounded = Physics.Raycast(transform.position, -Vector3.up, checkRadius, groundLayers);
 
-        if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = Vector3.up * FuerzaSalto;
 
         }
         bool salto = Input.GetKeyDown(KeyCode.Space);
-        
-            GetComponent<Animator>().SetBool("Salto", salto);
+
+        GetComponent<Animator>().SetBool("Salto", salto);
 
 
         //Para la orientacion del Prota
@@ -128,7 +128,7 @@ public class movimiento_personaje : MonoBehaviour
 
     public void Stop()
     {
-        rb.velocity = new Vector3(0,0,0);
+        rb.velocity = new Vector3(0, 0, 0);
         GetComponent<Animator>().Play("Caida_Atras");
     }
 
@@ -139,3 +139,4 @@ public class movimiento_personaje : MonoBehaviour
             rb.velocity = Vector3.up * FuerzaSalto;
         }
     }
+}
