@@ -9,7 +9,8 @@ public class movimiento_personaje : MonoBehaviour
     protected Joystick joystick;
     //public float velocidad_inicial = 100f;
     public Slider vidas;
-    public float velocidad_fin;
+    public float velocidad;
+    float velocidad_fin;
     public GameObject Finpartida;
     Rigidbody rb;
 
@@ -23,11 +24,14 @@ public class movimiento_personaje : MonoBehaviour
     bool Saltando;
     bool salto;
 
+    Ctrl_Lavadora Lavadora;
     // Use this for initialization
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody>();
+        Lavadora = GameObject.FindGameObjectWithTag("lavadora").GetComponent<Ctrl_Lavadora>();
+        velocidad_fin = velocidad;
         //Col_Personaje = GetComponent<BoxCollider>();
         //var rigidbody = GetComponent<Rigidbody>();
     }
@@ -137,6 +141,42 @@ public class movimiento_personaje : MonoBehaviour
         if (isGrounded == true)
         {
             rb.velocity = Vector3.up * FuerzaSalto;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Fuego":
+                vidas.value--;
+                break;
+
+            case "lavadora":
+                if (Lavadora.LavadoraActivada)
+                {
+                    velocidad_fin = 50;
+                }
+                break;
+
+            case "Pega":
+                velocidad_fin = 30;
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "lavadora":
+                velocidad_fin = velocidad;
+                break;
+
+            case "Pega":
+                velocidad_fin = velocidad;
+                break;
+
         }
     }
 }

@@ -237,6 +237,10 @@ public class movimiento_objetos : MonoBehaviour
                 print("tocamos estanteria");
                 rb.isKinematic = true;
                 break;
+
+            case "Fuego":
+                Destroy(this.gameObject);
+                break;
         }
     }
  

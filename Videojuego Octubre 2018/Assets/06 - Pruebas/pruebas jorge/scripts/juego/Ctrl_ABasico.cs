@@ -54,7 +54,7 @@ public class Ctrl_ABasico : MonoBehaviour
                 break;
 
             case "objeto(Clone)":
-                print("desruimos enemigo");
+                print("destruimos enemigo");
                 
                 Destroy(this.gameObject);
                 break;
