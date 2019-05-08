@@ -30,7 +30,9 @@ public class movimiento_personaje : MonoBehaviour
     {
         joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody>();
-        Lavadora = GameObject.FindGameObjectWithTag("lavadora").GetComponent<Ctrl_Lavadora>();
+        if (GameObject.FindGameObjectWithTag("lavadora")) {
+            Lavadora = GameObject.FindGameObjectWithTag("lavadora").GetComponent<Ctrl_Lavadora>();
+        }
         velocidad_fin = velocidad;
         //Col_Personaje = GetComponent<BoxCollider>();
         //var rigidbody = GetComponent<Rigidbody>();
