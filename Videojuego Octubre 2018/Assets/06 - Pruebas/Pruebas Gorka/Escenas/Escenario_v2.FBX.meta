@@ -171,6 +171,7 @@ ModelImporter:
     100330: Suelo_independiente
     100332: tarro_01
     100334: Torus001
+    100336: Box161
     400000: bote de algo
     400002: bote de algo001
     400004: Box013
@@ -339,6 +340,7 @@ ModelImporter:
     400330: Suelo_independiente
     400332: tarro_01
     400334: Torus001
+    400336: Box161
     2100000: 'Material #158'
     2100002: Mat_armarios_altos
     2100004: Mat_nevera
@@ -362,6 +364,7 @@ ModelImporter:
     2100040: Mat_marco
     2100042: Mat_campana
     2100044: Mat_leche
+    2100046: 'Material #164'
     2300000: bote de algo
     2300002: bote de algo001
     2300004: Box013
@@ -528,6 +531,7 @@ ModelImporter:
     2300326: Sphere010
     2300328: Suelo_independiente
     2300330: Torus001
+    2300332: Box161
     3300000: bote de algo
     3300002: bote de algo001
     3300004: Box013
@@ -694,6 +698,7 @@ ModelImporter:
     3300326: Sphere010
     3300328: Suelo_independiente
     3300330: Torus001
+    3300332: Box161
     4300000: Plane001
     4300002: Box013
     4300004: Box022
@@ -860,8 +865,219 @@ ModelImporter:
     4300326: Box160
     4300328: Object021
     4300330: Suelo_independiente
+    4300332: Box161
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_armarios_altos
+    second: {fileID: 2100000, guid: c8d8c7ed38ffc3a48b5ca5497f61db75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_armarios_bajos
+    second: {fileID: 2100000, guid: 68fdc25aa71fe254da8926ee4aa83bd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_armarios_puertas
+    second: {fileID: 2100000, guid: 7c42407e79b218148a926eed4dc652d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_campana
+    second: {fileID: 2100000, guid: a534d4a47dce68a48a02d2890aafd51c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_electrodometicos
+    second: {fileID: 2100000, guid: baa5d0d97000b57429c2462b5b62229a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_encimera
+    second: {fileID: 2100000, guid: 73bbb0f29ca33a845bd0307456a0cafe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_fregadero
+    second: {fileID: 2100000, guid: 5d810b09a777499489c08a56ddeabc31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_fuegos
+    second: {fileID: 2100000, guid: 0183a147f1f2abd4786bbae6754f685b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_leche
+    second: {fileID: 2100000, guid: c488004bb6d85d64282e12f8563eb0eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_marco
+    second: {fileID: 2100000, guid: 7800c56391ecd23438654aa7d6d85efb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_menaje
+    second: {fileID: 2100000, guid: f4e2580ac9e79544a9868a307222cb70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_nevera
+    second: {fileID: 2100000, guid: 2ab2f61fff667374eaeb5990b7b9ff2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_object_01
+    second: {fileID: 2100000, guid: 74080f9e07a547f4ba59c4384afdf57b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_objects_00
+    second: {fileID: 2100000, guid: 08b1bbb95a5ed0a4891c6e580ed8bb1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_paredes
+    second: {fileID: 2100000, guid: 72e44e4f732ffac4e844e5742e4cfc68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_suelo
+    second: {fileID: 2100000, guid: 65aec17a06cb6684f897b27f8aa4d735, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_topes
+    second: {fileID: 2100000, guid: aaaaf43ec2ab4d34e94a1d4e657b0352, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #158'
+    second: {fileID: 2100000, guid: 7ef0cf3e60b96f9488aa234a72774747, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #160'
+    second: {fileID: 2100000, guid: cb25067ca360f3e48b0f1ed26b6a0332, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #161'
+    second: {fileID: 2100000, guid: 1992fc97ce3a0f44a819adf94050d77e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #162'
+    second: {fileID: 2100000, guid: d2013a4d69c10f447b264ecf6a452bf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #163'
+    second: {fileID: 2100000, guid: f700eb7039a0194448fb6d5960bfc1a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: fe641befb524352468b5a040b32f9632, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: milky-way-background-vector
+    second: {fileID: 2800000, guid: 3e18c41e86e6565499213142c6470698, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_V3_suelo
+    second: {fileID: 2800000, guid: fcb90f950fc62da4da013a471a5b3c01, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_armarios_altos
+    second: {fileID: 2800000, guid: 4c4731c61bfe0e44b93173d2b5970246, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_armarios_bajos
+    second: {fileID: 2800000, guid: 1fcc6fed31438b3468bacbc8c993320b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_armarios_cajones
+    second: {fileID: 2800000, guid: 245abb8249cbb2241b5a40f22b834cb5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_campana
+    second: {fileID: 2800000, guid: dea4252aabd4ac74e8db9a3339b6c501, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_electrodomesticos
+    second: {fileID: 2800000, guid: 357d0b7232b798f42893421b5d776302, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_encimera
+    second: {fileID: 2800000, guid: ff4fa71905028e04fba772467b22f460, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_encimera_v2
+    second: {fileID: 2800000, guid: 17ebffad0503dd5468fc45aa1ec5879b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_fregadero
+    second: {fileID: 2800000, guid: 822cf29c117f30f42b0741d0af02ec90, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_fuegos
+    second: {fileID: 2800000, guid: c8a07ebdb28339149bf7ca3fe49a7cbd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_leche
+    second: {fileID: 2800000, guid: 5c0dd58cbe69deb468ff3707a3dbede7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_marco
+    second: {fileID: 2800000, guid: e5e898b340171514389ace86db38b000, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_menaje
+    second: {fileID: 2800000, guid: 8f5efb160f312df489a4e2390abacdf5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_nevera
+    second: {fileID: 2800000, guid: 6e5773519356ef842b378c097a9ea552, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_object_00
+    second: {fileID: 2800000, guid: 8ad8c1900348ae344a185903f1c2dc6a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_objects_01
+    second: {fileID: 2800000, guid: 5e219412acc7dff4e8e691a54016fc04, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_paredes
+    second: {fileID: 2800000, guid: 5c1c36cbc7a0b0341ad0dce877909fcc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_topesEncimera
+    second: {fileID: 2800000, guid: 18590c9c49711d44b9ea499d13a8a45f, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
