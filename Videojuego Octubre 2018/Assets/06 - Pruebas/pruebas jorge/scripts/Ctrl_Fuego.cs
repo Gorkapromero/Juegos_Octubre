@@ -11,11 +11,13 @@ public class Ctrl_Fuego : MonoBehaviour {
     bool FuegoActivado;
 
     Animator Animaciones;
-	// Use this for initialization
+    // Use this for initialization
+    movimiento_personaje Personaje;
 	void Start ()
     {
         Animaciones = GameObject.Find("Elementos_Escenario").GetComponent<Animator>();
-	}
+        Personaje = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -35,6 +37,7 @@ public class Ctrl_Fuego : MonoBehaviour {
             Animaciones.Play("Anim_FuegoOff");
             TiempoActivacion = Random.Range(TiempoMinimo,TiempoMax);
             FuegoActivado = false;
+            Personaje.DentroFuego = false;
         }
         else if(FuegoActivado)
         {
@@ -57,6 +60,23 @@ public class Ctrl_Fuego : MonoBehaviour {
                 break;
             case "Jugador":
                 //restamos vida
+                if(!Personaje.DentroFuego)
+                {
+                    Personaje.quitarvida_Vida();
+                    Personaje.DentroFuego = true;
+                }
+                //añadimos particulas de fuego
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider coli)
+    {
+        switch (coli.gameObject.tag)
+        {
+            case "Jugador":
+                //restamos vida
+                Personaje.DentroFuego = false;
                 //añadimos particulas de fuego
                 break;
         }

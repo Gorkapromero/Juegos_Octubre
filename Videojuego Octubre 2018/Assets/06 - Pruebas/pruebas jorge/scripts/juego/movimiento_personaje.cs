@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class movimiento_personaje : MonoBehaviour
 {
+    public int Vidas;
+    public Text T_Vidas;
 
     protected Joystick joystick;
     //public float velocidad_inicial = 100f;
-    public Slider vidas;
+    //public Slider vidas;
     public float velocidad;
     float velocidad_fin;
     public GameObject Finpartida;
@@ -24,10 +26,13 @@ public class movimiento_personaje : MonoBehaviour
     bool Saltando;
     bool salto;
 
+    public bool DentroFuego;
+
     Ctrl_Lavadora Lavadora;
     // Use this for initialization
     void Start()
     {
+        ActualizarVidas();
         joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody>();
         if (GameObject.FindGameObjectWithTag("lavadora")) {
@@ -47,10 +52,10 @@ public class movimiento_personaje : MonoBehaviour
         rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
                                          rb.velocity.y,
                                          0);
-        if (Saltando) //La variable "Saltando" se activa y desactiva en un evento de la animación de saltar adelante
+        /*if (Saltando) //La variable "Saltando" se activa y desactiva en un evento de la animación de saltar adelante
         {
             rb.velocity = new Vector3(joystick.Horizontal * vidas.value * 35, rb.velocity.y, 0);
-        }
+        }*/
 
         //Para las animaciones de movimiento
         //***Corrección "temporal" del solapado de animaciones de andar y correr ********
@@ -101,13 +106,6 @@ public class movimiento_personaje : MonoBehaviour
             }
         }
 
-        if (vidas.value == vidas.minValue)
-        {
-            Finpartida.SetActive(true);
-            GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
-            GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
-            Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
-        }
     }
 
     public void saltoAdelante()
@@ -151,7 +149,10 @@ public class movimiento_personaje : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Fuego":
-                vidas.value--;
+                if (!DentroFuego)
+                {
+                    quitarvida_Vida();
+                }
                 break;
 
             case "lavadora":
@@ -180,5 +181,25 @@ public class movimiento_personaje : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void quitarvida_Vida()
+    {
+        Vidas--;
+
+        if (Vidas == 0)
+        {
+            Finpartida.SetActive(true);
+            GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
+            GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
+            Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
+        }
+
+        ActualizarVidas();
+    }
+
+    void ActualizarVidas()
+    {
+        T_Vidas.text = "HP." + Vidas.ToString();
     }
 }

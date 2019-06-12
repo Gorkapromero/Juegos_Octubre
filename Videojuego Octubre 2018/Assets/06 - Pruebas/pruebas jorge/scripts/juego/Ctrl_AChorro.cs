@@ -24,21 +24,21 @@ public class Ctrl_AChorro : MonoBehaviour {
     private void OnTriggerEnter(Collider coli)
     {
         print(coli.gameObject.name);
-        switch (coli.gameObject.name)
+        /*switch (coli.gameObject.name)
         {
-            /*case "Top":                           //ataque llega al techo
+            case "Top":                           //ataque llega al techo
                 print("chocamos con " + coli);
                 GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = true;
                 Destroy(this.gameObject);
-                break;*/
+                break;
 
-            /*case "objeto(Clone)":
+            case "objeto(Clone)":
                 print("desruimos enemigo");
 
                 Destroy(this.gameObject);
-                break;*/
+                break;
 
-        }
+        }*/
     }
 
     private void OnCollisionEnter(Collision collision)

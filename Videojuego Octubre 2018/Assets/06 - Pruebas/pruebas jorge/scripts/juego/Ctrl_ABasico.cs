@@ -20,7 +20,7 @@ public class Ctrl_ABasico : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(Habilidades.AtaqueBasico==true)
+        /*if(Habilidades.AtaqueBasico==true)
         {
             if(transform.position.z >= (-Distancia_Max-50.4883f))
             {
@@ -40,7 +40,7 @@ public class Ctrl_ABasico : MonoBehaviour
         {
             print("z pajarita " + transform.position.z);
             transform.position -= transform.forward * Velocidad * Time.deltaTime;
-        }
+        }*/
         
 	}
 
