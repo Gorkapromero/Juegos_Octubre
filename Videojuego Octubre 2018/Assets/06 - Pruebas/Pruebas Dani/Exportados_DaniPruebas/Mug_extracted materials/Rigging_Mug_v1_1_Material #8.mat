@@ -54,12 +54,17 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ToonShade:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Brightness: 1
+    - _BumpAmt: 10
     - _BumpScale: 1
     - _ColorMask: 15
     - _Cutoff: 0.5
@@ -69,8 +74,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _LightSmoothness: 0.28
-    - _LightThreshold: 0.39
+    - _LightSmoothness: 0.42
+    - _LightThreshold: 0.42
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
@@ -86,17 +91,18 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 31.43
+    - _Outline: 0.002
     - _OutlineSize: 0.1
     - _Parallax: 0.02
-    - _RimIntensity: 0.5
-    - _RimSize: 1.5
-    - _RimSmoothness: 0.5
-    - _ShadowIntensity: 0.97
-    - _Shininess: 0.36
+    - _RimIntensity: 0.36
+    - _RimSize: 0.1
+    - _RimSmoothness: 0.65
+    - _ShadowIntensity: 0.32
+    - _Shininess: 0.28
+    - _Size: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0
+    - _SpecularIntensity: 0.63
     - _SrcBlend: 1
     - _Stencil: 0
     - _StencilComp: 8
@@ -109,7 +115,7 @@ Material:
     - _VertexColor: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8679245, g: 0.8582955, b: 0.8392666, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
