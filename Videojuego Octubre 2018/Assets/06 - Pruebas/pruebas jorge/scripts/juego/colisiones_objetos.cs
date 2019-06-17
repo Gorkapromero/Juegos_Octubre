@@ -81,7 +81,7 @@ public class colisiones_objetos : MonoBehaviour
             case "A_Basic(Clone)":
                 print("desruimos enemigo");
                 Puntuacion.Enemigos_Eliminados++;
-                Puntuacion.Actualizar_enemigos();
+                //Puntuacion.Actualizar_enemigos();
                 Destroy(this.gameObject);
                 break;
 

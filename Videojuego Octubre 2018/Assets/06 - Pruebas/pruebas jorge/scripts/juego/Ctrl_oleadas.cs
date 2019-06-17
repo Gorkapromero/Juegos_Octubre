@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ctrl_oleadas : MonoBehaviour
 {
+    public Transform[] posiciones;
+    //public GameObject Objetos;
+    public float tiempoCreacion = 2f;
+
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
     [System.Serializable]
@@ -38,14 +43,16 @@ public class Ctrl_oleadas : MonoBehaviour
         get { return Estado; }
     }
 
-    crar_objeto Enemigos;
+    //crar_objeto Enemigos;
     float total = 0;
 
+    public Text TextoOleadas;
     // Use this for initialization
     void Start()
     {
-        Enemigos = gameObject.GetComponent<crar_objeto>();
+        //Enemigos = gameObject.GetComponent<crar_objeto>();
         //WaveCountdown = TiempoDescanso;
+        ActualizarTextoOleadas();
     }
 
     // Update is called once per frame
@@ -108,7 +115,7 @@ public class Ctrl_oleadas : MonoBehaviour
         {
             crear(_oleada);//ir a crear enemigo del otro script
             print("enemigo: " + i);
-            yield return new WaitForSecondsRealtime(Enemigos.tiempoCreacion);
+            yield return new WaitForSecondsRealtime(tiempoCreacion);
         }
 
         Estado = SpawnState.WAITING;
@@ -125,7 +132,7 @@ public class Ctrl_oleadas : MonoBehaviour
 
         ContadorOleadas++;
         NumeroEnemigos = NumeroEnemigos + 3;
-
+        ActualizarTextoOleadas();
     }
 
     public void crear(oleada _Oleada)
@@ -144,8 +151,8 @@ public class Ctrl_oleadas : MonoBehaviour
         {
             if (randomPoint < _Oleada.enemigos[j].rareza)
             {
-                int spawnPoint = Random.Range(0, Enemigos.posiciones.Length);
-                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, Enemigos.posiciones[spawnPoint].position, Quaternion.identity);
+                int spawnPoint = Random.Range(0, posiciones.Length);
+                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, posiciones[spawnPoint].position, Quaternion.identity);
                 return;
             }
             else
@@ -154,6 +161,11 @@ public class Ctrl_oleadas : MonoBehaviour
             }
         }
 
+    }
+
+    public void ActualizarTextoOleadas()
+    {
+        TextoOleadas.text = (ContadorOleadas + 1).ToString();
     }
 
 }

@@ -7,8 +7,8 @@ public class Enegia : MonoBehaviour {
 
     public float VelocidadAnimacion;
     public float Energia;
-    float EnergiaFinal;
-    float EnergiaInicial;
+    public float EnergiaFinal;
+    public float EnergiaInicial;
     public Slider BarraEnergia;
     //public float sumar;
 
@@ -20,6 +20,8 @@ public class Enegia : MonoBehaviour {
 	void Start ()
     {
         //AñadirEnergia(sumar);
+        BarraEnergia.maxValue = energiaMax;
+        BarraEnergia.value = Energia;
     }
 	
 	// Update is called once per frame
@@ -36,17 +38,32 @@ public class Enegia : MonoBehaviour {
                     Energia = EnergiaFinal;
                     BarraEnergia.value = Energia;
                 }
+               
                 if(Energia>energiaMax)
                 {
                     Energia = energiaMax;
                 }
+            }
+            else
+            {
+                Energia -= (EnergiaInicial - EnergiaFinal);
+                BarraEnergia.value = Energia;
             }
         }
     }
 
     public void AñadirEnergia(float Valor)
     {
+        if (EnergiaFinal < energiaMax)
+        {
+            EnergiaInicial = Energia;
+            EnergiaFinal += Valor;
+        }
+    }
+
+    public void RestarEnergia(float Valor)
+    {
         EnergiaInicial = Energia;
-        EnergiaFinal += Valor;
+        EnergiaFinal += -Valor;
     }
 }

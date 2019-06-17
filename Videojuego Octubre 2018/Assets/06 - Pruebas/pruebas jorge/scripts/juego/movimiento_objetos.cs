@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class movimiento_objetos : MonoBehaviour
 {
-
     public float vision;
     public float Velocidad;
     public float FuerzaSalto = 10.0f;
@@ -24,13 +23,15 @@ public class movimiento_objetos : MonoBehaviour
 
     Animator animatorEnemigo;
 
-    Slider vidas;
+    movimiento_personaje Vidas;
+    //Slider vidas;
     Ctrl_Puntuacion Puntuacion;
 
-    bool Jvisto = false;
+    /*bool Jvisto = false;
     bool Salto = false;
     bool stop = false;
     bool suelo = false;
+    bool grounded = false;*/
 
     Vector3 target;
 
@@ -40,6 +41,9 @@ public class movimiento_objetos : MonoBehaviour
     public GameObject Particulasboom;
     public GameObject ParticulasMuerte;
 
+    Enegia energia;
+    AgentJumpToTarget Jump;
+
     // Use this for initialization
     void Start ()
     {
@@ -48,6 +52,9 @@ public class movimiento_objetos : MonoBehaviour
         Destino = GameObject.Find("destino").GetComponent<Transform>().position;//new Vector3(0, jugador.position.y, this.transform.position.z);
         nav = GetComponent<NavMeshAgent>();
         colBomb = GetComponent<CapsuleCollider>();
+        energia = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
+        Vidas = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
+        Jump = GetComponent<AgentJumpToTarget>();
 
         if (gameObject.name != "E_Normal(Clone)")
         {
@@ -73,10 +80,11 @@ public class movimiento_objetos : MonoBehaviour
         }
         //*********************//
 
-        //nav.SetDestination(Destino);
-        //FuerzaSalto = Velocidad + 10;
-        //Velocidad = nav.speed;
-        dist = Vector3.Distance(jugador.position, transform.position);
+        //target = new Vector3(jugador.position.x,jugador.position.y,this.transform.position.z);
+        target = jugador.position;
+        nav.SetDestination(target);
+        Debug.DrawLine(transform.position, target, Color.green);
+        /*dist = Vector3.Distance(jugador.position, transform.position);
         if ((dist < vision|| Jvisto==true)&&!stop&&!Salto)   //vemos al jugador antes de saltar
         {
             if (!Jvisto)
@@ -147,9 +155,9 @@ public class movimiento_objetos : MonoBehaviour
                                 
                 Invoke("explosion", tiempoExplosion);
             }
-        }
-        
-	}
+        }*/
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         switch (other.gameObject.tag)
@@ -163,15 +171,15 @@ public class movimiento_objetos : MonoBehaviour
                 }
 
                 //CONTROL DEL AGENTE
-                suelo = true;
-                Salto = false;
+                //suelo = true;
+                //Salto = false;
                 nav.enabled = true;
  
                 print("chocamos con suelo");
                 switch (gameObject.name)
                 {
                     case "E_Normal(Clone)":
-                        Muerte(); //PARTÍCULAS TEMPORALES ...
+                        //Muerte(); //PARTÍCULAS TEMPORALES ...
                         break;
                     case "E_Bomb(Clone)":
                         break;
@@ -189,14 +197,16 @@ public class movimiento_objetos : MonoBehaviour
                 {
                     case "E_Normal(Clone)":
                         print("quitamos vida");
-                        vidas = GameObject.Find("Vida").GetComponent<Slider>();
-                        vidas.value--;
+                        //vidas = GameObject.Find("Vida").GetComponent<Slider>();
+                        //vidas.value--;
+                        Vidas.quitarvida_Vida();
 
                         Destroy(this.gameObject);
                         break;
                     case "E_Bomb(Clone)":
-                        vidas = GameObject.Find("Vida").GetComponent<Slider>();
-                        vidas.value--;
+                        /*vidas = GameObject.Find("Vida").GetComponent<Slider>();
+                        vidas.value--;*/
+                        Vidas.quitarvida_Vida();
                         explosion();
                         Destroy(this.gameObject);
                         break;
@@ -213,13 +223,15 @@ public class movimiento_objetos : MonoBehaviour
             case "A_Basico":
                 print("desruimos enemigo");
                 Puntuacion.Enemigos_Eliminados++;
-                Puntuacion.Actualizar_enemigos();
+                //Puntuacion.Actualizar_enemigos();
                 Muerte();
+                //sumamos energia
+                energia.AñadirEnergia(10);
                 break;
 
             case "A_chorro":
                 Puntuacion.Enemigos_Eliminados++;
-                Puntuacion.Actualizar_enemigos();
+                //Puntuacion.Actualizar_enemigos();
                 Muerte();
                 break;
 
@@ -229,7 +241,7 @@ public class movimiento_objetos : MonoBehaviour
 
             case "explosion":
                 Puntuacion.Enemigos_Eliminados++;
-                Puntuacion.Actualizar_enemigos();
+                //Puntuacion.Actualizar_enemigos();
                 Destroy(this.gameObject);
                 break;
 
@@ -251,22 +263,22 @@ public class movimiento_objetos : MonoBehaviour
         {
             case "jump":
                 print("jump");
-                stop = true;
+                //stop = true;
                 Debug.DrawLine(transform.position, target, Color.green);
                 Invoke("saltar", tiempoDeEspera);
                 break;
         }
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, vision);
-    }
+    }*/
 
     void saltar()
     {
-        nav.enabled = false;
+        /*nav.enabled = false;
         rb.isKinematic = false;
         if (dist < vision)
         {
@@ -282,8 +294,9 @@ public class movimiento_objetos : MonoBehaviour
         {
             Velocidad = 100f;
         }
-        Salto = true;
-        //stop = false;
+        //Salto = true;
+        //stop = false;*/
+        Jump.Jump();
         Debug.DrawLine(transform.position, target, Color.green);
         
         print("saltamos");
@@ -312,4 +325,5 @@ public class movimiento_objetos : MonoBehaviour
         GameObject ParticulasDead = Instantiate(ParticulasMuerte, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
+
 }

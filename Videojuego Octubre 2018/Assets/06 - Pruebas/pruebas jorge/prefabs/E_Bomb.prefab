@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 54568346493768034}
   - component: {fileID: 114973656421719362}
   - component: {fileID: 136837842570054340}
+  - component: {fileID: 114051783833745812}
+  - component: {fileID: 114994587752658236}
   m_Layer: 0
   m_Name: E_Bomb
   m_TagString: Enemigo
@@ -858,6 +860,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114051783833745812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318831246343000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d76b529d1aea4247b64d52c510498c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NavMeshAgent: {fileID: 195110227450049368, guid: 20faf35a8f7278c40bc95c03b5692f49,
+    type: 2}
+  Rigidbody: {fileID: 54568346493768034}
+  Target: {fileID: 0}
+  ReachedStartPointDistance: 0.5
+  DummyAgent: {fileID: 4088997838483852, guid: 20faf35a8f7278c40bc95c03b5692f49, type: 2}
+  EndJumpPosition: {x: 0, y: 0, z: 0}
+  MaxJumpableDistance: 8000
+  JumpTime: 0.6
+  AddToJumpHeight: 0
+  JumpStartPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &114374960235487956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -917,6 +941,26 @@ MonoBehaviour:
     type: 2}
   ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
     type: 2}
+--- !u!114 &114994587752658236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318831246343000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f7e64032638054db5720701aaa3f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: 2
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocidad: 2
+  altura: 5
 --- !u!136 &136837842570054340
 CapsuleCollider:
   m_ObjectHideFlags: 1

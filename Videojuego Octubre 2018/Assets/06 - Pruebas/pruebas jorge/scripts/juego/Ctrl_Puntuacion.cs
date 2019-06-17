@@ -12,7 +12,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     //public int Tiempo;
     //public int Total;
 
-    public Text T_Enemigos;
+    //public Text T_Enemigos;
     public Text TP_Final;
     Timer tiempo;
 
@@ -25,7 +25,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     void Start ()
     {
         tiempo = GameObject.Find("Timer").GetComponent<Timer>();
-        Actualizar_enemigos();
+        //Actualizar_enemigos();
 	}
 	
 	// Update is called once per frame
@@ -34,10 +34,10 @@ public class Ctrl_Puntuacion : MonoBehaviour
 		
 	}
 
-    public void Actualizar_enemigos()
+    /*public void Actualizar_enemigos()
     {
         T_Enemigos.text = "Enemigos Eliminados: " + Enemigos_Eliminados.ToString();
-    }
+    }*/
 
     public void Puntuacion_final()
     {

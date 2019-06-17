@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Ctrl_Habilidades : MonoBehaviour
 {
     public bool AtaqueBasico;
+    public float Tiempo_ABasico;
     
 
     [System.Serializable]
@@ -13,9 +14,9 @@ public class Ctrl_Habilidades : MonoBehaviour
     {
         public string nombre;
         public GameObject habilidad;
-        public float T_enfriamiento;
+        public float Energia_necesaria;
         public GameObject tiempo;
-        public Text tiempo_texto;
+        //public Text tiempo_texto;
     }
 
     public List<Habilidades> tablahabilidades = new List<Habilidades>();
@@ -36,19 +37,20 @@ public class Ctrl_Habilidades : MonoBehaviour
     float t3;
     float t0;
 
-
+    Enegia Energia_Total;
 
 
 	// Use this for initialization
 	void Start ()
     {
-        t0 = tablahabilidades[0].T_enfriamiento;
+        Energia_Total = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
+        /*t0 = tablahabilidades[0].T_enfriamiento;
         t1 = tablahabilidades[1].T_enfriamiento;
         t2 = tablahabilidades[2].T_enfriamiento;
-        t3 = tablahabilidades[3].T_enfriamiento;
-        tablahabilidades[1].tiempo.SetActive(false);
-        tablahabilidades[2].tiempo.SetActive(false);
-        tablahabilidades[3].tiempo.SetActive(false);
+        t3 = tablahabilidades[3].T_enfriamiento;*/
+        tablahabilidades[1].tiempo.SetActive(true);
+        tablahabilidades[2].tiempo.SetActive(true);
+        tablahabilidades[3].tiempo.SetActive(true);
 
     }
 	
@@ -69,21 +71,25 @@ public class Ctrl_Habilidades : MonoBehaviour
             if (t0 <= 0)
             {
                 //t_chorro = false;
-                t0 = tablahabilidades[0].T_enfriamiento;
+                t0 = Tiempo_ABasico;
                 //tablahabilidades[0].tiempo.SetActive(false);
                 GameObject.Find("A_Basico").GetComponent<Button>().enabled = true;
 		
             }
 
         }
-        if (t_chorro == true)
+
+
+        //ACTIVAMOS CHORRO SI TENEMOS ENERGIA
+        if (tablahabilidades[1].Energia_necesaria <= Energia_Total.Energia)
         {
             print("tiempo chorro on");
-            if(tablahabilidades[1].tiempo.activeSelf == false)
+            if(tablahabilidades[1].tiempo.activeSelf == true)
             {
                 print("activamos");
-                tablahabilidades[1].tiempo.SetActive(true);
+                tablahabilidades[1].tiempo.SetActive(false);
             }
+            /*
             tablahabilidades[1].tiempo_texto.text = t1.ToString("f0");
             t1 -= Time.deltaTime;
             //print(t1);
@@ -93,19 +99,27 @@ public class Ctrl_Habilidades : MonoBehaviour
                 t1 = tablahabilidades[1].T_enfriamiento;
                 tablahabilidades[1].tiempo.SetActive(false);
                 GameObject.Find("A_chorro").GetComponent<Button>().enabled = true;
-            }
+            }*/
             
         }
-        if (t_explosion == true)
+        else
+        {
+            tablahabilidades[1].tiempo.SetActive(true);
+        }
+
+
+        //ACTIVAMOS EXPLOSION SI TENEMOS ENERGIA
+        if (tablahabilidades[2].Energia_necesaria <= Energia_Total.Energia)
         {
 		 
             print("tiempo explosion on");
-            if (tablahabilidades[2].tiempo.activeSelf == false)
+            if (tablahabilidades[2].tiempo.activeSelf == true)
             {
                 print("activamos");
-                tablahabilidades[2].tiempo.SetActive(true);
+                tablahabilidades[2].tiempo.SetActive(false);
 
             }
+            /*
             tablahabilidades[2].tiempo_texto.text = t2.ToString("f0");
             t2 -= Time.deltaTime;
             //print(t1);
@@ -118,18 +132,24 @@ public class Ctrl_Habilidades : MonoBehaviour
                 GameObject.Find("A_Explosion").GetComponent<Button>().enabled = true;
 
 
-            }
+            }*/
 
         }
+        else
+        {
+            tablahabilidades[2].tiempo.SetActive(true);
+        }
 
-        if (t_escudo == true)
+        //ACTIVAMOS ESCUDO SI TENEMOS ENERGIA
+        if (tablahabilidades[3].Energia_necesaria <= Energia_Total.Energia)
         {
             print("tiempo escudo on");
-            if (tablahabilidades[3].tiempo.activeSelf == false)
+            if (tablahabilidades[3].tiempo.activeSelf == true)
             {
                 print("activamos");
-                tablahabilidades[3].tiempo.SetActive(true);
+                tablahabilidades[3].tiempo.SetActive(false);
             }
+            /*
             tablahabilidades[3].tiempo_texto.text = t3.ToString("f0");
             t3 -= Time.deltaTime;
             //print(t1);
@@ -139,15 +159,20 @@ public class Ctrl_Habilidades : MonoBehaviour
                 t3 = tablahabilidades[1].T_enfriamiento;
                 tablahabilidades[3].tiempo.SetActive(false);
                 GameObject.Find("Escudo").GetComponent<Button>().enabled = true;
-            }
+            }*/
 
+        }
+        else
+        {
+            tablahabilidades[3].tiempo.SetActive(true);
         }
     }
 
     public void Ataque_Basico()
     {
         t_basico = true;
-        AtaqueBasico = true;
+        //AtaqueBasico = true;
+        GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().Play("LanzarPajarita");
         GameObject.Find("A_Basico").GetComponent<Button>().enabled = false;
     }
 
@@ -163,6 +188,9 @@ public class Ctrl_Habilidades : MonoBehaviour
         GameObject.Find("A_chorro").GetComponent<Button>().enabled = false;
 
         Invoke("move", 1f);
+
+        //gastamos energia
+        Energia_Total.RestarEnergia(tablahabilidades[1].Energia_necesaria);
     }
 
     public void Explosion()
@@ -176,7 +204,9 @@ public class Ctrl_Habilidades : MonoBehaviour
         GameObject Objeto = Instantiate(tablahabilidades[2].habilidad, SpawnPosition, Quaternion.identity);
         GameObject.Find("A_Explosion").GetComponent<Button>().enabled = false;
 
-		//GameObject ParticulasExplosionInstancia = Instantiate(ParticulasExplosion, transform.position, transform.rotation);//
+        //GameObject ParticulasExplosionInstancia = Instantiate(ParticulasExplosion, transform.position, transform.rotation);
+        //gastamos energia
+        Energia_Total.RestarEnergia(tablahabilidades[2].Energia_necesaria);
     }
 
     public void escudo()
@@ -185,10 +215,13 @@ public class Ctrl_Habilidades : MonoBehaviour
         tablahabilidades[3].habilidad.SetActive(true);
         Invoke("escudooff",tiempoEscudo);
         GameObject.Find("Escudo").GetComponent<Button>().enabled = false;
+        //gastamos energia
+        Energia_Total.RestarEnergia(tablahabilidades[3].Energia_necesaria);
     }
     void escudooff()
     {
         tablahabilidades[3].habilidad.SetActive(false);
+        GameObject.Find("Escudo").GetComponent<Button>().enabled = true;
     }
 
     void move()
