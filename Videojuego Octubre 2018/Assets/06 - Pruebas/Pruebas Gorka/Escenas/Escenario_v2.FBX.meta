@@ -392,6 +392,99 @@ ModelImporter:
     100772: Plane020
     100774: Plane021
     100776: Plane022
+    100778: bote_004
+    100780: bote_005
+    100782: bote_006
+    100784: bote_007
+    100786: bote_008
+    100788: bote_02
+    100790: bote_03
+    100792: Box463
+    100794: Box465
+    100796: Box467
+    100798: Box468
+    100800: Cylinder088
+    100802: Cylinder101
+    100804: Cylinder102
+    100806: Cylinder103
+    100808: Cylinder104
+    100810: Cylinder105
+    100812: Cylinder106
+    100814: Cylinder107
+    100816: Cylinder108
+    100818: Cylinder109
+    100820: Cylinder111
+    100822: Cylinder115
+    100824: Cylinder116
+    100826: Cylinder117
+    100828: Cylinder118
+    100830: Cylinder122
+    100832: Cylinder123
+    100834: Cylinder124
+    100836: Cylinder125
+    100838: Cylinder126
+    100840: Cylinder127
+    100842: Cylinder128
+    100844: Cylinder129
+    100846: Cylinder130
+    100848: Cylinder131
+    100850: Cylinder133
+    100852: Cylinder134
+    100854: Cylinder135
+    100856: Cylinder136
+    100858: Cylinder137
+    100860: Cylinder138
+    100862: Cylinder139
+    100864: Cylinder140
+    100866: Cylinder141
+    100868: Cylinder142
+    100870: Cylinder143
+    100872: Cylinder144
+    100874: Cylinder145
+    100876: Cylinder146
+    100878: Cylinder147
+    100880: Cylinder148
+    100882: Cylinder149
+    100884: Object023
+    100886: Object024
+    100888: Object025
+    100890: Object026
+    100892: Object027
+    100894: Object028
+    100896: Object029
+    100898: Object030
+    100900: Object031
+    100902: Object032
+    100904: Object033
+    100906: Object034
+    100908: Plane023
+    100910: Plane027
+    100912: Plane028
+    100914: Box847
+    100916: Box848
+    100918: Box850
+    100920: Cylinder152
+    100922: Cylinder153
+    100924: Cylinder154
+    100926: Cylinder155
+    100928: Cylinder156
+    100930: Cylinder157
+    100932: Cylinder158
+    100934: Cylinder159
+    100936: Cylinder160
+    100938: Cylinder161
+    100940: Cylinder162
+    100942: Cylinder163
+    100944: Cylinder164
+    100946: Cylinder165
+    100948: Cylinder166
+    100950: Cylinder167
+    100952: Cylinder168
+    100954: Cylinder169
+    100956: Cylinder170
+    100958: Cylinder171
+    100960: Cylinder172
+    100962: Object035
     400000: bote de algo
     400002: bote de algo001
     400004: Box013
@@ -781,6 +874,99 @@ ModelImporter:
     400772: Plane020
     400774: Plane021
     400776: Plane022
+    400778: bote_004
+    400780: bote_005
+    400782: bote_006
+    400784: bote_007
+    400786: bote_008
+    400788: bote_02
+    400790: bote_03
+    400792: Box463
+    400794: Box465
+    400796: Box467
+    400798: Box468
+    400800: Cylinder088
+    400802: Cylinder101
+    400804: Cylinder102
+    400806: Cylinder103
+    400808: Cylinder104
+    400810: Cylinder105
+    400812: Cylinder106
+    400814: Cylinder107
+    400816: Cylinder108
+    400818: Cylinder109
+    400820: Cylinder111
+    400822: Cylinder115
+    400824: Cylinder116
+    400826: Cylinder117
+    400828: Cylinder118
+    400830: Cylinder122
+    400832: Cylinder123
+    400834: Cylinder124
+    400836: Cylinder125
+    400838: Cylinder126
+    400840: Cylinder127
+    400842: Cylinder128
+    400844: Cylinder129
+    400846: Cylinder130
+    400848: Cylinder131
+    400850: Cylinder133
+    400852: Cylinder134
+    400854: Cylinder135
+    400856: Cylinder136
+    400858: Cylinder137
+    400860: Cylinder138
+    400862: Cylinder139
+    400864: Cylinder140
+    400866: Cylinder141
+    400868: Cylinder142
+    400870: Cylinder143
+    400872: Cylinder144
+    400874: Cylinder145
+    400876: Cylinder146
+    400878: Cylinder147
+    400880: Cylinder148
+    400882: Cylinder149
+    400884: Object023
+    400886: Object024
+    400888: Object025
+    400890: Object026
+    400892: Object027
+    400894: Object028
+    400896: Object029
+    400898: Object030
+    400900: Object031
+    400902: Object032
+    400904: Object033
+    400906: Object034
+    400908: Plane023
+    400910: Plane027
+    400912: Plane028
+    400914: Box847
+    400916: Box848
+    400918: Box850
+    400920: Cylinder152
+    400922: Cylinder153
+    400924: Cylinder154
+    400926: Cylinder155
+    400928: Cylinder156
+    400930: Cylinder157
+    400932: Cylinder158
+    400934: Cylinder159
+    400936: Cylinder160
+    400938: Cylinder161
+    400940: Cylinder162
+    400942: Cylinder163
+    400944: Cylinder164
+    400946: Cylinder165
+    400948: Cylinder166
+    400950: Cylinder167
+    400952: Cylinder168
+    400954: Cylinder169
+    400956: Cylinder170
+    400958: Cylinder171
+    400960: Cylinder172
+    400962: Object035
     2100000: 'Material #158'
     2100002: Mat_armarios_altos
     2100004: Mat_nevera
@@ -809,6 +995,18 @@ ModelImporter:
     2100050: 'Material #166'
     2100052: 'Material #168'
     2100054: Mat_agua
+    2100056: Mat_objetos_02
+    2100058: Mat_especias
+    2100060: Mat_objetos_03
+    2100062: 'Material #169'
+    2100064: Mat_bote_01
+    2100066: Mat_cereales
+    2100068: Mat_azulejos_normal
+    2100070: Mat_estanteria
+    2100072: Mat_estanterias_v2
+    2100074: Mat_objetos_04
+    2100076: Mat_paladon
+    2100078: Mat_azucarero
     2300000: bote de algo
     2300002: bote de algo001
     2300004: Box013
@@ -1195,6 +1393,99 @@ ModelImporter:
     2300766: Plane020
     2300768: Plane021
     2300770: Plane022
+    2300772: bote_004
+    2300774: bote_005
+    2300776: bote_006
+    2300778: bote_007
+    2300780: bote_008
+    2300782: bote_02
+    2300784: bote_03
+    2300786: Box463
+    2300788: Box465
+    2300790: Box467
+    2300792: Box468
+    2300794: Cylinder088
+    2300796: Cylinder101
+    2300798: Cylinder102
+    2300800: Cylinder103
+    2300802: Cylinder104
+    2300804: Cylinder105
+    2300806: Cylinder106
+    2300808: Cylinder107
+    2300810: Cylinder108
+    2300812: Cylinder109
+    2300814: Cylinder111
+    2300816: Cylinder115
+    2300818: Cylinder116
+    2300820: Cylinder117
+    2300822: Cylinder118
+    2300824: Cylinder122
+    2300826: Cylinder123
+    2300828: Cylinder124
+    2300830: Cylinder125
+    2300832: Cylinder126
+    2300834: Cylinder127
+    2300836: Cylinder128
+    2300838: Cylinder129
+    2300840: Cylinder130
+    2300842: Cylinder131
+    2300844: Cylinder133
+    2300846: Cylinder134
+    2300848: Cylinder135
+    2300850: Cylinder136
+    2300852: Cylinder137
+    2300854: Cylinder138
+    2300856: Cylinder139
+    2300858: Cylinder140
+    2300860: Cylinder141
+    2300862: Cylinder142
+    2300864: Cylinder143
+    2300866: Cylinder144
+    2300868: Cylinder145
+    2300870: Cylinder146
+    2300872: Cylinder147
+    2300874: Cylinder148
+    2300876: Cylinder149
+    2300878: Object023
+    2300880: Object024
+    2300882: Object025
+    2300884: Object026
+    2300886: Object027
+    2300888: Object028
+    2300890: Object029
+    2300892: Object030
+    2300894: Object031
+    2300896: Object032
+    2300898: Object033
+    2300900: Object034
+    2300902: Plane023
+    2300904: Plane027
+    2300906: Plane028
+    2300908: Box847
+    2300910: Box848
+    2300912: Box850
+    2300914: Cylinder152
+    2300916: Cylinder153
+    2300918: Cylinder154
+    2300920: Cylinder155
+    2300922: Cylinder156
+    2300924: Cylinder157
+    2300926: Cylinder158
+    2300928: Cylinder159
+    2300930: Cylinder160
+    2300932: Cylinder161
+    2300934: Cylinder162
+    2300936: Cylinder163
+    2300938: Cylinder164
+    2300940: Cylinder165
+    2300942: Cylinder166
+    2300944: Cylinder167
+    2300946: Cylinder168
+    2300948: Cylinder169
+    2300950: Cylinder170
+    2300952: Cylinder171
+    2300954: Cylinder172
+    2300956: Object035
     3300000: bote de algo
     3300002: bote de algo001
     3300004: Box013
@@ -1581,6 +1872,99 @@ ModelImporter:
     3300766: Plane020
     3300768: Plane021
     3300770: Plane022
+    3300772: bote_004
+    3300774: bote_005
+    3300776: bote_006
+    3300778: bote_007
+    3300780: bote_008
+    3300782: bote_02
+    3300784: bote_03
+    3300786: Box463
+    3300788: Box465
+    3300790: Box467
+    3300792: Box468
+    3300794: Cylinder088
+    3300796: Cylinder101
+    3300798: Cylinder102
+    3300800: Cylinder103
+    3300802: Cylinder104
+    3300804: Cylinder105
+    3300806: Cylinder106
+    3300808: Cylinder107
+    3300810: Cylinder108
+    3300812: Cylinder109
+    3300814: Cylinder111
+    3300816: Cylinder115
+    3300818: Cylinder116
+    3300820: Cylinder117
+    3300822: Cylinder118
+    3300824: Cylinder122
+    3300826: Cylinder123
+    3300828: Cylinder124
+    3300830: Cylinder125
+    3300832: Cylinder126
+    3300834: Cylinder127
+    3300836: Cylinder128
+    3300838: Cylinder129
+    3300840: Cylinder130
+    3300842: Cylinder131
+    3300844: Cylinder133
+    3300846: Cylinder134
+    3300848: Cylinder135
+    3300850: Cylinder136
+    3300852: Cylinder137
+    3300854: Cylinder138
+    3300856: Cylinder139
+    3300858: Cylinder140
+    3300860: Cylinder141
+    3300862: Cylinder142
+    3300864: Cylinder143
+    3300866: Cylinder144
+    3300868: Cylinder145
+    3300870: Cylinder146
+    3300872: Cylinder147
+    3300874: Cylinder148
+    3300876: Cylinder149
+    3300878: Object023
+    3300880: Object024
+    3300882: Object025
+    3300884: Object026
+    3300886: Object027
+    3300888: Object028
+    3300890: Object029
+    3300892: Object030
+    3300894: Object031
+    3300896: Object032
+    3300898: Object033
+    3300900: Object034
+    3300902: Plane023
+    3300904: Plane027
+    3300906: Plane028
+    3300908: Box847
+    3300910: Box848
+    3300912: Box850
+    3300914: Cylinder152
+    3300916: Cylinder153
+    3300918: Cylinder154
+    3300920: Cylinder155
+    3300922: Cylinder156
+    3300924: Cylinder157
+    3300926: Cylinder158
+    3300928: Cylinder159
+    3300930: Cylinder160
+    3300932: Cylinder161
+    3300934: Cylinder162
+    3300936: Cylinder163
+    3300938: Cylinder164
+    3300940: Cylinder165
+    3300942: Cylinder166
+    3300944: Cylinder167
+    3300946: Cylinder168
+    3300948: Cylinder169
+    3300950: Cylinder170
+    3300952: Cylinder171
+    3300954: Cylinder172
+    3300956: Object035
     4300000: Plane001
     4300002: Box013
     4300004: Box022
@@ -1967,6 +2351,99 @@ ModelImporter:
     4300766: Plane020
     4300768: Plane021
     4300770: Plane022
+    4300772: Plane023
+    4300774: Cylinder088
+    4300776: bote_02
+    4300778: bote_03
+    4300780: Object023
+    4300782: Object024
+    4300784: Cylinder101
+    4300786: Cylinder102
+    4300788: Cylinder103
+    4300790: Cylinder104
+    4300792: Object025
+    4300794: Cylinder105
+    4300796: Object026
+    4300798: bote_004
+    4300800: Cylinder106
+    4300802: Object027
+    4300804: bote_005
+    4300806: Cylinder107
+    4300808: Object028
+    4300810: bote_006
+    4300812: Cylinder108
+    4300814: Cylinder109
+    4300816: Object029
+    4300818: Cylinder111
+    4300820: Object030
+    4300822: Box463
+    4300824: Cylinder115
+    4300826: Cylinder116
+    4300828: Object031
+    4300830: bote_007
+    4300832: Cylinder117
+    4300834: Object032
+    4300836: bote_008
+    4300838: Cylinder118
+    4300840: Object033
+    4300842: Cylinder122
+    4300844: Box465
+    4300846: Cylinder123
+    4300848: Cylinder124
+    4300850: Cylinder125
+    4300852: Cylinder126
+    4300854: Cylinder127
+    4300856: Cylinder128
+    4300858: Cylinder129
+    4300860: Cylinder130
+    4300862: Cylinder131
+    4300864: Box467
+    4300866: Box468
+    4300868: Plane027
+    4300870: Cylinder133
+    4300872: Object034
+    4300874: Cylinder134
+    4300876: Cylinder135
+    4300878: Cylinder136
+    4300880: Cylinder137
+    4300882: Cylinder138
+    4300884: Cylinder139
+    4300886: Cylinder140
+    4300888: Cylinder141
+    4300890: Cylinder142
+    4300892: Cylinder143
+    4300894: Cylinder144
+    4300896: Cylinder145
+    4300898: Cylinder146
+    4300900: Cylinder147
+    4300902: Cylinder148
+    4300904: Cylinder149
+    4300906: Plane028
+    4300908: Box847
+    4300910: Box848
+    4300912: Cylinder152
+    4300914: Cylinder153
+    4300916: Cylinder154
+    4300918: Cylinder155
+    4300920: Cylinder156
+    4300922: Cylinder157
+    4300924: Cylinder158
+    4300926: Cylinder159
+    4300928: Cylinder160
+    4300930: Cylinder161
+    4300932: Cylinder162
+    4300934: Cylinder163
+    4300936: Cylinder164
+    4300938: Cylinder165
+    4300940: Cylinder166
+    4300942: Cylinder167
+    4300944: Cylinder168
+    4300946: Cylinder169
+    4300948: Cylinder170
+    4300950: Cylinder171
+    4300952: Cylinder172
+    4300954: Object035
+    4300956: Box850
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -1992,8 +2469,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Mat_azucarero
+    second: {fileID: 2100000, guid: 6c840a5f20633c74fa691369bd500fef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_azulejos_normal
+    second: {fileID: 2100000, guid: 0523d38a0dd45b548bb29843cd012a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_bote_01
+    second: {fileID: 2100000, guid: 3b351c944ddfa5a49be573014dfb5548, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Mat_campana
     second: {fileID: 2100000, guid: a534d4a47dce68a48a02d2890aafd51c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_cereales
+    second: {fileID: 2100000, guid: 80dccef82ebe7464fa3c26655bba537a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -2004,6 +2501,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Mat_encimera
     second: {fileID: 2100000, guid: 73bbb0f29ca33a845bd0307456a0cafe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_especias
+    second: {fileID: 2100000, guid: b68af32e2535b2e4aa8fd8454d3eb8ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_estanteria
+    second: {fileID: 2100000, guid: f151dd9d0fbd32c409d6055acccff6dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_estanterias_v2
+    second: {fileID: 2100000, guid: bdbdae31500a2694d93c8d710957dd6e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -2044,6 +2556,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Mat_objects_00
     second: {fileID: 2100000, guid: 08b1bbb95a5ed0a4891c6e580ed8bb1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_objetos_02
+    second: {fileID: 2100000, guid: 7899f16050ee4d248ae6d67b3dd711bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_objetos_03
+    second: {fileID: 2100000, guid: e4883d28c1ac5804fad4dbdacb362caa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_objetos_04
+    second: {fileID: 2100000, guid: f6c735b545aa82541a72da02e3e9b072, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_paladon
+    second: {fileID: 2100000, guid: 20acd2f05e927014eb41d673f110752b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -2102,8 +2634,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: 'Material #169'
+    second: {fileID: 2100000, guid: e4b9d30fb0701714198a135de8ad49fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: No Name
     second: {fileID: 2100000, guid: fe641befb524352468b5a040b32f9632, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Usv_paladon
+    second: {fileID: 2800000, guid: 07b76b59c13c13b4e9b365eb6d3f382b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
@@ -2112,38 +2654,68 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
+      name: normal_azulejos
+    second: {fileID: 2800000, guid: 7deb94b6cc3a58d4ca816a4a5957ce84, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: seamless_cartoon_styled_water_texture_by_berserkitty_dcatyft
+    second: {fileID: 2800000, guid: fc230fcb5b172a9449b0623c0dc8b6be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: usvs_azulejos
+    second: {fileID: 2800000, guid: 2a4b63a949513f341a28c4e7ff18f17f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
       name: uvs_V3_suelo
-    second: {fileID: 2800000, guid: fcb90f950fc62da4da013a471a5b3c01, type: 3}
+    second: {fileID: 2800000, guid: 07d47b15b64f10a4f8aea1f2e0dcf525, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_armarios_altos
-    second: {fileID: 2800000, guid: 4c4731c61bfe0e44b93173d2b5970246, type: 3}
+    second: {fileID: 2800000, guid: 848112b9a45df6544845df2bd97de5a5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_armarios_bajos
-    second: {fileID: 2800000, guid: 1fcc6fed31438b3468bacbc8c993320b, type: 3}
+    second: {fileID: 2800000, guid: cbd5c632c9bc59147a91d1208b34f878, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_armarios_cajones
-    second: {fileID: 2800000, guid: 245abb8249cbb2241b5a40f22b834cb5, type: 3}
+    second: {fileID: 2800000, guid: 8004b88123f62ab489cb157fdec0429c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_azucarero
+    second: {fileID: 2800000, guid: a06983afa491e494d864a79ff0f8fa75, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_bote_01
+    second: {fileID: 2800000, guid: 1c1b769f3b2410f4fb61bfe485f4ed1e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_campana
-    second: {fileID: 2800000, guid: dea4252aabd4ac74e8db9a3339b6c501, type: 3}
+    second: {fileID: 2800000, guid: c1cac3bf292a4a34c8d33ac58d1c0e0b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_cereales
+    second: {fileID: 2800000, guid: ce7df00771770e04e9b5a1ececf73aac, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_electrodomesticos
-    second: {fileID: 2800000, guid: 357d0b7232b798f42893421b5d776302, type: 3}
+    second: {fileID: 2800000, guid: 5400e87d4e9e4514b85b8c43b18380f0, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_encimera
-    second: {fileID: 2800000, guid: ff4fa71905028e04fba772467b22f460, type: 3}
+    second: {fileID: 2800000, guid: 6dfe67a6e226d5048a4f6b7e5aac2867, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
@@ -2152,13 +2724,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
+      name: uvs_especias
+    second: {fileID: 2800000, guid: 739ebd5c3f93c664085c7adec5446e68, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_estanteria_v2
+    second: {fileID: 2800000, guid: 35ee5269dd66476439c30b9b5f569483, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_estanterias_v2
+    second: {fileID: 2800000, guid: f8fb3881c2aeebd4c830288b922d21ee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
       name: uvs_fregadero
-    second: {fileID: 2800000, guid: 822cf29c117f30f42b0741d0af02ec90, type: 3}
+    second: {fileID: 2800000, guid: e507a74db4a0ad44399b105669fc1b00, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_fuegos
-    second: {fileID: 2800000, guid: c8a07ebdb28339149bf7ca3fe49a7cbd, type: 3}
+    second: {fileID: 2800000, guid: a2de678d5139a764b8a0c7684251545c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
@@ -2172,33 +2759,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
+      name: uvs_marco_v2
+    second: {fileID: 2800000, guid: 72adaa951e8d1be4d90ce1c0cc5ca0c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
       name: uvs_menaje
-    second: {fileID: 2800000, guid: 8f5efb160f312df489a4e2390abacdf5, type: 3}
+    second: {fileID: 2800000, guid: ce0efff5be02ea94e8931900e5b40c6f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_nevera
-    second: {fileID: 2800000, guid: 6e5773519356ef842b378c097a9ea552, type: 3}
+    second: {fileID: 2800000, guid: 21b46a2a0de2a59428ad0651777489fe, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_object_00
-    second: {fileID: 2800000, guid: 8ad8c1900348ae344a185903f1c2dc6a, type: 3}
+    second: {fileID: 2800000, guid: 00ade43ff0c3448489f578540e913929, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_objects_01
-    second: {fileID: 2800000, guid: 5e219412acc7dff4e8e691a54016fc04, type: 3}
+    second: {fileID: 2800000, guid: df37683a55e66fa4aaa0e3fe70ecf8a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_objetos_02
+    second: {fileID: 2800000, guid: fab9d5d601ee7244eb1f8edf23f10b72, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_objetos_03
+    second: {fileID: 2800000, guid: d618fc4b60bf5ce499deca87847c2f3c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_objetos_04
+    second: {fileID: 2800000, guid: f7c7b018d44ff9a4d9e9f45076346a49, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_paredes
-    second: {fileID: 2800000, guid: 5c1c36cbc7a0b0341ad0dce877909fcc, type: 3}
+    second: {fileID: 2800000, guid: 5082ce65a30264c4ea7d6de3e7d53e7d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_topesEncimera
-    second: {fileID: 2800000, guid: 18590c9c49711d44b9ea499d13a8a45f, type: 3}
+    second: {fileID: 2800000, guid: 447b21b0a8080f54196d85bc42a54023, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
