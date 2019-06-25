@@ -906,7 +906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f342f9d5e0205489f10b15cac8a42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vision: 70
   Velocidad: 15
   FuerzaSalto: 50
   tiempoDeEspera: 1
@@ -937,7 +936,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   velocidad: 2
-  altura: 5
+  altura: 8
 --- !u!136 &136837842570054340
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1157,7 +1156,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1318831246343000}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.8
   m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50

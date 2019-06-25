@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class movimiento_objetos : MonoBehaviour
 {
-    public float vision;
+    //public float vision;
     public float Velocidad;
     public float FuerzaSalto = 10.0f;
     public float tiempoDeEspera;
@@ -185,7 +185,7 @@ public class movimiento_objetos : MonoBehaviour
                         break;
                     case "E_Pega(Clone)":
                         Vector3 PosPoff = new Vector3(transform.position.x, -54f, transform.position.z);
-                        vision = 0;
+                        //vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
                         Destroy(this.gameObject);
                         break;
@@ -212,7 +212,7 @@ public class movimiento_objetos : MonoBehaviour
                         break;
                     case "E_Pega(Clone)":
                         Vector3 PosPoff = new Vector3(transform.position.x, -61.5f, transform.position.z);
-                        vision = 0;
+                        //vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, jugador.position, Quaternion.identity);
                         Destroy(this.gameObject);
                         break;
@@ -245,10 +245,10 @@ public class movimiento_objetos : MonoBehaviour
                 Destroy(this.gameObject);
                 break;
 
-            case "jump":
+            /*case "jump":
                 print("tocamos estanteria");
                 rb.isKinematic = true;
-                break;
+                break;*/
 
             case "Fuego":
                 Destroy(this.gameObject);
@@ -265,7 +265,7 @@ public class movimiento_objetos : MonoBehaviour
                 print("jump");
                 //stop = true;
                 Debug.DrawLine(transform.position, target, Color.green);
-                Invoke("saltar", tiempoDeEspera);
+                //Invoke("saltar", tiempoDeEspera);
                 break;
         }
     }
@@ -296,7 +296,7 @@ public class movimiento_objetos : MonoBehaviour
         }
         //Salto = true;
         //stop = false;*/
-        Jump.Jump();
+        //Jump.Jump();
         Debug.DrawLine(transform.position, target, Color.green);
         
         print("saltamos");
