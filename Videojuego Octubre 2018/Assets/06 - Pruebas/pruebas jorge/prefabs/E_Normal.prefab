@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114509148866483080}
   - component: {fileID: 195947177518201728}
   - component: {fileID: 114966163936630026}
+  - component: {fileID: 114577278027794382}
   m_Layer: 0
   m_Name: E_Normal
   m_TagString: Enemigo
@@ -124,13 +125,27 @@ MonoBehaviour:
   Particulasboom: {fileID: 0}
   ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
     type: 2}
---- !u!114 &114966163936630026
+--- !u!114 &114577278027794382
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340248824946342}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a6d9ca13976aa42806dfecd042488b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpTime: 5
+  AddToJumpHeight: 20
+  FinSalto: []
+--- !u!114 &114966163936630026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340248824946342}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f7e64032638054db5720701aaa3f4e, type: 3}
   m_Name: 
@@ -142,8 +157,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  velocidad: 2
-  altura: 8
+  velocidad: 1
+  altura: 10
 --- !u!135 &135126869149643494
 SphereCollider:
   m_ObjectHideFlags: 1

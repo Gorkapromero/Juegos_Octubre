@@ -27,8 +27,9 @@ public class movimiento_objetos : MonoBehaviour
     //Slider vidas;
     Ctrl_Puntuacion Puntuacion;
 
-    /*bool Jvisto = false;
     bool Salto = false;
+    /*bool Jvisto = false;
+    
     bool stop = false;
     bool suelo = false;
     bool grounded = false;*/
@@ -84,6 +85,12 @@ public class movimiento_objetos : MonoBehaviour
         target = jugador.position;
         nav.SetDestination(target);
         Debug.DrawLine(transform.position, target, Color.green);
+
+        if (gameObject.name == "E_Bomb(Clone)")
+        {
+            gObj_ParticulasMecha.SetActive(true);
+        }
+
         /*dist = Vector3.Distance(jugador.position, transform.position);
         if ((dist < vision|| Jvisto==true)&&!stop&&!Salto)   //vemos al jugador antes de saltar
         {
@@ -187,7 +194,7 @@ public class movimiento_objetos : MonoBehaviour
                         Vector3 PosPoff = new Vector3(transform.position.x, -54f, transform.position.z);
                         //vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
-                        Destroy(this.gameObject);
+                        //Destroy(this.gameObject);
                         break;
                 }
                 break;
@@ -262,10 +269,13 @@ public class movimiento_objetos : MonoBehaviour
         switch (other.tag)
         {
             case "jump":
-                print("jump");
-                //stop = true;
-                Debug.DrawLine(transform.position, target, Color.green);
-                //Invoke("saltar", tiempoDeEspera);
+                if(!Salto)
+                {
+                    //GameObject.Find("navmesh").GetComponent<Jump>().Salto(other.name);
+                    GetComponent<Jump>().Salto(other.name);
+                    Salto = true;
+                }
+               
                 break;
         }
     }

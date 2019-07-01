@@ -30,6 +30,9 @@ public class movimiento_personaje : MonoBehaviour
 
     Ctrl_Lavadora Lavadora;
     // Use this for initialization
+
+    public Transform puntoReaparicion;
+
     void Start()
     {
         ActualizarVidas();
@@ -141,7 +144,10 @@ public class movimiento_personaje : MonoBehaviour
         if (isGrounded == true)
         {
             rb.velocity = Vector3.up * FuerzaSalto;
+            bool salto = true;
         }
+
+        GetComponent<Animator>().SetBool("Salto", salto);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -164,6 +170,11 @@ public class movimiento_personaje : MonoBehaviour
 
             case "Pega":
                 velocidad_fin = 30;
+                break;
+
+            case "agua":
+                quitarvida_Vida();
+                Reaparecr();
                 break;
         }
     }
@@ -201,5 +212,10 @@ public class movimiento_personaje : MonoBehaviour
     void ActualizarVidas()
     {
         T_Vidas.text = "HP." + Vidas.ToString();
+    }
+
+    void Reaparecr()
+    {
+        transform.position = puntoReaparicion.position;
     }
 }
