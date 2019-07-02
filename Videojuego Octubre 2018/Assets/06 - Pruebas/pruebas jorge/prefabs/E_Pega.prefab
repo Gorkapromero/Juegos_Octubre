@@ -579,15 +579,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpTime: 5
-  AddToJumpHeight: 20
-  FinSalto: []
+  AddToJumpHeight: 80
 --- !u!114 &114547548368669284
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1220318009931152}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26f7e64032638054db5720701aaa3f4e, type: 3}
   m_Name: 
@@ -599,7 +598,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  velocidad: 1
+  velocidad: 0.6
   altura: 10
 --- !u!136 &136299082068452652
 CapsuleCollider:
@@ -725,13 +724,13 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.8
   m_Speed: 15
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoRepath: 0
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295

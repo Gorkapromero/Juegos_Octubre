@@ -292,7 +292,7 @@ MonoBehaviour:
   target: {fileID: 1232494666}
   targetLookAt: {fileID: 1111361658}
   smoothSpeed: 0.05
-  offset: {x: 0, y: 6, z: -170}
+  offset: {x: 0, y: 30, z: -170}
 --- !u!4 &17729560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400278, guid: 715a5b17bedc5a549b5192a661caf03e,
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   m_AgentTypeID: 0
   m_StartPoint: {x: 0, y: 0, z: -46.2}
   m_EndPoint: {x: 0, y: 4.2, z: -33.2}
-  m_Width: 66.63
+  m_Width: 50.3
   m_CostModifier: -1
   m_Bidirectional: 1
   m_AutoUpdatePosition: 1
@@ -2133,6 +2133,30 @@ Prefab:
     - target: {fileID: 100776, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
       propertyPath: m_TagString
       value: agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 400206, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4834
+      objectReference: {fileID: 0}
+    - target: {fileID: 400206, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1846
+      objectReference: {fileID: 0}
+    - target: {fileID: 400206, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1336
+      objectReference: {fileID: 0}
+    - target: {fileID: 400292, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4896
+      objectReference: {fileID: 0}
+    - target: {fileID: 400292, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1846
+      objectReference: {fileID: 0}
+    - target: {fileID: 400292, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1336
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
@@ -4944,6 +4968,26 @@ Prefab:
     - {fileID: 11100000, guid: f819af173055d04489197137c43a0513, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f819af173055d04489197137c43a0513, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &1010962212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100292, guid: 715a5b17bedc5a549b5192a661caf03e,
+    type: 3}
+  m_PrefabInternal: {fileID: 402991423}
+--- !u!208 &1010962216
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010962212}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.007, y: 0.007, z: 0.011000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.003, y: 0, z: 0.030000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1011695707
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,7 +5065,7 @@ MonoBehaviour:
   m_AgentTypeID: 0
   m_StartPoint: {x: 0, y: -8.64, z: -13}
   m_EndPoint: {x: 0, y: 0, z: 3.9}
-  m_Width: 66.63
+  m_Width: 39.5
   m_CostModifier: -1
   m_Bidirectional: 1
   m_AutoUpdatePosition: 1
@@ -5257,6 +5301,26 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 1
   m_Area: 0
+--- !u!1 &1109184839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100206, guid: 715a5b17bedc5a549b5192a661caf03e,
+    type: 3}
+  m_PrefabInternal: {fileID: 402991423}
+--- !u!208 &1109184843
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1109184839}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.006, y: 0.006, z: 0.027}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.001, y: 0, z: -0.010000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &1111361657
 GameObject:
   m_ObjectHideFlags: 0
@@ -5902,14 +5966,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vidas: 5
   T_Vidas: {fileID: 1211560371}
-  velocidad: 100
+  velocidad: 130
   Finpartida: {fileID: 584273809}
   isGrounded: 0
   checkRadius: 0.2
   groundLayers:
     serializedVersion: 2
     m_Bits: 512
-  FuerzaSalto: 110
+  FuerzaSalto: 150
   DentroFuego: 0
   puntoReaparicion: {fileID: 1553089482}
 --- !u!65 &1232494663
@@ -7867,7 +7931,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653673320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.16, y: -11.4, z: -3.6}
+  m_LocalPosition: {x: -0.22, y: -11.4, z: -3.6}
   m_LocalScale: {x: 0.9306531, y: 0.9306531, z: 0.9306531}
   m_Children: []
   m_Father: {fileID: 1876642846}
@@ -7916,7 +7980,7 @@ MonoBehaviour:
   m_AgentTypeID: 0
   m_StartPoint: {x: 0, y: 4.51, z: -46.2}
   m_EndPoint: {x: 0, y: 0, z: -33.2}
-  m_Width: 66.63
+  m_Width: 50.71
   m_CostModifier: -1
   m_Bidirectional: 1
   m_AutoUpdatePosition: 1
@@ -8499,6 +8563,8 @@ GameObject:
   - component: {fileID: 1872406200}
   - component: {fileID: 1872406201}
   - component: {fileID: 1872406202}
+  - component: {fileID: 1872406204}
+  - component: {fileID: 1872406203}
   m_Layer: 9
   m_Name: colliders
   m_TagString: Suelo
@@ -8543,6 +8609,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 387.00946, y: 95.39202, z: 95.75423}
   m_Center: {x: -338.61148, y: -100.688995, z: -25.470291}
+--- !u!65 &1872406203
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872406199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 107.217514, z: 100}
+  m_Center: {x: -693.43, y: -107.191246, z: -4}
+--- !u!65 &1872406204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872406199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 94.32916, y: 100, z: 100}
+  m_Center: {x: -589.0077, y: -110.8, z: -0.84}
 --- !u!1 &1873822826
 GameObject:
   m_ObjectHideFlags: 0
@@ -9449,9 +9539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: -1.5, z: -13}
+  m_StartPoint: {x: 0, y: -0.9, z: -13}
   m_EndPoint: {x: 0, y: -8.37, z: 3.9}
-  m_Width: 66.63
+  m_Width: 40.7
   m_CostModifier: -1
   m_Bidirectional: 1
   m_AutoUpdatePosition: 1

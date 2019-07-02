@@ -50,7 +50,7 @@ public class movimiento_objetos : MonoBehaviour
     {
         Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
         jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
-        Destino = GameObject.Find("destino").GetComponent<Transform>().position;//new Vector3(0, jugador.position.y, this.transform.position.z);
+        //Destino = GameObject.Find("destino").GetComponent<Transform>().position;//new Vector3(0, jugador.position.y, this.transform.position.z);
         nav = GetComponent<NavMeshAgent>();
         colBomb = GetComponent<CapsuleCollider>();
         energia = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
@@ -191,10 +191,10 @@ public class movimiento_objetos : MonoBehaviour
                     case "E_Bomb(Clone)":
                         break;
                     case "E_Pega(Clone)":
-                        Vector3 PosPoff = new Vector3(transform.position.x, -54f, transform.position.z);
+                        /*Vector3 PosPoff = new Vector3(transform.position.x, -54f, transform.position.z);
                         //vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
-                        //Destroy(this.gameObject);
+                        //Destroy(this.gameObject);*/
                         break;
                 }
                 break;

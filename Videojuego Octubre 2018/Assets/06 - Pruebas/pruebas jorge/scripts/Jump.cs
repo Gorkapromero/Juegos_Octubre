@@ -16,7 +16,7 @@ public class Jump : MonoBehaviour
     public float JumpTime = 0.6f;
     public float AddToJumpHeight;
 
-    public Transform[] FinSalto;
+    //public Transform[] FinSalto;
 
     //Transform _dummyAgent;
     Vector3 JumpStartPoint;
@@ -30,6 +30,8 @@ public class Jump : MonoBehaviour
     bool previousRigidBodyState;
 
     Animator animatorEnemigo;
+
+    bool Point3 = false;
 
     // Use this for initialization
     void Start ()
@@ -72,6 +74,9 @@ public class Jump : MonoBehaviour
                 break;
             case "pos 3":
                 JumpEndPoint = GameObject.Find("FinSalto 3").transform.position;
+                AddToJumpHeight = 10;
+                Point3 = true;
+                JumpTime = 10;
                 break;
             case "pos 4":
                 JumpEndPoint = GameObject.Find("FinSalto 4").transform.position;
@@ -101,7 +106,7 @@ public class Jump : MonoBehaviour
         _jumpPath = Path.ToArray();
         Rigidbody.DOLocalPath(_jumpPath, JumpTime, PathType.CatmullRom).OnComplete(JumpFinished);
 
-        if (gameObject.name!="E_Normal(Clone)")
+        if (gameObject.name != "E_Normal(Clone)" && !Point3)
         {
             animatorEnemigo.SetBool("enElAire", true);
         }
@@ -112,5 +117,6 @@ public class Jump : MonoBehaviour
     {
         NavMeshAgent.enabled = true;
         Rigidbody.isKinematic = previousRigidBodyState;
+        animatorEnemigo.SetBool("enElAire", false);
     }
 }
