@@ -50,6 +50,7 @@ public class AgentLinkMover : MonoBehaviour
     IEnumerator Parabola(NavMeshAgent agent, float height, float duration)
     {
         OffMeshLinkData data = agent.currentOffMeshLinkData;
+        //print("data name " + data);
         Vector3 startPos = agent.transform.position;
         Vector3 endPos = data.endPos + Vector3.up * agent.baseOffset;
         float normalizedTime = 0.0f;

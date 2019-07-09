@@ -102,7 +102,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &114509148866483080
 MonoBehaviour:
@@ -115,10 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f342f9d5e0205489f10b15cac8a42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocidad: 45
-  FuerzaSalto: 100
-  tiempoDeEspera: 1
-  tiempoExplosion: 0
   rb: {fileID: 54313026521070254}
   MalvaPoff: {fileID: 0}
   gObj_ParticulasMecha: {fileID: 0}
@@ -156,7 +152,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  velocidad: 0.6
+  velocidad: 1.2
   altura: 10
 --- !u!135 &135126869149643494
 SphereCollider:
@@ -179,7 +175,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 15
+  m_Speed: 30
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120

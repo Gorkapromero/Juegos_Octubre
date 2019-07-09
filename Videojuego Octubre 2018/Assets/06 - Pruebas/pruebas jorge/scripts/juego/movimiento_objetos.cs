@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class movimiento_objetos : MonoBehaviour
 {
     //public float vision;
-    public float Velocidad;
-    public float FuerzaSalto = 10.0f;
-    public float tiempoDeEspera;
-    public float tiempoExplosion;
+    //public float Velocidad;
+    //public float FuerzaSalto = 10.0f;
+    //public float tiempoDeEspera;
+    //public float tiempoExplosion;
 
     float dist;
 
@@ -233,7 +233,7 @@ public class movimiento_objetos : MonoBehaviour
                 //Puntuacion.Actualizar_enemigos();
                 Muerte();
                 //sumamos energia
-                energia.AñadirEnergia(10);
+                energia.AñadirEnergia(50);
                 break;
 
             case "A_chorro":
@@ -326,7 +326,7 @@ public class movimiento_objetos : MonoBehaviour
     {
         if (gameObject.name == "E_Bomb(Clone)")
         {
-            Velocidad = 15f;
+            //Velocidad = 15f;
         }
     }
 

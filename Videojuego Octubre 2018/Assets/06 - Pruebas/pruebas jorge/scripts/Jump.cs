@@ -76,7 +76,7 @@ public class Jump : MonoBehaviour
                 JumpEndPoint = GameObject.Find("FinSalto 3").transform.position;
                 AddToJumpHeight = 10;
                 Point3 = true;
-                JumpTime = 10;
+                JumpTime = 2;
                 break;
             case "pos 4":
                 JumpEndPoint = GameObject.Find("FinSalto 4").transform.position;

@@ -840,7 +840,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!95 &95301878162178238
 Animator:
@@ -920,10 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f342f9d5e0205489f10b15cac8a42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocidad: 15
-  FuerzaSalto: 50
-  tiempoDeEspera: 1
-  tiempoExplosion: 3
   rb: {fileID: 54568346493768034}
   MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
   gObj_ParticulasMecha: {fileID: 1991097601903890}
@@ -949,7 +945,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  velocidad: 0.6
+  velocidad: 1.2
   altura: 10
 --- !u!136 &136837842570054340
 CapsuleCollider:
@@ -1171,7 +1167,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 15
+  m_Speed: 30
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120

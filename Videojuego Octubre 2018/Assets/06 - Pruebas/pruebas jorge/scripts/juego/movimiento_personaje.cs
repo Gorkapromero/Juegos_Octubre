@@ -33,6 +33,8 @@ public class movimiento_personaje : MonoBehaviour
 
     public Transform puntoReaparicion;
 
+    Animator Animacion;
+
     void Start()
     {
         ActualizarVidas();
@@ -44,6 +46,7 @@ public class movimiento_personaje : MonoBehaviour
         velocidad_fin = velocidad;
         //Col_Personaje = GetComponent<BoxCollider>();
         //var rigidbody = GetComponent<Rigidbody>();
+        Animacion = gameObject.GetComponent<Animator>();
     }
 
 
@@ -102,11 +105,11 @@ public class movimiento_personaje : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 90, 0);
                 //GetComponent<Animator>().Play("Take 001 (1)");
             }
-            if (joystick.Horizontal == 0)
+            /*if (joystick.Horizontal == 0)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 //GetComponent<Animator>().Play("Take 001");
-            }
+            }*/
         }
 
     }
@@ -141,13 +144,15 @@ public class movimiento_personaje : MonoBehaviour
 
     public void saltar()
     {
+        Animacion.SetBool("Salto", true);
         if (isGrounded == true)
         {
             rb.velocity = Vector3.up * FuerzaSalto;
-            bool salto = true;
+            //bool salto = true;
+            
         }
 
-        GetComponent<Animator>().SetBool("Salto", salto);
+        
     }
 
     private void OnTriggerEnter(Collider other)
