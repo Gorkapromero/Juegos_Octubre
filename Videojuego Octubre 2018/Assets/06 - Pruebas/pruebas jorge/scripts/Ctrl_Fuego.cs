@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ctrl_Fuego : MonoBehaviour {
 
-    float TiempoFuego = 5.0f;
+    float TiempoFuego = 6.0f;
     public float TiempoActivacion;
     public float TiempoMinimo;
     public float TiempoMax;
@@ -13,6 +13,7 @@ public class Ctrl_Fuego : MonoBehaviour {
     Animator Animaciones;
     // Use this for initialization
     movimiento_personaje Personaje;
+    public GameObject ParticulasFuego;
 	void Start ()
     {
         Animaciones = GameObject.Find("Elementos_Escenario").GetComponent<Animator>();
@@ -34,7 +35,7 @@ public class Ctrl_Fuego : MonoBehaviour {
 		if(TiempoFuego <= 0)
         {
             TiempoFuego = 5.0f;
-            Animaciones.Play("Anim_FuegoOff");
+            //Animaciones.Play("Anim_FuegoOff");
             TiempoActivacion = Random.Range(TiempoMinimo,TiempoMax);
             FuegoActivado = false;
             Personaje.DentroFuego = false;
@@ -48,22 +49,24 @@ public class Ctrl_Fuego : MonoBehaviour {
 
     void ActivarFuego()
     {
-        Animaciones.Play("Anim_FuegoOn");
+        //Animaciones.Play("Anim_FuegoOn");
+        GameObject fuego = Instantiate(ParticulasFuego);
     }
 
     private void OnTriggerEnter(Collider coli)
     {
-        switch(coli.gameObject.tag)
+        switch (coli.gameObject.tag)
         {
             case "Enemigo":
                 //destruimos enemigo
                 break;
             case "Jugador":
                 //restamos vida
-                if(!Personaje.DentroFuego)
+                if (!Personaje.DentroFuego)
                 {
-                    Personaje.quitarvida_Vida();
                     Personaje.DentroFuego = true;
+                    Personaje.quitarvida_Vida();
+                    
                 }
                 //añadimos particulas de fuego
                 break;

@@ -35,8 +35,20 @@ public class movimiento_personaje : MonoBehaviour
 
     Animator Animacion;
 
+    public float blink;
+    public float immuned;
+    public SkinnedMeshRenderer[] modelRender;
+    public Mesh[] Geometrias;
+    //public SkinnedMeshRenderer model;
+    //public Mesh mesh;
+    private float blinkTime = 0.1f;
+    public float immunedTime;
+
     void Start()
     {
+        //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
+        //model.sharedMesh = null;
+        //model.SetActive(!model.activeSelf);
         ActualizarVidas();
         joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody>();
@@ -112,6 +124,39 @@ public class movimiento_personaje : MonoBehaviour
             }*/
         }
 
+        //BLINK
+        if (immunedTime > 0)
+        {
+            immunedTime -= Time.deltaTime;
+
+            blinkTime -= Time.deltaTime;
+
+            if (blinkTime <= 0)
+            {
+                //model.enabled = !model.enabled;
+                //model.SetActive(!model.activeSelf);
+                for (int i = 0; i < modelRender.Length; i++)
+                {
+                    if (modelRender[i].sharedMesh != null)
+                    {
+                        modelRender[i].sharedMesh = null;
+                    }
+                    else
+                    {
+                        modelRender[i].sharedMesh = Geometrias[i];
+                    }
+                }
+                blinkTime = blink;
+            }
+            if(immunedTime <=0)
+            {
+                for (int i = 0; i < modelRender.Length; i++)
+                {
+                    modelRender[i].sharedMesh = Geometrias[i];
+                }
+                //model.enabled = true;
+            }
+        }
     }
 
     public void saltoAdelante()
@@ -162,7 +207,7 @@ public class movimiento_personaje : MonoBehaviour
             case "Fuego":
                 if (!DentroFuego)
                 {
-                    quitarvida_Vida();
+                    //quitarvida_Vida();
                 }
                 break;
 
@@ -201,17 +246,32 @@ public class movimiento_personaje : MonoBehaviour
 
     public void quitarvida_Vida()
     {
-        Vidas--;
-
-        if (Vidas == 0)
+        if (immunedTime <= 0)
         {
-            Finpartida.SetActive(true);
-            GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
-            GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
-            Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
-        }
+            Vidas--;
 
-        ActualizarVidas();
+            if (Vidas == 0)
+            {
+                Finpartida.SetActive(true);
+                GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
+                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
+                Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
+            }
+            else
+            {
+                print("blink");
+                immunedTime = immuned;
+                //model.enabled = false;
+               //modelRender1.enabled = false;
+               for (int i = 0; i < modelRender.Length; i++)
+               {
+                    modelRender[i].sharedMesh = null;
+                }
+               blinkTime = blink;
+            }
+
+            ActualizarVidas();
+        }
     }
 
     void ActualizarVidas()

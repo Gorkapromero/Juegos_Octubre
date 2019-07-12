@@ -920,6 +920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f342f9d5e0205489f10b15cac8a42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vision: 70
+  tiempoExplosion: 3
   rb: {fileID: 54568346493768034}
   MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
   gObj_ParticulasMecha: {fileID: 1991097601903890}

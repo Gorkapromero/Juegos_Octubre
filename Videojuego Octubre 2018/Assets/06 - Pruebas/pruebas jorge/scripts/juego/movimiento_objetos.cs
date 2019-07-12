@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class movimiento_objetos : MonoBehaviour
 {
-    //public float vision;
+    public float vision;
     //public float Velocidad;
     //public float FuerzaSalto = 10.0f;
     //public float tiempoDeEspera;
-    //public float tiempoExplosion;
+    public float tiempoExplosion;
 
     float dist;
 
@@ -48,6 +48,7 @@ public class movimiento_objetos : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        
         Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
         jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
         //Destino = GameObject.Find("destino").GetComponent<Transform>().position;//new Vector3(0, jugador.position.y, this.transform.position.z);
@@ -91,7 +92,8 @@ public class movimiento_objetos : MonoBehaviour
             gObj_ParticulasMecha.SetActive(true);
         }
 
-        /*dist = Vector3.Distance(jugador.position, transform.position);
+        dist = Vector3.Distance(jugador.position, transform.position);
+        /*
         if ((dist < vision|| Jvisto==true)&&!stop&&!Salto)   //vemos al jugador antes de saltar
         {
             if (!Jvisto)
@@ -148,21 +150,21 @@ public class movimiento_objetos : MonoBehaviour
 
             }
 
-        }
+        }*/
 
-        else if (suelo)   //movimiento en el suelo de bomba
+        if (gameObject.name == "E_Bomb(Clone)")   //movimiento en el suelo de bomba
         {
             if (dist < vision)
             {
                 //nav.speed = 50;
                 //nav.acceleration = 20;
-                target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
-                nav.SetDestination(target);
-                Debug.DrawLine(transform.position, target, Color.green);
+                //target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
+                //nav.SetDestination(target);
+                //Debug.DrawLine(transform.position, target, Color.green);
                                 
                 Invoke("explosion", tiempoExplosion);
             }
-        }*/
+        }
 
     }
     private void OnTriggerEnter(Collider other)
@@ -280,11 +282,11 @@ public class movimiento_objetos : MonoBehaviour
         }
     }
 
-    /*private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, vision);
-    }*/
+    }
 
     void saltar()
     {
