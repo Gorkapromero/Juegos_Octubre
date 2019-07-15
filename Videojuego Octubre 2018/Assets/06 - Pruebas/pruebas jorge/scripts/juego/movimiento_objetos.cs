@@ -334,7 +334,8 @@ public class movimiento_objetos : MonoBehaviour
 
     void Muerte()
     {
-        GameObject ParticulasDead = Instantiate(ParticulasMuerte, transform.position, Quaternion.identity);
+        Vector3 PosicionParticulas = new Vector3(transform.position.x, -52.77079f, transform.position.z);
+        GameObject ParticulasDead = Instantiate(ParticulasMuerte, PosicionParticulas, Quaternion.identity);
         Destroy(this.gameObject);
     }
 
