@@ -74,7 +74,7 @@ Material:
     - _MKEditorShowRimBehavior: 0
     - _MKEditorShowShadowBehavior: 0
     - _MKEditorShowSketchBehavior: 0
-    - _MKEditorShowSpecularBehavior: 0
+    - _MKEditorShowSpecularBehavior: 1
     - _MKEditorShowTranslucentBehavior: 0
     - _Metallic: 0
     - _Mode: 0
@@ -88,7 +88,7 @@ Material:
     - _Shininess: 0.275
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.5
+    - _SpecularIntensity: 0
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
