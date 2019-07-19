@@ -17,11 +17,12 @@ public class movimiento_personaje : MonoBehaviour
     Rigidbody rb;
 
     public bool isGrounded;
+    public bool activarSalto = false;
     //public Collider Col_Personaje;
     //public Transform feetPos;
     public float checkRadius;
     public LayerMask groundLayers;
-    public float FuerzaSalto;
+    public float FuerzaSalto = 100f;
 
     bool Saltando;
     bool salto;
@@ -33,7 +34,7 @@ public class movimiento_personaje : MonoBehaviour
 
     public Transform puntoReaparicion;
 
-    Animator Animacion;
+    Animator animatorProta;
 
     public float blink;
     public float immuned;
@@ -58,7 +59,7 @@ public class movimiento_personaje : MonoBehaviour
         velocidad_fin = velocidad;
         //Col_Personaje = GetComponent<BoxCollider>();
         //var rigidbody = GetComponent<Rigidbody>();
-        Animacion = gameObject.GetComponent<Animator>();
+        animatorProta = gameObject.GetComponent<Animator>();
     }
 
 
@@ -70,10 +71,6 @@ public class movimiento_personaje : MonoBehaviour
         rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
                                          rb.velocity.y,
                                          0);
-        /*if (Saltando) //La variable "Saltando" se activa y desactiva en un evento de la animación de saltar adelante
-        {
-            rb.velocity = new Vector3(joystick.Horizontal * vidas.value * 35, rb.velocity.y, 0);
-        }*/
 
         //Para las animaciones de movimiento
         //***Corrección "temporal" del solapado de animaciones de andar y correr ********
@@ -94,14 +91,20 @@ public class movimiento_personaje : MonoBehaviour
         //Para el salto
         isGrounded = Physics.Raycast(transform.position, -Vector3.up, checkRadius, groundLayers);
 
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded == true && (Input.GetKeyDown(KeyCode.Space) || (activarSalto)))
         {
             rb.velocity = Vector3.up * FuerzaSalto;
+            GetComponent<Animator>().SetBool("Salto", true);
+
+            activarSalto = false;
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("Salto", false);
 
         }
-        bool salto = Input.GetKeyDown(KeyCode.Space);
 
-        GetComponent<Animator>().SetBool("Salto", salto);
+        //  bool salto = Input.GetKeyDown(KeyCode.Space);
 
 
         //Para la orientacion del Prota
@@ -117,13 +120,15 @@ public class movimiento_personaje : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 90, 0);
                 //GetComponent<Animator>().Play("Take 001 (1)");
             }
+
             /*if (joystick.Horizontal == 0)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 //GetComponent<Animator>().Play("Take 001");
             }*/
-        }
 
+        }
+        
         //BLINK
         if (immunedTime > 0)
         {
@@ -178,7 +183,7 @@ public class movimiento_personaje : MonoBehaviour
         print("Saltando = FALSE");
         rb.velocity = new Vector3(0, 0, 0);
         GetComponent<Animator>().SetBool("Salto", false);
-
+        activarSalto = false;
     }
 
     public void Stop()
@@ -189,15 +194,7 @@ public class movimiento_personaje : MonoBehaviour
 
     public void saltar()
     {
-        Animacion.SetBool("Salto", true);
-        if (isGrounded == true)
-        {
-            rb.velocity = Vector3.up * FuerzaSalto;
-            //bool salto = true;
-            
-        }
-
-        
+        activarSalto = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -256,6 +253,8 @@ public class movimiento_personaje : MonoBehaviour
                 GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
                 Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
+
+                GetComponent<Animator>().Play("Muerte");
             }
             else
             {
