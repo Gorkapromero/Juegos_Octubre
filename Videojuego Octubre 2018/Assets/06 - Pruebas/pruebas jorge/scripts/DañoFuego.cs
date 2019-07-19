@@ -18,10 +18,10 @@ public class DañoFuego : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!ps.IsAlive())
+        /*if (!ps.IsAlive())
         {
             GameObject.Destroy(this.gameObject);
-        }
+        }*/
     }
     private void OnTriggerEnter(Collider coli)
     {
