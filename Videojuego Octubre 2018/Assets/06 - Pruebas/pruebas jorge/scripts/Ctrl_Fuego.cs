@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ctrl_Fuego : MonoBehaviour {
 
-    float TiempoFuego = 6.0f;
+    float TiempoFuego = 2.0f;
     public float TiempoActivacion;
     public float TiempoMinimo;
     public float TiempoMax;
@@ -34,11 +34,12 @@ public class Ctrl_Fuego : MonoBehaviour {
         }
 		if(TiempoFuego <= 0)
         {
-            TiempoFuego = 5.0f;
+            TiempoFuego = 2.0f;
             //Animaciones.Play("Anim_FuegoOff");
             TiempoActivacion = Random.Range(TiempoMinimo,TiempoMax);
             FuegoActivado = false;
             Personaje.DentroFuego = false;
+            Destroy(GameObject.FindGameObjectWithTag("Fuego"));
         }
         else if(FuegoActivado)
         {

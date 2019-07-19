@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Ctrl_Habilidades : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         public GameObject habilidad;
         public float Energia_necesaria;
         public GameObject tiempo;
+        public EventTrigger Boton;
         //public Text tiempo_texto;
     }
 
@@ -88,6 +90,7 @@ public class Ctrl_Habilidades : MonoBehaviour
             {
                 print("activamos");
                 tablahabilidades[1].tiempo.SetActive(false);
+                tablahabilidades[1].Boton.enabled = true;
             }
             /*
             tablahabilidades[1].tiempo_texto.text = t1.ToString("f0");
@@ -105,6 +108,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         else
         {
             tablahabilidades[1].tiempo.SetActive(true);
+            tablahabilidades[1].Boton.enabled = false;
         }
 
 
@@ -117,6 +121,7 @@ public class Ctrl_Habilidades : MonoBehaviour
             {
                 print("activamos");
                 tablahabilidades[2].tiempo.SetActive(false);
+                tablahabilidades[2].Boton.enabled = true;
 
             }
             /*
@@ -138,6 +143,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         else
         {
             tablahabilidades[2].tiempo.SetActive(true);
+            tablahabilidades[2].Boton.enabled = false;
         }
 
         //ACTIVAMOS ESCUDO SI TENEMOS ENERGIA
@@ -148,6 +154,7 @@ public class Ctrl_Habilidades : MonoBehaviour
             {
                 print("activamos");
                 tablahabilidades[3].tiempo.SetActive(false);
+                tablahabilidades[3].Boton.enabled = true;
             }
             /*
             tablahabilidades[3].tiempo_texto.text = t3.ToString("f0");
@@ -165,6 +172,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         else
         {
             tablahabilidades[3].tiempo.SetActive(true);
+            tablahabilidades[3].Boton.enabled = false;
         }
     }
 
@@ -185,7 +193,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         //SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
 
         GameObject Objeto = Instantiate(tablahabilidades[1].habilidad, SpawnPosition, tablahabilidades[1].habilidad.transform.rotation);
-        GameObject.Find("A_chorro").GetComponent<Button>().enabled = false;
+        //GameObject.Find("A_chorro").GetComponent<Button>().enabled = false;
 
         Invoke("move", 1f);
 
@@ -202,7 +210,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
 
         GameObject Objeto = Instantiate(tablahabilidades[2].habilidad, SpawnPosition, Quaternion.identity);
-        GameObject.Find("A_Explosion").GetComponent<Button>().enabled = false;
+        //GameObject.Find("A_Explosion").GetComponent<Button>().enabled = false;
 
         //GameObject ParticulasExplosionInstancia = Instantiate(ParticulasExplosion, transform.position, transform.rotation);
         //gastamos energia
