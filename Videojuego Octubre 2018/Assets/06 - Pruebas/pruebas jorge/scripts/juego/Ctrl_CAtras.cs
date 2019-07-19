@@ -12,6 +12,7 @@ public class Ctrl_CAtras : MonoBehaviour {
     private bool ActivarCuenta = false;
     public float InicioCuenta;
 
+    private float Cuenta;
     Timer tiempo;
 
     // Use this for initialization
@@ -26,7 +27,7 @@ public class Ctrl_CAtras : MonoBehaviour {
     {
         if(ActivarCuenta == true)
         {
-            Tiempo = -Time.time + InicioCuenta;
+            Tiempo = -Time.time + Cuenta;
 
             T_Timer.text = Tiempo.ToString("f0");
 
@@ -48,6 +49,7 @@ public class Ctrl_CAtras : MonoBehaviour {
     void iniciarCuenta()
     {
         //Grupo_cuenta.SetActive(true);
+        Cuenta = Time.time + InicioCuenta;
         GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
         ActivarCuenta = true;
     }

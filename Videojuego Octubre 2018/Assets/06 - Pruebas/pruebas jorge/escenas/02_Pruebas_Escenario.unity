@@ -2075,9 +2075,46 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.393
       objectReference: {fileID: 0}
+    - target: {fileID: 400182, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1934
+      objectReference: {fileID: 0}
+    - target: {fileID: 400182, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0778
+      objectReference: {fileID: 0}
+    - target: {fileID: 400184, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1934
+      objectReference: {fileID: 0}
+    - target: {fileID: 400184, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0775
+      objectReference: {fileID: 0}
+    - target: {fileID: 100184, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715a5b17bedc5a549b5192a661caf03e, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &402991424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100184, guid: 715a5b17bedc5a549b5192a661caf03e,
+    type: 3}
+  m_PrefabInternal: {fileID: 402991423}
+--- !u!65 &402991425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402991424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040988263, y: 0.023294846, z: 0.0038113184}
+  m_Center: {x: 0.0005746827, y: 0.012147847, z: 0.0011710613}
 --- !u!1 &433857129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5815,7 +5852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vidas: 5
   T_Vidas: {fileID: 1211560371}
-  velocidad: 130
+  velocidad: 80
   Finpartida: {fileID: 584273809}
   isGrounded: 0
   checkRadius: 0.2
@@ -9939,11 +9976,11 @@ MonoBehaviour:
     - nombre: Enemigo normal
       enemigo: {fileID: 1340248824946342, guid: 12cf407eba09fea44b0770eb362b916f,
         type: 2}
-      rareza: 80
+      rareza: 90
     - nombre: Enemigo Bomba
       enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f,
         type: 2}
-      rareza: 50
+      rareza: 30
     - nombre: Enemigo pegajoso
       enemigo: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396,
         type: 2}
@@ -9955,7 +9992,7 @@ MonoBehaviour:
       enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f,
         type: 2}
       rareza: 100
-  NumeroEnemigos: 2
+  NumeroEnemigos: 5
   TiempoDescanso: 5
   TextoOleadas: {fileID: 1191418058}
 --- !u!1 &2119929442

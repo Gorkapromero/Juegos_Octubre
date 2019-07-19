@@ -113,7 +113,7 @@ public class Ctrl_oleadas : MonoBehaviour
 
         for (int i = 0; i < NumeroEnemigos; i++)
         {
-            crear(_oleada);//ir a crear enemigo del otro script
+            crear(_oleada);
             print("enemigo: " + i);
             yield return new WaitForSecondsRealtime(tiempoCreacion);
         }
