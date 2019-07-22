@@ -318,7 +318,28 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.28132388
+        functionName: desactivarAtaqueBasico
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7664398
+        functionName: desactivarAtaqueBasico
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.81179136
+        functionName: desactivarAtaqueBasico
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -584,7 +605,31 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.9550827
+        functionName: desactivarAtaqueBasico
+        data: 
+        objectReferenceParameter: {fileID: 1694707733641096, guid: a2ad94a543deda746a5cb81f5b543601,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.99618894
+        functionName: desactivarAtaqueBasico
+        data: 
+        objectReferenceParameter: {fileID: 1694707733641096, guid: a2ad94a543deda746a5cb81f5b543601,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.91383237
+        functionName: desactivarAtaqueBasico
+        data: 
+        objectReferenceParameter: {fileID: 1694707733641096, guid: a2ad94a543deda746a5cb81f5b543601,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -621,7 +666,7 @@ ModelImporter:
       name: FinSalto
       takeName: Take 001
       firstFrame: 173
-      lastFrame: 185
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
