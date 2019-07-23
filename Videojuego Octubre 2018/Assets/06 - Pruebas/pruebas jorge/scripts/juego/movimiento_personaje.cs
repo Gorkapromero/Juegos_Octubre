@@ -16,6 +16,7 @@ public class movimiento_personaje : MonoBehaviour
     public GameObject Finpartida;
     Rigidbody rb;
 
+    public bool atacando;
     public bool isGrounded;
     public bool activarSalto = false;
     //public Collider Col_Personaje;
@@ -45,6 +46,8 @@ public class movimiento_personaje : MonoBehaviour
     private float blinkTime = 0.1f;
     public float immunedTime;
 
+    Ctrl_Habilidades script_ctl_habilidades;
+
     void Start()
     {
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
@@ -60,33 +63,49 @@ public class movimiento_personaje : MonoBehaviour
         //Col_Personaje = GetComponent<BoxCollider>();
         //var rigidbody = GetComponent<Rigidbody>();
         animatorProta = gameObject.GetComponent<Animator>();
+
+        script_ctl_habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
+
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
-        //velocidad_fin = vidas.value * 20;
-        rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
+        //Para las animaciones de movimiento
+        if (!script_ctl_habilidades.AtaqueBasico)
+        {
+            //velocidad_fin = vidas.value * 20;
+            rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
                                          rb.velocity.y,
                                          0);
+            
+            print("movimiento activo");
 
-        //Para las animaciones de movimiento
-        //***Corrección "temporal" del solapado de animaciones de andar y correr ********
-        if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
-        {
-            GetComponent<Animator>().SetFloat("Speed", 0.34f);
+            //***Corrección "temporal" del solapado de animaciones de andar y correr ********
+            if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
+            {
+                GetComponent<Animator>().SetFloat("Speed", 0.34f);
+            }
+            else if (joystick.Horizontal > -0.62 && joystick.Horizontal < -0.34)
+            {
+                GetComponent<Animator>().SetFloat("Speed", -0.34f);
+            }
+            //*********************************************************************************
+            else
+            {
+                GetComponent<Animator>().SetFloat("Speed", (float)System.Math.Round(joystick.Horizontal, 2));
+            }
         }
-        else if (joystick.Horizontal > -0.62 && joystick.Horizontal < -0.34)
-        {
-            GetComponent<Animator>().SetFloat("Speed", -0.34f);
-        }
-        //*********************************************************************************
         else
         {
-            GetComponent<Animator>().SetFloat("Speed", (float)System.Math.Round(joystick.Horizontal, 2));
+            print("movimiento desactivado");
+
+            GetComponent<Animator>().SetFloat("Speed", 0.0f);
+
         }
+
 
         //Para el salto
         isGrounded = Physics.Raycast(transform.position, -Vector3.up, checkRadius, groundLayers);
@@ -94,13 +113,13 @@ public class movimiento_personaje : MonoBehaviour
         if (isGrounded == true && (Input.GetKeyDown(KeyCode.Space) || (activarSalto)))
         {
             rb.velocity = Vector3.up * FuerzaSalto;
-            GetComponent<Animator>().SetBool("Salto", true);
+            animatorProta.SetBool("Salto", true);
 
             activarSalto = false;
         }
         else
         {
-            GetComponent<Animator>().SetBool("Salto", false);
+            animatorProta.SetBool("Salto", false);
 
         }
 
@@ -173,7 +192,7 @@ public class movimiento_personaje : MonoBehaviour
 
     public void lanzarCafé()
     {
-        GetComponent<Animator>().Play("Habilidad_LanzarCafé");
+        animatorProta.Play("Habilidad_LanzarCafé");
 
     }
 
@@ -182,20 +201,28 @@ public class movimiento_personaje : MonoBehaviour
         Saltando = false;
         print("Saltando = FALSE");
         rb.velocity = new Vector3(0, 0, 0);
-        GetComponent<Animator>().SetBool("Salto", false);
+        animatorProta.SetBool("Salto", false);
         activarSalto = false;
     }
 
     public void Stop()
     {
         rb.velocity = new Vector3(0, 0, 0);
-        GetComponent<Animator>().Play("Caida_Atras");
+        animatorProta.Play("Caida_Atras");
     }
 
     public void saltar()
     {
         activarSalto = true;
     }
+
+    public void desactivarAtaqueBasico()
+    {
+        animatorProta.SetBool("LanzarPajarita", false);
+        script_ctl_habilidades.AtaqueBasico = false;
+
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -254,7 +281,7 @@ public class movimiento_personaje : MonoBehaviour
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
                 Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
 
-                GetComponent<Animator>().Play("Muerte");
+                animatorProta.Play("Muerte");
             }
             else
             {

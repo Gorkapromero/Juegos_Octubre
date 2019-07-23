@@ -29,7 +29,7 @@ public class Ctrl_Habilidades : MonoBehaviour
     public GameObject ParticulasSalpicadura;
 
 
-    bool t_basico = false;
+    public bool t_basico = false;
     bool t_chorro = false;
     bool t_escudo = false;
     bool t_explosion = false;
@@ -55,32 +55,44 @@ public class Ctrl_Habilidades : MonoBehaviour
         tablahabilidades[3].tiempo.SetActive(true);
 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+
+    private void FixedUpdate()
     {
-        if (t_basico == true)
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            print("tiempo basico on");
-            /*if (tablahabilidades[0].tiempo.activeSelf == false)
-            {
-                print("activamos");
-                tablahabilidades[0].tiempo.SetActive(true);
-            }
-            tablahabilidades[1].tiempo_texto.text = t1.ToString("f0");*/
-            t0 -= Time.deltaTime;
-            //print(t1);
-            if (t0 <= 0)
-            {
-                //t_chorro = false;
-                t0 = Tiempo_ABasico;
-                //tablahabilidades[0].tiempo.SetActive(false);
-                GameObject.Find("A_Basico").GetComponent<Button>().enabled = true;
-		
-            }
-
+            Ataque_Basico();
         }
+    }
+    // Update is called once per frame
+    void Update ()
+    {
 
+                    /*
+                            if (t_basico == true)
+                            {
+                                print("tiempo basico on");
+                                /*if (tablahabilidades[0].tiempo.activeSelf == false)
+                                {
+                                    print("activamos");
+                                    tablahabilidades[0].tiempo.SetActive(true);
+                                }
+                                tablahabilidades[1].tiempo_texto.text = t1.ToString("f0");
+                                t0 -= Time.deltaTime;
+                                //print(t1);
+                                if (t0 <= 0)
+                                {
+                                    //t_chorro = false;
+                                    t0 = Tiempo_ABasico;
+                                    //tablahabilidades[0].tiempo.SetActive(false);
+                                    GameObject.Find("A_Basico").GetComponent<Button>().enabled = true;
+                                    print("FIN ATAQUE BASICO");
+		
+                                }
+
+                            }
+
+                    */
 
         //ACTIVAMOS CHORRO SI TENEMOS ENERGIA
         if (tablahabilidades[1].Energia_necesaria <= Energia_Total.Energia)
@@ -179,10 +191,14 @@ public class Ctrl_Habilidades : MonoBehaviour
     public void Ataque_Basico()
     {
         t_basico = true;
-        //AtaqueBasico = true;
-        GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().Play("LanzarPajarita");
-        GameObject.Find("A_Basico").GetComponent<Button>().enabled = false;
+        AtaqueBasico = true;
+        GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().SetBool("LanzarPajarita",true);
+
+      //  Invoke("desactivarAtaqueBasico", 0.1f);
+
     }
+
+ 
 
     public void chorro()
     {
