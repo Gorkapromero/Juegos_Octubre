@@ -7,6 +7,7 @@ public class Ctrl_AExplosion : MonoBehaviour
     SphereCollider colisionador;
 
     public float tiempo;
+    public float RadioMax;
 	 
 
 
@@ -23,19 +24,9 @@ public class Ctrl_AExplosion : MonoBehaviour
         float velocidad = 150 / tiempo;
         colisionador.radius += velocidad * Time.deltaTime;
 
-        //transform.localScale += transform.localScale * velocidad * Time.deltaTime;
-	}
-
-    private void OnTriggerEnter(Collider coli)
-    {
-        print(coli.gameObject.name);
-        switch (coli.gameObject.name)
+        if(colisionador.radius >= RadioMax)
         {
-            case "Top":                           //objeto toca techo
-                print("chocamos con " + coli);
-                Destroy(this.gameObject);
-                break;
-
+            Destroy(this.gameObject);
         }
-    }
+	}
 }
