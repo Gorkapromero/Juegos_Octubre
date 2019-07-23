@@ -145,6 +145,14 @@ ModelImporter:
     100278: Plane028
     100280: Sphere002
     100282: Torus001
+    100284: Group005
+    100286: plane_nave_05
+    100288: plane_nave_06
+    100290: plane_nave_07
+    100292: plane_nave_08
+    100294: plano_nave_01
+    100296: plano_nave_02
+    100298: plano_nave_03
     400000: Box022
     400002: Box055
     400004: Box056
@@ -287,6 +295,14 @@ ModelImporter:
     400278: Plane028
     400280: Sphere002
     400282: Torus001
+    400284: Group005
+    400286: plane_nave_05
+    400288: plane_nave_06
+    400290: plane_nave_07
+    400292: plane_nave_08
+    400294: plano_nave_01
+    400296: plano_nave_02
+    400298: plano_nave_03
     2100000: Mat_nevera
     2100002: Mat_electrodomesticos_fuegos
     2100004: 'Material #158'
@@ -443,6 +459,13 @@ ModelImporter:
     2300276: Plane028
     2300278: Sphere002
     2300280: Torus001
+    2300282: plane_nave_05
+    2300284: plane_nave_06
+    2300286: plane_nave_07
+    2300288: plane_nave_08
+    2300290: plano_nave_01
+    2300292: plano_nave_02
+    2300294: plano_nave_03
     3300000: Box022
     3300002: Box055
     3300004: Box056
@@ -584,6 +607,13 @@ ModelImporter:
     3300276: Plane028
     3300278: Sphere002
     3300280: Torus001
+    3300282: plane_nave_05
+    3300284: plane_nave_06
+    3300286: plane_nave_07
+    3300288: plane_nave_08
+    3300290: plano_nave_01
+    3300292: plano_nave_02
+    3300294: plano_nave_03
     4300000: Box022
     4300002: Cylinder173
     4300004: pCube049
@@ -725,6 +755,13 @@ ModelImporter:
     4300276: Box941
     4300278: Box942
     4300280: Box962
+    4300282: plano_nave_01
+    4300284: plano_nave_02
+    4300286: plano_nave_03
+    4300288: plane_nave_08
+    4300290: plane_nave_07
+    4300292: plane_nave_06
+    4300294: plane_nave_05
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
