@@ -42,12 +42,12 @@ Material:
     - _MKEditorShowSpecularBehavior: 1
     - _MKEditorShowTranslucentBehavior: 0
     - _OutlineSize: 0.0009
-    - _RimIntensity: 0.33
-    - _RimSize: 0.78
-    - _RimSmoothness: 0.77
+    - _RimIntensity: 0.227
+    - _RimSize: 0.11
+    - _RimSmoothness: 1
     - _ShadowIntensity: 0.58
     - _Shininess: 0.06
-    - _SpecularIntensity: 0.45
+    - _SpecularIntensity: 0.128
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}

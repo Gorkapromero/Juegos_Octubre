@@ -81,14 +81,14 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineSize: 0.0006
     - _Parallax: 0.02
-    - _RimIntensity: 0.5
-    - _RimSize: 0.7
-    - _RimSmoothness: 0.79
+    - _RimIntensity: 0.123
+    - _RimSize: 0
+    - _RimSmoothness: 0
     - _ShadowIntensity: 0.92
-    - _Shininess: 0.06
+    - _Shininess: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.57
+    - _SpecularIntensity: 0
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

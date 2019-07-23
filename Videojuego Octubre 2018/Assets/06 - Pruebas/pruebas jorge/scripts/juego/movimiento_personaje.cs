@@ -25,7 +25,7 @@ public class movimiento_personaje : MonoBehaviour
     public LayerMask groundLayers;
     public float FuerzaSalto = 100f;
 
-    bool Saltando;
+    public bool DobleSalto;
     bool salto;
 
     public bool DentroFuego;
@@ -46,6 +46,11 @@ public class movimiento_personaje : MonoBehaviour
     private float blinkTime = 0.1f;
     public float immunedTime;
 
+    public bool bloquearControl;
+
+    public GameObject ParticulasAterrizaje;
+    public GameObject ParticulasAtaqueAereo;
+    
     Ctrl_Habilidades script_ctl_habilidades;
 
     void Start()
@@ -74,15 +79,13 @@ public class movimiento_personaje : MonoBehaviour
     void Update()
     {
         //Para las animaciones de movimiento
-        if (!script_ctl_habilidades.AtaqueBasico)
+        if (script_ctl_habilidades.AtaqueBasico == false && bloquearControl == false)
         {
             //velocidad_fin = vidas.value * 20;
             rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
                                          rb.velocity.y,
                                          0);
             
-            print("movimiento activo");
-
             //***Corrección "temporal" del solapado de animaciones de andar y correr ********
             if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
             {
@@ -110,29 +113,62 @@ public class movimiento_personaje : MonoBehaviour
         //Para el salto
         isGrounded = Physics.Raycast(transform.position, -Vector3.up, checkRadius, groundLayers);
 
-        if (isGrounded == true && (Input.GetKeyDown(KeyCode.Space) || (activarSalto)))
+        if (isGrounded == true) //Mientras el prota está en el suelo...
         {
-            rb.velocity = Vector3.up * FuerzaSalto;
-            animatorProta.SetBool("Salto", true);
+            if (Input.GetKeyDown(KeyCode.Space) || (activarSalto)) {
+                //particulas de salto
+                GameObject ParticulasDobleSalto = Instantiate(ParticulasAterrizaje, transform.position, Quaternion.identity);
 
-            activarSalto = false;
+                rb.velocity = Vector3.up * FuerzaSalto;
+                animatorProta.SetBool("Salto", true);
+
+                activarSalto = false;
+                animatorProta.SetBool("AtaqueAereo", false);
+            }
+
+            DobleSalto = false;
+            
         }
-        else
+       
+        //Si el prota no está en el suelo...
+        if (isGrounded == false)
         {
+            if (Input.GetKeyDown(KeyCode.Space) || (activarSalto))
+            {
+
+                if (!DobleSalto)
+                {
+                    print("Doble Salto");
+                    animatorProta.Play("DobleSalto");
+                    GameObject ParticulasDobleSalto = Instantiate(ParticulasAterrizaje, transform.position, Quaternion.identity);
+
+                    rb.velocity = Vector3.up * FuerzaSalto / 1.2f;
+                }
+
+                activarSalto = false;
+                DobleSalto = true;
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftControl) || script_ctl_habilidades.AtaqueBasico)
+            {
+                GameObject P_AtaqueAereo = Instantiate(ParticulasAtaqueAereo, transform.position, Quaternion.identity);
+                animatorProta.Play("AtaqueAereo");
+
+                script_ctl_habilidades.AtaqueBasico = false;
+
+            }
             animatorProta.SetBool("Salto", false);
 
         }
 
-        //  bool salto = Input.GetKeyDown(KeyCode.Space);
-
 
         //Para la orientacion del Prota
-        if (!Saltando)
+        if (isGrounded == true && !script_ctl_habilidades.AtaqueBasico)
         {
             if (joystick.Horizontal < 0)
             {
                 transform.eulerAngles = new Vector3(0, -90, 0);
-                //GetComponent<Animator>().Play("Take 001 (1)");
             }
             if (joystick.Horizontal > 0)
             {
@@ -185,8 +221,8 @@ public class movimiento_personaje : MonoBehaviour
 
     public void saltoAdelante()
     {
-        Saltando = true;
-        print("Saltando = TRUE");
+        //Saltando = true;
+        //print("Saltando = TRUE");
 
     }
 
@@ -198,8 +234,8 @@ public class movimiento_personaje : MonoBehaviour
 
     public void finSaltoAdelante()
     {
-        Saltando = false;
-        print("Saltando = FALSE");
+        //Saltando = false;
+        //print("Saltando = FALSE");
         rb.velocity = new Vector3(0, 0, 0);
         animatorProta.SetBool("Salto", false);
         activarSalto = false;
@@ -221,8 +257,23 @@ public class movimiento_personaje : MonoBehaviour
         animatorProta.SetBool("LanzarPajarita", false);
         script_ctl_habilidades.AtaqueBasico = false;
 
+        //Aumentamos el tamaño del collider de la pajarita
+        BoxCollider colliderPajarita = GameObject.Find("Rigging_Mug_v1_1_ctl_pajarita").GetComponent<BoxCollider>();
+        colliderPajarita.size = new Vector3(colliderPajarita.size.x, colliderPajarita.size.y, 1.0f);
+
     }
 
+    public void bloquearControles()
+    {
+       bloquearControl = true;
+
+    }
+
+    public void desbloquearControles()
+    {
+        bloquearControl = false;
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {

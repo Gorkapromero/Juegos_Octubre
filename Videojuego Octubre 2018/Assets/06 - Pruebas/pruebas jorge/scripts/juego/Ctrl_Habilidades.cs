@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Ctrl_Habilidades : MonoBehaviour
 {
     public bool AtaqueBasico;
+    public bool AtaqueAereo;
     public float Tiempo_ABasico;
     
 
@@ -41,9 +42,8 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     Enegia Energia_Total;
 
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         Energia_Total = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
         /*t0 = tablahabilidades[0].T_enfriamiento;
@@ -194,7 +194,10 @@ public class Ctrl_Habilidades : MonoBehaviour
         AtaqueBasico = true;
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().SetBool("LanzarPajarita",true);
 
-      //  Invoke("desactivarAtaqueBasico", 0.1f);
+
+        //Aumentamos el tamaño del collider de la pajarita
+        BoxCollider colliderPajarita = GameObject.Find("Rigging_Mug_v1_1_ctl_pajarita").GetComponent<BoxCollider>();
+        colliderPajarita.size = new Vector3(colliderPajarita.size.x, colliderPajarita.size.y, 3.0f);
 
     }
 
