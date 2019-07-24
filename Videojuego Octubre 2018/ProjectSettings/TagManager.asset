@@ -18,6 +18,7 @@ TagManager:
   - agua
   - lavadora
   - Pega
+  - caida
   layers:
   - Default
   - TransparentFX

@@ -50,8 +50,11 @@ public class movimiento_personaje : MonoBehaviour
 
     public GameObject ParticulasAterrizaje;
     public GameObject ParticulasAtaqueAereo;
+    public GameObject ParticulasCaidaDobleSalto;
     
     Ctrl_Habilidades script_ctl_habilidades;
+
+    public Collider CollDobleSalto;
 
     void Start()
     {
@@ -142,7 +145,8 @@ public class movimiento_personaje : MonoBehaviour
                     animatorProta.Play("DobleSalto");
                     GameObject ParticulasDobleSalto = Instantiate(ParticulasAterrizaje, transform.position, Quaternion.identity);
 
-                    rb.velocity = Vector3.up * FuerzaSalto / 1.2f;
+                    rb.velocity = Vector3.up * (FuerzaSalto * 1.2f);
+                    Invoke("caidaDobleSalto", 0.5f);
                 }
 
                 activarSalto = false;
@@ -359,5 +363,20 @@ public class movimiento_personaje : MonoBehaviour
     void Reaparecr()
     {
         transform.position = puntoReaparicion.position;
+    }
+
+    void caidaDobleSalto()
+    {
+        CollDobleSalto.enabled = true;
+        rb.velocity = Vector3.up * (-FuerzaSalto * 4);
+        
+        
+        Invoke("apagarColliderSalto", 0.1f);
+    }
+
+    void apagarColliderSalto()
+    {
+        GameObject ParticulasCaidadoblesalto = Instantiate(ParticulasCaidaDobleSalto, transform.position, Quaternion.identity);
+        CollDobleSalto.enabled = false;
     }
 }

@@ -84,7 +84,10 @@ public class movimiento_objetos : MonoBehaviour
 
         //target = new Vector3(jugador.position.x,jugador.position.y,this.transform.position.z);
         target = jugador.position;
-        nav.SetDestination(target);
+        if (nav.enabled)
+        {
+            nav.SetDestination(target);
+        }
         Debug.DrawLine(transform.position, target, Color.green);
 
         if (gameObject.name == "E_Bomb(Clone)")
@@ -261,6 +264,10 @@ public class movimiento_objetos : MonoBehaviour
 
             case "Fuego":
                 Destroy(this.gameObject);
+                break;
+
+            case "caida":
+                Muerte();
                 break;
         }
     }

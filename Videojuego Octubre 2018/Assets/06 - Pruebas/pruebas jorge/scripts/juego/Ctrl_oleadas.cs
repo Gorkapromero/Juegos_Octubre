@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Ctrl_oleadas : MonoBehaviour
 {
     public Transform[] posiciones;
+    //public Transform[] posicionesActivas;
+    public List<Transform> PosicionesActivas;
+    //int pos;
     //public GameObject Objetos;
     public float tiempoCreacion = 2f;
 
@@ -47,11 +50,15 @@ public class Ctrl_oleadas : MonoBehaviour
     float total = 0;
 
     public Text TextoOleadas;
+    public Transform jugador;
+
+    public float rangoDistancia;
     // Use this for initialization
     void Start()
     {
         //Enemigos = gameObject.GetComponent<crar_objeto>();
         //WaveCountdown = TiempoDescanso;
+        //jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
         ActualizarTextoOleadas();
     }
 
@@ -137,6 +144,23 @@ public class Ctrl_oleadas : MonoBehaviour
 
     public void crear(oleada _Oleada)
     {
+        PosicionesActivas = new List<Transform>();
+        for(int x = 0; x < posiciones.Length;x++)
+        {
+            float dist = Vector3.Distance(posiciones[x].position, jugador.position);
+            if(x<=4&&rangoDistancia>dist)
+            {
+                /*posicionesActivas[pos] = posiciones[x];
+                pos++;*/
+                PosicionesActivas.Add(posiciones[x]);
+            }
+            else if(x>4&&rangoDistancia<dist)
+            {
+                /*posicionesActivas[pos] = posiciones[x];
+                pos++;*/
+                PosicionesActivas.Add(posiciones[x]);
+            }
+        }
         print("enemigo");
         total = 0;
         for (int i = 0; i < _Oleada.enemigos.Length; i++)
@@ -151,8 +175,9 @@ public class Ctrl_oleadas : MonoBehaviour
         {
             if (randomPoint < _Oleada.enemigos[j].rareza)
             {
-                int spawnPoint = Random.Range(0, posiciones.Length);
-                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, posiciones[spawnPoint].position, Quaternion.identity);
+                int spawnPoint = Random.Range(0, PosicionesActivas.Count);
+                //float dist = Vector3.Distance(posiciones[spawnPoint].position, jugador.position);
+                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, PosicionesActivas[spawnPoint].position, Quaternion.identity);
                 return;
             }
             else
@@ -166,6 +191,12 @@ public class Ctrl_oleadas : MonoBehaviour
     public void ActualizarTextoOleadas()
     {
         TextoOleadas.text = (ContadorOleadas + 1).ToString();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(jugador.position, rangoDistancia);
     }
 
 }
