@@ -56,6 +56,8 @@ public class movimiento_personaje : MonoBehaviour
 
     public Collider CollDobleSalto;
 
+    Animator animatorCamara;
+
     void Start()
     {
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
@@ -74,7 +76,7 @@ public class movimiento_personaje : MonoBehaviour
 
         script_ctl_habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
 
-
+        animatorCamara = GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>();
     }
 
 
@@ -297,7 +299,7 @@ public class movimiento_personaje : MonoBehaviour
                 }
                 break;
 
-            case "Pega":
+            case "miel":
                 velocidad_fin = 30;
                 break;
 
@@ -316,7 +318,7 @@ public class movimiento_personaje : MonoBehaviour
                 velocidad_fin = velocidad;
                 break;
 
-            case "Pega":
+            case "miel":
                 velocidad_fin = velocidad;
                 break;
 
@@ -337,6 +339,12 @@ public class movimiento_personaje : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
 
                 animatorProta.Play("Muerte");
+                velocidad_fin = 0;
+                GameObject[] Enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+                for(int i = 0;i<Enemigos.Length;i++)
+                {
+                    Destroy(Enemigos[i]);
+                }
             }
             else
             {
@@ -378,5 +386,6 @@ public class movimiento_personaje : MonoBehaviour
     {
         GameObject ParticulasCaidadoblesalto = Instantiate(ParticulasCaidaDobleSalto, transform.position, Quaternion.identity);
         CollDobleSalto.enabled = false;
+        animatorCamara.Play("animShake_DobleSalto");
     }
 }

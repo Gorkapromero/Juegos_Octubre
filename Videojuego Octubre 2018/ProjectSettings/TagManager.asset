@@ -20,6 +20,9 @@ TagManager:
   - Pega
   - caida
   - ShakeCamara
+  - miel
+  - EstropajoOFF
+  - estropajo
   layers:
   - Default
   - TransparentFX
