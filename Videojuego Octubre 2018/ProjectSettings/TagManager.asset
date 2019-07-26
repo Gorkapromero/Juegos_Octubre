@@ -19,6 +19,7 @@ TagManager:
   - lavadora
   - Pega
   - caida
+  - ShakeCamara
   layers:
   - Default
   - TransparentFX
