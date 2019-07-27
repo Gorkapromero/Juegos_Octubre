@@ -300,6 +300,8 @@ public class movimiento_personaje : MonoBehaviour
                 break;
 
             case "miel":
+                //bloquearControles();
+                animatorProta.SetBool("AndarPegajoso", true);
                 velocidad_fin = 30;
                 break;
 
@@ -319,7 +321,10 @@ public class movimiento_personaje : MonoBehaviour
                 break;
 
             case "miel":
+                animatorProta.SetBool("AndarPegajoso", false);
                 velocidad_fin = velocidad;
+                desbloquearControles();
+
                 break;
 
         }

@@ -9,21 +9,22 @@ public class cameraControl_inGame : MonoBehaviour {
 
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
-    
+
+    public bool camaraLibre = false;
     
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
-        Vector3 desiredPosition = target.position + offset; // - new Vector3(-20.0f, 0f,0f);
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
+        if (!camaraLibre)
+        {
+            Vector3 desiredPosition = target.position + offset; // - new Vector3(-20.0f, 0f,0f);
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothedPosition;
 
-        Vector3 target2 = new Vector3(targetLookAt.position.x, 0, 0);
-        transform.LookAt(target2);
-        //transform.rotation *= Quaternion.Euler(-30,0,0);
+            Vector3 target2 = new Vector3(targetLookAt.position.x, 0, 0);
+            transform.LookAt(target2);
+            //transform.rotation *= Quaternion.Euler(-30,0,0);
+        }
     }
-
-
-
+       
 }
-
