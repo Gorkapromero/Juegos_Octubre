@@ -6502,6 +6502,7 @@ MonoBehaviour:
   targetLookAt: {fileID: 0}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
+  camaraLibre: 0
 --- !u!81 &916617902
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13215,7 +13216,7 @@ ParticleSystem:
         key0: {r: 1, g: 0.5666981, b: 0, a: 1}
         key1: {r: 1, g: 0.5666981, b: 0, a: 1}
         key2: {r: 1, g: 0.6640479, b: 0, a: 0.53333336}
-        key3: {r: 0.9811321, g: 0.55292547, b: 0.31933072, a: 0}
+        key3: {r: 0.90588236, g: 0.40294024, b: 0.11372546, a: 0}
         key4: {r: 0.9568628, g: 0.6627451, b: 0.4156863, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -13242,7 +13243,7 @@ ParticleSystem:
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 0.20703118, b: 0, a: 1}
-        key1: {r: 1, g: 0.58425826, b: 0.29019606, a: 0.53333336}
+        key1: {r: 1, g: 0.5093468, b: 0.29019606, a: 0.53333336}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
