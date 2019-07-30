@@ -5,26 +5,24 @@ using UnityEngine;
 public class Ctrl_Estropajo1 : MonoBehaviour
 {
     public bool contactoEstropajo;
-    //public GameObject Estropajo;
-    public GameObject grupoAnimEstropajo;
-
-    Animator animatorEstropajo;
-
+    public GameObject Estropajo;
+    public float Velocidad;
 
     // Use this for initialization
     void Start () {
-        animatorEstropajo = grupoAnimEstropajo.GetComponent<Animator>();
-
-    }
+		
+	}
 	
-    private void OnCollisionEnter()
+	// Update is called once per frame
+	void Update ()
     {
-        //contactoEstropajo = true;
-        animatorEstropajo.SetBool("primeraColision", true);
-
+        if (contactoEstropajo)
+        {
+            Estropajo.transform.position -= Estropajo.transform.forward * Velocidad * Time.deltaTime;
+        }
+        else if (!contactoEstropajo&& Estropajo.transform.position.y >= -35f)
+        {
+            Estropajo.transform.position += Estropajo.transform.forward * Velocidad * Time.deltaTime;
+        }
     }
-
-
-
-
 }

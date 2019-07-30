@@ -53,7 +53,6 @@ public class movimiento_personaje : MonoBehaviour
     public GameObject ParticulasCaidaDobleSalto;
     
     Ctrl_Habilidades script_ctl_habilidades;
-    //Ctrl_Estropajo1 Ctrl_Estropajo;
 
     public Collider CollDobleSalto;
 
@@ -76,7 +75,6 @@ public class movimiento_personaje : MonoBehaviour
         animatorProta = gameObject.GetComponent<Animator>();
 
         script_ctl_habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
-      //  Ctrl_Estropajo = GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Estropajo1>();
 
         animatorCamara = GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>();
     }
@@ -378,10 +376,6 @@ public class movimiento_personaje : MonoBehaviour
     void Reaparecr()
     {
         transform.position = puntoReaparicion.position;
-
-        //resetearElEstropajo
-        //Ctrl_Estropajo.resetearEstropajo();
-
     }
 
     void caidaDobleSalto()

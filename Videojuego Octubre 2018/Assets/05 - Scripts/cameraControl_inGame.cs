@@ -7,8 +7,6 @@ public class cameraControl_inGame : MonoBehaviour {
     public Transform target;
     public Transform targetLookAt;
 
-    public float rotacionY;
-
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
@@ -23,7 +21,7 @@ public class cameraControl_inGame : MonoBehaviour {
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
             transform.position = smoothedPosition;
 
-            Vector3 target2 = new Vector3(targetLookAt.position.x, rotacionY, 0);
+            Vector3 target2 = new Vector3(targetLookAt.position.x, 0, 0);
             transform.LookAt(target2);
             //transform.rotation *= Quaternion.Euler(-30,0,0);
         }
