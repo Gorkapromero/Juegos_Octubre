@@ -155,6 +155,37 @@ ModelImporter:
     100298: plano_nave_03
     100300: Group007
     100302: Plane029
+    100304: CartonLeche
+    100306: Plane031
+    100308: Plane032
+    100310: Plane033
+    100312: Plane034
+    100314: Plane035
+    100316: Plane036
+    100318: Plane037
+    100320: Plane038
+    100322: Plane039
+    100324: Plane040
+    100326: Plane041
+    100328: Plane042
+    100330: Plane043
+    100332: Plane044
+    100334: Plane045
+    100336: Plane046
+    100338: Plane047
+    100340: Plane048
+    100342: Plane049
+    100344: Plane050
+    100346: Plane051
+    100348: Plane052
+    100350: Plane053
+    100352: Plane054
+    100354: Plane055
+    100356: Plane056
+    100358: Plane057
+    100360: Plane059
+    100362: Plane061
+    100364: Plane063
     400000: Box022
     400002: Box055
     400004: Box056
@@ -307,6 +338,37 @@ ModelImporter:
     400298: plano_nave_03
     400300: Group007
     400302: Plane029
+    400304: CartonLeche
+    400306: Plane031
+    400308: Plane032
+    400310: Plane033
+    400312: Plane034
+    400314: Plane035
+    400316: Plane036
+    400318: Plane037
+    400320: Plane038
+    400322: Plane039
+    400324: Plane040
+    400326: Plane041
+    400328: Plane042
+    400330: Plane043
+    400332: Plane044
+    400334: Plane045
+    400336: Plane046
+    400338: Plane047
+    400340: Plane048
+    400342: Plane049
+    400344: Plane050
+    400346: Plane051
+    400348: Plane052
+    400350: Plane053
+    400352: Plane054
+    400354: Plane055
+    400356: Plane056
+    400358: Plane057
+    400360: Plane059
+    400362: Plane061
+    400364: Plane063
     2100000: Mat_nevera
     2100002: Mat_electrodomesticos_fuegos
     2100004: 'Material #158'
@@ -323,6 +385,9 @@ ModelImporter:
     2100026: Mat_rejilla_fuegos
     2100028: Mat_respiradero
     2100030: Mat_agua
+    2100032: Mat_cartonLeche
+    2100034: Mat_cortina
+    2100036: Mat_lineaCortina
     2300000: Box022
     2300002: Box055
     2300004: Box056
@@ -472,6 +537,37 @@ ModelImporter:
     2300292: plano_nave_02
     2300294: plano_nave_03
     2300296: Plane029
+    2300298: CartonLeche
+    2300300: Plane031
+    2300302: Plane032
+    2300304: Plane033
+    2300306: Plane034
+    2300308: Plane035
+    2300310: Plane036
+    2300312: Plane037
+    2300314: Plane038
+    2300316: Plane039
+    2300318: Plane040
+    2300320: Plane041
+    2300322: Plane042
+    2300324: Plane043
+    2300326: Plane044
+    2300328: Plane045
+    2300330: Plane046
+    2300332: Plane047
+    2300334: Plane048
+    2300336: Plane049
+    2300338: Plane050
+    2300340: Plane051
+    2300342: Plane052
+    2300344: Plane053
+    2300346: Plane054
+    2300348: Plane055
+    2300350: Plane056
+    2300352: Plane057
+    2300354: Plane059
+    2300356: Plane061
+    2300358: Plane063
     3300000: Box022
     3300002: Box055
     3300004: Box056
@@ -621,6 +717,37 @@ ModelImporter:
     3300292: plano_nave_02
     3300294: plano_nave_03
     3300296: Plane029
+    3300298: CartonLeche
+    3300300: Plane031
+    3300302: Plane032
+    3300304: Plane033
+    3300306: Plane034
+    3300308: Plane035
+    3300310: Plane036
+    3300312: Plane037
+    3300314: Plane038
+    3300316: Plane039
+    3300318: Plane040
+    3300320: Plane041
+    3300322: Plane042
+    3300324: Plane043
+    3300326: Plane044
+    3300328: Plane045
+    3300330: Plane046
+    3300332: Plane047
+    3300334: Plane048
+    3300336: Plane049
+    3300338: Plane050
+    3300340: Plane051
+    3300342: Plane052
+    3300344: Plane053
+    3300346: Plane054
+    3300348: Plane055
+    3300350: Plane056
+    3300352: Plane057
+    3300354: Plane059
+    3300356: Plane061
+    3300358: Plane063
     4300000: Box022
     4300002: Cylinder173
     4300004: pCube049
@@ -770,6 +897,37 @@ ModelImporter:
     4300292: plane_nave_06
     4300294: plane_nave_05
     4300296: Plane029
+    4300298: CartonLeche
+    4300300: Plane031
+    4300302: Plane032
+    4300304: Plane033
+    4300306: Plane034
+    4300308: Plane035
+    4300310: Plane036
+    4300312: Plane037
+    4300314: Plane038
+    4300316: Plane039
+    4300318: Plane040
+    4300320: Plane041
+    4300322: Plane042
+    4300324: Plane043
+    4300326: Plane044
+    4300328: Plane045
+    4300330: Plane046
+    4300332: Plane047
+    4300334: Plane048
+    4300336: Plane049
+    4300338: Plane050
+    4300340: Plane051
+    4300342: Plane052
+    4300344: Plane053
+    4300346: Plane054
+    4300348: Plane055
+    4300350: Plane056
+    4300352: Plane057
+    4300354: Plane059
+    4300356: Plane061
+    4300358: Plane063
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -780,8 +938,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Mat_agua
+    second: {fileID: 2100000, guid: a6c2891a3b4761c438f409e519dc096e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Mat_armarios
     second: {fileID: 2100000, guid: d2c970ab5abc86d469a8ba8a68053fcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_cartonLeche
+    second: {fileID: 2100000, guid: b94ece541e4c94c49a165d5d026e0daa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_cortina
+    second: {fileID: 2100000, guid: c008ad571d2aa3641b218a4ed00610eb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -792,6 +965,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Mat_estanterias
     second: {fileID: 2100000, guid: cd1c603b7065e894a88e1e3d69e18124, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_lineaCortina
+    second: {fileID: 2100000, guid: 8c8e7d76257a28c4e884eb8206e450b6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
