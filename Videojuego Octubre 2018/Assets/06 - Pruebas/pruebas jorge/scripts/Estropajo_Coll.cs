@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class Estropajo_Coll : MonoBehaviour
 {
-    Ctrl_Estropajo1 Ctrl_Estropajo;
+//    Ctrl_Estropajo1 Ctrl_Estropajo;
+    Animator animatorEstropajo;
 	// Use this for initialization
 	void Start ()
     {
-        Ctrl_Estropajo = GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Estropajo1>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        animatorEstropajo = gameObject.GetComponent<Animator>();
 
-    private void OnCollisionEnter()
+
+    }
+
+
+
+    private void OnTriggerEnter(Collider trigger)
     {
-        print("colision estropajo");
-       
-        Ctrl_Estropajo.contactoEstropajo = true;
-        //}
+
+        if(trigger.tag == "Jugador")
+        {
+            animatorEstropajo.SetBool("primeraColision", false);
+
+        }
+
     }
 
 }
