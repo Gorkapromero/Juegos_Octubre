@@ -348,8 +348,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
-  - m_ConditionMode: 4
-    m_ConditionEvent: Speed
 --- !u!1101 &1101345736044950024
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
