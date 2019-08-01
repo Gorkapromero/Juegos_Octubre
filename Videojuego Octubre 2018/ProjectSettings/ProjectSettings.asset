@@ -245,7 +245,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: L:/GitHub/Juegos_Octubre/Videojuego Octubre 2018/JuegoOctubre.keystore
+  AndroidKeystoreName: E:/IKKI STUDIOS/Proyectos/05- TEApp/Juegos_Octubre/Videojuego
+    Octubre 2018/JuegoOctubre.keystore
   AndroidKeyaliasName: taza1
   AndroidBuildApkPerCpuArchitecture: 1
   AndroidTVCompatibility: 1
