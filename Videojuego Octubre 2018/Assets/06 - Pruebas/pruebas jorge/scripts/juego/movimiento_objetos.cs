@@ -96,74 +96,11 @@ public class movimiento_objetos : MonoBehaviour
         }
 
         dist = Vector3.Distance(jugador.position, transform.position);
-        /*
-        if ((dist < vision|| Jvisto==true)&&!stop&&!Salto)   //vemos al jugador antes de saltar
-        {
-            if (!Jvisto)
-            {
-                Jvisto = true;
-                target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z); //jugador.position;
-            }
-            
-
-            //float fixedSpeed = Velocidad * Time.deltaTime;
-            //transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
-            nav.SetDestination(target);
-
-            Debug.DrawLine(transform.position, target, Color.green);
-            
-        }
-        else if (!Jvisto&&!stop&&!Salto)      //no vemos jugador
-        {
-            //print("no vemos jugador");
-            target = new Vector3(Destino.x,Destino.y,jugador.position.z);
-            //float fixedSpeed = Velocidad * Time.deltaTime;
-            //transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
-            nav.SetDestination(Destino);
-            Debug.DrawLine(transform.position, target, Color.green);
-        }
-
-        else if (Salto)  //movimiento despues del salto
-        {
-            //CONTROL DEL AGENTE
-            Invoke("velDespuesSalto", 0.10f);
-            if (dist < vision && gameObject.name == "E_Bomb(Clone)")
-            {
-                //Activamos las partículas de la mecha del explosivo
-                gObj_ParticulasMecha.SetActive(true);
-
-                target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z); //jugador.position;
-                Debug.DrawLine(transform.position, target, Color.green);
-            }
-            float fixedSpeed = Velocidad * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target, fixedSpeed);
-            //nav.SetDestination(target);
-            Debug.DrawLine(transform.position, target, Color.green);
-
-
-            //ANIMACIONES
-            if (gameObject.name != "E_Normal(Clone)")
-            {
-
-                print("ENEMIGO "+gameObject.name+" en el aire");
-
-                //enElAire = true;
-                animatorEnemigo.SetBool("enElAire",true);
-
-
-            }
-
-        }*/
 
         if (gameObject.name == "E_Bomb(Clone)")   //movimiento en el suelo de bomba
         {
             if (dist < vision)
             {
-                //nav.speed = 50;
-                //nav.acceleration = 20;
-                //target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z); //jugador.position;
-                //nav.SetDestination(target);
-                //Debug.DrawLine(transform.position, target, Color.green);
                                 
                 Invoke("explosion", tiempoExplosion);
             }
@@ -182,9 +119,6 @@ public class movimiento_objetos : MonoBehaviour
                     animatorEnemigo.SetBool("enElAire", false);
                 }
 
-                //CONTROL DEL AGENTE
-                //suelo = true;
-                //Salto = false;
                 nav.enabled = true;
  
                 print("chocamos con suelo");
@@ -209,22 +143,17 @@ public class movimiento_objetos : MonoBehaviour
                 {
                     case "E_Normal(Clone)":
                         print("quitamos vida");
-                        //vidas = GameObject.Find("Vida").GetComponent<Slider>();
-                        //vidas.value--;
                         Vidas.quitarvida_Vida();
 
                         Destroy(this.gameObject);
                         break;
                     case "E_Bomb(Clone)":
-                        /*vidas = GameObject.Find("Vida").GetComponent<Slider>();
-                        vidas.value--;*/
                         Vidas.quitarvida_Vida();
                         explosion();
                         Destroy(this.gameObject);
                         break;
                     case "E_Pega(Clone)":
                         Vector3 PosPoff = new Vector3(transform.position.x, -61.5f, transform.position.z);
-                        //vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, jugador.position, Quaternion.identity);
                         Destroy(this.gameObject);
                         break;
@@ -235,7 +164,6 @@ public class movimiento_objetos : MonoBehaviour
             case "A_Basico":
                 print("desruimos enemigo");
                 Puntuacion.Enemigos_Eliminados++;
-                //Puntuacion.Actualizar_enemigos();
                 Muerte();
                 //sumamos energia
                 energia.AñadirEnergia(50);
@@ -243,7 +171,6 @@ public class movimiento_objetos : MonoBehaviour
 
             case "A_chorro":
                 Puntuacion.Enemigos_Eliminados++;
-                //Puntuacion.Actualizar_enemigos();
                 Muerte();
                 break;
 
@@ -253,18 +180,12 @@ public class movimiento_objetos : MonoBehaviour
 
             case "explosion":
                 Puntuacion.Enemigos_Eliminados++;
-                //Puntuacion.Actualizar_enemigos();
                 Destroy(this.gameObject);
                 break;
 
-            /*case "jump":
-                print("tocamos estanteria");
-                rb.isKinematic = true;
+            /*case "Fuego":
+                Destroy(this.gameObject);
                 break;*/
-
-            case "Fuego":
-                Destroy(this.gameObject);
-                break;
 
             case "caida":
                 Muerte();
@@ -280,7 +201,6 @@ public class movimiento_objetos : MonoBehaviour
             case "jump":
                 if(!Salto)
                 {
-                    //GameObject.Find("navmesh").GetComponent<Jump>().Salto(other.name);
                     GetComponent<Jump>().Salto(other.name);
                     Salto = true;
                 }
@@ -297,25 +217,6 @@ public class movimiento_objetos : MonoBehaviour
 
     void saltar()
     {
-        /*nav.enabled = false;
-        rb.isKinematic = false;
-        if (dist < vision)
-        {
-            //target = new Vector3(jugador.position.x, this.transform.position.y, jugador.position.z);  //vemos al jugador
-            target = new Vector3(jugador.position.x, jugador.position.y, jugador.position.z);
-        }
-        else
-        {
-            //target = new Vector3(0, this.transform.position.y, jugador.position.z);                 //ultima direccion
-        }
-        rb.AddForce(Vector3.up * FuerzaSalto, ForceMode.Impulse);
-        if(gameObject.name == "E_Bomb(Clone)")
-        {
-            Velocidad = 100f;
-        }
-        //Salto = true;
-        //stop = false;*/
-        //Jump.Jump();
         Debug.DrawLine(transform.position, target, Color.green);
         
         print("saltamos");
