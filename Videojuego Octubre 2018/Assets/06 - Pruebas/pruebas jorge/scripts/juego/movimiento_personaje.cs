@@ -397,6 +397,6 @@ public class movimiento_personaje : MonoBehaviour
     {
         GameObject ParticulasCaidadoblesalto = Instantiate(ParticulasCaidaDobleSalto, transform.position, Quaternion.identity);
         CollDobleSalto.enabled = false;
-        animatorCamara.Play("animShake_DobleSalto");
+        //animatorCamara.Play("animShake_DobleSalto");
     }
 }

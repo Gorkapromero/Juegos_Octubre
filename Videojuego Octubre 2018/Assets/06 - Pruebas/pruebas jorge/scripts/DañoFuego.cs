@@ -27,9 +27,6 @@ public class DañoFuego : MonoBehaviour
     {
         switch (coli.gameObject.tag)
         {
-            case "Enemigo":
-                //destruimos enemigo
-                break;
             case "Jugador":
                 //restamos vida
                 if (!Personaje.DentroFuego)
@@ -47,9 +44,7 @@ public class DañoFuego : MonoBehaviour
         switch (coli.gameObject.tag)
         {
             case "Jugador":
-                //restamos vida
                 Personaje.DentroFuego = false;
-                //añadimos particulas de fuego
                 break;
         }
     }
