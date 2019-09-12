@@ -186,6 +186,13 @@ ModelImporter:
     100360: Plane059
     100362: Plane061
     100364: Plane063
+    100366: Group001
+    100368: Group002
+    100370: Group004
+    100372: Plane001
+    100374: Plane012
+    100376: Plane013
+    100378: Plane022
     400000: Box022
     400002: Box055
     400004: Box056
@@ -369,6 +376,13 @@ ModelImporter:
     400360: Plane059
     400362: Plane061
     400364: Plane063
+    400366: Group001
+    400368: Group002
+    400370: Group004
+    400372: Plane001
+    400374: Plane012
+    400376: Plane013
+    400378: Plane022
     2100000: Mat_nevera
     2100002: Mat_electrodomesticos_fuegos
     2100004: 'Material #158'
@@ -568,6 +582,10 @@ ModelImporter:
     2300354: Plane059
     2300356: Plane061
     2300358: Plane063
+    2300360: Plane001
+    2300362: Plane012
+    2300364: Plane013
+    2300366: Plane022
     3300000: Box022
     3300002: Box055
     3300004: Box056
@@ -748,6 +766,10 @@ ModelImporter:
     3300354: Plane059
     3300356: Plane061
     3300358: Plane063
+    3300360: Plane001
+    3300362: Plane012
+    3300364: Plane013
+    3300366: Plane022
     4300000: Box022
     4300002: Cylinder173
     4300004: pCube049
@@ -928,6 +950,10 @@ ModelImporter:
     4300354: Plane059
     4300356: Plane061
     4300358: Plane063
+    4300360: Plane022
+    4300362: Plane001
+    4300364: Plane013
+    4300366: Plane012
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
