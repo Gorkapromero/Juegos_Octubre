@@ -433,13 +433,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340248824946342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9a6d9ca13976aa42806dfecd042488b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpTime: 5
-  AddToJumpHeight: 80
+  JumpTime: 1
+  AddToJumpHeight: 20
 --- !u!114 &114966163936630026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -454,12 +454,39 @@ MonoBehaviour:
   method: 2
   curve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.9999995
+      outSlope: 4.9999995
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.28432444
+    - serializedVersion: 3
+      time: 0.24482083
+      value: 0.7047968
+      inSlope: 1.277028
+      outSlope: 1.277028
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   velocidad: 1.2
-  altura: 10
+  altura: 50
 --- !u!136 &136630998615544974
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -583,8 +610,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 60
-  m_Acceleration: 20
+  m_Speed: 25
+  m_Acceleration: 120
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
