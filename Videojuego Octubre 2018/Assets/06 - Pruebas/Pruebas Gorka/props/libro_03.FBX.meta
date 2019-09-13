@@ -11,7 +11,12 @@ ModelImporter:
     2300000: Box092
     3300000: Box092
     4300000: Box092
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_objetos_02
+    second: {fileID: 2100000, guid: d64f099c0193ac4429277ce92772b4a9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

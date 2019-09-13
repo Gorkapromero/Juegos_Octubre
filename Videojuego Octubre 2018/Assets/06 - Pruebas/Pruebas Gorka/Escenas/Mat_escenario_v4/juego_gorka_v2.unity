@@ -222,6 +222,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 23.315641
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: c47a300f97c75fa479f8761da09f8371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 207dbfa9b5c5d8541a1c7511d12e32e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c47a300f97c75fa479f8761da09f8371, type: 3}
   m_IsPrefabAsset: 0
@@ -288,6 +292,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: eab490fc3e6abcd45819e293cad126db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 207dbfa9b5c5d8541a1c7511d12e32e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab490fc3e6abcd45819e293cad126db, type: 3}
   m_IsPrefabAsset: 0
@@ -420,6 +428,10 @@ Prefab:
       propertyPath: m_Name
       value: libro_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: c47a300f97c75fa479f8761da09f8371, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 207dbfa9b5c5d8541a1c7511d12e32e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c47a300f97c75fa479f8761da09f8371, type: 3}
   m_IsPrefabAsset: 0
@@ -680,6 +692,10 @@ Prefab:
       propertyPath: m_Name
       value: libro_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 5e801c0b61400eb4b8176fdbe828483b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 207dbfa9b5c5d8541a1c7511d12e32e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e801c0b61400eb4b8176fdbe828483b, type: 3}
   m_IsPrefabAsset: 0
@@ -753,13 +769,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483791761}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0, y: 0.9987864, z: 0.049252268, w: 0}
+  m_LocalPosition: {x: -48.43, y: 5.5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.6460004, y: 180.00002, z: 0}
 --- !u!1001 &529813387
 Prefab:
   m_ObjectHideFlags: 0
@@ -1623,6 +1639,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 22.624395
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 5e801c0b61400eb4b8176fdbe828483b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 207dbfa9b5c5d8541a1c7511d12e32e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e801c0b61400eb4b8176fdbe828483b, type: 3}
   m_IsPrefabAsset: 0
