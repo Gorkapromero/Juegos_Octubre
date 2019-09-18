@@ -6500,6 +6500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   targetLookAt: {fileID: 0}
+  rotacionY: 0
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
   camaraLibre: 0
@@ -7535,7 +7536,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 15
+        scalar: 5
         minScalar: 15
         maxCurve:
           serializedVersion: 2
