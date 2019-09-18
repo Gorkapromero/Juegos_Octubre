@@ -17,7 +17,11 @@ public class AgentLinkMover : MonoBehaviour
     public OffMeshLinkMoveMethod method = OffMeshLinkMoveMethod.Parabola;
     public AnimationCurve curve = new AnimationCurve();
     public float velocidad;
-    public float altura;
+    float altura;
+
+    public float Altura1;
+    public float AlturaEstanterias;
+    public float AlturaFregadero;
     IEnumerator Start()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
@@ -76,6 +80,24 @@ public class AgentLinkMover : MonoBehaviour
             yield return null;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        print("trigger "+ other.gameObject.tag);
+        switch (other.gameObject.tag)
+        {
 
+            case "Link1":
+            altura = Altura1;
+            break;
+
+            case "Link2":
+            altura = AlturaEstanterias;
+            break;
+
+            case "Link3":
+            altura = AlturaFregadero;
+            break;
+        }
+    }
     
 }

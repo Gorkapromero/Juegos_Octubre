@@ -23844,8 +23844,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1232494666}
   targetLookAt: {fileID: 1111361658}
+  rotacionY: 0
   smoothSpeed: 0.05
   offset: {x: 0, y: 30, z: -170}
+  camaraLibre: 0
 --- !u!81 &1918569009
 AudioListener:
   m_ObjectHideFlags: 0
@@ -26237,7 +26239,7 @@ MonoBehaviour:
   NumeroEnemigos: 5
   TiempoDescanso: 5
   TextoOleadas: {fileID: 1191418058}
-  jugador: {fileID: 0}
+  jugador: {fileID: 1232494666}
   rangoDistancia: 0
 --- !u!1 &2117546356
 GameObject:

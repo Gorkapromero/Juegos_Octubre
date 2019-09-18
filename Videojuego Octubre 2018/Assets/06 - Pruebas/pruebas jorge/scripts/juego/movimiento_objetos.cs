@@ -45,6 +45,8 @@ public class movimiento_objetos : MonoBehaviour
     Enegia energia;
     AgentJumpToTarget Jump;
 
+    public int VidasPegajoso;
+
     // Use this for initialization
     void Start ()
     {
@@ -162,11 +164,28 @@ public class movimiento_objetos : MonoBehaviour
                 
 
             case "A_Basico":
-                print("desruimos enemigo");
-                Puntuacion.Enemigos_Eliminados++;
-                Muerte();
-                //sumamos energia
-                energia.AñadirEnergia(50);
+            switch (gameObject.name)
+                {
+                    case "E_Pega(Clone)":
+                        VidasPegajoso--;
+                        if(VidasPegajoso<=0)
+                        {
+                            print("desruimos enemigo");
+                            Puntuacion.Enemigos_Eliminados++;
+                            Muerte();
+                            //sumamos energia
+                            energia.AñadirEnergia(50);
+                        }
+                        break;
+
+                    default:
+                    print("desruimos enemigo");
+                    Puntuacion.Enemigos_Eliminados++;
+                    Muerte();
+                    //sumamos energia
+                    energia.AñadirEnergia(50);
+                        break;
+                }
                 break;
 
             case "A_chorro":
@@ -193,7 +212,7 @@ public class movimiento_objetos : MonoBehaviour
         }
     }
  
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         print("salimos coll");
         switch (other.tag)
@@ -207,7 +226,7 @@ public class movimiento_objetos : MonoBehaviour
                
                 break;
         }
-    }
+    }*/
 
     private void OnDrawGizmos()
     {

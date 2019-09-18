@@ -23,6 +23,9 @@ TagManager:
   - miel
   - EstropajoOFF
   - estropajo
+  - Link1
+  - Link2
+  - Link3
   layers:
   - Default
   - TransparentFX

@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 114973656421719362}
   - component: {fileID: 136837842570054340}
   - component: {fileID: 114994587752658236}
-  - component: {fileID: 114721351303653530}
   m_Layer: 0
   m_Name: E_Bomb
   m_TagString: Enemigo
@@ -896,19 +895,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
---- !u!114 &114721351303653530
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1318831246343000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a6d9ca13976aa42806dfecd042488b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpTime: 10
-  AddToJumpHeight: 80
 --- !u!114 &114973656421719362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -975,7 +961,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   velocidad: 1.2
-  altura: 50
+  Altura1: 20
+  AlturaEstanterias: 50
+  AlturaFregadero: 50
 --- !u!136 &136837842570054340
 CapsuleCollider:
   m_ObjectHideFlags: 1
