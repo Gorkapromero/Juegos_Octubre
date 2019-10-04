@@ -30,7 +30,7 @@ public class movimiento_personaje : MonoBehaviour
 
     public bool DentroFuego;
 
-    Ctrl_Lavadora Lavadora;
+    //Ctrl_Lavadora Lavadora;
     // Use this for initialization
 
     public Transform puntoReaparicion;
@@ -51,6 +51,7 @@ public class movimiento_personaje : MonoBehaviour
     public GameObject ParticulasAterrizaje;
     public GameObject ParticulasAtaqueAereo;
     public GameObject ParticulasCaidaDobleSalto;
+    public GameObject ParticulasTeHundes;
     
     Ctrl_Habilidades script_ctl_habilidades;
     //Ctrl_Estropajo1 Ctrl_Estropajo;
@@ -58,6 +59,8 @@ public class movimiento_personaje : MonoBehaviour
     public Collider CollDobleSalto;
 
     Animator animatorCamara;
+
+    public GameObject FloatingLive;
 
     void Start()
     {
@@ -67,9 +70,9 @@ public class movimiento_personaje : MonoBehaviour
         ActualizarVidas();
         joystick = FindObjectOfType<Joystick>();
         rb = GetComponent<Rigidbody>();
-        if (GameObject.FindGameObjectWithTag("lavadora")) {
+        /*if (GameObject.FindGameObjectWithTag("lavadora")) {
             Lavadora = GameObject.FindGameObjectWithTag("lavadora").GetComponent<Ctrl_Lavadora>();
-        }
+        }*/
         velocidad_fin = velocidad;
         //Col_Personaje = GetComponent<BoxCollider>();
         //var rigidbody = GetComponent<Rigidbody>();
@@ -252,7 +255,7 @@ public class movimiento_personaje : MonoBehaviour
     public void Stop()
     {
         rb.velocity = new Vector3(0, 0, 0);
-        animatorProta.Play("Caida_Atras");
+        //animatorProta.Play("Caida_Atras");
     }
 
     public void saltar()
@@ -294,12 +297,12 @@ public class movimiento_personaje : MonoBehaviour
                 }
                 break;
 
-            case "lavadora":
+            /*case "lavadora":
                 if (Lavadora.LavadoraActivada)
                 {
                     velocidad_fin = 50;
                 }
-                break;
+                break;*/
 
             case "miel":
                 //bloquearControles();
@@ -308,9 +311,12 @@ public class movimiento_personaje : MonoBehaviour
                 break;
 
             case "agua":
+                Vector3 PosicionParticulas = new Vector3(transform.position.x, -56f, transform.position.z);
+                Instantiate(ParticulasTeHundes, PosicionParticulas, Quaternion.identity);
                 quitarvida_Vida();
                 Reaparecr();
                 break;
+
         }
     }
 
@@ -362,15 +368,17 @@ public class movimiento_personaje : MonoBehaviour
                for (int i = 0; i < modelRender.Length; i++)
                {
                     modelRender[i].sharedMesh = null;
-                }
+               }
                blinkTime = blink;
+               Instantiate(FloatingLive, transform.position, Quaternion.identity);
+
             }
 
             ActualizarVidas();
         }
     }
 
-    void ActualizarVidas()
+    public void ActualizarVidas()
     {
         T_Vidas.text = "HP." + Vidas.ToString();
     }

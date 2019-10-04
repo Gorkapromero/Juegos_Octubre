@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Ctrl_oleadas : MonoBehaviour
 {
+    public Transform PosicionParacas;
     public Transform[] posiciones;
     //public Transform[] posicionesActivas;
     public List<Transform> PosicionesActivas;
@@ -175,9 +176,20 @@ public class Ctrl_oleadas : MonoBehaviour
         {
             if (randomPoint < _Oleada.enemigos[j].rareza)
             {
-                int spawnPoint = Random.Range(0, PosicionesActivas.Count);
-                //float dist = Vector3.Distance(posiciones[spawnPoint].position, jugador.position);
-                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, PosicionesActivas[spawnPoint].position, Quaternion.identity);
+                if(_Oleada.enemigos[j].nombre=="Enemigo Bomba")
+                {
+                    Vector3 SpawnPosition = new Vector3(0, 0, 0);
+                    //SpawnPosition = this.transform.position + Random.onUnitSphere * RangoCreacion;
+                    SpawnPosition = new Vector3(jugador.position.x, PosicionParacas.position.y, jugador.position.z);
+
+                    GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, Quaternion.identity);
+                }
+                else
+                {
+                    int spawnPoint = Random.Range(0, PosicionesActivas.Count);
+                    //float dist = Vector3.Distance(posiciones[spawnPoint].position, jugador.position);
+                    GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, PosicionesActivas[spawnPoint].position, Quaternion.identity);
+                }
                 return;
             }
             else

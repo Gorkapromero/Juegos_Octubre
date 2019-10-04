@@ -10,7 +10,7 @@ public class Ctrl_Pegar : MonoBehaviour
 	void Start ()
     {
 		move = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
-        Invoke("Despegar", TiempoPeg);
+        //Invoke("Despegar", TiempoPeg);
 
     }
 	

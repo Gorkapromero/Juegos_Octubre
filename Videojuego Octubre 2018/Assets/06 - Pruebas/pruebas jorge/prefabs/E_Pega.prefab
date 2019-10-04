@@ -564,7 +564,14 @@ MonoBehaviour:
   Particulasboom: {fileID: 0}
   ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
     type: 2}
-  VidasPegajoso: 3
+  VidaPegajoso: 120
+  Velocidad: 0
+  FloatingEnergy: {fileID: 1078266722140502, guid: 5b0f70d2e30d81c46afa841c503feef8,
+    type: 2}
+  FloatingGhost: {fileID: 1078266722140502, guid: f6f05c7a0b08bf74dac672311120a44c,
+    type: 2}
+  FloatingLifePega: {fileID: 1310590947349496, guid: aa3aebc0f15fbfe49bd9784fea50625d,
+    type: 2}
 --- !u!114 &114547548368669284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -727,7 +734,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1220318009931152}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 0.1
   m_Speed: 10
   m_Acceleration: 100
   avoidancePriority: 50
