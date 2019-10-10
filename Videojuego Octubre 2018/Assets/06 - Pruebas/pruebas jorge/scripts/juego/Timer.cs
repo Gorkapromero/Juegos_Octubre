@@ -63,4 +63,10 @@ public class Timer : MonoBehaviour
         startTime = -Time.time;
         ActivarTiempo = true;
     }
+
+    public void ReanuadarTiempo()
+    {
+        startTime = -Time.time + Tiempo;
+        ActivarTiempo = true;
+    }
 }

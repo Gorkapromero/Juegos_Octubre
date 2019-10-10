@@ -93,6 +93,17 @@ public class RankingManager : MonoBehaviour
         CerrarDB();
     }
 
+    public void InsertarMejorPuntuacion(int s)
+    {
+        AbrirDB();
+        comandosDB = conexionDB.CreateCommand();
+        string sqlQuery = String.Format("insert into TopPuntuacion(Score) values(\"{0}\")", s);
+        comandosDB.CommandText = sqlQuery;
+
+        comandosDB.ExecuteScalar();
+        CerrarDB();
+    }
+
     void BorrarPuntos(int id)
     {
         AbrirDB();

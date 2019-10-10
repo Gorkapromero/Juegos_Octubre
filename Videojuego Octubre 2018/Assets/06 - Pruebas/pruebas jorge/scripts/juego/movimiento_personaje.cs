@@ -347,7 +347,7 @@ public class movimiento_personaje : MonoBehaviour
             if (Vidas == 0)
             {
                 Finpartida.SetActive(true);
-                GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Puntuacion_final();
+                GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Mostrar_Textos();
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
                 Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
 

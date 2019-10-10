@@ -36,7 +36,7 @@ public class Ctrl_oleadas : MonoBehaviour
 
     public int NumeroEnemigos;
 
-    int ContadorOleadas = 0;
+    public int ContadorOleadas = 0;
 
     public float TiempoDescanso;
     float WaveCountdown;
