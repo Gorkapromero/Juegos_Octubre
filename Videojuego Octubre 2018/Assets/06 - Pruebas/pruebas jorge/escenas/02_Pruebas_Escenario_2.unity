@@ -378,11 +378,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemigos_Eliminados: 0
-  Texto_Tiempo: {fileID: 0}
-  Texto_Oleadas: {fileID: 0}
-  Texto_Enemigos: {fileID: 0}
-  Texto_Score: {fileID: 0}
-  Texto_BestScore: {fileID: 0}
+  Texto_Tiempo: {fileID: 1596949148}
+  Texto_Oleadas: {fileID: 1596949147}
+  Texto_Enemigos: {fileID: 1596949146}
+  Texto_Score: {fileID: 1596949145}
+  Texto_BestScore: {fileID: 1596949144}
+  NewScore: {fileID: 0}
   PantallaGuardar: {fileID: 849702826}
   Nombre: {fileID: 2021325666}
   Ranking: {fileID: 62138724}
@@ -9926,9 +9927,43 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 62138722}
+    - target: {fileID: 1678570866881432, guid: 898764c26dc6f184a99a3a95d61eb706, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 898764c26dc6f184a99a3a95d61eb706, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1596949144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114937281062471806, guid: 898764c26dc6f184a99a3a95d61eb706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1596949143}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1596949145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114674094680844666, guid: 898764c26dc6f184a99a3a95d61eb706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1596949143}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1596949146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114495812627921152, guid: 898764c26dc6f184a99a3a95d61eb706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1596949143}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1596949147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114874028904656106, guid: 898764c26dc6f184a99a3a95d61eb706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1596949143}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1596949148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114571212464491376, guid: 898764c26dc6f184a99a3a95d61eb706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1596949143}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1600594307
 Prefab:
   m_ObjectHideFlags: 0

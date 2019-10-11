@@ -7,7 +7,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
 {
 
     public int Enemigos_Eliminados = 0;
-    float P_Final;
+    int P_Final;
 
     //public int Tiempo;
     //public int Total;
@@ -17,6 +17,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Text Texto_Enemigos;
     public Text Texto_Score;
     public Text Texto_BestScore;
+    public GameObject NewScore;
 
     Timer tiempo;
     Ctrl_oleadas Oleadas;
@@ -26,6 +27,8 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public InputField Nombre;
     public RankingManager Ranking;
 
+    int BestScore;
+
 
     // Use this for initialization
     void Start ()
@@ -33,6 +36,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         tiempo = GameObject.Find("Timer").GetComponent<Timer>();
         Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
         //Actualizar_enemigos();
+        ApagarTextos();
 	}
 	
 	// Update is called once per frame
@@ -47,23 +51,19 @@ public class Ctrl_Puntuacion : MonoBehaviour
         Invoke("Mostraroleadas", 2);
         Invoke("MostrarEnemigos", 3);
         Invoke("Mostrarscore", 4);
+        Invoke("MostrarBestscore", 5);
     }
 
     void Puntuacion_final()
     {
         tiempo.PararTiempo();
-        P_Final = (Enemigos_Eliminados * 10) + (Oleadas.ContadorOleadas*100); 
+        P_Final = (Enemigos_Eliminados * 10) + (Oleadas.ContadorOleadas*100);
     }
 
-    public void GuardarPuntuacion()
+    void Guardar()
     {
-        PantallaGuardar.SetActive(true);
-    }
-
-    public void Guardar()
-    {
-        Ranking.InsertarPuntos(Nombre.text, P_Final.ToString("f0"));
-        PantallaGuardar.SetActive(false);
+        Ranking.BorrarPuntos(1);
+        Ranking.InsertarMejorPuntuacion(1, P_Final);
     }
 
     void Mostrartiempo()
@@ -83,7 +83,27 @@ public class Ctrl_Puntuacion : MonoBehaviour
         Texto_Score.text = P_Final.ToString("f0");
     }
     void MostrarBestscore()
-    { 
-        
+    {
+        BestScore = Ranking.ObtenerPuntuacion();
+        if (P_Final > BestScore)
+        {
+            Guardar();
+            //new Score(actualizamos texto bestscore)
+            Texto_BestScore.text = P_Final.ToString("f0");
+            NewScore.SetActive(true);
+        }
+        else
+        {
+            Texto_BestScore.text = BestScore.ToString();
+        }
+    }
+
+    public void ApagarTextos()
+    {
+        Texto_Tiempo.text = null;
+        Texto_Oleadas.text = null;
+        Texto_Enemigos.text = null;
+        Texto_Score.text = null;
+        Texto_BestScore.text = null;
     }
 }

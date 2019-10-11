@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ControlBotonesMenu : MonoBehaviour 
 {
-
-	// Use this for initialization
-	void Start () 
+    RankingManager Ranking;
+    public Text TextoScore;
+    int Bestscore;
+    // Use this for initialization
+    void Start () 
 	{
-		
+        Ranking = gameObject.GetComponent<RankingManager>();
+        BestScore();
 	}
 
 
@@ -46,4 +50,10 @@ public class ControlBotonesMenu : MonoBehaviour
 	{
 		Application.OpenURL ("http://studiosikki.com/");
 	}
+    void BestScore()
+    {
+        Bestscore = Ranking.ObtenerPuntuacion();
+        //print(Bestscore);
+        TextoScore.text = Bestscore.ToString();
+    }
 }

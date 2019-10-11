@@ -8,10 +8,11 @@ public class Ctrl_Botones : MonoBehaviour
 {
     //public InputField Nombre;
     //public RankingManager Ranking;
+    Ctrl_Puntuacion Puntuacion;
 	// Use this for initialization
 	void Start ()
     {
-		
+        Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
 	}
 	
 
@@ -35,5 +36,4 @@ public class Ctrl_Botones : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
 }

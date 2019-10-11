@@ -23,11 +23,13 @@ public class RankingManager : MonoBehaviour
     IDataReader leerDatos;
 
     private List<Ranking> rankings = new List<Ranking>();
+    private List<TopScore> score = new List<TopScore>();
 
+    int _Score;
     // Use this for initialization
     void Start ()
     {
-        if (SceneManager.GetActiveScene().name == "Ranking")
+        if (SceneManager.GetActiveScene().name == "02_Ranking")
         {
             BorrarPuntosExtra();
             MostrarRanking();
@@ -82,6 +84,25 @@ public class RankingManager : MonoBehaviour
         print("obtenemos ranking");
     }
 
+    public int ObtenerPuntuacion()
+    {
+        print("obtenemos puntuacion");
+        AbrirDB();
+        comandosDB = conexionDB.CreateCommand();
+        string sqlQuery = "select * from TopPuntuacion";
+        comandosDB.CommandText = sqlQuery;
+
+        leerDatos = comandosDB.ExecuteReader();
+        while (leerDatos.Read())
+        {
+            _Score = leerDatos.GetInt32(1);
+        }
+        leerDatos.Close();
+        leerDatos = null;
+        CerrarDB();
+        return _Score;
+    }
+
     public void InsertarPuntos(string n, string s)
     {
         AbrirDB();
@@ -93,22 +114,22 @@ public class RankingManager : MonoBehaviour
         CerrarDB();
     }
 
-    public void InsertarMejorPuntuacion(int s)
+    public void InsertarMejorPuntuacion(int id,int s)
     {
         AbrirDB();
         comandosDB = conexionDB.CreateCommand();
-        string sqlQuery = String.Format("insert into TopPuntuacion(Score) values(\"{0}\")", s);
+        string sqlQuery = String.Format("insert into TopPuntuacion(Id,Score) values(\"{0}\",\"{1}\")",id,s);
         comandosDB.CommandText = sqlQuery;
 
         comandosDB.ExecuteScalar();
         CerrarDB();
     }
 
-    void BorrarPuntos(int id)
+    public void BorrarPuntos(int id)
     {
         AbrirDB();
         comandosDB = conexionDB.CreateCommand();
-        string sqlQuery = "delete from Ranking where PlayerId =" + id;
+        string sqlQuery = "delete from TopPuntuacion where Id =" + id;
         comandosDB.CommandText = sqlQuery;
 
         comandosDB.ExecuteScalar();
