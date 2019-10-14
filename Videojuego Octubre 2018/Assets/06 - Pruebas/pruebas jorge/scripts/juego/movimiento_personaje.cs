@@ -62,6 +62,8 @@ public class movimiento_personaje : MonoBehaviour
 
     public GameObject FloatingLive;
 
+    bool EnMiel;
+
     void Start()
     {
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
@@ -160,15 +162,15 @@ public class movimiento_personaje : MonoBehaviour
                 DobleSalto = true;
 
             }
-
-            if (Input.GetKeyDown(KeyCode.LeftControl) || script_ctl_habilidades.AtaqueBasico)
+            //ATAQUE AEREO
+            /*if (Input.GetKeyDown(KeyCode.LeftControl) || script_ctl_habilidades.AtaqueBasico)
             {
                 GameObject P_AtaqueAereo = Instantiate(ParticulasAtaqueAereo, transform.position, Quaternion.identity);
                 animatorProta.Play("AtaqueAereo");
 
                 script_ctl_habilidades.AtaqueBasico = false;
 
-            }
+            }*/
             animatorProta.SetBool("Salto", false);
 
         }
@@ -227,6 +229,11 @@ public class movimiento_personaje : MonoBehaviour
                 }
                 //model.enabled = true;
             }
+        }
+
+        if(!EnMiel&&bloquearControl)
+        {
+            desbloquearControles();
         }
     }
 
@@ -306,8 +313,10 @@ public class movimiento_personaje : MonoBehaviour
 
             case "miel":
                 //bloquearControles();
+                EnMiel = true;
                 animatorProta.SetBool("AndarPegajoso", true);
                 velocidad_fin = 30;
+                bloquearControles();
                 break;
 
             case "agua":
@@ -329,9 +338,11 @@ public class movimiento_personaje : MonoBehaviour
                 break;
 
             case "miel":
+                EnMiel = false;
                 animatorProta.SetBool("AndarPegajoso", false);
                 velocidad_fin = velocidad;
-                desbloquearControles();
+                //desbloquearControles();
+                //Invoke("desbloquearControles", 0.15f);
 
                 break;
 

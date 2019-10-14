@@ -26,6 +26,7 @@ public class movimiento_objetos : MonoBehaviour
     movimiento_personaje Vidas;
     //Slider vidas;
     Ctrl_Puntuacion Puntuacion;
+    Ctrl_oleadas Oleadas;
 
     bool Salto = false;
     /*bool Jvisto = false;
@@ -45,7 +46,8 @@ public class movimiento_objetos : MonoBehaviour
     Enegia energia;
     AgentJumpToTarget Jump;
 
-    public int VidaPegajoso;
+    public int VidaEnemigo;
+    int dañoAtaque = 40;
 
     public float Velocidad;
 
@@ -53,7 +55,7 @@ public class movimiento_objetos : MonoBehaviour
     public GameObject FloatingGhost;
     public GameObject FloatingLifePega;
 
-    bool AtaquePega = false;
+    bool Ataque = false;
 
     // Use this for initialization
     void Start ()
@@ -69,6 +71,7 @@ public class movimiento_objetos : MonoBehaviour
         Jump = GetComponent<AgentJumpToTarget>();
         Velocidad = nav.speed;
         animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
 
         if (gameObject.name == "E_Bomb(Clone)")
         {
@@ -76,6 +79,8 @@ public class movimiento_objetos : MonoBehaviour
             animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
             animatorEnemigo.SetBool("enElAire", true);
         }
+
+        VidaEnemigo += (Oleadas.ContadorOleadas * 10);
     }
 	
 	// Update is called once per frame
@@ -180,15 +185,15 @@ public class movimiento_objetos : MonoBehaviour
                 
 
             case "A_Basico":
-            switch (gameObject.name)
+            /*switch (gameObject.name)
                 {
-                    case "E_Pega(Clone)":
-                        if (AtaquePega == false)
+                    case "E_Pega(Clone)":*/
+                        if (Ataque == false)
                         {
-                            AtaquePega = true;
-                            VidaPegajoso -= 40;
+                            Ataque = true;
+                            VidaEnemigo -= dañoAtaque;
                             
-                            if (VidaPegajoso <= 0)
+                            if (VidaEnemigo <= 0)
                             {
                                 print("desruimos enemigo");
                                 Puntuacion.Enemigos_Eliminados++;
@@ -200,13 +205,13 @@ public class movimiento_objetos : MonoBehaviour
                             {
                                 Vector3 Posiciontextos = new Vector3(transform.position.x, -60f, transform.position.z);
                                 var text = Instantiate(FloatingLifePega, Posiciontextos, Quaternion.identity);
-                                text.GetComponent<TextMesh>().text = VidaPegajoso.ToString();
+                                text.GetComponent<TextMesh>().text = VidaEnemigo.ToString();
                             }
                             Invoke("ActivarAtaque", 0.5f);
                         }
                         break;
 
-                    case "E_Bomb(Clone)":
+                    /*case "E_Bomb(Clone)":
                         print("desruimos enemigo");
                         Puntuacion.Enemigos_Eliminados++;
                         Muerte();
@@ -222,7 +227,7 @@ public class movimiento_objetos : MonoBehaviour
                         break;
 
                 }
-                break;
+                break;*/
 
             case "A_chorro":
                 Puntuacion.Enemigos_Eliminados++;
@@ -243,6 +248,7 @@ public class movimiento_objetos : MonoBehaviour
                 break;*/
 
             case "caida":
+                Puntuacion.Enemigos_Eliminados++;
                 Muerte();
                 break;
         }
@@ -294,6 +300,6 @@ public class movimiento_objetos : MonoBehaviour
 
     void ActivarAtaque()
     {
-        AtaquePega = false;
+        Ataque = false;
     }
 }

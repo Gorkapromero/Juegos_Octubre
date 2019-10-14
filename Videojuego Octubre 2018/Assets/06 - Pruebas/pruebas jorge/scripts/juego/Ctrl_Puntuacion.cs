@@ -29,6 +29,15 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     int BestScore;
 
+    public float VelocidadAnimacion;
+    float Valor;
+    float ValorFinal;
+    float ValorInicial = 0;
+    Text Texto;
+
+    bool B_tiempo = true;
+    bool FinTextos = true;
+    public int texto = 1;
 
     // Use this for initialization
     void Start ()
@@ -42,16 +51,72 @@ public class Ctrl_Puntuacion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (Valor != ValorFinal)
+        {
+            if (ValorInicial < ValorFinal)
+            {
+                Valor += (VelocidadAnimacion * Time.deltaTime) * (ValorFinal - ValorInicial);
+                if(B_tiempo)
+                {
+                    string Minutos = ((int)Valor / 59).ToString("f0");
+                    string Segundos = (Valor % 59).ToString("f0");
+                    if (Valor % 59 < 9.5f)
+                    {
+                        Texto.text = Minutos + ":" + 0 + Segundos;
+                    }
+                    else
+                    {
+                        Texto.text = Minutos + ":" + Segundos;
+                    }
+                }
+                else
+                {
+                    Texto.text = Valor.ToString("f0");
+                }
+                
+                if (Valor >= ValorFinal)
+                {
+                    Valor = ValorFinal;
+                    if (B_tiempo)
+                    {
+                        string Minutos = ((int)Valor / 59).ToString("f0");
+                        string Segundos = (Valor % 59).ToString("f0");
+                        if (Valor % 59 < 9.5f)
+                        {
+                            Texto.text = Minutos + ":" + 0 + Segundos;
+                        }
+                        else
+                        {
+                            Texto.text = Minutos + ":" + Segundos;
+                        }
+                    }
+                    else
+                    {
+                        Texto.text = Valor.ToString("f0");
+                    }
+
+                    texto++;
+                    MostrarTexto(texto);
+                }
+
+            }
+        }
+        else if(Valor==ValorFinal&&!FinTextos)
+        {
+            Valor = ValorFinal;
+            Texto.text = Valor.ToString();
+
+            texto++;
+            MostrarTexto(texto);
+        }
+
     }
 
     public void Mostrar_Textos()
     {
+        FinTextos = false;
         Puntuacion_final();
-        Invoke("Mostrartiempo", 1);
-        Invoke("Mostraroleadas", 2);
-        Invoke("MostrarEnemigos", 3);
-        Invoke("Mostrarscore", 4);
-        Invoke("MostrarBestscore", 5);
+        MostrarTexto(texto);
     }
 
     void Puntuacion_final()
@@ -68,19 +133,42 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     void Mostrartiempo()
     {
-        Texto_Tiempo.text = tiempo.T_Timer.text;
+        print("tiempo");
+        B_tiempo = true;
+        Valor = ValorInicial;
+        Texto = Texto_Tiempo;
+        ValorFinal = tiempo.Tiempo;
+        //Texto_Tiempo.text = tiempo.T_Timer.text;
     }
     void Mostraroleadas()
     {
-        Texto_Oleadas.text = Oleadas.ContadorOleadas.ToString();
+        print("oleadas");
+        B_tiempo = false;
+        FinTextos = false;
+        Valor = ValorInicial;
+        Texto = Texto_Oleadas;
+        ValorFinal = Oleadas.ContadorOleadas;
+        //Texto_Oleadas.text = Oleadas.ContadorOleadas.ToString();
     }
     void MostrarEnemigos()
     {
-        Texto_Enemigos.text = Enemigos_Eliminados.ToString();
+        print("Enemigos");
+        B_tiempo = false;
+        FinTextos = false;
+        Valor = ValorInicial;
+        Texto = Texto_Enemigos;
+        ValorFinal = Enemigos_Eliminados;
+        //Texto_Enemigos.text = Enemigos_Eliminados.ToString();
     }
     void Mostrarscore()
     {
-        Texto_Score.text = P_Final.ToString("f0");
+        print("score");
+        B_tiempo = false;
+        FinTextos = false;
+        Valor = ValorInicial;
+        Texto = Texto_Score;
+        ValorFinal = P_Final;
+        //Texto_Score.text = P_Final.ToString("f0");
     }
     void MostrarBestscore()
     {
@@ -105,5 +193,37 @@ public class Ctrl_Puntuacion : MonoBehaviour
         Texto_Enemigos.text = null;
         Texto_Score.text = null;
         Texto_BestScore.text = null;
+        NewScore.SetActive(false);
+        texto = 1;
+        Valor = ValorInicial;
+    }
+
+    void MostrarTexto(int x)
+    {
+        switch(x)
+        {
+            case 1:
+                Mostrartiempo();
+                break;
+            case 2:
+                FinTextos = true;
+                Invoke("Mostraroleadas", 0.5f);
+                //Mostraroleadas();
+                break;
+            case 3:
+                FinTextos = true;
+                Invoke("MostrarEnemigos", 0.5f);
+                //MostrarEnemigos();
+                break;
+            case 4:
+                FinTextos = true;
+                Invoke("Mostrarscore", 0.5f);
+                //Mostrarscore();
+                break;
+            case 5:
+                FinTextos = true;
+                Invoke("MostrarBestscore", 0.5f);
+                break;
+        }
     }
 }

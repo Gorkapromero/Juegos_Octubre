@@ -564,7 +564,7 @@ MonoBehaviour:
   Particulasboom: {fileID: 0}
   ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
     type: 2}
-  VidaPegajoso: 120
+  VidaEnemigo: 120
   Velocidad: 0
   FloatingEnergy: {fileID: 1078266722140502, guid: 5b0f70d2e30d81c46afa841c503feef8,
     type: 2}
