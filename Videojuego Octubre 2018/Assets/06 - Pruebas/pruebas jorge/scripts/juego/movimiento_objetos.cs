@@ -197,7 +197,13 @@ public class movimiento_objetos : MonoBehaviour
                         {
                             Ataque = true;
                             VidaEnemigo -= dañoAtaque;
-                            
+
+                            //Animacion de recibir daño para el enemigo
+                            nav.speed = 0;
+                            //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.Impulse);
+
+                            Invoke("recuperarVelocidadMalvaNormal", 0.5f);
+
                             if (VidaEnemigo <= 0)
                             {
                                 print("desruimos enemigo");
@@ -264,6 +270,11 @@ public class movimiento_objetos : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, vision);
+    }
+
+    void recuperarVelocidadMalvaNormal()
+    {
+        nav.speed = 25;
     }
 
     void saltar()
