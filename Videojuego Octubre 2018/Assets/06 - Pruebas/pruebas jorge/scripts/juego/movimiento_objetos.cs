@@ -58,6 +58,8 @@ public class movimiento_objetos : MonoBehaviour
 
     bool Ataque = false;
 
+    public Vector3 OffsetBomba;
+
     // Use this for initialization
     void Start ()
     {
@@ -106,7 +108,18 @@ public class movimiento_objetos : MonoBehaviour
         target = jugador.position;
         if (nav.enabled)
         {
-            nav.SetDestination(target);
+            if (gameObject.name == "E_Bomb(Clone)")
+            {
+                nav.SetDestination(target+OffsetBomba);
+                if (dist < vision)
+                {
+                    Invoke("explosion", tiempoExplosion);
+                }
+            }
+            else
+            {
+                nav.SetDestination(target);
+            }
         }
         else if(!nav.enabled&&gameObject.name == "E_Bomb(Clone)")
         {
@@ -121,14 +134,6 @@ public class movimiento_objetos : MonoBehaviour
         }
 
         dist = Vector3.Distance(jugador.position, transform.position);
-
-        if (gameObject.name == "E_Bomb(Clone)")   //movimiento en el suelo de bomba
-        {
-            if (dist < vision)
-            {                
-                Invoke("explosion", tiempoExplosion);
-            }
-        }
 
     }
     private void OnTriggerEnter(Collider other)
@@ -190,9 +195,17 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "A_Basico":
-            /*switch (gameObject.name)
+            switch (gameObject.name)
                 {
-                    case "E_Pega(Clone)":*/
+                    case "E_Bomb(Clone)":
+                        print("desruimos enemigo");
+                        Puntuacion.Enemigos_Eliminados++;
+                        Muerte();
+                        //sumamos energia
+                        energia.AñadirEnergia(50);
+                        break;
+
+                    default:
                         if (Ataque == false)
                         {
                             Ataque = true;
@@ -221,7 +234,6 @@ public class movimiento_objetos : MonoBehaviour
                             Invoke("ActivarAtaque", 0.5f);
                         }
                         break;
-
                     /*case "E_Bomb(Clone)":
                         print("desruimos enemigo");
                         Puntuacion.Enemigos_Eliminados++;
@@ -235,10 +247,10 @@ public class movimiento_objetos : MonoBehaviour
                         Muerte();
                         //sumamos energia
                         energia.AñadirEnergia(50);
-                        break;
+                        break;*/
 
                 }
-                break;*/
+                break;
 
             case "A_chorro":
                 Puntuacion.Enemigos_Eliminados++;
@@ -288,7 +300,7 @@ public class movimiento_objetos : MonoBehaviour
     {
         colBomb.radius += 25f * Time.deltaTime;
         GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
-        if (colBomb.radius >= 5f)
+        if (colBomb.radius >= 25f)
         {
             Destroy(this.gameObject);
         }
