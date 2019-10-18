@@ -42,10 +42,18 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     Enegia Energia_Total;
 
+    public float FuerzaSalto;
+    public bool sprint;
+    Rigidbody RBplayer;
+
+    protected Joystick joystick;
+
     // Use this for initialization
     void Start ()
     {
+        RBplayer = GameObject.FindGameObjectWithTag("Jugador").GetComponent<Rigidbody>();
         Energia_Total = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
+        joystick = FindObjectOfType<Joystick>();
         /*t0 = tablahabilidades[0].T_enfriamiento;
         t1 = tablahabilidades[1].T_enfriamiento;
         t2 = tablahabilidades[2].T_enfriamiento;
@@ -97,7 +105,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         //ACTIVAMOS CHORRO SI TENEMOS ENERGIA
         if (tablahabilidades[1].Energia_necesaria <= Energia_Total.Energia)
         {
-            print("tiempo chorro on");
+            //print("tiempo chorro on");
             if(tablahabilidades[1].tiempo.activeSelf == true)
             {
                 print("activamos");
@@ -186,6 +194,22 @@ public class Ctrl_Habilidades : MonoBehaviour
             tablahabilidades[3].tiempo.SetActive(true);
             tablahabilidades[3].Boton.enabled = false;
         }
+
+        if(sprint)
+        {
+            if(joystick.Horizontal<0)
+            {
+                RBplayer.velocity = Vector3.right * -FuerzaSalto;  
+            }
+            else if (joystick.Horizontal>0)
+            {
+                RBplayer.velocity = Vector3.right * FuerzaSalto;
+            }
+            RBplayer.velocity = Vector3.right * -FuerzaSalto;
+            GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().Play("Salto+Adelante");
+            Invoke("move", 0.5f);
+        }
+        //print("Joystick: " + joystick.Horizontal);
     }
 
     public void Ataque_Basico()
@@ -207,14 +231,7 @@ public class Ctrl_Habilidades : MonoBehaviour
     {
         t_chorro = true;
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = false;
-        Vector3 SpawnPosition = new Vector3(0, 0, 0);
-        SpawnPosition = this.transform.position;
-        //SpawnPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-
-        GameObject Objeto = Instantiate(tablahabilidades[1].habilidad, SpawnPosition, tablahabilidades[1].habilidad.transform.rotation);
-        //GameObject.Find("A_chorro").GetComponent<Button>().enabled = false;
-
-        Invoke("move", 1f);
+        sprint = true;
 
         //gastamos energia
         Energia_Total.RestarEnergia(tablahabilidades[1].Energia_necesaria);
@@ -254,5 +271,6 @@ public class Ctrl_Habilidades : MonoBehaviour
     void move()
     {
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = true;
+        sprint = false;
     }
 }

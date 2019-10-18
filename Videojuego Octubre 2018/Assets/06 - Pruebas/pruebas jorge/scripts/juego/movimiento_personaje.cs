@@ -26,7 +26,6 @@ public class movimiento_personaje : MonoBehaviour
     public float FuerzaSalto = 100f;
 
     public bool DobleSalto;
-    bool salto;
 
     public bool DentroFuego;
 
@@ -139,6 +138,7 @@ public class movimiento_personaje : MonoBehaviour
             }
 
             DobleSalto = false;
+
             
         }
        

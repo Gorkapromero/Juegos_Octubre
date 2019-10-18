@@ -27,6 +27,7 @@ public class movimiento_objetos : MonoBehaviour
     //Slider vidas;
     Ctrl_Puntuacion Puntuacion;
     Ctrl_oleadas Oleadas;
+    Ctrl_Habilidades Habilidades;
 
     bool Salto = false;
     /*bool Jvisto = false;
@@ -72,6 +73,7 @@ public class movimiento_objetos : MonoBehaviour
         Velocidad = nav.speed;
         animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
         Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
+        Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
 
         if (gameObject.name == "E_Bomb(Clone)")
         {
@@ -162,27 +164,30 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "Jugador":                       //objeto toca personaje
-                switch (gameObject.name)
+                if (!Habilidades.sprint)
                 {
-                    case "E_Normal(Clone)":
-                        print("quitamos vida");
-                        Vidas.quitarvida_Vida();
+                    switch (gameObject.name)
+                    {
+                        case "E_Normal(Clone)":
+                            print("quitamos vida");
+                            Vidas.quitarvida_Vida();
+                            Destroy(this.gameObject);
+                            break;
 
-                        Destroy(this.gameObject);
-                        break;
-                    case "E_Bomb(Clone)":
-                        Vidas.quitarvida_Vida();
-                        explosion();
-                        Destroy(this.gameObject);
-                        break;
-                    case "E_Pega(Clone)":
-                        Vector3 PosPoff = new Vector3(jugador.position.x, -54f, jugador.position.z);
-                        GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
-                        Destroy(this.gameObject);
-                        break;
+                        case "E_Bomb(Clone)":
+                            Vidas.quitarvida_Vida();
+                            explosion();
+                            Destroy(this.gameObject);
+                            break;
+
+                        case "E_Pega(Clone)":
+                            Vector3 PosPoff = new Vector3(jugador.position.x, -54f, jugador.position.z);
+                            GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
+                            Destroy(this.gameObject);
+                            break;
+                    }
                 }
                 break;
-                
 
             case "A_Basico":
             /*switch (gameObject.name)
