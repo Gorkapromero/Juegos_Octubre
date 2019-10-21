@@ -50,7 +50,7 @@ public class movimiento_objetos : MonoBehaviour
     public int VidaEnemigo;
     int dañoAtaque = 40;
 
-    public float Velocidad;
+    public float Velocidad_caidaBomba;
 
     public GameObject FloatingEnergy;
     public GameObject FloatingGhost;
@@ -72,7 +72,7 @@ public class movimiento_objetos : MonoBehaviour
         energia = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
         Vidas = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         Jump = GetComponent<AgentJumpToTarget>();
-        Velocidad = nav.speed;
+        //Velocidad = nav.speed;
         animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
         Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
         Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
@@ -123,7 +123,7 @@ public class movimiento_objetos : MonoBehaviour
         }
         else if(!nav.enabled&&gameObject.name == "E_Bomb(Clone)")
         {
-            float fixedSpeed = Velocidad * Time.deltaTime;
+            float fixedSpeed = Velocidad_caidaBomba * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position,jugador.position,fixedSpeed);
         }
         Debug.DrawLine(transform.position, target, Color.green);
@@ -182,7 +182,7 @@ public class movimiento_objetos : MonoBehaviour
                         case "E_Bomb(Clone)":
                             Vidas.quitarvida_Vida();
                             explosion();
-                            Destroy(this.gameObject);
+                            //Destroy(this.gameObject);
                             break;
 
                         case "E_Pega(Clone)":
@@ -300,7 +300,7 @@ public class movimiento_objetos : MonoBehaviour
     {
         colBomb.radius += 25f * Time.deltaTime;
         GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
-        if (colBomb.radius >= 25f)
+        if (colBomb.radius >= 12f)
         {
             Destroy(this.gameObject);
         }

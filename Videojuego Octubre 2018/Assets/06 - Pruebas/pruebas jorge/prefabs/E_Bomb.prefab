@@ -834,7 +834,7 @@ Rigidbody:
   m_GameObject: {fileID: 1318831246343000}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 20
+  m_Drag: 15
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -916,13 +916,14 @@ MonoBehaviour:
   ParticulasMuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
     type: 2}
   VidaEnemigo: 40
-  Velocidad: 0
+  Velocidad_caidaBomba: 40
   FloatingEnergy: {fileID: 1078266722140502, guid: 5b0f70d2e30d81c46afa841c503feef8,
     type: 2}
   FloatingGhost: {fileID: 1078266722140502, guid: f6f05c7a0b08bf74dac672311120a44c,
     type: 2}
   FloatingLifePega: {fileID: 1310590947349496, guid: aa3aebc0f15fbfe49bd9784fea50625d,
     type: 2}
+  OffsetBomba: {x: 0, y: 0, z: 0.8}
 --- !u!114 &114994587752658236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1192,7 +1193,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 80
+  m_Speed: 100
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120

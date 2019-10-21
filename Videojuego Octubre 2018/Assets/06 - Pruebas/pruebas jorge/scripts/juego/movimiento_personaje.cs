@@ -63,13 +63,14 @@ public class movimiento_personaje : MonoBehaviour
 
     bool EnMiel;
 
+    int movimiento;
     void Start()
     {
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
         //model.sharedMesh = null;
         //model.SetActive(!model.activeSelf);
         ActualizarVidas();
-        joystick = FindObjectOfType<Joystick>();
+        
         rb = GetComponent<Rigidbody>();
         /*if (GameObject.FindGameObjectWithTag("lavadora")) {
             Lavadora = GameObject.FindGameObjectWithTag("lavadora").GetComponent<Ctrl_Lavadora>();
@@ -83,6 +84,7 @@ public class movimiento_personaje : MonoBehaviour
       //  Ctrl_Estropajo = GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Estropajo1>();
 
         animatorCamara = GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>();
+        //joystick = FindObjectOfType<Joystick>();
     }
 
 
@@ -93,11 +95,11 @@ public class movimiento_personaje : MonoBehaviour
         if (script_ctl_habilidades.AtaqueBasico == false && bloquearControl == false)
         {
             //velocidad_fin = vidas.value * 20;
-            rb.velocity = new Vector3(joystick.Horizontal * velocidad_fin,
+            rb.velocity = new Vector3(/*joystick.Horizontal*/movimiento * velocidad_fin,
                                          rb.velocity.y,
                                          0);
-            
-            //***Corrección "temporal" del solapado de animaciones de andar y correr ********
+            GetComponent<Animator>().SetFloat("Speed", movimiento);
+            /*//***Corrección "temporal" del solapado de animaciones de andar y correr ********
             if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
             {
                 GetComponent<Animator>().SetFloat("Speed", 0.34f);
@@ -110,7 +112,7 @@ public class movimiento_personaje : MonoBehaviour
             else
             {
                 GetComponent<Animator>().SetFloat("Speed", (float)System.Math.Round(joystick.Horizontal, 2));
-            }
+            }*/
         }
         else
         {
@@ -179,11 +181,11 @@ public class movimiento_personaje : MonoBehaviour
         //Para la orientacion del Prota
         if (isGrounded == true && !script_ctl_habilidades.AtaqueBasico)
         {
-            if (joystick.Horizontal < 0)
+            if (movimiento==-1)
             {
                 transform.eulerAngles = new Vector3(0, -90, 0);
             }
-            if (joystick.Horizontal > 0)
+            if (movimiento==1)
             {
                 transform.eulerAngles = new Vector3(0, 90, 0);
                 //GetComponent<Animator>().Play("Take 001 (1)");
@@ -417,5 +419,19 @@ public class movimiento_personaje : MonoBehaviour
         GameObject ParticulasCaidadoblesalto = Instantiate(ParticulasCaidaDobleSalto, transform.position, Quaternion.identity);
         CollDobleSalto.enabled = false;
         //animatorCamara.Play("animShake_DobleSalto");
+    }
+
+    public void IrDerecha()
+    {
+        movimiento = 1;
+    }
+
+    public void IrIzquierda()
+    {
+        movimiento = -1;
+    }
+    public void Parar()
+    {
+        movimiento = 0;
     }
 }

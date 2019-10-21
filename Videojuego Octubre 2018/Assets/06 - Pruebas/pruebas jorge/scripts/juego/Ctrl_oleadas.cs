@@ -155,12 +155,16 @@ public class Ctrl_oleadas : MonoBehaviour
         for (int x = 0; x < posiciones.Length;x++)
         {
             float dist = Vector3.Distance(posiciones[x].position, jugador.position);
-            if(x<=4&&rangoDistancia>dist)//encimera
+            if (x > 4 && rangoDistancia < dist) 
             {
-                /*posicionesActivas[pos] = posiciones[x];
-                pos++;*/
                 PosicionesActivas.Add(posiciones[x]);
             }
+            /*if(x<=4&&rangoDistancia>dist)//encimera
+            {
+                /*posicionesActivas[pos] = posiciones[x];
+                pos++;
+                PosicionesActivas.Add(posiciones[x]);
+            }*/
             /*else if(x>4&&rangoDistancia<dist)
             {
                 /*posicionesActivas[pos] = posiciones[x];
