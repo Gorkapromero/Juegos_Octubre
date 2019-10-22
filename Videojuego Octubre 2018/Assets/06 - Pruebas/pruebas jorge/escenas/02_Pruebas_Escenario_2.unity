@@ -8408,7 +8408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1b8076b1b60a94ba30a863e03b5e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Vidas: 1
+  Vidas: 5
   T_Vidas: {fileID: 1211560371}
   velocidad: 80
   Finpartida: {fileID: 584273809}
