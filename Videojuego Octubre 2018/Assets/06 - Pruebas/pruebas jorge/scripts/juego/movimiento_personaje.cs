@@ -72,6 +72,13 @@ public class movimiento_personaje : MonoBehaviour
     Color tempColoropac;
 
 
+    //VariablesSonido
+    AudioSource sonidoMuerte;
+    AudioSource sonidoMuerte_02;
+    AudioSource musicaDeFondo;
+    AudioSource sonidoQuitarVida;
+    AudioSource sonidoDisparo;
+
     void Start()
     {
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
@@ -97,6 +104,13 @@ public class movimiento_personaje : MonoBehaviour
         tempColoropac = Irizquierda.color;
         tempColortrans.a = 0.5f;
         tempColoropac.a = 1f;
+
+        //Variables Sonido
+        musicaDeFondo = GameObject.Find("MusicaFondo").GetComponent<AudioSource>();
+        sonidoMuerte = GameObject.Find("SonidoMuerte").GetComponent<AudioSource>();
+        sonidoMuerte_02 = GameObject.Find("SonidoMuerte_02").GetComponent<AudioSource>();
+        sonidoQuitarVida = GameObject.Find("SonidoQuitarVida").GetComponent<AudioSource>();
+
     }
 
 
@@ -370,11 +384,21 @@ public class movimiento_personaje : MonoBehaviour
         {
             Vidas--;
 
+            //Reproducimos el sonido de quitar vida
+            sonidoQuitarVida.Play();
+
             if (Vidas == 0)
             {
                 Finpartida.SetActive(true);
                 GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Mostrar_Textos();
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
+
+                //Reproducimos el sonido de "MUERTE"
+                sonidoMuerte.Play();
+                sonidoMuerte_02.Play();
+
+                //Y bajamos el sonido de la musica de fondo
+                musicaDeFondo.volume = 0.05f;
 
                 animatorProta.Play("Muerte");
                 velocidad_fin = 0;
@@ -382,6 +406,8 @@ public class movimiento_personaje : MonoBehaviour
             }
             else
             {
+
+
                 animatorProta.Play("RecibirDaño");
                 print("blink");
                 immunedTime = immuned;

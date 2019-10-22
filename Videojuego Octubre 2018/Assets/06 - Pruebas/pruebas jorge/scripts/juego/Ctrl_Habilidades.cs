@@ -49,6 +49,10 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     protected Joystick joystick;
 
+    //VariablesSonido
+    AudioSource sonidoDisparo;
+
+
     // Use this for initialization
     void Start ()
     {
@@ -63,6 +67,9 @@ public class Ctrl_Habilidades : MonoBehaviour
         tablahabilidades[1].tiempo.SetActive(true);
         tablahabilidades[2].tiempo.SetActive(true);
         tablahabilidades[3].tiempo.SetActive(true);
+
+        //VariablesSonido
+        sonidoDisparo = GameObject.Find("SonidoDisparo").GetComponent<AudioSource>();
 
     }
 
@@ -216,6 +223,9 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public void Ataque_Basico()
     {
+        //Reproducimos el sonido del disparo
+        sonidoDisparo.Play();
+
         t_basico = true;
         AtaqueBasico = true;
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().SetBool("LanzarPajarita",true);
