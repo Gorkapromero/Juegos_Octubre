@@ -64,6 +64,14 @@ public class movimiento_personaje : MonoBehaviour
     bool EnMiel;
 
     int movimiento;
+    public int DireccionProta;
+
+    public Image Irderecha;
+    public Image Irizquierda;
+    Color tempColortrans;
+    Color tempColoropac;
+
+
     void Start()
     {
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
@@ -85,6 +93,10 @@ public class movimiento_personaje : MonoBehaviour
 
         animatorCamara = GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>();
         //joystick = FindObjectOfType<Joystick>();
+        tempColortrans = Irderecha.color;
+        tempColoropac = Irizquierda.color;
+        tempColortrans.a = 0.5f;
+        tempColoropac.a = 1f;
     }
 
 
@@ -184,11 +196,12 @@ public class movimiento_personaje : MonoBehaviour
             if (movimiento==-1)
             {
                 transform.eulerAngles = new Vector3(0, -90, 0);
+                DireccionProta = -1;
             }
             if (movimiento==1)
             {
                 transform.eulerAngles = new Vector3(0, 90, 0);
-                //GetComponent<Animator>().Play("Take 001 (1)");
+                DireccionProta = 1;
             }
 
             /*if (joystick.Horizontal == 0)
@@ -361,19 +374,15 @@ public class movimiento_personaje : MonoBehaviour
             {
                 Finpartida.SetActive(true);
                 GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Mostrar_Textos();
-                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
-                Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
+                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
 
                 animatorProta.Play("Muerte");
                 velocidad_fin = 0;
-                GameObject[] Enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
-                for(int i = 0;i<Enemigos.Length;i++)
-                {
-                    Destroy(Enemigos[i]);
-                }
+                
             }
             else
             {
+                animatorProta.Play("RecibirDaño");
                 print("blink");
                 immunedTime = immuned;
                 //model.enabled = false;
@@ -424,14 +433,20 @@ public class movimiento_personaje : MonoBehaviour
     public void IrDerecha()
     {
         movimiento = 1;
+        Irderecha.color = tempColoropac;
+        Irizquierda.color = tempColortrans;
     }
 
     public void IrIzquierda()
     {
         movimiento = -1;
+        Irderecha.color = tempColortrans;
+        Irizquierda.color = tempColoropac;
     }
     public void Parar()
     {
         movimiento = 0;
+        Irderecha.color = tempColortrans;
+        Irizquierda.color = tempColortrans;
     }
 }

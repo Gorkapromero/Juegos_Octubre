@@ -45,15 +45,17 @@ public class Ctrl_Habilidades : MonoBehaviour
     public float FuerzaSalto;
     public bool sprint;
     Rigidbody RBplayer;
+    GameObject Player;
 
     protected Joystick joystick;
 
     // Use this for initialization
     void Start ()
     {
-        RBplayer = GameObject.FindGameObjectWithTag("Jugador").GetComponent<Rigidbody>();
+        Player = GameObject.FindGameObjectWithTag("Jugador");
+        RBplayer = Player.GetComponent<Rigidbody>();
         Energia_Total = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
-        joystick = FindObjectOfType<Joystick>();
+        //joystick = FindObjectOfType<Joystick>();
         /*t0 = tablahabilidades[0].T_enfriamiento;
         t1 = tablahabilidades[1].T_enfriamiento;
         t2 = tablahabilidades[2].T_enfriamiento;
@@ -197,19 +199,19 @@ public class Ctrl_Habilidades : MonoBehaviour
 
         if(sprint)
         {
-            if(joystick.Horizontal<0)
+            if(Player.GetComponent<movimiento_personaje>().DireccionProta == -1)
             {
+                print("saltamos izquierda");
                 RBplayer.velocity = Vector3.right * -FuerzaSalto;  
             }
-            else if (joystick.Horizontal>0)
+            else if (Player.GetComponent<movimiento_personaje>().DireccionProta == 1)
             {
+                print("saltamos derecha");
                 RBplayer.velocity = Vector3.right * FuerzaSalto;
             }
-            RBplayer.velocity = Vector3.right * -FuerzaSalto;
             GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().Play("Salto+Adelante");
             Invoke("move", 0.5f);
         }
-        //print("Joystick: " + joystick.Horizontal);
     }
 
     public void Ataque_Basico()

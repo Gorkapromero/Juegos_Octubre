@@ -206,7 +206,7 @@ public class movimiento_objetos : MonoBehaviour
                         break;
 
                     default:
-                        if (Ataque == false)
+                        if (Ataque == false&&Habilidades.AtaqueBasico==true)
                         {
                             Ataque = true;
                             VidaEnemigo -= dañoAtaque;

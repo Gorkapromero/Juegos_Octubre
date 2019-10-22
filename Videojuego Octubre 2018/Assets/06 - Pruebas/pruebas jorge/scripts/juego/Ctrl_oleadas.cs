@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum EstadoJugador 
+{ 
+    Vivo, 
+    muerto 
+}
 public class Ctrl_oleadas : MonoBehaviour
 {
     public Transform PosicionParacas;
@@ -52,6 +57,7 @@ public class Ctrl_oleadas : MonoBehaviour
 
     public Text TextoOleadas;
     public Transform jugador;
+    public EstadoJugador PlayerState = EstadoJugador.Vivo;
 
     public float rangoDistancia;
 
@@ -69,49 +75,63 @@ public class Ctrl_oleadas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Estado == SpawnState.WAITING)
+        if (PlayerState.ToString() == "muerto")
         {
-            if(GameObject.FindGameObjectWithTag("Enemigo") == null)//comprobar si el enemigo esta vivo
+            if (GameObject.FindGameObjectWithTag("Enemigo"))
             {
-                OleadaCompletada();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        if (WaveCountdown <= 0)
-        {
-            if(Estado != SpawnState.SPAWNING)
-            {
-                if (oleadas.Length > 1)  //comprobamos si hay oleadas personalizadas
+                GameObject[] Enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+                for (int i = 0; i < Enemigos.Length; i++)
                 {
-                    for (int s = 1; s < oleadas.Length; s++)
-                    {
-                        if (oleadas[s].numeroOleada == ContadorOleadas + 1)  //miramos si alguna coincide con la oleada actual
-                        {
-                            print("oleada personalizada");
-                            StartCoroutine(SpawnOleada(oleadas[s]));
-                        }
-                        else
-                        {
-                            print("oleada normal");
-                            StartCoroutine(SpawnOleada(oleadas[0]));
-                        }
-                    }
+                    Destroy(Enemigos[i]);
                 }
-                else
-                {
-                    print("oleada normal");
-                    StartCoroutine(SpawnOleada(oleadas[0]));
-                }
-
             }
         }
         else
         {
-            WaveCountdown -= Time.deltaTime;
+            if (Estado == SpawnState.WAITING)
+            {
+                if (GameObject.FindGameObjectWithTag("Enemigo") == null)//comprobar si el enemigo esta vivo
+                {
+                    OleadaCompletada();
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            if (WaveCountdown <= 0)
+            {
+                if (Estado != SpawnState.SPAWNING)
+                {
+                    if (oleadas.Length > 1)  //comprobamos si hay oleadas personalizadas
+                    {
+                        for (int s = 1; s < oleadas.Length; s++)
+                        {
+                            if (oleadas[s].numeroOleada == ContadorOleadas + 1)  //miramos si alguna coincide con la oleada actual
+                            {
+                                print("oleada personalizada");
+                                StartCoroutine(SpawnOleada(oleadas[s]));
+                            }
+                            else
+                            {
+                                print("oleada normal");
+                                StartCoroutine(SpawnOleada(oleadas[0]));
+                            }
+                        }
+                    }
+                    else
+                    {
+                        print("oleada normal");
+                        StartCoroutine(SpawnOleada(oleadas[0]));
+                    }
+
+                }
+            }
+            else
+            {
+                WaveCountdown -= Time.deltaTime;
+            }
         }
 
     }
