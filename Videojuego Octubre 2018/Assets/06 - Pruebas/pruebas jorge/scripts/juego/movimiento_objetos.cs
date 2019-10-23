@@ -60,6 +60,10 @@ public class movimiento_objetos : MonoBehaviour
 
     public Vector3 OffsetBomba;
 
+    //Variables Sonidos
+    AudioSource SonidoRecibirPajaritazoEnemigo;
+
+
     // Use this for initialization
     void Start ()
     {
@@ -85,14 +89,18 @@ public class movimiento_objetos : MonoBehaviour
         }
 
         VidaEnemigo += (Oleadas.ContadorOleadas * 10);
+
+        //Variables Sonidos
+        SonidoRecibirPajaritazoEnemigo = GameObject.Find("SonidoRecibirPajaritazoEnemigo").GetComponent<AudioSource>();
+
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
         //ANIMACIONES**********//
-        if (gameObject.name != "E_Normal(Clone)")
-        {
+        //if (gameObject.name != "E_Normal(Clone)")
+        //{
             if (nav.velocity.x != 0)
             {
                 animatorEnemigo.SetBool("andando", true);
@@ -101,7 +109,7 @@ public class movimiento_objetos : MonoBehaviour
             {
                 animatorEnemigo.SetBool("andando", false);
             }
-        }
+        //}
         //*********************//
 
         //target = new Vector3(jugador.position.x,jugador.position.y,this.transform.position.z);
@@ -199,6 +207,11 @@ public class movimiento_objetos : MonoBehaviour
                 {
                     case "E_Bomb(Clone)":
                         print("desruimos enemigo");
+
+
+                        //Sonido de recibir daño para el enemigo
+                        SonidoRecibirPajaritazoEnemigo.Play();
+
                         Puntuacion.Enemigos_Eliminados++;
                         Muerte();
                         //sumamos energia
@@ -212,10 +225,16 @@ public class movimiento_objetos : MonoBehaviour
                             VidaEnemigo -= dañoAtaque;
 
                             //Animacion de recibir daño para el enemigo
+                            animatorEnemigo.Play("RecibirGolpe");
+
+                            //Sonido de recibir daño para el enemigo
+                            SonidoRecibirPajaritazoEnemigo.Play();
+
+
                             nav.speed = 0;
                             //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.Impulse);
 
-                            Invoke("recuperarVelocidadMalvaNormal", 0.5f);
+                            Invoke("recuperarVelocidadMalvaNormal", 1f);
 
                             if (VidaEnemigo <= 0)
                             {
