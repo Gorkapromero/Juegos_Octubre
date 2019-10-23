@@ -232,7 +232,7 @@ public class movimiento_objetos : MonoBehaviour
 
 
                             nav.speed = 0;
-                            //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.Impulse);
+                            //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.VelocityChange);
 
                             Invoke("recuperarVelocidadMalvaNormal", 1f);
 
