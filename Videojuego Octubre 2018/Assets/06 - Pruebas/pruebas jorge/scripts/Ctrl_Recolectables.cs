@@ -28,7 +28,7 @@ public class Ctrl_Recolectables : MonoBehaviour
         }
         else if(tiempo <= 0)
         {
-            Vector3 PosicionObjeto = new Vector3(Random.Range(-RandomizePosition.x, RandomizePosition.x), -49f, transform.position.z);
+            Vector3 PosicionObjeto = new Vector3(Random.Range(-RandomizePosition.x, RandomizePosition.x), RandomizePosition.y , transform.position.z);
             GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
             Indicadores.Target = Recolectable;
 

@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4328,6 +4328,11 @@ Prefab:
       propertyPath: FuerzaSalto
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
+        type: 2}
+      propertyPath: MaterialPajarita
+      value: 
+      objectReference: {fileID: 2100000, guid: 6430045639ca14d4887dbf89570d8c19, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ad94a543deda746a5cb81f5b543601, type: 2}
   m_IsPrefabAsset: 0
@@ -8711,13 +8716,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1312987153}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7d17820bdfa517489d602a968b6ed5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RandomizePosition: {x: 483, y: 49.5, z: 0}
-  CreationTime: 90
+  RandomizePosition: {x: 483, y: -42.5, z: 0}
+  CreationTime: 1
   Objeto: {fileID: 1951060795561662, guid: 980b85f1254ea7942a3dbc88a29df924, type: 2}
   ParticulasAparece: {fileID: 1130418685649048, guid: 91f7c8084a6e4884ca7dcb4f11cf4f92,
     type: 2}

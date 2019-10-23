@@ -29,6 +29,7 @@ public class Ctrl_Habilidades : MonoBehaviour
     //public GameObject ParticulasExplosion; 
     public GameObject ParticulasSalpicadura;
 
+    public float DañoBasico;
 
     public bool t_basico = false;
     bool t_chorro = false;
@@ -49,6 +50,8 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     protected Joystick joystick;
 
+    public Material MaterialPajarita;
+    Color ColorPajarita;
     //VariablesSonido
     AudioSource sonidoDisparo;
 
@@ -59,6 +62,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Jugador");
         RBplayer = Player.GetComponent<Rigidbody>();
         Energia_Total = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
+        ColorPajarita = MaterialPajarita.color;
         //joystick = FindObjectOfType<Joystick>();
         /*t0 = tablahabilidades[0].T_enfriamiento;
         t1 = tablahabilidades[1].T_enfriamiento;
@@ -284,5 +288,11 @@ public class Ctrl_Habilidades : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = true;
         sprint = false;
+    }
+
+    public void quitarDañoExtra()
+    {
+        DañoBasico = 40;
+        MaterialPajarita.color = ColorPajarita;
     }
 }

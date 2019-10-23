@@ -15,6 +15,7 @@ public class Recolectable : MonoBehaviour {
     //public GameObject ParticulasVida;
 
     movimiento_personaje Jugador;
+    Ctrl_Habilidades Habilidades;
 
     [System.Serializable]
     public class objeto
@@ -26,11 +27,14 @@ public class Recolectable : MonoBehaviour {
 
     public objeto[] objetos;
 
+    public Color ColorMasDaño;
+
     // Use this for initialization
     void Start()
     {
         Invoke("Destruir", DestroyTime);
         Jugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
+        Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
     }
 
     // Update is called once per frame
@@ -43,7 +47,7 @@ public class Recolectable : MonoBehaviour {
     {
         if (other.gameObject.tag == "Jugador")
         {
-            
+            CogerObjeto();
         }
     }
 
@@ -73,11 +77,20 @@ public class Recolectable : MonoBehaviour {
                     case "Vida":
                         Jugador.Vidas++;
                         Jugador.ActualizarVidas();
-                        Vector3 PosicionParticulas = new Vector3(transform.position.x, -24f, transform.position.z);
-                        Instantiate(objetos[j].Particulas, PosicionParticulas, Quaternion.identity);
+                        Vector3 PosicionParticulasVida = new Vector3(transform.position.x, -24f, transform.position.z);
+                        Instantiate(objetos[j].Particulas, PosicionParticulasVida, Quaternion.identity);
                         Destroy(gameObject);
                         break;
                     case "Daño":
+                        //aumentamos daño
+                        Habilidades.DañoBasico = 100;
+                        //cambiamos color pajarita
+                        Habilidades.MaterialPajarita.color = ColorMasDaño;
+                        //indicamos que hemos conseguido mas daño
+                        Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -24f, transform.position.z);
+                        Instantiate(objetos[j].Particulas, PosicionParticulasDaño, Quaternion.identity);
+                        //activamos tiempo daño extra
+                        Destroy(gameObject);
                         break;
                     case "Default":
                         break;
