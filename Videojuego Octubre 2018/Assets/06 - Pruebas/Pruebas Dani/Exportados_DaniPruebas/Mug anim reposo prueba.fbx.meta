@@ -782,8 +782,8 @@ ModelImporter:
     - serializedVersion: 16
       name: "RecibirDa\xF1o"
       takeName: Take 001
-      firstFrame: 189
-      lastFrame: 193
+      firstFrame: 505
+      lastFrame: 535
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -803,13 +803,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.13189577
-        functionName: bloquearControles
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.083933674
         functionName: bloquearControles
         data: 
@@ -817,14 +810,28 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.85611373
+      - time: 0.13189577
+        functionName: bloquearControles
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.21092682
+        functionName: bloquearControles
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9093864
         functionName: desbloquearControles
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.81054914
+      - time: 0.9723928
         functionName: desbloquearControles
         data: 
         objectReferenceParameter: {instanceID: 0}
