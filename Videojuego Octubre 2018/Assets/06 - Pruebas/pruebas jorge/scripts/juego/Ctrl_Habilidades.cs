@@ -43,7 +43,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     Enegia Energia_Total;
 
-    public float FuerzaSalto;
+    public float FuerzaSprint;
     public bool sprint;
     Rigidbody RBplayer;
     GameObject Player;
@@ -213,12 +213,12 @@ public class Ctrl_Habilidades : MonoBehaviour
             if(Player.GetComponent<movimiento_personaje>().DireccionProta == -1)
             {
                 print("saltamos izquierda");
-                RBplayer.velocity = Vector3.right * -FuerzaSalto;  
+                RBplayer.velocity = Vector3.right * -FuerzaSprint;  
             }
             else if (Player.GetComponent<movimiento_personaje>().DireccionProta == 1)
             {
                 print("saltamos derecha");
-                RBplayer.velocity = Vector3.right * FuerzaSalto;
+                RBplayer.velocity = Vector3.right * FuerzaSprint;
             }
             GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().Play("Salto+Adelante");
             Invoke("move", 0.5f);

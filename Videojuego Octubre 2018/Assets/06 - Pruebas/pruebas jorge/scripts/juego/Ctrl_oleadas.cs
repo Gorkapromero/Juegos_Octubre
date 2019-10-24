@@ -11,6 +11,7 @@ public enum EstadoJugador
 public class Ctrl_oleadas : MonoBehaviour
 {
     public Transform PosicionParacas;
+    public Vector3 OffsetCaida;
     public Transform[] posiciones;
     //public Transform[] posicionesActivas;
     public List<Transform> PosicionesActivas;
@@ -220,7 +221,7 @@ public class Ctrl_oleadas : MonoBehaviour
                     if(spawnPoint==0)
                     {
                         Vector3 SpawnPosition = new Vector3(0, 0, 0);
-                        SpawnPosition = new Vector3(jugador.position.x, PosicionParacas.position.y, jugador.position.z);
+                        SpawnPosition = new Vector3(jugador.position.x+Random.Range(-OffsetCaida.x,OffsetCaida.x), PosicionParacas.position.y, jugador.position.z);
                         GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, Quaternion.identity);
                     }
                     else

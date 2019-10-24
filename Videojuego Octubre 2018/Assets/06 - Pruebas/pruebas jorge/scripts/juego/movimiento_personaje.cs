@@ -389,10 +389,6 @@ public class movimiento_personaje : MonoBehaviour
 
             if (Vidas == 0)
             {
-                Finpartida.SetActive(true);
-                GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Mostrar_Textos();
-                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
-
                 //Reproducimos el sonido de "MUERTE"
                 sonidoMuerte.Play();
                 sonidoMuerte_02.Play();
@@ -402,6 +398,12 @@ public class movimiento_personaje : MonoBehaviour
 
                 animatorProta.Play("Muerte");
                 velocidad_fin = 0;
+
+                //Destruimos enemigos
+                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
+
+                //menu fin de partida
+                Invoke("ActivarFinPartida",3);
                 
             }
             else
@@ -474,5 +476,11 @@ public class movimiento_personaje : MonoBehaviour
         movimiento = 0;
         Irderecha.color = tempColortrans;
         Irizquierda.color = tempColortrans;
+    }
+
+    void ActivarFinPartida()
+    {
+        Finpartida.SetActive(true);
+        GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Mostrar_Textos();
     }
 }

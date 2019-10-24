@@ -285,10 +285,6 @@ public class movimiento_objetos : MonoBehaviour
                 Destroy(this.gameObject);
                 break;
 
-            /*case "Fuego":
-                Destroy(this.gameObject);
-                break;*/
-
             case "caida":
                 Puntuacion.Enemigos_Eliminados++;
                 Muerte();

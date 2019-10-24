@@ -11,13 +11,16 @@ public class Ctrl_Recolectables : MonoBehaviour
 
     public GameObject ParticulasAparece;
     Window_IndicadorRecolectables Indicadores;
+    
+    movimiento_personaje Jugador;
 
     // Use this for initialization
     void Start () 
     {
         tiempo = CreationTime;
         Indicadores = GameObject.Find("Window_recolectablePoint").GetComponent<Window_IndicadorRecolectables>();
-	}
+        Jugador= GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
+    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -34,6 +37,11 @@ public class Ctrl_Recolectables : MonoBehaviour
 
             Vector3 PosicionParticulas = new Vector3(PosicionObjeto.x, -54f, transform.position.z);
             Instantiate(ParticulasAparece, PosicionParticulas, Quaternion.Euler(-90f,0,0));
+            
+            if(Jugador.Vidas<5)
+            {
+                
+            }
             tiempo = CreationTime;
         }
 		
