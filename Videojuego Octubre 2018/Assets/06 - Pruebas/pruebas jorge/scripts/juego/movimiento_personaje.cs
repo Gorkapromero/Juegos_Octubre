@@ -62,6 +62,7 @@ public class movimiento_personaje : MonoBehaviour
     public GameObject FloatingLive;
 
     bool EnMiel;
+    bool recibiendoGolpe;
 
     int movimiento;
     public int DireccionProta;
@@ -125,7 +126,7 @@ public class movimiento_personaje : MonoBehaviour
                                          rb.velocity.y,
                                          0);
             GetComponent<Animator>().SetFloat("Speed", movimiento);
-            GetComponent<Rigidbody>().isKinematic = false;
+            //GetComponent<Rigidbody>().isKinematic = false;
 
             /*//***Corrección "temporal" del solapado de animaciones de andar y correr ********
             if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
@@ -262,9 +263,10 @@ public class movimiento_personaje : MonoBehaviour
             }
         }
 
-        if(!EnMiel&&bloquearControl)
+        if(!EnMiel&&bloquearControl&&!recibiendoGolpe)
         {
             desbloquearControles();
+
         }
     }
 
@@ -321,6 +323,9 @@ public class movimiento_personaje : MonoBehaviour
     public void desbloquearControles()
     {
         bloquearControl = false;
+        velocidad_fin = 80;
+        recibiendoGolpe = false;
+
 
     }
 
@@ -391,8 +396,13 @@ public class movimiento_personaje : MonoBehaviour
 
             //Y Bloqueamos los controles para ejecutar la animacion de recibir daño
             GetComponent<Animator>().SetFloat("Speed", 0.0f);
-            GetComponent<Rigidbody>().isKinematic = true;
+            //GetComponent<Rigidbody>().isKinematic = true;
+            velocidad_fin = 0;
+            recibiendoGolpe = true;
+
             bloquearControles();
+            Invoke("desbloquearControles",1.0f);
+
 
             if (Vidas == 0)
             {
@@ -415,7 +425,6 @@ public class movimiento_personaje : MonoBehaviour
             }
             else
             {
-
 
                 animatorProta.Play("RecibirDaño");
                 print("blink");

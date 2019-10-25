@@ -176,6 +176,10 @@ public class movimiento_objetos : MonoBehaviour
                 }
                 break;
 
+            case "agua":
+                Destroy(this.gameObject);
+                break;
+
             case "Jugador":                       //objeto toca personaje
                 if (!Habilidades.sprint)
                 {
@@ -184,7 +188,8 @@ public class movimiento_objetos : MonoBehaviour
                         case "E_Normal(Clone)":
                             print("quitamos vida");
                             Vidas.quitarvida_Vida();
-                            Destroy(this.gameObject);
+                            Muerte();
+                            //Destroy(this.gameObject);
                             break;
 
                         case "E_Bomb(Clone)":
@@ -226,6 +231,8 @@ public class movimiento_objetos : MonoBehaviour
 
                             //Animacion de recibir daño para el enemigo
                             animatorEnemigo.Play("RecibirGolpe");
+                            //Animacion de recibir daño para el enemigo
+                            animatorEnemigo.Play("RecibirGolpe1");
 
                             //Sonido de recibir daño para el enemigo
                             SonidoRecibirPajaritazoEnemigo.Play();
@@ -234,7 +241,7 @@ public class movimiento_objetos : MonoBehaviour
                             nav.speed = 0;
                             //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.VelocityChange);
 
-                            Invoke("recuperarVelocidadMalvaNormal", 1f);
+                            Invoke("recuperarVelocidadMalvaNormal", 1.5f);
 
                             if (VidaEnemigo <= 0)
                             {
