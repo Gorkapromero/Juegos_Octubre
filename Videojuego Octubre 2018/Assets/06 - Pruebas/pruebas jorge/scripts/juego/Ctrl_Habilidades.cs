@@ -29,11 +29,11 @@ public class Ctrl_Habilidades : MonoBehaviour
     //public GameObject ParticulasExplosion; 
     public GameObject ParticulasSalpicadura;
 
-    public float DañoBasico;
+    public int DañoBasico;
 
     public bool t_basico = false;
     bool t_chorro = false;
-    bool t_escudo = false;
+    public bool escudoActivado = false;
     bool t_explosion = false;
 
     float t1;
@@ -271,15 +271,25 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public void escudo()
     {
-        t_escudo = true;
-        tablahabilidades[3].habilidad.SetActive(true);
-        Invoke("escudooff",tiempoEscudo);
-        GameObject.Find("Escudo").GetComponent<Button>().enabled = false;
-        //gastamos energia
-        Energia_Total.RestarEnergia(tablahabilidades[3].Energia_necesaria);
+        if(escudoActivado==false)
+        {
+            escudoActivado = true;
+            tablahabilidades[3].habilidad.SetActive(true);
+            //Invoke("escudooff",tiempoEscudo);
+            //GameObject.Find("Escudo").GetComponent<Button>().enabled = false;
+            //gastamos energia
+            //Energia_Total.RestarEnergia(tablahabilidades[3].Energia_necesaria);
+        }
+        else
+        {
+            escudooff();
+        }
+
+        
     }
-    void escudooff()
+    public void escudooff()
     {
+        escudoActivado = false;
         tablahabilidades[3].habilidad.SetActive(false);
         GameObject.Find("Escudo").GetComponent<Button>().enabled = true;
     }
@@ -292,7 +302,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public void quitarDañoExtra()
     {
-        DañoBasico = 40;
+        DañoBasico = 100;
         MaterialPajarita.color = ColorPajarita;
     }
 }

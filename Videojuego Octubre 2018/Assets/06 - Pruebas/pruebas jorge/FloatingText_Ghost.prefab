@@ -202,6 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyTime: 3
-  offset: {x: 0, y: 10, z: 0}
-  RandomizeIntensity: {x: 0.5, y: 0, z: 0}
+  offset: {x: 0, y: 15, z: 0}
+  RandomizeIntensity: {x: 5, y: 0, z: 0}
   Velocidad: 20

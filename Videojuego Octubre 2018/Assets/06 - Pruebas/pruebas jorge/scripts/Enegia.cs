@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Enegia : MonoBehaviour {
 
     public float VelocidadAnimacion;
+    public float VelocidadGastoEscudo;
     public float Energia;
     public float EnergiaFinal;
     public float EnergiaInicial;
@@ -14,6 +15,7 @@ public class Enegia : MonoBehaviour {
 
     public float energiaMax;
 
+    Ctrl_Habilidades Habilidades;
     //public bool energia2;
 
 	// Use this for initialization
@@ -22,6 +24,7 @@ public class Enegia : MonoBehaviour {
         //AñadirEnergia(sumar);
         BarraEnergia.maxValue = energiaMax;
         BarraEnergia.value = Energia;
+        Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
     }
 	
 	// Update is called once per frame
@@ -50,6 +53,17 @@ public class Enegia : MonoBehaviour {
                 BarraEnergia.value = Energia;
             }
         }
+
+        if(Habilidades.escudoActivado==true)
+        {
+            Energia -= VelocidadGastoEscudo * Time.deltaTime;
+            if(Energia<=0)
+            {
+                Energia = 0;
+                Habilidades.escudooff();
+            }
+        }
+
     }
 
     public void AñadirEnergia(float Valor)

@@ -5,21 +5,22 @@ using UnityEngine;
 public class Ctrl_Recolectables : MonoBehaviour 
 {
     public Vector3 RandomizePosition = new Vector3(0, 0, 0);
-    public float CreationTime;
+    public float CreationTimeMax;
+    public float CreationTimeMin;
     public GameObject Objeto;
     float tiempo;
 
     public GameObject ParticulasAparece;
     Window_IndicadorRecolectables Indicadores;
-    
-    movimiento_personaje Jugador;
 
+    movimiento_personaje Jugador;
+    bool SiguienteCaja;
     // Use this for initialization
     void Start () 
     {
-        tiempo = CreationTime;
+        TiempoSiguienteCaja();
         Indicadores = GameObject.Find("Window_recolectablePoint").GetComponent<Window_IndicadorRecolectables>();
-        Jugador= GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
+        Jugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
     }
 	
 	// Update is called once per frame
@@ -29,20 +30,15 @@ public class Ctrl_Recolectables : MonoBehaviour
         {
             tiempo -= Time.deltaTime;
         }
-        else if(tiempo <= 0)
+        else if(tiempo <= 0&&SiguienteCaja)
         {
             Vector3 PosicionObjeto = new Vector3(Random.Range(-RandomizePosition.x, RandomizePosition.x), RandomizePosition.y , transform.position.z);
             GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
             Indicadores.Target = Recolectable;
 
             Vector3 PosicionParticulas = new Vector3(PosicionObjeto.x, -54f, transform.position.z);
-            Instantiate(ParticulasAparece, PosicionParticulas, Quaternion.Euler(-90f,0,0));
-            
-            if(Jugador.Vidas<5)
-            {
-                
-            }
-            tiempo = CreationTime;
+            Instantiate(ParticulasAparece, PosicionParticulas, Quaternion.Euler(-90f,0,0));   
+            SiguienteCaja=false;
         }
 		
 	}
@@ -51,5 +47,18 @@ public class Ctrl_Recolectables : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position, RandomizePosition*2);
+    }
+
+    public void TiempoSiguienteCaja()
+    {
+        if(Jugador.Vidas<5)
+        {
+           tiempo = CreationTimeMax-(((CreationTimeMax-CreationTimeMin)/4)*(5-Jugador.Vidas));
+        }
+        else
+        {
+            tiempo = CreationTimeMax;
+        }
+        SiguienteCaja = true;
     }
 }

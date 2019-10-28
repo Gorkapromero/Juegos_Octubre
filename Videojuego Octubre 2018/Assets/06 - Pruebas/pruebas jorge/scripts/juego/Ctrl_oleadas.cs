@@ -12,6 +12,10 @@ public class Ctrl_oleadas : MonoBehaviour
 {
     public Transform PosicionParacas;
     public Vector3 OffsetCaida;
+    public Transform zonaAgua;
+    public Vector3 TamañoZonaAgua;
+    public Transform ZonaDerecha;
+    public Transform ZonaIzquierda;
     public Transform[] posiciones;
     //public Transform[] posicionesActivas;
     public List<Transform> PosicionesActivas;
@@ -63,7 +67,7 @@ public class Ctrl_oleadas : MonoBehaviour
     public float rangoDistancia;
 
     public GameObject TextoOleadaCompletada;
-
+    //public float distA;
     // Use this for initialization
     void Start()
     {
@@ -76,6 +80,7 @@ public class Ctrl_oleadas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //distA = (PuntoDePrueba.position-zonaAgua.position).magnitude;
         if (PlayerState.ToString() == "muerto")
         {
             if (GameObject.FindGameObjectWithTag("Enemigo"))
@@ -217,12 +222,35 @@ public class Ctrl_oleadas : MonoBehaviour
                 }
                 else
                 {
+                    
                     int spawnPoint = Random.Range(0, PosicionesActivas.Count);
                     if(spawnPoint==0)
                     {
                         Vector3 SpawnPosition = new Vector3(0, 0, 0);
-                        SpawnPosition = new Vector3(jugador.position.x+Random.Range(-OffsetCaida.x,OffsetCaida.x), PosicionParacas.position.y, jugador.position.z);
-                        GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, Quaternion.identity);
+                        Vector3 PositionSpawn = new Vector3((jugador.position.x+OffsetCaida.x),zonaAgua.position.y,zonaAgua.position.z);
+                        float distA = Vector3.Distance(PositionSpawn,zonaAgua.position);
+                        if(distA>TamañoZonaAgua.x)//No estamos en el agua
+                        {
+                            SpawnPosition = new Vector3(jugador.position.x+Random.Range(-OffsetCaida.x,OffsetCaida.x), PosicionParacas.position.y, jugador.position.z);
+                            GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, Quaternion.identity);
+                        }
+                        else//si estamos en el agua
+                        {
+                            float DistDer = Vector3.Distance(PositionSpawn,ZonaDerecha.position);
+                            float DistIzq = Vector3.Distance(PositionSpawn,ZonaIzquierda.position);
+                            if(DistDer<DistIzq)//si estamos a la derecha del agua
+                            {
+                                SpawnPosition = new Vector3(ZonaDerecha.position.x, PosicionParacas.position.y, jugador.position.z);
+                                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo,SpawnPosition , Quaternion.identity);
+                            }
+                            else if(DistIzq<=DistDer)//si estamos en la izquierda del agua
+                            {
+                                SpawnPosition = new Vector3(ZonaIzquierda.position.x, PosicionParacas.position.y, jugador.position.z);
+                                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo,SpawnPosition , Quaternion.identity);
+                            }
+
+                        }
+                           
                     }
                     else
                     {
@@ -250,6 +278,9 @@ public class Ctrl_oleadas : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(jugador.position, rangoDistancia);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(zonaAgua.position, TamañoZonaAgua*2);
     }
 
     void DesactibarTexto()

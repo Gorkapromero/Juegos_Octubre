@@ -129,7 +129,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 03923a7c5c97f0e498e5b6a53899ec78, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4279352388
+    rgba: 4294967295
 --- !u!114 &114130963098853270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,5 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyTime: 1
   offset: {x: 0, y: 40, z: 0}
-  RandomizeIntensity: {x: 2, y: 0, z: 0}
+  RandomizeIntensity: {x: 20, y: 0, z: 0}
   Velocidad: 20

@@ -16,6 +16,7 @@ public class Recolectable : MonoBehaviour {
 
     movimiento_personaje Jugador;
     Ctrl_Habilidades Habilidades;
+    Ctrl_Recolectables Recolectables;
 
     [System.Serializable]
     public class objeto
@@ -35,6 +36,7 @@ public class Recolectable : MonoBehaviour {
         Invoke("Destruir", DestroyTime);
         Jugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
+        Recolectables = GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>();
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class Recolectable : MonoBehaviour {
     void Destruir()
     {
         Destroy(gameObject);
+        Recolectables.TiempoSiguienteCaja();
         //Instantiate(ParticulasDestruccion, transform.position, Quaternion.identity);
 
     }
@@ -79,7 +82,7 @@ public class Recolectable : MonoBehaviour {
                         Jugador.ActualizarVidas();
                         Vector3 PosicionParticulasVida = new Vector3(transform.position.x, -24f, transform.position.z);
                         Instantiate(objetos[j].Particulas, PosicionParticulasVida, Quaternion.identity);
-                        Destroy(gameObject);
+                        Destruir();
                         break;
                     case "Daño":
                         //aumentamos daño
@@ -90,7 +93,7 @@ public class Recolectable : MonoBehaviour {
                         Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -24f, transform.position.z);
                         Instantiate(objetos[j].Particulas, PosicionParticulasDaño, Quaternion.identity);
                         //activamos tiempo daño extra
-                        Destroy(gameObject);
+                        Destruir();
                         break;
                     case "Default":
                         break;

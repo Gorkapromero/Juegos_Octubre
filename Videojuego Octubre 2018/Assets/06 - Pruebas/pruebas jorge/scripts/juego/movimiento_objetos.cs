@@ -48,7 +48,6 @@ public class movimiento_objetos : MonoBehaviour
     AgentJumpToTarget Jump;
 
     public int VidaEnemigo;
-    int dañoAtaque = 40;
 
     public float Velocidad_caidaBomba;
 
@@ -227,7 +226,7 @@ public class movimiento_objetos : MonoBehaviour
                         if (Ataque == false&&Habilidades.AtaqueBasico==true)
                         {
                             Ataque = true;
-                            VidaEnemigo -= dañoAtaque;
+                            VidaEnemigo -= Habilidades.DañoBasico;
 
                             //Animacion de recibir daño para el enemigo
                             animatorEnemigo.Play("RecibirGolpe");
@@ -248,6 +247,7 @@ public class movimiento_objetos : MonoBehaviour
                                 print("desruimos enemigo");
                                 Puntuacion.Enemigos_Eliminados++;
                                 Muerte();
+                                textoEnergia();
                                 //sumamos energia
                                 energia.AñadirEnergia(50);
                             }
@@ -340,7 +340,6 @@ public class movimiento_objetos : MonoBehaviour
     {
         //float text
         Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
-        Instantiate(FloatingEnergy, Posiciontextos, Quaternion.identity);
         Instantiate(FloatingGhost, Posiciontextos, Quaternion.identity);
 
         Vector3 PosicionParticulas = new Vector3(transform.position.x, -52.77079f, transform.position.z);
@@ -351,5 +350,11 @@ public class movimiento_objetos : MonoBehaviour
     void ActivarAtaque()
     {
         Ataque = false;
+    }
+
+    void textoEnergia()
+    {
+        Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
+        Instantiate(FloatingEnergy, Posiciontextos, Quaternion.identity);
     }
 }
