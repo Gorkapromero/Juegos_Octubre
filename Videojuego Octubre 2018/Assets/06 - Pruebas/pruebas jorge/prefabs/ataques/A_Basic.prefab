@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocidad: 300
+  Distancia_Max: 0
+  Distancia_Min: -50.4883
 --- !u!135 &135156849957153892
 SphereCollider:
   m_ObjectHideFlags: 1

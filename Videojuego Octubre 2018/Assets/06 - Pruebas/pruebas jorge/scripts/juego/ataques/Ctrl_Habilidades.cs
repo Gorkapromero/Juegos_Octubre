@@ -88,55 +88,16 @@ public class Ctrl_Habilidades : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-
-                    /*
-                            if (t_basico == true)
-                            {
-                                print("tiempo basico on");
-                                /*if (tablahabilidades[0].tiempo.activeSelf == false)
-                                {
-                                    print("activamos");
-                                    tablahabilidades[0].tiempo.SetActive(true);
-                                }
-                                tablahabilidades[1].tiempo_texto.text = t1.ToString("f0");
-                                t0 -= Time.deltaTime;
-                                //print(t1);
-                                if (t0 <= 0)
-                                {
-                                    //t_chorro = false;
-                                    t0 = Tiempo_ABasico;
-                                    //tablahabilidades[0].tiempo.SetActive(false);
-                                    GameObject.Find("A_Basico").GetComponent<Button>().enabled = true;
-                                    print("FIN ATAQUE BASICO");
-		
-                                }
-
-                            }
-
-                    */
-
         //ACTIVAMOS CHORRO SI TENEMOS ENERGIA
         if (tablahabilidades[1].Energia_necesaria <= Energia_Total.Energia)
         {
             //print("tiempo chorro on");
             if(tablahabilidades[1].tiempo.activeSelf == true)
             {
-                print("activamos");
+                print("activamos sprint");
                 tablahabilidades[1].tiempo.SetActive(false);
                 tablahabilidades[1].Boton.enabled = true;
-            }
-            /*
-            tablahabilidades[1].tiempo_texto.text = t1.ToString("f0");
-            t1 -= Time.deltaTime;
-            //print(t1);
-            if (t1 <= 0)
-            {
-                t_chorro = false;
-                t1 = tablahabilidades[1].T_enfriamiento;
-                tablahabilidades[1].tiempo.SetActive(false);
-                GameObject.Find("A_chorro").GetComponent<Button>().enabled = true;
-            }*/
-            
+            }           
         }
         else
         {
@@ -157,20 +118,6 @@ public class Ctrl_Habilidades : MonoBehaviour
                 tablahabilidades[2].Boton.enabled = true;
 
             }
-            /*
-            tablahabilidades[2].tiempo_texto.text = t2.ToString("f0");
-            t2 -= Time.deltaTime;
-            //print(t1);
-            if (t2 <= 0)
-            {
-				
-                t_explosion = false;
-                t2 = tablahabilidades[2].T_enfriamiento;
-                tablahabilidades[2].tiempo.SetActive(false);
-                GameObject.Find("A_Explosion").GetComponent<Button>().enabled = true;
-
-
-            }*/
 
         }
         else

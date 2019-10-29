@@ -2634,7 +2634,7 @@ Prefab:
     - target: {fileID: 224070147403872398, guid: ce5089f3caa5bb042a4d4c23a427bc82,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224070147403872398, guid: ce5089f3caa5bb042a4d4c23a427bc82,
         type: 2}
@@ -4360,7 +4360,7 @@ Prefab:
     - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 2}
       propertyPath: tablahabilidades.Array.data[3].Energia_necesaria
-      value: 500
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 2}
@@ -4405,7 +4405,7 @@ Prefab:
     - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 2}
       propertyPath: FuerzaSprint
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 2}
@@ -5925,9 +5925,9 @@ RectTransform:
   - {fileID: 318472386}
   - {fileID: 1117439036}
   - {fileID: 1620753868}
+  - {fileID: 1415420263}
   - {fileID: 2119929443}
   - {fileID: 1390032885}
-  - {fileID: 1415420263}
   - {fileID: 1958114704}
   - {fileID: 1073519022}
   - {fileID: 1792753374}
@@ -8812,11 +8812,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1278053672}
   m_CullTransparentMesh: 0
---- !u!1 &1286987024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1473736234452846, guid: 17a0742c0fa46354dbab6529d50e4b1b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1675879234}
 --- !u!1 &1293919371
 GameObject:
   m_ObjectHideFlags: 0
@@ -8887,7 +8882,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1312987153}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7d17820bdfa517489d602a968b6ed5d, type: 3}
   m_Name: 
@@ -8896,8 +8891,10 @@ MonoBehaviour:
   CreationTimeMax: 90
   CreationTimeMin: 10
   Objeto: {fileID: 1951060795561662, guid: 980b85f1254ea7942a3dbc88a29df924, type: 2}
+  tiempo: 0
   ParticulasAparece: {fileID: 1130418685649048, guid: 91f7c8084a6e4884ca7dcb4f11cf4f92,
     type: 2}
+  SiguienteCaja: 1
 --- !u!4 &1312987155
 Transform:
   m_ObjectHideFlags: 0
@@ -9590,7 +9587,7 @@ RectTransform:
   - {fileID: 320151387}
   - {fileID: 1798994253}
   m_Father: {fileID: 925913237}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9687,7 +9684,6 @@ GameObject:
   - component: {fileID: 1426145973}
   - component: {fileID: 1426145975}
   - component: {fileID: 1426145976}
-  - component: {fileID: 1426145977}
   m_Layer: 0
   m_Name: Elementos_Escenario
   m_TagString: Untagged
@@ -9761,19 +9757,6 @@ MonoBehaviour:
   TiempoMax: 3
   ParticulasFuego: {fileID: 1038168909434234, guid: 970411d6b8dd38940b8ddff15cd37121,
     type: 2}
---- !u!114 &1426145977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1426145972}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c37027e6a6b95b34687733cd240c463f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contactoEstropajo: 0
-  grupoAnimEstropajo: {fileID: 1286987024}
 --- !u!1 &1428088745
 GameObject:
   m_ObjectHideFlags: 0
@@ -14069,7 +14052,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7af5fb0400e3a8e4e99de274f04a6d83, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 336739ca065ce5547b19962d174c2e0e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -14354,8 +14337,8 @@ MonoBehaviour:
   - nombre: Oleada bomba
     numeroOleada: 0
     enemigos:
-    - nombre: Enemigo Bomba
-      enemigo: {fileID: 1318831246343000, guid: d4a23b2a07a327d4587df297be76c55f,
+    - nombre: Enemigo Pegajoso
+      enemigo: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396,
         type: 2}
       rareza: 100
   NumeroEnemigos: 5
@@ -14395,7 +14378,7 @@ RectTransform:
   - {fileID: 616253677}
   - {fileID: 1534516362}
   m_Father: {fileID: 925913237}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}

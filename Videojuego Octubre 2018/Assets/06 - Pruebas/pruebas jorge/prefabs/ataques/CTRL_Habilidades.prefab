@@ -38,34 +38,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2760283098f54b44c842452bf0b8304e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AtaqueBasico: 0
+  AtaqueAereo: 0
+  Tiempo_ABasico: 0
   tablahabilidades:
   - nombre: Ataque basico
     habilidad: {fileID: 1080059351610992, guid: 0a1dd97d39ad6464a847f9d2b9b46831,
       type: 2}
-    T_enfriamiento: 1
+    Energia_necesaria: 0
     tiempo: {fileID: 0}
-    tiempo_texto: {fileID: 0}
+    Boton: {fileID: 0}
   - nombre: ataque chorro
     habilidad: {fileID: 1211414541836494, guid: ede74548d65e86f46b3c77ad97b4e716,
       type: 2}
-    T_enfriamiento: 10
+    Energia_necesaria: 0
     tiempo: {fileID: 0}
-    tiempo_texto: {fileID: 0}
+    Boton: {fileID: 0}
   - nombre: ataque explosion
     habilidad: {fileID: 1490945627697852, guid: 67881fa6615fb694fab54ff4c54c01f2,
       type: 2}
-    T_enfriamiento: 30
+    Energia_necesaria: 0
     tiempo: {fileID: 0}
-    tiempo_texto: {fileID: 0}
+    Boton: {fileID: 0}
   - nombre: escudo
     habilidad: {fileID: 0}
-    T_enfriamiento: 20
+    Energia_necesaria: 0
     tiempo: {fileID: 0}
-    tiempo_texto: {fileID: 0}
+    Boton: {fileID: 0}
   tiempoEscudo: 10
   tiempo: {fileID: 0}
   ParticulasSalpicadura: {fileID: 1968004906157278, guid: 2b8f7c359a3e6ed41882f92627303c20,
     type: 2}
+  "Da\xF1oBasico": 0
+  t_basico: 0
+  escudoActivado: 0
+  FuerzaSprint: 0
+  sprint: 0
+  MaterialPajarita: {fileID: 0}
 --- !u!224 &224448777849231944
 RectTransform:
   m_ObjectHideFlags: 1

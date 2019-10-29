@@ -55,8 +55,9 @@ public class Recolectable : MonoBehaviour {
 
     void Destruir()
     {
-        Destroy(gameObject);
         Recolectables.TiempoSiguienteCaja();
+        Destroy(gameObject);
+        
         //Instantiate(ParticulasDestruccion, transform.position, Quaternion.identity);
 
     }

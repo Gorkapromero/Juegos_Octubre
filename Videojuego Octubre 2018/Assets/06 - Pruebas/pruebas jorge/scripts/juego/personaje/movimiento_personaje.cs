@@ -53,6 +53,7 @@ public class movimiento_personaje : MonoBehaviour
     public GameObject ParticulasTeHundes;
     
     Ctrl_Habilidades script_ctl_habilidades;
+    Ctrl_Recolectables Recolectables;
     //Ctrl_Estropajo1 Ctrl_Estropajo;
 
     public Collider CollDobleSalto;
@@ -101,6 +102,9 @@ public class movimiento_personaje : MonoBehaviour
 
         animatorCamara = GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>();
         //joystick = FindObjectOfType<Joystick>();
+
+        Recolectables = GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>();
+
         tempColortrans = Irderecha.color;
         tempColoropac = Irizquierda.color;
         tempColortrans.a = 0.5f;
@@ -294,7 +298,8 @@ public class movimiento_personaje : MonoBehaviour
 
     public void Stop()
     {
-        rb.velocity = new Vector3(0, 0, 0);
+        velocidad_fin=0;
+        bloquearControles();
         //animatorProta.Play("Caida_Atras");
     }
 
@@ -325,8 +330,6 @@ public class movimiento_personaje : MonoBehaviour
         bloquearControl = false;
         velocidad_fin = 80;
         recibiendoGolpe = false;
-
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -437,7 +440,7 @@ public class movimiento_personaje : MonoBehaviour
                }
                blinkTime = blink;
                Instantiate(FloatingLive, transform.position, Quaternion.identity);
-
+               Recolectables.reducirTiempo();
             }
 
             ActualizarVidas();

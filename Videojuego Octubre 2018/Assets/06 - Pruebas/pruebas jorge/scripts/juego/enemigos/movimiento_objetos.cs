@@ -45,7 +45,7 @@ public class movimiento_objetos : MonoBehaviour
     public GameObject ParticulasMuerte;
 
     Enegia energia;
-    AgentJumpToTarget Jump;
+    
 
     public int VidaEnemigo;
 
@@ -74,7 +74,6 @@ public class movimiento_objetos : MonoBehaviour
         colBomb = GetComponent<CapsuleCollider>();
         energia = GameObject.Find("Elementos_Escenario").GetComponent<Enegia>();
         Vidas = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
-        Jump = GetComponent<AgentJumpToTarget>();
         //Velocidad = nav.speed;
         animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
         Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
@@ -198,9 +197,8 @@ public class movimiento_objetos : MonoBehaviour
                             break;
 
                         case "E_Pega(Clone)":
-                            Vector3 PosPoff = new Vector3(jugador.position.x, -54f, jugador.position.z);
-                            GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
-                            Destroy(this.gameObject);
+                            Vidas.quitarvida_Vida();
+                            Muerte();
                             break;
                     }
                 }

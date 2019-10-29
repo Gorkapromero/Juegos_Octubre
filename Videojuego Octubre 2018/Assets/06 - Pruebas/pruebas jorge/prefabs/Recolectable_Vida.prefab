@@ -183,5 +183,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyTime: 10
   Velocidad: 100
-  ParticulasVida: {fileID: 1590309589241858, guid: 7ae1cc4ebde80814db39e065cb6849ac,
-    type: 2}
+  objetos: []
+  "ColorMasDa\xF1o": {r: 0, g: 0, b: 0, a: 0}

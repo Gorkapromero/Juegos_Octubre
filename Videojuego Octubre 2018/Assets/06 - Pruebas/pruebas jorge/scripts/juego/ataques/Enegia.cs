@@ -30,32 +30,10 @@ public class Enegia : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Energia != EnergiaFinal)
-        {
-            if(EnergiaInicial<EnergiaFinal)
-            {
-                Energia += (VelocidadAnimacion * Time.deltaTime) * (EnergiaFinal - EnergiaInicial);
-                BarraEnergia.value = Energia;
-                if (Energia >= EnergiaFinal)
-                {
-                    Energia = EnergiaFinal;
-                    BarraEnergia.value = Energia;
-                }
-               
-                if(Energia>energiaMax)
-                {
-                    Energia = energiaMax;
-                }
-            }
-            else
-            {
-                Energia -= (EnergiaInicial - EnergiaFinal);
-                BarraEnergia.value = Energia;
-            }
-        }
-
         if(Habilidades.escudoActivado==true)
         {
+            EnergiaFinal = 0;
+            EnergiaInicial = 0;
             Energia -= VelocidadGastoEscudo * Time.deltaTime;
             if(Energia<=0)
             {
@@ -63,15 +41,49 @@ public class Enegia : MonoBehaviour {
                 Habilidades.escudooff();
             }
         }
+        else
+        {
+            if(Energia != EnergiaFinal)
+            {
+                if(EnergiaInicial<EnergiaFinal)
+                {
+                    Energia += (VelocidadAnimacion * Time.deltaTime) * (EnergiaFinal - EnergiaInicial);
+                    BarraEnergia.value = Energia;
+                    if (Energia >= EnergiaFinal)
+                    {
+                        Energia = EnergiaFinal;
+                        BarraEnergia.value = Energia;
+                    }
+                
+                    if(Energia>energiaMax)
+                    {
+                        Energia = energiaMax;
+                    }
+                }
+                else
+                {
+                    Energia -= (EnergiaInicial - EnergiaFinal);
+                    if(Energia<0)
+                    {
+                        Energia=0;
+                    }
+                    BarraEnergia.value = Energia;
+                }
+            }
+        }
 
     }
 
     public void AñadirEnergia(float Valor)
     {
-        if (EnergiaFinal < energiaMax)
+        if (EnergiaFinal < energiaMax&&Habilidades.escudoActivado==false)
         {
             EnergiaInicial = Energia;
             EnergiaFinal += Valor;
+        }
+        else if(Habilidades.escudoActivado == true)
+        {
+            Energia+=Valor;
         }
     }
 

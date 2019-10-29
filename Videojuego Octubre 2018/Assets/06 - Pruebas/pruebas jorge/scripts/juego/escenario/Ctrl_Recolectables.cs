@@ -8,19 +8,20 @@ public class Ctrl_Recolectables : MonoBehaviour
     public float CreationTimeMax;
     public float CreationTimeMin;
     public GameObject Objeto;
-    float tiempo;
+    public float tiempo;
 
     public GameObject ParticulasAparece;
     Window_IndicadorRecolectables Indicadores;
 
     movimiento_personaje Jugador;
-    bool SiguienteCaja;
+    public bool SiguienteCaja = true;
     // Use this for initialization
     void Start () 
     {
-        TiempoSiguienteCaja();
+        
         Indicadores = GameObject.Find("Window_recolectablePoint").GetComponent<Window_IndicadorRecolectables>();
         Jugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
+        TiempoSiguienteCaja();
     }
 	
 	// Update is called once per frame
@@ -32,6 +33,7 @@ public class Ctrl_Recolectables : MonoBehaviour
         }
         else if(tiempo <= 0&&SiguienteCaja)
         {
+            print("sacamos caja");
             Vector3 PosicionObjeto = new Vector3(Random.Range(-RandomizePosition.x, RandomizePosition.x), RandomizePosition.y , transform.position.z);
             GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
             Indicadores.Target = Recolectable;
@@ -55,10 +57,18 @@ public class Ctrl_Recolectables : MonoBehaviour
         {
            tiempo = CreationTimeMax-(((CreationTimeMax-CreationTimeMin)/4)*(5-Jugador.Vidas));
         }
-        else
+        else if(Jugador.Vidas>=5)
         {
             tiempo = CreationTimeMax;
         }
         SiguienteCaja = true;
+    }
+
+    public void reducirTiempo()
+    {
+        if(Jugador.Vidas<5)
+        {
+            tiempo -= (CreationTimeMax-CreationTimeMin)/4;
+        }
     }
 }
