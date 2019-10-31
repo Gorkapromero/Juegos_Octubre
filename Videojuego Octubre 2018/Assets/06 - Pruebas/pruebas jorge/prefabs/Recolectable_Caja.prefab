@@ -286,7 +286,7 @@ MonoBehaviour:
   DestroyTime: 10
   Velocidad: 100
   objetos:
-  - Nombre: 1
+  - Nombre: 2
     Particulas: {fileID: 1590309589241858, guid: 7ae1cc4ebde80814db39e065cb6849ac,
       type: 2}
     Porcentaje: 100

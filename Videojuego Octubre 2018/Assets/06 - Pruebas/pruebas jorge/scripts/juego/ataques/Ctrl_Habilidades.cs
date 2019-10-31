@@ -24,23 +24,14 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public List<Habilidades> tablahabilidades = new List<Habilidades>();
 
-    public float tiempoEscudo;
-    public GameObject tiempo;
+    //public float tiempoEscudo;
+    //public GameObject tiempo;
     //public GameObject ParticulasExplosion; 
     public GameObject ParticulasSalpicadura;
 
     public int DañoBasico;
 
-    public bool t_basico = false;
-    bool t_chorro = false;
     public bool escudoActivado = false;
-    bool t_explosion = false;
-
-    float t1;
-    float t2;
-    float t3;
-    float t0;
-
     Enegia Energia_Total;
 
     public float FuerzaSprint;
@@ -54,6 +45,10 @@ public class Ctrl_Habilidades : MonoBehaviour
     Color ColorPajarita;
     //VariablesSonido
     AudioSource sonidoDisparo;
+
+    public float tiempoDañoExtra;
+    public bool DañoExtra;
+    float tiempo;
 
 
     // Use this for initialization
@@ -71,6 +66,8 @@ public class Ctrl_Habilidades : MonoBehaviour
         tablahabilidades[1].tiempo.SetActive(true);
         tablahabilidades[2].tiempo.SetActive(true);
         tablahabilidades[3].tiempo.SetActive(true);
+
+        tiempo=tiempoDañoExtra;
 
         //VariablesSonido
         sonidoDisparo = GameObject.Find("SonidoDisparo").GetComponent<AudioSource>();
@@ -170,6 +167,18 @@ public class Ctrl_Habilidades : MonoBehaviour
             GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().Play("Salto+Adelante");
             Invoke("move", 0.5f);
         }
+
+        if(DañoExtra)
+        {
+            if(tiempo>0)
+            {
+                tiempo -= Time.deltaTime;
+            }
+            else
+            {
+                quitarDañoExtra();
+            }
+        }
     }
 
     public void Ataque_Basico()
@@ -177,7 +186,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         //Reproducimos el sonido del disparo
         sonidoDisparo.Play();
 
-        t_basico = true;
+        //t_basico = true;
         AtaqueBasico = true;
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().SetBool("LanzarPajarita",true);
 
@@ -192,7 +201,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public void chorro()
     {
-        t_chorro = true;
+        //t_chorro = true;
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>().enabled = false;
         sprint = true;
 
@@ -202,7 +211,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public void Explosion()
     {
-        t_explosion = true;
+        //t_explosion = true;
 
         Vector3 SpawnPosition = new Vector3(0, 0, 0);
         SpawnPosition = this.transform.position;
@@ -249,7 +258,9 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public void quitarDañoExtra()
     {
+        DañoExtra=false;
         DañoBasico = 100;
         MaterialPajarita.color = ColorPajarita;
+        tiempo=tiempoDañoExtra;
     }
 }
