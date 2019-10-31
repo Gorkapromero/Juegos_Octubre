@@ -87,13 +87,14 @@ public class Recolectable : MonoBehaviour {
                         break;
                     case "Daño":
                         //aumentamos daño
-                        Habilidades.DañoBasico = 100;
+                        Habilidades.DañoBasico += 50;
                         //cambiamos color pajarita
                         Habilidades.MaterialPajarita.color = ColorMasDaño;
                         //indicamos que hemos conseguido mas daño
                         Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -24f, transform.position.z);
                         Instantiate(objetos[j].Particulas, PosicionParticulasDaño, Quaternion.identity);
                         //activamos tiempo daño extra
+                        Habilidades.DañoExtra = true;
                         Destruir();
                         break;
                     case "Default":
