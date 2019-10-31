@@ -12,16 +12,23 @@ public class ataquePegajoso : MonoBehaviour
 	Transform jugador;
 
 	public GameObject prefabPoff;
+	public float Altura;
+	public float Velocidad;
+	public Vector3 OffSetPosFinal;
 
 	// Use this for initialization
-	void Start () 
+	IEnumerator Start () 
 	{
 		Personaje = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
 		Rb=GetComponent<Rigidbody>();
 		jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
 
-		Vector3 moveDirection = (jugador.position-transform.position).normalized * FuerzaLanzamiento;
-		Rb.velocity = new Vector3(moveDirection.x,FuerzaLanzamiento,0);
+		/*Vector3 moveDirection = (jugador.position-transform.position).normalized * FuerzaLanzamiento;
+		Rb.velocity = new Vector3(moveDirection.x,FuerzaLanzamiento,0);*/
+		while(true)
+		{
+			yield return StartCoroutine(ataque(jugador,Altura,Velocidad));
+		}
 	}
 	
 	// Update is called once per frame
@@ -39,10 +46,24 @@ public class ataquePegajoso : MonoBehaviour
 			break;
 
 			case "Suelo":
-			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y+3.62f, transform.position.z);
+			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y+15.8f, transform.position.z);
             GameObject poff = Instantiate(prefabPoff, PosPoff, Quaternion.identity);
             Destroy(this.gameObject);
 			break;
+		}
+	}
+
+	IEnumerator ataque(Transform objetivo,float altura,float velocidad)
+	{
+		Vector3 StartPos = transform.position;
+		Vector3 endPos = objetivo.transform.position+OffSetPosFinal;
+		float normalizedTime = 0.0f;
+		while(normalizedTime < 1.0f)
+		{
+			float yoffset = altura * 4.0f * (normalizedTime - normalizedTime*normalizedTime);
+			transform.position = Vector3.Lerp(StartPos,endPos,normalizedTime)+yoffset*Vector3.up;
+			normalizedTime += Time.deltaTime/velocidad;
+			yield return null;
 		}
 	}
 }

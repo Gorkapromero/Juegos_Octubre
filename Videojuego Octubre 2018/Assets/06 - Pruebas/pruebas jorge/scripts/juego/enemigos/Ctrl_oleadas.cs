@@ -231,7 +231,16 @@ public class Ctrl_oleadas : MonoBehaviour
                         float distA = Vector3.Distance(PositionSpawn,zonaAgua.position);
                         if(distA>TamañoZonaAgua.x)//No estamos en el agua
                         {
-                            SpawnPosition = new Vector3(jugador.position.x+Random.Range(-OffsetCaida.x,OffsetCaida.x), PosicionParacas.position.y, jugador.position.z);
+                            float PosicionXEnemigo=Random.Range(-OffsetCaida.x,OffsetCaida.x);
+                            if(PosicionXEnemigo<=0)
+                            {
+                                SpawnPosition = new Vector3(jugador.position.x-OffsetCaida.x, PosicionParacas.position.y, jugador.position.z);
+                            }
+                            else
+                            {
+                                SpawnPosition = new Vector3(jugador.position.x+OffsetCaida.x, PosicionParacas.position.y, jugador.position.z);
+                            }
+                            
                             GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, Quaternion.identity);
                         }
                         else//si estamos en el agua

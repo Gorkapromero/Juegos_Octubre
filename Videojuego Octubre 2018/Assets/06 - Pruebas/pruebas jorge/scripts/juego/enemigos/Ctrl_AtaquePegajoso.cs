@@ -11,6 +11,8 @@ public class Ctrl_AtaquePegajoso : MonoBehaviour
 	float tiempo;
 
 	Transform jugador;
+
+	public bool PersonajeVisto;
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,7 +27,7 @@ public class Ctrl_AtaquePegajoso : MonoBehaviour
 		{
 			tiempo -= Time.deltaTime;
 		}
-		else
+		else if(tiempo<=0&&PersonajeVisto)
 		{
 			//instanciar ataque
 			PosicionAtaque = new Vector3(transform.position.x, -34.9f, transform.position.z);

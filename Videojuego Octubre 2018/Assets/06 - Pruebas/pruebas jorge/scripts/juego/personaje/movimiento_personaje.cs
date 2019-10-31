@@ -409,6 +409,9 @@ public class movimiento_personaje : MonoBehaviour
 
             if (Vidas == 0)
             {
+                //Desactivamos controles
+                bloquearControles();
+                
                 //Reproducimos el sonido de "MUERTE"
                 sonidoMuerte.Play();
                 sonidoMuerte_02.Play();

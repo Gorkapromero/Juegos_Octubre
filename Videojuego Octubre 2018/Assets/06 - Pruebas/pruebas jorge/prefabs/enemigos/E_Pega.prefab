@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f342f9d5e0205489f10b15cac8a42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vision: 0
+  vision: 160
   tiempoExplosion: 0
   rb: {fileID: 54694897519627992}
   MalvaPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
@@ -628,6 +628,7 @@ MonoBehaviour:
   PrefabAtaque: {fileID: 1075051482990046, guid: 940e99d6d1e4c6d469659e341176dd4b,
     type: 2}
   FrecuenciaAtaque: 5
+  PersonajeVisto: 0
 --- !u!136 &136299082068452652
 CapsuleCollider:
   m_ObjectHideFlags: 1

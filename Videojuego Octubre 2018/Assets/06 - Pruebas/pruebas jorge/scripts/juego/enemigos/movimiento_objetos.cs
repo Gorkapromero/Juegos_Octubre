@@ -78,7 +78,7 @@ public class movimiento_objetos : MonoBehaviour
         animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
         Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
         Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
-
+        
         if (gameObject.name == "E_Bomb(Clone)")
         {
             print(gameObject.name); 
@@ -112,6 +112,7 @@ public class movimiento_objetos : MonoBehaviour
 
         //target = new Vector3(jugador.position.x,jugador.position.y,this.transform.position.z);
         target = jugador.position;
+        dist = Vector3.Distance(jugador.position, transform.position);
         if (nav.enabled)
         {
             if (gameObject.name == "E_Bomb(Clone)")
@@ -126,6 +127,11 @@ public class movimiento_objetos : MonoBehaviour
             {
                 nav.SetDestination(target);
             }
+
+            if(gameObject.name == "E_Pega(Clone)"&&dist<vision)
+            {
+                gameObject.GetComponent<Ctrl_AtaquePegajoso>().PersonajeVisto=true;
+            }
         }
         else if(!nav.enabled&&gameObject.name == "E_Bomb(Clone)")
         {
@@ -138,8 +144,6 @@ public class movimiento_objetos : MonoBehaviour
         {
             gObj_ParticulasMecha.SetActive(true);
         }
-
-        dist = Vector3.Distance(jugador.position, transform.position);
 
     }
     private void OnTriggerEnter(Collider other)
