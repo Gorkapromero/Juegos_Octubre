@@ -55,6 +55,49 @@ ModelImporter:
     100098: pSphere1
     100100: pSphere3
     100102: VFX
+    100104: Rigging_Mug_v1_1_Box005
+    100106: Rigging_Mug_v1_1_Box019
+    100108: Rigging_Mug_v1_1_casco_space
+    100110: Rigging_Mug_v1_1_cola_rabbit
+    100112: Rigging_Mug_v1_1_Cylinder002
+    100114: Rigging_Mug_v1_1_geo_barba_presidente
+    100116: Rigging_Mug_v1_1_geo_cejaDer
+    100118: Rigging_Mug_v1_1_geo_cejaIzq
+    100120: Rigging_Mug_v1_1_geo_pajarita_residente
+    100122: Rigging_Mug_v1_1_geo_pajaritaConejo
+    100124: Rigging_Mug_v1_1_geo_pajaritaSpace
+    100126: Rigging_Mug_v1_1_geo_pieDer
+    100128: Rigging_Mug_v1_1_geo_pieIzq
+    100130: Rigging_Mug_v1_1_geo_pierna_der 1
+    100132: Rigging_Mug_v1_1_geo_pierna_der 2
+    100134: Rigging_Mug_v1_1_geo_pierna_der 3
+    100136: Rigging_Mug_v1_1_geo_pierna_der 4
+    100138: Rigging_Mug_v1_1_geo_pierna_izq 1
+    100140: Rigging_Mug_v1_1_geo_pierna_izq 2
+    100142: Rigging_Mug_v1_1_geo_pierna_izq 3
+    100144: Rigging_Mug_v1_1_geo_pierna_izq 4
+    100146: Rigging_Mug_v1_1_geo_sombrero_presidente
+    100148: Rigging_Mug_v1_1_geo_zapato_der 1
+    100150: Rigging_Mug_v1_1_geo_zapato_der 2
+    100152: Rigging_Mug_v1_1_geo_zapato_izq 1
+    100154: Rigging_Mug_v1_1_geo_zapato_izq 2
+    100156: Rigging_Mug_v1_1_gpr_geo_rabbit
+    100158: Rigging_Mug_v1_1_gpr_geo_space
+    100160: Rigging_Mug_v1_1_gpr_skin_presidente
+    100162: Rigging_Mug_v1_1_grp_geo_Normal
+    100164: Rigging_Mug_v1_1_grp_geo_piernas1
+    100166: Rigging_Mug_v1_1_grp_geo_piernas2
+    100168: Rigging_Mug_v1_1_grp_geo_piernasConejo
+    100170: Rigging_Mug_v1_1_grp_geo_piernasSpace
+    100172: Rigging_Mug_v1_1_grp_geo_Santa
+    100174: Rigging_Mug_v1_1_mochila_space
+    100176: Rigging_Mug_v1_1_nariz_rabbit
+    100178: Rigging_Mug_v1_1_Object001
+    100180: Rigging_Mug_v1_1_oreja_der_rabbit
+    100182: Rigging_Mug_v1_1_oreja_izq_rabbit
+    100184: Rigging_Mug_v1_1_pajarita_santa_uvs
+    100186: Rigging_Mug_v1_1_Pie_original_der
+    100188: Rigging_Mug_v1_1_Sphere001
     400000: //RootNode
     400002: Rigging_Mug_v1_1_ctl_cabeza
     400004: Rigging_Mug_v1_1_ctl_cadera
@@ -107,6 +150,49 @@ ModelImporter:
     400098: pSphere1
     400100: pSphere3
     400102: VFX
+    400104: Rigging_Mug_v1_1_Box005
+    400106: Rigging_Mug_v1_1_Box019
+    400108: Rigging_Mug_v1_1_casco_space
+    400110: Rigging_Mug_v1_1_cola_rabbit
+    400112: Rigging_Mug_v1_1_Cylinder002
+    400114: Rigging_Mug_v1_1_geo_barba_presidente
+    400116: Rigging_Mug_v1_1_geo_cejaDer
+    400118: Rigging_Mug_v1_1_geo_cejaIzq
+    400120: Rigging_Mug_v1_1_geo_pajarita_residente
+    400122: Rigging_Mug_v1_1_geo_pajaritaConejo
+    400124: Rigging_Mug_v1_1_geo_pajaritaSpace
+    400126: Rigging_Mug_v1_1_geo_pieDer
+    400128: Rigging_Mug_v1_1_geo_pieIzq
+    400130: Rigging_Mug_v1_1_geo_pierna_der 1
+    400132: Rigging_Mug_v1_1_geo_pierna_der 2
+    400134: Rigging_Mug_v1_1_geo_pierna_der 3
+    400136: Rigging_Mug_v1_1_geo_pierna_der 4
+    400138: Rigging_Mug_v1_1_geo_pierna_izq 1
+    400140: Rigging_Mug_v1_1_geo_pierna_izq 2
+    400142: Rigging_Mug_v1_1_geo_pierna_izq 3
+    400144: Rigging_Mug_v1_1_geo_pierna_izq 4
+    400146: Rigging_Mug_v1_1_geo_sombrero_presidente
+    400148: Rigging_Mug_v1_1_geo_zapato_der 1
+    400150: Rigging_Mug_v1_1_geo_zapato_der 2
+    400152: Rigging_Mug_v1_1_geo_zapato_izq 1
+    400154: Rigging_Mug_v1_1_geo_zapato_izq 2
+    400156: Rigging_Mug_v1_1_gpr_geo_rabbit
+    400158: Rigging_Mug_v1_1_gpr_geo_space
+    400160: Rigging_Mug_v1_1_gpr_skin_presidente
+    400162: Rigging_Mug_v1_1_grp_geo_Normal
+    400164: Rigging_Mug_v1_1_grp_geo_piernas1
+    400166: Rigging_Mug_v1_1_grp_geo_piernas2
+    400168: Rigging_Mug_v1_1_grp_geo_piernasConejo
+    400170: Rigging_Mug_v1_1_grp_geo_piernasSpace
+    400172: Rigging_Mug_v1_1_grp_geo_Santa
+    400174: Rigging_Mug_v1_1_mochila_space
+    400176: Rigging_Mug_v1_1_nariz_rabbit
+    400178: Rigging_Mug_v1_1_Object001
+    400180: Rigging_Mug_v1_1_oreja_der_rabbit
+    400182: Rigging_Mug_v1_1_oreja_izq_rabbit
+    400184: Rigging_Mug_v1_1_pajarita_santa_uvs
+    400186: Rigging_Mug_v1_1_Pie_original_der
+    400188: Rigging_Mug_v1_1_Sphere001
     2100000: 'Rigging_Mug_v1_1_Material #3'
     2100002: 'Rigging_Mug_v1_1_Material #9'
     2100004: 'Rigging_Mug_v1_1_Material #8'
@@ -115,6 +201,17 @@ ModelImporter:
     2100010: phong1
     2100012: lambert2
     2100014: useBackground1
+    2100016: Rigging_Mug_v1_1_lambert4
+    2100018: Rigging_Mug_v1_1_matRosa_Conejo
+    2100020: Rigging_Mug_v1_1_mat_blancoConejo
+    2100022: Rigging_Mug_v1_1_mat_NegroSpace
+    2100024: 'Rigging_Mug_v1_1_Material #95'
+    2100026: Rigging_Mug_v1_1_mat_NegroPresidente
+    2100028: Rigging_Mug_v1_1_mat_BlancoSpace
+    2100030: lambert1
+    2100032: Rigging_Mug_v1_1_Material $01
+    2100034: Rigging_Mug_v1_1_lambert7
+    2100036: Rigging_Mug_v1_1_lambert5
     2300000: chorro_SalpicaduraTronco
     2300002: chorro_Tronco
     2300004: pCylinder1
@@ -141,6 +238,40 @@ ModelImporter:
     4300022: chorro_SalpicaduraTronco
     4300024: pSphere1
     4300026: pSphere3
+    4300028: Rigging_Mug_v1_1_Box019
+    4300030: Rigging_Mug_v1_1_Pie_original_der
+    4300032: Rigging_Mug_v1_1_Cylinder002
+    4300034: Rigging_Mug_v1_1_Box005
+    4300036: Rigging_Mug_v1_1_Object001
+    4300038: Rigging_Mug_v1_1_Sphere001
+    4300040: Rigging_Mug_v1_1_pajarita_santa_uvs
+    4300042: Rigging_Mug_v1_1_nariz_rabbit
+    4300044: Rigging_Mug_v1_1_oreja_izq_rabbit
+    4300046: Rigging_Mug_v1_1_oreja_der_rabbit
+    4300048: Rigging_Mug_v1_1_cola_rabbit
+    4300050: Rigging_Mug_v1_1_geo_pajaritaConejo
+    4300052: Rigging_Mug_v1_1_geo_pierna_izq
+    4300054: Rigging_Mug_v1_1_geo_pieIzq
+    4300056: Rigging_Mug_v1_1_geo_pierna_der
+    4300058: Rigging_Mug_v1_1_geo_pieDer
+    4300060: Rigging_Mug_v1_1_geo_pierna_izq
+    4300062: Rigging_Mug_v1_1_geo_pierna_der
+    4300064: Rigging_Mug_v1_1_geo_barba_presidente
+    4300066: Rigging_Mug_v1_1_geo_cejaIzq
+    4300068: Rigging_Mug_v1_1_geo_cejaDer
+    4300070: Rigging_Mug_v1_1_geo_pajarita_residente
+    4300072: Rigging_Mug_v1_1_geo_sombrero_presidente
+    4300074: Rigging_Mug_v1_1_casco_space
+    4300076: Rigging_Mug_v1_1_geo_pajaritaSpace
+    4300078: Rigging_Mug_v1_1_mochila_space
+    4300080: Rigging_Mug_v1_1_geo_pierna_izq
+    4300082: Rigging_Mug_v1_1_geo_zapato_izq
+    4300084: Rigging_Mug_v1_1_geo_pierna_der
+    4300086: Rigging_Mug_v1_1_geo_zapato_der
+    4300088: Rigging_Mug_v1_1_geo_pierna_izq
+    4300090: Rigging_Mug_v1_1_geo_zapato_izq
+    4300092: Rigging_Mug_v1_1_geo_pierna_der
+    4300094: Rigging_Mug_v1_1_geo_zapato_der
     7400000: Reposo
     7400002: Correr
     7400004: "Habilidad_LanzarCaf\xE9"
@@ -170,6 +301,40 @@ ModelImporter:
     13700010: Rigging_Mug_v1_1_geo_plano_cafe
     13700012: Rigging_Mug_v1_1_geo_zapato_der
     13700014: Rigging_Mug_v1_1_geo_zapato_izq
+    13700016: Rigging_Mug_v1_1_Box005
+    13700018: Rigging_Mug_v1_1_Box019
+    13700020: Rigging_Mug_v1_1_casco_space
+    13700022: Rigging_Mug_v1_1_cola_rabbit
+    13700024: Rigging_Mug_v1_1_Cylinder002
+    13700026: Rigging_Mug_v1_1_geo_barba_presidente
+    13700028: Rigging_Mug_v1_1_geo_cejaDer
+    13700030: Rigging_Mug_v1_1_geo_cejaIzq
+    13700032: Rigging_Mug_v1_1_geo_pajarita_residente
+    13700034: Rigging_Mug_v1_1_geo_pajaritaConejo
+    13700036: Rigging_Mug_v1_1_geo_pajaritaSpace
+    13700038: Rigging_Mug_v1_1_geo_pieDer
+    13700040: Rigging_Mug_v1_1_geo_pieIzq
+    13700042: Rigging_Mug_v1_1_geo_pierna_der 1
+    13700044: Rigging_Mug_v1_1_geo_pierna_der 2
+    13700046: Rigging_Mug_v1_1_geo_pierna_der 3
+    13700048: Rigging_Mug_v1_1_geo_pierna_der 4
+    13700050: Rigging_Mug_v1_1_geo_pierna_izq 1
+    13700052: Rigging_Mug_v1_1_geo_pierna_izq 2
+    13700054: Rigging_Mug_v1_1_geo_pierna_izq 3
+    13700056: Rigging_Mug_v1_1_geo_pierna_izq 4
+    13700058: Rigging_Mug_v1_1_geo_sombrero_presidente
+    13700060: Rigging_Mug_v1_1_geo_zapato_der 1
+    13700062: Rigging_Mug_v1_1_geo_zapato_der 2
+    13700064: Rigging_Mug_v1_1_geo_zapato_izq 1
+    13700066: Rigging_Mug_v1_1_geo_zapato_izq 2
+    13700068: Rigging_Mug_v1_1_mochila_space
+    13700070: Rigging_Mug_v1_1_nariz_rabbit
+    13700072: Rigging_Mug_v1_1_Object001
+    13700074: Rigging_Mug_v1_1_oreja_der_rabbit
+    13700076: Rigging_Mug_v1_1_oreja_izq_rabbit
+    13700078: Rigging_Mug_v1_1_pajarita_santa_uvs
+    13700080: Rigging_Mug_v1_1_Pie_original_der
+    13700082: Rigging_Mug_v1_1_Sphere001
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -215,8 +380,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
+      name: Humo_01
+    second: {fileID: 2800000, guid: d6003fc6234e17542b3166c49d7b2a13, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
       name: uvs_prueba
-    second: {fileID: 2800000, guid: 2f123d009f4be8240b1bb6eb27667a3a, type: 3}
+    second: {fileID: 2800000, guid: b77a418f834140c4c8267a772efc3a29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_santa
+    second: {fileID: 2800000, guid: 4a5dba9e7005fdd4880abb63bfc7bfbb, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
