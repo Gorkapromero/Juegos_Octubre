@@ -91,7 +91,7 @@ public class Recolectable : MonoBehaviour {
                         //cambiamos color pajarita
                         Habilidades.MaterialPajarita.color = ColorMasDaño;
                         //indicamos que hemos conseguido mas daño
-                        Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -24f, transform.position.z);
+                        Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -54f, transform.position.z);
                         Instantiate(objetos[j].Particulas, PosicionParticulasDaño, Quaternion.identity);
                         //activamos tiempo daño extra
                         Habilidades.DañoExtra = true;

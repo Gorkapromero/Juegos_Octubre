@@ -114,9 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FuerzaLanzamiento: 200
   prefabPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 2}
-  Altura: 50
-  Velocidad: 3
-  OffSetPosFinal: {x: 0, y: 0, z: 0}
+  Velocidad: 100
 --- !u!135 &135836602836612872
 SphereCollider:
   m_ObjectHideFlags: 1

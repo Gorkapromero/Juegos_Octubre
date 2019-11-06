@@ -289,5 +289,9 @@ MonoBehaviour:
   - Nombre: 1
     Particulas: {fileID: 1590309589241858, guid: 7ae1cc4ebde80814db39e065cb6849ac,
       type: 2}
-    Porcentaje: 100
+    Porcentaje: 50
+  - Nombre: 2
+    Particulas: {fileID: 1305855916155836, guid: 1caedd9b55a3d7849a9e5d8c8cabe3b0,
+      type: 2}
+    Porcentaje: 50
   "ColorMasDa\xF1o": {r: 1, g: 0, b: 0, a: 0}

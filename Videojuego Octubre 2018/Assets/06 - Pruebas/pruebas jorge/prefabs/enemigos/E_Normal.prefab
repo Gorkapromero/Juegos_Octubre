@@ -510,7 +510,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   velocidad: 1.2
-  Altura1: 20
+  Altura1: 10
   AlturaEstanterias: 50
   AlturaFregadero: 50
 --- !u!136 &136630998615544974
