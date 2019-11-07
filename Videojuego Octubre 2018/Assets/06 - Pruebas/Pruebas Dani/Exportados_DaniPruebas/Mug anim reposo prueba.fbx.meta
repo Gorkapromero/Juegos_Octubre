@@ -99,6 +99,22 @@ ModelImporter:
     100186: Rigging_Mug_v1_1_Pie_original_der
     100188: Rigging_Mug_v1_1_Sphere001
     100190: Rigging_Mug_v1_1_geo_trajeSanta
+    100192: Rigging_Mug_v1_1_bigote_01_mex
+    100194: Rigging_Mug_v1_1_bigote_02_mex
+    100196: Rigging_Mug_v1_1_cabezaPatito_playista
+    100198: Rigging_Mug_v1_1_cinto_01_mex
+    100200: Rigging_Mug_v1_1_cinto_02_mex
+    100202: Rigging_Mug_v1_1_flotador_playista
+    100204: Rigging_Mug_v1_1_gafas_playista
+    100206: Rigging_Mug_v1_1_gorro_mex
+    100208: Rigging_Mug_v1_1_gpr_geo_mex
+    100210: Rigging_Mug_v1_1_gpr_skin_playista
+    100212: Rigging_Mug_v1_1_pajarita_mex
+    100214: Rigging_Mug_v1_1_pantalon_playista
+    100216: Rigging_Mug_v1_1_pie_der_mex
+    100218: Rigging_Mug_v1_1_pie_der_playista
+    100220: Rigging_Mug_v1_1_pie_izq_mex
+    100222: Rigging_Mug_v1_1_pie_izq_playista
     400000: //RootNode
     400002: Rigging_Mug_v1_1_ctl_cabeza
     400004: Rigging_Mug_v1_1_ctl_cadera
@@ -195,6 +211,22 @@ ModelImporter:
     400186: Rigging_Mug_v1_1_Pie_original_der
     400188: Rigging_Mug_v1_1_Sphere001
     400190: Rigging_Mug_v1_1_geo_trajeSanta
+    400192: Rigging_Mug_v1_1_bigote_01_mex
+    400194: Rigging_Mug_v1_1_bigote_02_mex
+    400196: Rigging_Mug_v1_1_cabezaPatito_playista
+    400198: Rigging_Mug_v1_1_cinto_01_mex
+    400200: Rigging_Mug_v1_1_cinto_02_mex
+    400202: Rigging_Mug_v1_1_flotador_playista
+    400204: Rigging_Mug_v1_1_gafas_playista
+    400206: Rigging_Mug_v1_1_gorro_mex
+    400208: Rigging_Mug_v1_1_gpr_geo_mex
+    400210: Rigging_Mug_v1_1_gpr_skin_playista
+    400212: Rigging_Mug_v1_1_pajarita_mex
+    400214: Rigging_Mug_v1_1_pantalon_playista
+    400216: Rigging_Mug_v1_1_pie_der_mex
+    400218: Rigging_Mug_v1_1_pie_der_playista
+    400220: Rigging_Mug_v1_1_pie_izq_mex
+    400222: Rigging_Mug_v1_1_pie_izq_playista
     2100000: 'Rigging_Mug_v1_1_Material #3'
     2100002: 'Rigging_Mug_v1_1_Material #9'
     2100004: 'Rigging_Mug_v1_1_Material #8'
@@ -214,6 +246,8 @@ ModelImporter:
     2100032: Rigging_Mug_v1_1_Material $01
     2100034: Rigging_Mug_v1_1_lambert7
     2100036: Rigging_Mug_v1_1_lambert5
+    2100038: Rigging_Mug_v1_1_mat_mex_skin
+    2100040: "Rigging_Mug_v1_1_mat_ba\xF1ista"
     2300000: chorro_SalpicaduraTronco
     2300002: chorro_Tronco
     2300004: pCylinder1
@@ -275,6 +309,20 @@ ModelImporter:
     4300092: Rigging_Mug_v1_1_geo_pierna_der
     4300094: Rigging_Mug_v1_1_geo_zapato_der
     4300096: Rigging_Mug_v1_1_geo_trajeSanta
+    4300098: Rigging_Mug_v1_1_pie_izq_mex
+    4300100: Rigging_Mug_v1_1_pie_der_mex
+    4300102: Rigging_Mug_v1_1_cinto_01_mex
+    4300104: Rigging_Mug_v1_1_cinto_02_mex
+    4300106: Rigging_Mug_v1_1_pajarita_mex
+    4300108: Rigging_Mug_v1_1_bigote_01_mex
+    4300110: Rigging_Mug_v1_1_bigote_02_mex
+    4300112: Rigging_Mug_v1_1_gorro_mex
+    4300114: Rigging_Mug_v1_1_flotador_playista
+    4300116: Rigging_Mug_v1_1_cabezaPatito_playista
+    4300118: Rigging_Mug_v1_1_pantalon_playista
+    4300120: Rigging_Mug_v1_1_gafas_playista
+    4300122: Rigging_Mug_v1_1_pie_der_playista
+    4300124: Rigging_Mug_v1_1_pie_izq_playista
     7400000: Reposo
     7400002: Correr
     7400004: "Habilidad_LanzarCaf\xE9"
@@ -339,6 +387,20 @@ ModelImporter:
     13700080: Rigging_Mug_v1_1_Pie_original_der
     13700082: Rigging_Mug_v1_1_Sphere001
     13700084: Rigging_Mug_v1_1_geo_trajeSanta
+    13700086: Rigging_Mug_v1_1_bigote_01_mex
+    13700088: Rigging_Mug_v1_1_bigote_02_mex
+    13700090: Rigging_Mug_v1_1_cabezaPatito_playista
+    13700092: Rigging_Mug_v1_1_cinto_01_mex
+    13700094: Rigging_Mug_v1_1_cinto_02_mex
+    13700096: Rigging_Mug_v1_1_flotador_playista
+    13700098: Rigging_Mug_v1_1_gafas_playista
+    13700100: Rigging_Mug_v1_1_gorro_mex
+    13700102: Rigging_Mug_v1_1_pajarita_mex
+    13700104: Rigging_Mug_v1_1_pantalon_playista
+    13700106: Rigging_Mug_v1_1_pie_der_mex
+    13700108: Rigging_Mug_v1_1_pie_der_playista
+    13700110: Rigging_Mug_v1_1_pie_izq_mex
+    13700112: Rigging_Mug_v1_1_pie_izq_playista
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
