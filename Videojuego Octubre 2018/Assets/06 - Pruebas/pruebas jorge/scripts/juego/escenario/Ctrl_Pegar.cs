@@ -14,7 +14,7 @@ public class Ctrl_Pegar : MonoBehaviour
     {
 		move = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         AnimatorJugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>();
-        //Invoke("Despegar", TiempoPeg);
+        Invoke("Despegar", TiempoPeg);
 
     }
 	
@@ -61,7 +61,6 @@ public class Ctrl_Pegar : MonoBehaviour
             //move.bloquearControles();
             AnimatorJugador.Play("Caida_Atras");
             //move.enabled = false;
-            Invoke("Despegar", TiempoPeg);
         }
     }
 }

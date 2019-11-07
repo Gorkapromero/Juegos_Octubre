@@ -23,10 +23,13 @@ public class Recolectable : MonoBehaviour {
     {
         public Objetonombre Nombre = Objetonombre.Default;
         public GameObject Particulas;
+        [Range(0,100)]
         public int Porcentaje;
     }
 
-    public objeto[] objetos;
+    public List <objeto> LootTable = new List<objeto>();
+    [Range(0,100)]
+    public int dropChance;
 
     public Color ColorMasDaño;
 
@@ -49,7 +52,7 @@ public class Recolectable : MonoBehaviour {
     {
         if (other.gameObject.tag == "Jugador")
         {
-            CogerObjeto();
+
         }
     }
 
@@ -62,45 +65,62 @@ public class Recolectable : MonoBehaviour {
 
     }
 
-    void CogerObjeto()
+    void claculateLoot()
     {
-        int total = 0;
-        for (int i = 0; i < objetos.Length; i++)
+        int calc_dropChance = Random.Range(0,101);
+
+        if(calc_dropChance > dropChance)
         {
-            total += objetos[i].Porcentaje;
+            //no Loot
+            return;
         }
 
-        float randomObject = Random.value * total;
-
-        for (int j = 0; j < objetos.Length; j++)
+        if(calc_dropChance <= dropChance)//looteamos
         {
-            if (randomObject < objetos[j].Porcentaje)
+            int itemWeight = 0;
+
+            for(int i=0; i<LootTable.Count;i++)
             {
-                switch(objetos[j].Nombre.ToString())
+                itemWeight += LootTable[i].Porcentaje;
+            }
+
+            int randomValue = Random.Range(0, itemWeight);
+
+            for(int j=0; j<LootTable.Count;j++)
+            {
+                if(randomValue <= LootTable[j].Porcentaje)
                 {
-                    case "Vida":
-                        Jugador.Vidas++;
-                        Jugador.ActualizarVidas();
-                        Vector3 PosicionParticulasVida = new Vector3(transform.position.x, -24f, transform.position.z);
-                        Instantiate(objetos[j].Particulas, PosicionParticulasVida, Quaternion.identity);
-                        Destruir();
-                        break;
-                    case "Daño":
-                        //aumentamos daño
-                        Habilidades.DañoBasico += 50;
-                        //cambiamos color pajarita
-                        Habilidades.MaterialPajarita.color = ColorMasDaño;
-                        //indicamos que hemos conseguido mas daño
-                        Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -54f, transform.position.z);
-                        Instantiate(objetos[j].Particulas, PosicionParticulasDaño, Quaternion.identity);
-                        //activamos tiempo daño extra
-                        Habilidades.DañoExtra = true;
-                        Destruir();
-                        break;
-                    case "Default":
-                        break;
+                    //sacamositem
+                    switch(LootTable[j].Nombre.ToString())
+                    {
+                        case "Vida":
+                            Jugador.Vidas++;
+                            Jugador.ActualizarVidas();
+                            Vector3 PosicionParticulasVida = new Vector3(transform.position.x, -24f, transform.position.z);
+                            Instantiate(LootTable[j].Particulas, PosicionParticulasVida, Quaternion.identity);
+                            Destruir();
+                            break;
+                        case "Daño":
+                            //aumentamos daño
+                            Habilidades.DañoBasico += 50;
+                            //cambiamos color pajarita
+                            Habilidades.MaterialPajarita.color = ColorMasDaño;
+                            //indicamos que hemos conseguido mas daño
+                            Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -54f, transform.position.z);
+                            Instantiate(LootTable[j].Particulas, PosicionParticulasDaño, Quaternion.identity);
+                            //activamos tiempo daño extra
+                            Habilidades.DañoExtra = true;
+                            Destruir();
+                            break;
+                        case "Default":
+                            break;
+                    }
+                    return;
                 }
+                randomValue -= LootTable[j].Porcentaje;
+
             }
         }
+
     }
 }

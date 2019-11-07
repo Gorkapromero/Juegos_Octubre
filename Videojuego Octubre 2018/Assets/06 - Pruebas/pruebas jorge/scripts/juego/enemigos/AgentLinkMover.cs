@@ -17,9 +17,10 @@ public class AgentLinkMover : MonoBehaviour
     public OffMeshLinkMoveMethod method = OffMeshLinkMoveMethod.Parabola;
     public AnimationCurve curve = new AnimationCurve();
     public float velocidad;
+    public float velocidadEncimera;
     float altura;
 
-    public float Altura1;
+    public float AlturaEncimera;
     public float AlturaEstanterias;
     public float AlturaFregadero;
     IEnumerator Start()
@@ -87,7 +88,8 @@ public class AgentLinkMover : MonoBehaviour
         {
 
             case "Link1":
-            altura = Altura1;
+            altura = AlturaEncimera;
+            velocidad = velocidadEncimera;
             break;
 
             case "Link2":
