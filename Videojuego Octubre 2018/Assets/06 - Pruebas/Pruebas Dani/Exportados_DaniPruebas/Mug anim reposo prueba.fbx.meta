@@ -476,8 +476,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: "Rigging_Mug_v1_1_mat_ba\xF1ista"
+    second: {fileID: 2100000, guid: 801678507726fe84099f5415b98c060f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rigging_Mug_v1_1_mat_blancoConejo
     second: {fileID: 2100000, guid: 6a45dd03ef3e8524a8aa82be84686211, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rigging_Mug_v1_1_mat_mex_skin
+    second: {fileID: 2100000, guid: adf7ec57665d68f4bb70e5e2ca3dc94a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -502,17 +512,27 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Humo_01
-    second: {fileID: 2800000, guid: d6003fc6234e17542b3166c49d7b2a13, type: 3}
+    second: {fileID: 2800000, guid: 17cf6697af44f0b458d8b86335b18e39, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "uvs_ba\xF1ista"
+    second: {fileID: 2800000, guid: 054cfdd0e71b0bc44b873a3bdf9cef35, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: uvs_mex
+    second: {fileID: 2800000, guid: 1443a32f0a318634ca960573973785b7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_prueba
-    second: {fileID: 2800000, guid: b77a418f834140c4c8267a772efc3a29, type: 3}
+    second: {fileID: 2800000, guid: 8d14c995f6d387345852ecbb4fa284fd, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: uvs_santa
-    second: {fileID: 2800000, guid: 4a5dba9e7005fdd4880abb63bfc7bfbb, type: 3}
+    second: {fileID: 2800000, guid: 0967c9aede3bb48449187aa8c827b99e, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
