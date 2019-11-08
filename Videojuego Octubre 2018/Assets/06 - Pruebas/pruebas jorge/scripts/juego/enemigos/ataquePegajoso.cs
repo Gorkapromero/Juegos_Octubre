@@ -48,7 +48,7 @@ public class ataquePegajoso : MonoBehaviour
 			break;
 
 			case "Suelo":
-			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y+3.3f, transform.position.z);
+			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y+3.2f, transform.position.z);
             GameObject poff = Instantiate(prefabPoff, PosPoff, Quaternion.identity);
             Destroy(this.gameObject);
 			break;

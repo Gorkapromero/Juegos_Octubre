@@ -88,17 +88,18 @@ public class AgentLinkMover : MonoBehaviour
         {
 
             case "Link1":
-            altura = AlturaEncimera;
-            velocidad = velocidadEncimera;
-            break;
+                altura = AlturaEncimera;
+                velocidad = velocidadEncimera;
+                break;
 
             case "Link2":
-            altura = AlturaEstanterias;
-            break;
+                altura = AlturaEstanterias;
+                break;
 
             case "Link3":
-            altura = AlturaFregadero;
-            break;
+                velocidad = 1.2f;
+                altura = AlturaFregadero;
+                break;
         }
     }
     
