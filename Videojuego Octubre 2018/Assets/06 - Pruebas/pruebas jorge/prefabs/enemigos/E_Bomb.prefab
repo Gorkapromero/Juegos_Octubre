@@ -616,14 +616,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318831246343000}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.9996658, z: -0, w: 0.025851956}
+  m_LocalPosition: {x: -200.2442, y: 62.9, z: -0.047828764}
   m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
   m_Children:
   - {fileID: 4576011482958630}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 177.037, z: 0}
 --- !u!4 &4575690660897120
 Transform:
   m_ObjectHideFlags: 1
@@ -834,7 +834,7 @@ Rigidbody:
   m_GameObject: {fileID: 1318831246343000}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 12
+  m_Drag: 10
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -970,7 +970,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   velocidad: 1.2
-  velocidadEncimera: 3
+  velocidadEncimera: 0.4
   AlturaEncimera: 10
   AlturaEstanterias: 50
   AlturaFregadero: 50
@@ -1194,13 +1194,13 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 120
-  m_Acceleration: 20
+  m_Speed: 80
+  m_Acceleration: 120
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 0
   m_Height: 1
   m_BaseOffset: 0.5
