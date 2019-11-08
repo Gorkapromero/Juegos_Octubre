@@ -15,6 +15,8 @@ public class Ctrl_Fuego : MonoBehaviour
     // Use this for initialization
     movimiento_personaje Personaje;
     public GameObject ParticulasFuego;
+    public Transform Posicionfuego;
+
     void Start()
     {
         Animaciones = GameObject.Find("Elementos_Escenario").GetComponent<Animator>();
