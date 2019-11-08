@@ -26,6 +26,7 @@ TagManager:
   - Link1
   - Link2
   - Link3
+  - SoundEffects
   layers:
   - Default
   - TransparentFX

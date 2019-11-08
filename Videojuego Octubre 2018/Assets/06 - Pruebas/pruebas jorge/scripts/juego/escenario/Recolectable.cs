@@ -52,7 +52,7 @@ public class Recolectable : MonoBehaviour {
     {
         if (other.gameObject.tag == "Jugador")
         {
-
+            claculateLoot();
         }
     }
 

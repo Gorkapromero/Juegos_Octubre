@@ -13,6 +13,8 @@ public class Ctrl_Botones : MonoBehaviour
     public static bool GamePaused = false;
 
     public GameObject pauseMenuUI;
+
+    public AudioSource Musica;
 	// Use this for initialization
 	void Start ()
     {
@@ -53,5 +55,19 @@ public class Ctrl_Botones : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
+    }
+
+    public void QuitarMusica()
+    {
+        Musica.mute = !Musica.mute;
+    }
+
+    public void QuitarEfectos()
+    {
+        GameObject[] Efectos = GameObject.FindGameObjectsWithTag("SoundEffects");
+        for(int i = 0; i<Efectos.Length; i++)
+        {
+            Efectos[i].GetComponent<AudioSource>().mute = !Efectos[i].GetComponent<AudioSource>().mute;
+        }
     }
 }

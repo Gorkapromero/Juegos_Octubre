@@ -52,6 +52,10 @@ public class ataquePegajoso : MonoBehaviour
             GameObject poff = Instantiate(prefabPoff, PosPoff, Quaternion.identity);
             Destroy(this.gameObject);
 			break;
+
+			case "escudo":
+			Destroy(this.gameObject);
+			break;
 		}
 	}
 

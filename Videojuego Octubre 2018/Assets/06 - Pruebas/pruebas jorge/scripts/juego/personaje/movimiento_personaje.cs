@@ -421,6 +421,7 @@ public class movimiento_personaje : MonoBehaviour
 
                 animatorProta.Play("Muerte");
                 velocidad_fin = 0;
+                bloquearControles();
 
                 //Destruimos enemigos
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
