@@ -74,7 +74,7 @@ Material:
     - _MKEditorShowRimBehavior: 1
     - _MKEditorShowShadowBehavior: 0
     - _MKEditorShowSketchBehavior: 0
-    - _MKEditorShowSpecularBehavior: 1
+    - _MKEditorShowSpecularBehavior: 0
     - _MKEditorShowTranslucentBehavior: 0
     - _Metallic: 0
     - _Mode: 0
