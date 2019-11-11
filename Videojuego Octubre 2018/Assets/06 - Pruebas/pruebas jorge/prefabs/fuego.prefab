@@ -53,9 +53,10 @@ GameObject:
   - component: {fileID: 4097915119961078}
   - component: {fileID: 198269108115373310}
   - component: {fileID: 199563267344425778}
+  - component: {fileID: 136045905362044384}
   m_Layer: 0
   m_Name: fuego_v1
-  m_TagString: Untagged
+  m_TagString: Fuego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,6 +273,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!136 &136045905362044384
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114985485974770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 8.8
+  m_Height: 23
+  m_Direction: 2
+  m_Center: {x: 1.43, y: 2.78, z: 3.673809}
 --- !u!198 &198067190088384506
 ParticleSystem:
   m_ObjectHideFlags: 1
