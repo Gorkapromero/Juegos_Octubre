@@ -25,6 +25,11 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void volverJugar()
     {
+        if(Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
+
         SceneManager.LoadScene(1);
     }
 
