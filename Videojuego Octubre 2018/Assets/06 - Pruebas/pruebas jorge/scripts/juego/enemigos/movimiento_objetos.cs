@@ -55,6 +55,8 @@ public class movimiento_objetos : MonoBehaviour
     public GameObject FloatingGhost;
     public GameObject FloatingLifePega;
 
+    public GameObject particulasHitEnemigos;
+
     bool Ataque = false;
 
     public Vector3 OffsetBomba;
@@ -218,6 +220,10 @@ public class movimiento_objetos : MonoBehaviour
                         //Sonido de recibir daño para el enemigo
                         SonidoRecibirPajaritazoEnemigo.Play();
 
+                        Vector3 posicionParticulasHit = new Vector3(transform.position.x, -47.6f, transform.position.z);
+                        Instantiate(particulasHitEnemigos, posicionParticulasHit, Quaternion.identity);
+
+
                         Puntuacion.Enemigos_Eliminados++;
                         Muerte();
                         //sumamos energia
@@ -238,6 +244,8 @@ public class movimiento_objetos : MonoBehaviour
                             //Sonido de recibir daño para el enemigo
                             SonidoRecibirPajaritazoEnemigo.Play();
 
+                            posicionParticulasHit = new Vector3(transform.position.x, -47.6f, transform.position.z);
+                            Instantiate(particulasHitEnemigos, posicionParticulasHit, Quaternion.identity);
 
                             nav.speed = 0;
                             //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.VelocityChange);

@@ -316,6 +316,7 @@ public class movimiento_personaje : MonoBehaviour
         //Aumentamos el tamaño del collider de la pajarita
         BoxCollider colliderPajarita = GameObject.Find("Rigging_Mug_v1_1_ctl_pajarita").GetComponent<BoxCollider>();
         colliderPajarita.size = new Vector3(colliderPajarita.size.x, colliderPajarita.size.y, 1.0f);
+        colliderPajarita.enabled = false;
 
     }
 

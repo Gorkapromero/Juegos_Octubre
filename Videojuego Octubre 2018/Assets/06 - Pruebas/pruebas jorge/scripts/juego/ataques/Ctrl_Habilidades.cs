@@ -50,6 +50,8 @@ public class Ctrl_Habilidades : MonoBehaviour
     public bool DañoExtra;
     float tiempo;
 
+    BoxCollider colliderPajarita;
+
 
     // Use this for initialization
     void Start ()
@@ -190,14 +192,20 @@ public class Ctrl_Habilidades : MonoBehaviour
         AtaqueBasico = true;
         GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().SetBool("LanzarPajarita",true);
 
-
         //Aumentamos el tamaño del collider de la pajarita
-        BoxCollider colliderPajarita = GameObject.Find("Rigging_Mug_v1_1_ctl_pajarita").GetComponent<BoxCollider>();
+        colliderPajarita = GameObject.Find("Rigging_Mug_v1_1_ctl_pajarita").GetComponent<BoxCollider>();
         colliderPajarita.size = new Vector3(colliderPajarita.size.x, colliderPajarita.size.y, 3.0f);
 
+        Invoke("ActivarColliderPajarita", 0.2f);
+
+        
+    }
+    void ActivarColliderPajarita()
+    {
+
+        colliderPajarita.enabled = true;
     }
 
- 
 
     public void chorro()
     {

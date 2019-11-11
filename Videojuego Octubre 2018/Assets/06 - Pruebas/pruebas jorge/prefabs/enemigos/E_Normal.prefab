@@ -305,14 +305,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340248824946342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -221.9, y: -47, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -221.8559, y: -47, z: -0.05915706}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4143994724795598}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4633727746480798
 Transform:
   m_ObjectHideFlags: 1
@@ -462,6 +462,8 @@ MonoBehaviour:
   FloatingGhost: {fileID: 1078266722140502, guid: f6f05c7a0b08bf74dac672311120a44c,
     type: 2}
   FloatingLifePega: {fileID: 1310590947349496, guid: aa3aebc0f15fbfe49bd9784fea50625d,
+    type: 2}
+  particulasHitEnemigos: {fileID: 1036187169397420, guid: bb85272764dde974fbd6bfdd8acad5e5,
     type: 2}
   OffsetBomba: {x: 0, y: 0, z: 0}
 --- !u!114 &114966163936630026

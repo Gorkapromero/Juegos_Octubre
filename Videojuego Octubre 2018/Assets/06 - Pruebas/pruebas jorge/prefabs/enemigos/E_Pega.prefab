@@ -573,6 +573,8 @@ MonoBehaviour:
     type: 2}
   FloatingLifePega: {fileID: 1310590947349496, guid: aa3aebc0f15fbfe49bd9784fea50625d,
     type: 2}
+  particulasHitEnemigos: {fileID: 1036187169397420, guid: bb85272764dde974fbd6bfdd8acad5e5,
+    type: 2}
   OffsetBomba: {x: 0, y: 0, z: 0}
 --- !u!114 &114547548368669284
 MonoBehaviour:

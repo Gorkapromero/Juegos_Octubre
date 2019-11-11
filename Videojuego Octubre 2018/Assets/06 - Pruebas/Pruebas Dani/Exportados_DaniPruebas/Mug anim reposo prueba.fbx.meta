@@ -941,7 +941,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.8802958
+      - time: 0.82881373
         functionName: desactivarAtaqueBasico
         data: 
         objectReferenceParameter: {fileID: 1694707733641096, guid: a2ad94a543deda746a5cb81f5b543601,
@@ -949,7 +949,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9550827
+      - time: 0.8801997
         functionName: desactivarAtaqueBasico
         data: 
         objectReferenceParameter: {fileID: 1694707733641096, guid: a2ad94a543deda746a5cb81f5b543601,
@@ -957,7 +957,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.99618894
+      - time: 0.9493871
         functionName: desactivarAtaqueBasico
         data: 
         objectReferenceParameter: {fileID: 1694707733641096, guid: a2ad94a543deda746a5cb81f5b543601,
