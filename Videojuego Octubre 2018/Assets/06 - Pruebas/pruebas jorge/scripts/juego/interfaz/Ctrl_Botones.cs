@@ -45,6 +45,10 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void CargarMenu()
     {
+        if(Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
         SceneManager.LoadScene(0);
     }
 

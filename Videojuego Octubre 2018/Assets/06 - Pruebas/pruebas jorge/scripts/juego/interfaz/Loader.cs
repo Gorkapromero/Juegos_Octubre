@@ -32,4 +32,21 @@ public class Loader : MonoBehaviour
             yield return null;
         }
     }
+
+    public void MenuSkins()
+    {
+        GameObject.Find("Canvas").GetComponent<Animator>().Play("AbrirSkins");
+        GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("VerSkins");
+        //Invoke("cargarSkin",0.3f);
+    }
+    public void Volver()
+    {
+        GameObject.Find("Canvas").GetComponent<Animator>().Play("VolverMenu");
+        GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("CerrarSkins");
+    }
+
+    void cargarSkin()
+    {
+        GameObject.Find("Skins").GetComponent<Ctrl_Skins>().buscarSkin();
+    }
 }

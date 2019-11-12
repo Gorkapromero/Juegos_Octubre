@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14204,6 +14204,41 @@ Prefab:
     - {fileID: 13700000, guid: f819af173055d04489197137c43a0513, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f819af173055d04489197137c43a0513, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &995215289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100172, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
+--- !u!1 &995215290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100162, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
+--- !u!1 &995215291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100160, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
+--- !u!1 &995215292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100210, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
+--- !u!1 &995215293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100158, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
+--- !u!1 &995215294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100156, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
+--- !u!1 &995215295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100208, guid: f819af173055d04489197137c43a0513,
+    type: 3}
+  m_PrefabInternal: {fileID: 995215288}
 --- !u!1 &1011695707
 GameObject:
   m_ObjectHideFlags: 0
@@ -16209,6 +16244,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f819af173055d04489197137c43a0513,
     type: 3}
   m_PrefabInternal: {fileID: 995215288}
+--- !u!114 &1232494661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232494660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ac894a5c1ecb04bb8c62ca3f962cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TablaSkins:
+  - Nombre: Normal
+    Skin: {fileID: 995215290}
+  - Nombre: Mexicano
+    Skin: {fileID: 995215295}
+  - Nombre: Rabbit
+    Skin: {fileID: 995215294}
+  - Nombre: Space
+    Skin: {fileID: 995215293}
+  - Nombre: Playista
+    Skin: {fileID: 995215292}
+  - Nombre: Presidente
+    Skin: {fileID: 995215291}
+  - Nombre: Santa
+    Skin: {fileID: 995215289}
 --- !u!114 &1232494662
 MonoBehaviour:
   m_ObjectHideFlags: 0
