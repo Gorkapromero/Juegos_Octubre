@@ -67,6 +67,7 @@ public class Ctrl_Skins : MonoBehaviour
 		GrupoSkins.transform.position = Posicion;
 		SkinActivada = TablaSkins[NumeroSkin].Nombre;
 		DatosGuardados.Skin = SkinActivada;
+       // print(SkinActivada);
 		
 	}
 
@@ -86,7 +87,9 @@ public class Ctrl_Skins : MonoBehaviour
 		{
 			SkinActivada = DatosGuardados.Skin;
 		}
-		
+       
+
+
 		for (int i = 0; i < TablaSkins.Count; i++)
 		{
 			if(TablaSkins[i].Nombre == SkinActivada)

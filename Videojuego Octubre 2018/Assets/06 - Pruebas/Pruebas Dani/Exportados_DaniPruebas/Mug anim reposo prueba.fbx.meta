@@ -720,14 +720,16 @@ ModelImporter:
       - time: 0.67589986
         functionName: bloquearControles
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: bd1b8076b1b60a94ba30a863e03b5e82,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.875346
         functionName: desbloquearControles
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: bd1b8076b1b60a94ba30a863e03b5e82,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

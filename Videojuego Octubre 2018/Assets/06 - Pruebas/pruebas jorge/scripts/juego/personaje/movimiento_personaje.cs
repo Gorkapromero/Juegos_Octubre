@@ -73,6 +73,7 @@ public class movimiento_personaje : MonoBehaviour
     Color tempColortrans;
     Color tempColoropac;
 
+    public GameObject panelBloqueoControles;
 
     //VariablesSonido
     AudioSource sonidoMuerte;
@@ -132,20 +133,7 @@ public class movimiento_personaje : MonoBehaviour
             GetComponent<Animator>().SetFloat("Speed", movimiento);
             //GetComponent<Rigidbody>().isKinematic = false;
 
-            /*//***Corrección "temporal" del solapado de animaciones de andar y correr ********
-            if (joystick.Horizontal < 0.62 && joystick.Horizontal > 0.34)
-            {
-                GetComponent<Animator>().SetFloat("Speed", 0.34f);
-            }
-            else if (joystick.Horizontal > -0.62 && joystick.Horizontal < -0.34)
-            {
-                GetComponent<Animator>().SetFloat("Speed", -0.34f);
-            }
-            //*********************************************************************************
-            else
-            {
-                GetComponent<Animator>().SetFloat("Speed", (float)System.Math.Round(joystick.Horizontal, 2));
-            }*/
+            
         }
         else
         {
@@ -186,7 +174,7 @@ public class movimiento_personaje : MonoBehaviour
                 if (!DobleSalto)
                 {
                     print("Doble Salto");
-                    animatorProta.Play("DobleSalto");
+                    animatorProta.Play("DobleSalto",-1,0);
                     GameObject ParticulasDobleSalto = Instantiate(ParticulasAterrizaje, transform.position, Quaternion.identity);
 
                     rb.velocity = Vector3.up * (FuerzaSalto * 1.2f);
@@ -269,7 +257,7 @@ public class movimiento_personaje : MonoBehaviour
 
         if(!EnMiel&&bloquearControl&&!recibiendoGolpe)
         {
-            desbloquearControles();
+            //desbloquearControles();
 
         }
     }
@@ -322,12 +310,17 @@ public class movimiento_personaje : MonoBehaviour
 
     public void bloquearControles()
     {
-       bloquearControl = true;
+        bloquearControl = true;
+
+        panelBloqueoControles.SetActive(true);
+
 
     }
 
     public void desbloquearControles()
     {
+        panelBloqueoControles.SetActive(false);
+
         bloquearControl = false;
         velocidad_fin = 80;
         recibiendoGolpe = false;
@@ -405,14 +398,10 @@ public class movimiento_personaje : MonoBehaviour
             recibiendoGolpe = true;
 
             bloquearControles();
-            Invoke("desbloquearControles",1.0f);
 
 
             if (Vidas == 0)
-            {
-                //Desactivamos controles
-                bloquearControles();
-                
+            {                   
                 //Reproducimos el sonido de "MUERTE"
                 sonidoMuerte.Play();
                 sonidoMuerte_02.Play();
@@ -420,19 +409,21 @@ public class movimiento_personaje : MonoBehaviour
                 //Y bajamos el sonido de la musica de fondo
                 musicaDeFondo.volume = 0.05f;
 
-                animatorProta.Play("Muerte");
+                animatorProta.Play("Muerte",-1,0);
                 velocidad_fin = 0;
+                GetComponent<Animator>().SetFloat("Speed", 0.0f);
                 bloquearControles();
 
                 //Destruimos enemigos
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
 
                 //menu fin de partida
-                Invoke("ActivarFinPartida",3);
+                Invoke("ActivarFinPartida",2);
                 
             }
             else
             {
+                Invoke("desbloquearControles", 1.0f);
 
                 animatorProta.Play("RecibirDaño");
                 print("blink");
@@ -484,16 +475,22 @@ public class movimiento_personaje : MonoBehaviour
 
     public void IrDerecha()
     {
-        movimiento = 1;
-        Irderecha.color = tempColoropac;
-        Irizquierda.color = tempColortrans;
+        if (!bloquearControl)
+        {
+            movimiento = 1;
+            Irderecha.color = tempColoropac;
+            Irizquierda.color = tempColortrans;
+        }
     }
 
     public void IrIzquierda()
     {
-        movimiento = -1;
-        Irderecha.color = tempColortrans;
-        Irizquierda.color = tempColoropac;
+        if (!bloquearControl)
+        {
+            movimiento = -1;
+            Irderecha.color = tempColortrans;
+            Irizquierda.color = tempColoropac;
+        }
     }
     public void Parar()
     {

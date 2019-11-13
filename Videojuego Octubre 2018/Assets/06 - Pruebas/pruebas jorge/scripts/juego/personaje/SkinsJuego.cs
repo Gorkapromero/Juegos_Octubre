@@ -20,18 +20,33 @@ public class SkinsJuego : MonoBehaviour {
 		if(GameObject.Find("Datosguardados"))
 		{
 			DatosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
-			for (int i = 0; i < TablaSkins.Count; i++)
-			{
-				if(TablaSkins[i].Nombre==DatosGuardados.Skin)
-				{
-					TablaSkins[i].Skin.SetActive(true);
-				}
-				else
-				{
-					TablaSkins[i].Skin.SetActive(false);
-				}
-			}
-		}
+            if (DatosGuardados.Skin != null)
+            {
+                for (int i = 0; i < TablaSkins.Count; i++)
+                {
+                    if (TablaSkins[i].Nombre == DatosGuardados.Skin)
+                    {
+                        TablaSkins[i].Skin.SetActive(true);
+                    }
+                    else
+                    {
+                        TablaSkins[i].Skin.SetActive(false);
+                    }
+                }
+            }
+
+            else
+            {
+                //Desactivamos todas las Skins (Por si acaso)
+                for (int i = 0; i < TablaSkins.Count; i++)
+                {
+                    TablaSkins[i].Skin.SetActive(false);
+                }
+                // Y activamos la Skin "Normal" por defecto, si no tenemos una skin pre-seleccionada
+                TablaSkins[0].Skin.SetActive(true);
+            }
+
+        }
 		
 	}
 }
