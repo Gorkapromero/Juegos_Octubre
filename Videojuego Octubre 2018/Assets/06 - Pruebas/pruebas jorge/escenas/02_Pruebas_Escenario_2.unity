@@ -5784,6 +5784,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd7524c9dd783f4fa94f066d92f9b33, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1001 &701698355
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -206.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -40.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335204661635314, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &704794239
 GameObject:
   m_ObjectHideFlags: 0
@@ -23733,7 +23775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2018437130
 Transform:
   m_ObjectHideFlags: 0
@@ -24034,7 +24076,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dd17c1f279f80e44dab8a7b40ab36fa7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f047c81b8e6f3464b80dd23d02d64998, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1

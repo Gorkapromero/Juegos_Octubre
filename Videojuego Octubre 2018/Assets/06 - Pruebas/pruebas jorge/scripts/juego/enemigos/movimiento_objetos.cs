@@ -237,9 +237,7 @@ public class movimiento_objetos : MonoBehaviour
                             VidaEnemigo -= Habilidades.DañoBasico;
 
                             //Animacion de recibir daño para el enemigo
-                            animatorEnemigo.Play("RecibirGolpe");
-                            //Animacion de recibir daño para el enemigo
-                            animatorEnemigo.Play("RecibirGolpe1");
+                            animatorEnemigo.Play("RecibirGolpe",-1,0);
 
                             //Sonido de recibir daño para el enemigo
                             SonidoRecibirPajaritazoEnemigo.Play();
