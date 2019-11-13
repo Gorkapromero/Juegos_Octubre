@@ -30,7 +30,7 @@ public class Ctrl_Skins : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		ScrollMax = (TablaSkins.Count-1)*15;
+		ScrollMax = (TablaSkins.Count-1)*12;
 		DatosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
 		
 		Invoke("buscarSkin",0.05f);
@@ -45,7 +45,7 @@ public class Ctrl_Skins : MonoBehaviour
 	public void Scroll()
 	{
 		Posicion = GetMouseAsWorldPoint()+mOffset;
-		if(Posicion.x<0&&Posicion.x>-90f)
+		if(Posicion.x<0&&Posicion.x>-ScrollMax)
 		{
 			GrupoSkins.transform.position = Posicion;
 		}
@@ -61,9 +61,9 @@ public class Ctrl_Skins : MonoBehaviour
 
 	public void Drop()
 	{
-		int NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/15));
+		int NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/12));
 
-		Posicion.x = -NumeroSkin*15;
+		Posicion.x = -NumeroSkin*12;
 		GrupoSkins.transform.position = Posicion;
 		SkinActivada = TablaSkins[NumeroSkin].Nombre;
 		DatosGuardados.Skin = SkinActivada;
@@ -94,7 +94,7 @@ public class Ctrl_Skins : MonoBehaviour
 		{
 			if(TablaSkins[i].Nombre == SkinActivada)
 			{
-				GrupoSkins.transform.position = new Vector3((-i*15)+42.09f,GrupoSkins.transform.position.y,GrupoSkins.transform.position.z);
+				GrupoSkins.transform.position = new Vector3((-i*12)+42.09f,GrupoSkins.transform.position.y,GrupoSkins.transform.position.z);
 				return;
 			}
 		}
