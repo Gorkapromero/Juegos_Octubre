@@ -39,7 +39,7 @@ public class Loader : MonoBehaviour
         GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("VerSkins");
         //Invoke("cargarSkin",0.3f);
     }
-    public void Volver()
+    public void VolverMenu()
     {
         GameObject.Find("Canvas").GetComponent<Animator>().Play("VolverMenu");
         GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("CerrarSkins");
@@ -48,5 +48,16 @@ public class Loader : MonoBehaviour
     void cargarSkin()
     {
         GameObject.Find("Skins").GetComponent<Ctrl_Skins>().buscarSkin();
+    }
+
+    public void IrTienda()
+    {
+        GameObject.Find("Canvas").GetComponent<Animator>().Play("AbrirTienda");
+        GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("VerTienda");
+    }
+    public void volverSkins()
+    {
+        GameObject.Find("Canvas").GetComponent<Animator>().Play("CerrarTienda");
+        GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("VolverSkins");
     }
 }
