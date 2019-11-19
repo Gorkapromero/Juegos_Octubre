@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Ctrl_Skins : MonoBehaviour 
 {
+	public float roty;
+	public float VelocidadRotacion;
 	public Camera camara;
 	public GameObject GrupoSkins;
 
@@ -27,6 +31,13 @@ public class Ctrl_Skins : MonoBehaviour
 
 	DatosGuardados DatosGuardados;
 
+	public Material MaterialPajarita;
+
+	bool drop;
+	float posfinal;
+	float posinicial;
+	public float velocidad;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -39,7 +50,33 @@ public class Ctrl_Skins : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		if(drop)
+		{
+			print("posicion inicial: " + posinicial);
+			print("posicion final: " + posfinal);
+			if(posfinal>posinicial)
+			{
+				Posicion.x += (velocidad *Time.deltaTime);
+				GrupoSkins.transform.position = Posicion;
+				if(Posicion.x>=posfinal)
+				{
+					Posicion.x = posfinal;
+					GrupoSkins.transform.position = Posicion;
+					drop = false;
+				}
+			}
+			else
+			{
+				Posicion.x -= (velocidad *Time.deltaTime);
+				GrupoSkins.transform.position = Posicion;
+				if(Posicion.x<posfinal)
+				{
+					Posicion.x = posfinal;
+					GrupoSkins.transform.position = Posicion;
+					drop = false;
+				}
+			}
+		}
 	}
 
 	public void Scroll()
@@ -48,6 +85,16 @@ public class Ctrl_Skins : MonoBehaviour
 		if(Posicion.x<0&&Posicion.x>-ScrollMax)
 		{
 			GrupoSkins.transform.position = Posicion;
+		}
+	}
+
+	public void ScrollCircular()
+	{
+		Posicion = GetMouseAsWorldPoint()+mOffset;
+		roty = Input.GetAxis("Mouse X")*VelocidadRotacion*Mathf.Deg2Rad;
+		if(GrupoSkins.transform.eulerAngles.y-180>=0&&GrupoSkins.transform.eulerAngles.y-180<=270f)
+		{
+			GrupoSkins.transform.Rotate(Vector3.up, -roty);
 		}
 	}
 
@@ -63,8 +110,12 @@ public class Ctrl_Skins : MonoBehaviour
 	{
 		int NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/12));
 
-		Posicion.x = -NumeroSkin*12;
-		GrupoSkins.transform.position = Posicion;
+		//Posicion.x = -NumeroSkin*12;
+		posinicial = GrupoSkins.transform.position.x;
+		posfinal = -NumeroSkin*12;
+		Posicion.x=posinicial;
+		drop = true;
+		//GrupoSkins.transform.position = Posicion;
 		SkinActivada = TablaSkins[NumeroSkin].Nombre;
 		DatosGuardados.Skin = SkinActivada;
        // print(SkinActivada);
@@ -87,16 +138,26 @@ public class Ctrl_Skins : MonoBehaviour
 		{
 			SkinActivada = DatosGuardados.Skin;
 		}
-       
-
 
 		for (int i = 0; i < TablaSkins.Count; i++)
 		{
 			if(TablaSkins[i].Nombre == SkinActivada)
 			{
-				GrupoSkins.transform.position = new Vector3((-i*12)+42.09f,GrupoSkins.transform.position.y,GrupoSkins.transform.position.z);
+				GrupoSkins.transform.position = new Vector3((-i*12),GrupoSkins.transform.position.y,GrupoSkins.transform.position.z);
 				return;
 			}
 		}
+	}
+
+	public void CambiarColor()
+	{
+		if(SkinActivada == "Normal")
+		{
+			Color ColorElejido = EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color;
+
+			MaterialPajarita.color = ColorElejido;
+		}
+		
+
 	}
 }
