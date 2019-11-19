@@ -1251,6 +1251,7 @@ MonoBehaviour:
     Skin: {fileID: 2055963477}
   SkinActivada: Normal
   MaterialPajarita: {fileID: 2100000, guid: 6430045639ca14d4887dbf89570d8c19, type: 2}
+  colores: {fileID: 853579257}
   velocidad: 25
 --- !u!1 &66657829
 GameObject:
@@ -7792,6 +7793,7 @@ MonoBehaviour:
     Skin: {fileID: 442327517}
   SkinActivada: Normal
   MaterialPajarita: {fileID: 0}
+  colores: {fileID: 0}
   velocidad: 0
 --- !u!1 &442327517
 GameObject:
@@ -13549,8 +13551,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6430045639ca14d4887dbf89570d8c19, type: 2}
-  - {fileID: 2100000, guid: 6430045639ca14d4887dbf89570d8c19, type: 2}
+  - {fileID: 2100000, guid: fb5e8be397939214cacd8d42760526e8, type: 2}
+  - {fileID: 2100000, guid: fb5e8be397939214cacd8d42760526e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14845,7 +14847,7 @@ GameObject:
   - component: {fileID: 853579260}
   - component: {fileID: 853579259}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Panel_Colores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

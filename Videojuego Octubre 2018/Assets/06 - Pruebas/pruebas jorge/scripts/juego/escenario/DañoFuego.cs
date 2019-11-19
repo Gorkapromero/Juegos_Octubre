@@ -8,12 +8,14 @@ public class DañoFuego : MonoBehaviour
     ParticleSystem ps;
 
     CapsuleCollider ColliderFuego;
+    Ctrl_Habilidades Habilidades;
 
     // Use this for initialization
     void Start()
     {
         Personaje = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         ps = this.GetComponent<ParticleSystem>();
+        Habilidades=GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
 
         ColliderFuego = GetComponent<CapsuleCollider>();
         ColliderFuego.enabled = false;
@@ -53,7 +55,7 @@ public class DañoFuego : MonoBehaviour
         {
             case "Jugador":
                 //restamos vida
-                if (!Personaje.DentroFuego)
+                if (!Personaje.DentroFuego&&!Habilidades.escudoActivado)
                 {
                     Personaje.quitarvida_Vida();
                     Personaje.DentroFuego = true;
