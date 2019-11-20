@@ -107,7 +107,7 @@ public class Recolectable : MonoBehaviour {
                             Habilidades.MaterialPajarita.color = ColorMasDaño;
                             //indicamos que hemos conseguido mas daño
                             Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -54f, transform.position.z);
-                            Instantiate(LootTable[j].Particulas, PosicionParticulasDaño, Quaternion.identity);
+                            Instantiate(LootTable[j].Particulas, PosicionParticulasDaño, Quaternion.Euler(-90f,0,0));
                             //activamos tiempo daño extra
                             Habilidades.DañoExtra = true;
                             Destruir();

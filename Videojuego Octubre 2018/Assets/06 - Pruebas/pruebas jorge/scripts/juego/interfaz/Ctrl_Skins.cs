@@ -32,8 +32,10 @@ public class Ctrl_Skins : MonoBehaviour
 	DatosGuardados DatosGuardados;
 
 	public Material MaterialPajarita;
+	public GameObject colores;
 
 	bool drop;
+	bool scroll;
 	float posfinal;
 	float posinicial;
 	public float velocidad;
@@ -77,10 +79,20 @@ public class Ctrl_Skins : MonoBehaviour
 				}
 			}
 		}
+
+		if(SkinActivada == "Normal")
+		{
+			colores.SetActive(true);
+		}
+		else if(SkinActivada != "Normal"&&colores)
+		{
+			colores.SetActive(false);
+		}
 	}
 
 	public void Scroll()
 	{
+		scroll=true;
 		Posicion = GetMouseAsWorldPoint()+mOffset;
 		if(Posicion.x<0&&Posicion.x>-ScrollMax)
 		{
@@ -108,16 +120,23 @@ public class Ctrl_Skins : MonoBehaviour
 
 	public void Drop()
 	{
-		int NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/12));
+		if(scroll)
+		{
+			scroll=false;
+			int NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/12));
 
-		//Posicion.x = -NumeroSkin*12;
-		posinicial = GrupoSkins.transform.position.x;
-		posfinal = -NumeroSkin*12;
-		Posicion.x=posinicial;
-		drop = true;
-		//GrupoSkins.transform.position = Posicion;
-		SkinActivada = TablaSkins[NumeroSkin].Nombre;
-		DatosGuardados.Skin = SkinActivada;
+			//Posicion.x = -NumeroSkin*12;
+			posinicial = GrupoSkins.transform.position.x;
+			posfinal = -NumeroSkin*12;
+			Posicion.x=posinicial;
+			drop = true;
+			//GrupoSkins.transform.position = Posicion;
+			SkinActivada = TablaSkins[NumeroSkin].Nombre;
+			TablaSkins[NumeroSkin].Skin.GetComponent<Animator>().Play("LevantarDeCaidaAtras");
+			DatosGuardados.Skin = SkinActivada;
+			
+		}
+		
        // print(SkinActivada);
 		
 	}
