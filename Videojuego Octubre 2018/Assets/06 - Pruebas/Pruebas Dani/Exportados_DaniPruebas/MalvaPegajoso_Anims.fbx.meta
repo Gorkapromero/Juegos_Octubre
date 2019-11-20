@@ -74,6 +74,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: TEXT_Malva_Pegajoso2
     second: {fileID: 2800000, guid: b653a1788dc220841afca341d84129f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ojo_04
+    second: {fileID: 2800000, guid: d69b8a0792ecc724f9ea94e80b25c197, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: textura_pegajoso_v2
+    second: {fileID: 2800000, guid: cb53c646589476e49a1de4a6a2c7fa7a, type: 3}
   materials:
     importMaterials: 1
     materialName: 2
