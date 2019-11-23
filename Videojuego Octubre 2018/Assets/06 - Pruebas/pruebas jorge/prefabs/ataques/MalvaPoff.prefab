@@ -129,8 +129,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1780197598949182}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12081367, y: 0.12081372, z: 20.8201}
+  m_LocalPosition: {x: 0, y: -0.4, z: -0.00000028348}
+  m_LocalScale: {x: 0.19263738, y: 0.19263747, z: 33.19765}
   m_Children:
   - {fileID: 4101548218729954}
   - {fileID: 4462998083853490}
@@ -226,7 +226,7 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -369,8 +369,8 @@ ParticleSystem:
       maxColor: {r: 0.8867924, g: 0.4308473, b: 0.82133067, a: 0.7058824}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0.990566, g: 0.21960661, b: 0.8636195, a: 1}
+        key0: {r: 0.9622642, g: 0.80241305, b: 0.62184054, a: 1}
+        key1: {r: 0.7529412, g: 0.3882353, b: 0.050980393, a: 1}
         key2: {r: 0.990566, g: 0.21960661, b: 0.8636195, a: 0}
         key3: {r: 0.990566, g: 0.21960661, b: 0.8636195, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1332,7 +1332,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 1, g: 1, b: 1, a: 0.039215688}
         key3: {r: 1, g: 1, b: 1, a: 0.039215688}
         key4: {r: 1, g: 1, b: 1, a: 0.039215688}
@@ -4645,7 +4645,7 @@ ParticleSystem:
   lengthInSec: 0.4
   simulationSpeed: 1
   stopAction: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4785,7 +4785,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0.85647917, a: 1}
+      maxColor: {r: 0.7529412, g: 0.3882353, b: 0.050980393, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9001,7 +9001,7 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9141,7 +9141,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.7688679, b: 0.97371435, a: 0.627451}
+      maxColor: {r: 0.8679245, g: 0.5467412, b: 0.24973297, a: 0.5019608}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10152,7 +10152,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
