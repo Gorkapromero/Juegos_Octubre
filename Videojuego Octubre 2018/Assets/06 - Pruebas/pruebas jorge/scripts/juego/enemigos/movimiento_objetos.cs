@@ -328,6 +328,10 @@ public class movimiento_objetos : MonoBehaviour
 
     void explosion()
     {
+        //animacion de Shake de la camara
+        GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>().Play("animShake_DobleSalto");
+
+
         colBomb.radius += 25f * Time.deltaTime;
         GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
         if (colBomb.radius >= 12f)
