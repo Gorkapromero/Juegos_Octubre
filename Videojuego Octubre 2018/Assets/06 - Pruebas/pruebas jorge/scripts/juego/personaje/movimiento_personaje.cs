@@ -406,13 +406,18 @@ public class movimiento_personaje : MonoBehaviour
                 sonidoMuerte.Play();
                 sonidoMuerte_02.Play();
 
+                //ejecutamos la animacion de muerteCamara
+                animatorCamara.Play("animMuerteCamara");
+
+
                 //Y bajamos el sonido de la musica de fondo
-                musicaDeFondo.volume = 0.05f;
+                musicaDeFondo.volume = 0.0f;
 
                 animatorProta.Play("Muerte",-1,0);
                 velocidad_fin = 0;
                 GetComponent<Animator>().SetFloat("Speed", 0.0f);
                 bloquearControles();
+                panelBloqueoControles.SetActive(true);
 
                 //Destruimos enemigos
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
@@ -470,7 +475,7 @@ public class movimiento_personaje : MonoBehaviour
     {
         GameObject ParticulasCaidadoblesalto = Instantiate(ParticulasCaidaDobleSalto, transform.position, Quaternion.identity);
         CollDobleSalto.enabled = false;
-        //animatorCamara.Play("animShake_DobleSalto");
+        animatorCamara.Play("animShake_DobleSalto");
     }
 
     public void IrDerecha()

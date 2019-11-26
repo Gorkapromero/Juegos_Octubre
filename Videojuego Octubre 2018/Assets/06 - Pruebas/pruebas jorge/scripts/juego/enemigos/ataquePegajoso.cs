@@ -33,10 +33,7 @@ public class ataquePegajoso : MonoBehaviour
 		Rb.velocity = Vo;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	    
 
 	private void OnTriggerEnter(Collider other) 
 	{
