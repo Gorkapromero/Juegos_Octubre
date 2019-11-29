@@ -925,6 +925,8 @@ MonoBehaviour:
     type: 2}
   particulasHitEnemigos: {fileID: 1036187169397420, guid: bb85272764dde974fbd6bfdd8acad5e5,
     type: 2}
+  Moneda: {fileID: 1332504836155120, guid: e79931b461e5f654abc5c2af888e900a, type: 2}
+  NumeroMonedas: 2
   OffsetBomba: {x: 0, y: 0, z: 0.8}
 --- !u!114 &114994587752658236
 MonoBehaviour:

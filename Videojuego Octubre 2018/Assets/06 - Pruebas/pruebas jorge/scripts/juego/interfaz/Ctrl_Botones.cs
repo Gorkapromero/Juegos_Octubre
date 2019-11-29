@@ -15,9 +15,13 @@ public class Ctrl_Botones : MonoBehaviour
     public GameObject pauseMenuUI;
 
     public AudioSource Musica;
+
+    DatosGuardados DatosGuardar;
 	// Use this for initialization
 	void Start ()
     {
+        DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
+
         Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
 	}
 	
@@ -29,6 +33,8 @@ public class Ctrl_Botones : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+
+        DatosGuardar.Save();
 
         SceneManager.LoadScene(1);
     }
@@ -49,6 +55,9 @@ public class Ctrl_Botones : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+
+        DatosGuardar.Save();
+        
         SceneManager.LoadScene(0);
     }
 
@@ -78,5 +87,12 @@ public class Ctrl_Botones : MonoBehaviour
         {
             Efectos[i].GetComponent<AudioSource>().mute = !Efectos[i].GetComponent<AudioSource>().mute;
         }
+    }
+
+    public void seguirJugando()
+    {
+        //resetear valore
+        //desactivar fin de partida
+        //timer 3 segundos
     }
 }
