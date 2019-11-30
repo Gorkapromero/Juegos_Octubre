@@ -371,6 +371,8 @@ public class movimiento_objetos : MonoBehaviour
     {
         Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
         Instantiate(FloatingEnergy, Posiciontextos, Quaternion.identity);
+
+        CrearMoneda();
     }
 
     void CrearMoneda()

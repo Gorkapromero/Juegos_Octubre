@@ -14,7 +14,7 @@ public class Monedas : MonoBehaviour
 	{
 		DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
 
-		Vector3 Vo = new Vector3(Random.Range(-FuerzaExplosion,FuerzaExplosion),FuerzaExplosion,0);
+		Vector3 Vo = new Vector3(Random.Range(-FuerzaExplosion,FuerzaExplosion),FuerzaExplosion*20f,0);
 		RBMoneda.velocity = Vo;
 	}
 	
@@ -25,6 +25,7 @@ public class Monedas : MonoBehaviour
 
 	private void OnCollisionEnter(Collision other) 
 	{
+		print("colision");
 		if(other.gameObject.tag == "Jugador")
 		{
 			//sumamos moneda
