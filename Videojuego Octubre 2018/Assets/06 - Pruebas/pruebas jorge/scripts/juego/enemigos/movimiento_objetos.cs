@@ -57,6 +57,9 @@ public class movimiento_objetos : MonoBehaviour
 
     public GameObject particulasHitEnemigos;
 
+    public GameObject Moneda;
+    public int NumeroMonedas;
+
     bool Ataque = false;
 
     public Vector3 OffsetBomba;
@@ -368,5 +371,15 @@ public class movimiento_objetos : MonoBehaviour
     {
         Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
         Instantiate(FloatingEnergy, Posiciontextos, Quaternion.identity);
+
+        CrearMoneda();
+    }
+
+    void CrearMoneda()
+    {
+        for (int i = 1; i <= NumeroMonedas; i++)
+        {
+            Instantiate(Moneda,transform.position,Quaternion.identity);
+        }
     }
 }

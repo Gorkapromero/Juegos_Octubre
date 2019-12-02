@@ -15,11 +15,27 @@ public class Ctrl_Botones : MonoBehaviour
     public GameObject pauseMenuUI;
 
     public AudioSource Musica;
+
+    DatosGuardados DatosGuardar;
+    movimiento_personaje personaje;
+
+
+    AudioSource sonidoMuerte;
+    AudioSource sonidoMuerte_02;
+    AudioSource musicaDeFondo;
+    Animator animatorProta;
+
+    Timer timer;
+    Ctrl_CAtras CuentaAtras;
 	// Use this for initialization
 	void Start ()
     {
+        DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
+        personaje = GameObject.FindWithTag("Jugador").GetComponent<movimiento_personaje>();
         Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
-	}
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
+        CuentaAtras = GameObject.Find("cunta_atras").GetComponent<Ctrl_CAtras>();
+    }
 	
 
 
@@ -29,6 +45,8 @@ public class Ctrl_Botones : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+
+        DatosGuardar.Save();
 
         SceneManager.LoadScene(1);
     }
@@ -49,6 +67,9 @@ public class Ctrl_Botones : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+
+        DatosGuardar.Save();
+        
         SceneManager.LoadScene(0);
     }
 
@@ -78,5 +99,41 @@ public class Ctrl_Botones : MonoBehaviour
         {
             Efectos[i].GetComponent<AudioSource>().mute = !Efectos[i].GetComponent<AudioSource>().mute;
         }
+    }
+
+    public void GastarMonedas(int monedas)
+    {
+        DatosGuardar.Monedas -= monedas;
+        VolverAJugar();
+    }
+
+    public void VerAnuncio()
+    {
+
+    }
+
+    void VolverAJugar()
+    {
+        //resetear valores
+        //Reproducimos el sonido de "MUERTE"
+                sonidoMuerte.Stop();
+                sonidoMuerte_02.Stop();
+
+                //Y bajamos el sonido de la musica de fondo
+                musicaDeFondo.volume = 0.4f;
+
+                //animatorProta.Play("Muerte",-1,0);
+                personaje.velocidad_fin = personaje.velocidad;
+                //GetComponent<Animator>().SetFloat("Speed", 0.0f);
+                personaje.desbloquearControles();
+                personaje.panelBloqueoControles.SetActive(true);
+
+                CuentaAtras.iniciarCuenta();
+                timer.ReanuadarTiempo();
+
+                //menu fin de partida
+                personaje.Finpartida.SetActive(false);
+        //desactivar fin de partida
+        //timer 3 segundos
     }
 }

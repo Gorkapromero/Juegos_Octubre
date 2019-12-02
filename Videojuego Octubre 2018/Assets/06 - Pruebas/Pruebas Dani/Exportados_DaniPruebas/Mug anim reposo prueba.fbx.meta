@@ -922,7 +922,7 @@ ModelImporter:
     - serializedVersion: 16
       name: LanzarPajarita
       takeName: Take 001
-      firstFrame: 340
+      firstFrame: 343
       lastFrame: 365
       wrapMode: 0
       orientationOffsetY: 0

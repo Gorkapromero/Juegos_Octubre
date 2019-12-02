@@ -6,10 +6,12 @@ using UnityEngine;
 public class PlayerData
 {
 	public string Skin;
+	public int Monedas;
 
 	public PlayerData(DatosGuardados Datos)
 	{
 		Skin = Datos.Skin;
+		Monedas = Datos.Monedas;
 	}
 	
 }

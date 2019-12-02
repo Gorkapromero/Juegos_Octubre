@@ -6,6 +6,7 @@ public class DatosGuardados : MonoBehaviour
 {
 	public static DatosGuardados cont;
 	public string Skin;
+	public int Monedas;
 
 	private void Start() 
 	{
@@ -23,6 +24,7 @@ public class DatosGuardados : MonoBehaviour
 		if(data!=null)
 		{
 			Skin = data.Skin;
+			Monedas = data.Monedas;
 		}
 
 	}

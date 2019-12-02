@@ -12,7 +12,7 @@ public class movimiento_personaje : MonoBehaviour
     //public float velocidad_inicial = 100f;
     //public Slider vidas;
     public float velocidad;
-    float velocidad_fin;
+    public float velocidad_fin;
     public GameObject Finpartida;
     Rigidbody rb;
 

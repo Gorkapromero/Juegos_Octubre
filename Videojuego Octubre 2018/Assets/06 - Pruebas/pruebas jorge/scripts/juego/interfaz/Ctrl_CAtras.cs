@@ -34,6 +34,7 @@ public class Ctrl_CAtras : MonoBehaviour {
             if (Tiempo <= 0)
             {
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = true;
+                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.Vivo;
                 Grupo_cuenta.SetActive(false);
                 pararcuenta();
                 tiempo.iniciarTiempo();
@@ -46,9 +47,12 @@ public class Ctrl_CAtras : MonoBehaviour {
         ActivarCuenta = false;
     }
 
-    void iniciarCuenta()
-    {
-        //Grupo_cuenta.SetActive(true);
+    public void iniciarCuenta()
+    {   
+        if(!Grupo_cuenta)
+        {
+            Grupo_cuenta.SetActive(true);
+        }
         Cuenta = Time.time + InicioCuenta;
         GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
         ActivarCuenta = true;
