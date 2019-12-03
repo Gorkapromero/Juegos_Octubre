@@ -15,11 +15,13 @@ public class Monedas : MonoBehaviour
 		DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
 
 		Vector3 Vo = new Vector3(Random.Range(-FuerzaExplosion,FuerzaExplosion),FuerzaExplosion*20f,0);
-		RBMoneda.velocity = Vo;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		//RBMoneda.velocity = Vo;
+        gameObject.GetComponent<Rigidbody>().AddForce(Vo, ForceMode.Impulse);
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 

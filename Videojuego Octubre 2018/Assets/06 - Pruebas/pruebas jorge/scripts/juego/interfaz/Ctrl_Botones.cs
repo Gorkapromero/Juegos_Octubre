@@ -26,15 +26,25 @@ public class Ctrl_Botones : MonoBehaviour
     Animator animatorProta;
 
     Timer timer;
-    Ctrl_CAtras CuentaAtras;
+    public Ctrl_CAtras CuentaAtras;
 	// Use this for initialization
 	void Start ()
     {
-        DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
+        animatorProta = GameObject.FindWithTag("Jugador").GetComponent<Animator>();
+
+        DatosGuardar =GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         personaje = GameObject.FindWithTag("Jugador").GetComponent<movimiento_personaje>();
         Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
         timer = GameObject.Find("Timer").GetComponent<Timer>();
-        CuentaAtras = GameObject.Find("cunta_atras").GetComponent<Ctrl_CAtras>();
+        //CuentaAtras = GameObject.Find("cunta_atras").GetComponent<Ctrl_CAtras>();
+
+
+        //Variables Sonido
+        musicaDeFondo = GameObject.Find("MusicaFondo").GetComponent<AudioSource>();
+        sonidoMuerte = GameObject.Find("SonidoMuerte").GetComponent<AudioSource>();
+        sonidoMuerte_02 = GameObject.Find("SonidoMuerte_02").GetComponent<AudioSource>();
+
+
     }
 	
 
@@ -116,24 +126,37 @@ public class Ctrl_Botones : MonoBehaviour
     {
         //resetear valores
         //Reproducimos el sonido de "MUERTE"
-                sonidoMuerte.Stop();
-                sonidoMuerte_02.Stop();
+        sonidoMuerte.Stop();
+        sonidoMuerte_02.Stop();
 
-                //Y bajamos el sonido de la musica de fondo
-                musicaDeFondo.volume = 0.4f;
+        //Y bajamos el sonido de la musica de fondo
+        musicaDeFondo.volume = 0.4f;
 
-                //animatorProta.Play("Muerte",-1,0);
-                personaje.velocidad_fin = personaje.velocidad;
-                //GetComponent<Animator>().SetFloat("Speed", 0.0f);
-                personaje.desbloquearControles();
-                personaje.panelBloqueoControles.SetActive(true);
+        animatorProta.Play("LevantarDeCaidaAtras", -1,0);
 
-                CuentaAtras.iniciarCuenta();
-                timer.ReanuadarTiempo();
+        personaje.velocidad_fin = personaje.velocidad;
 
-                //menu fin de partida
-                personaje.Finpartida.SetActive(false);
+        //GetComponent<Animator>().SetFloat("Speed", 0.0f);
+
+        personaje.desbloquearControles();
+        personaje.panelBloqueoControles.SetActive(false);
+
+        GameObject.Find("ctrl_CuentaAtras").GetComponent<Ctrl_CAtras>().iniciarCuenta();
+
+        timer.ReanuadarTiempo();
+
+        //menu fin de partida
+        personaje.Finpartida.SetActive(false);
+        
         //desactivar fin de partida
         //timer 3 segundos
+
+        //Reseteamos la camara
+        GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>().Play("Cam_Standby");
+
+        //Reseteamos las vidas del jugador
+        personaje.Vidas = 3;
+        personaje.ActualizarVidas();
+
     }
 }
