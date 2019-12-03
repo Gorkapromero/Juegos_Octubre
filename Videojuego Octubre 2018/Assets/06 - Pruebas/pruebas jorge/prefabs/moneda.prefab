@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FuerzaExplosion: 8
+  particulasRecogerMoneda: {fileID: 1757237917585404, guid: 0bc93bb6ea0501b40993587e141aa546,
+    type: 2}
 --- !u!135 &135098016138511302
 SphereCollider:
   m_ObjectHideFlags: 1

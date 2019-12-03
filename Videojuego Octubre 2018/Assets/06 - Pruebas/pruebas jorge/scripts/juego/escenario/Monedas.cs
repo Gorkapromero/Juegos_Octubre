@@ -8,6 +8,9 @@ public class Monedas : MonoBehaviour
 	Rigidbody RBMoneda;
 
 	public float FuerzaExplosion;
+    public GameObject particulasRecogerMoneda;
+
+    AudioSource audioMoneda;
 
 	// Use this for initialization
 	void Start () 
@@ -18,13 +21,10 @@ public class Monedas : MonoBehaviour
 		//RBMoneda.velocity = Vo;
         gameObject.GetComponent<Rigidbody>().AddForce(Vo, ForceMode.Impulse);
 
+        audioMoneda = GameObject.Find("SonidoMoneda").GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
+ 
 	private void OnCollisionEnter(Collision other) 
 	{
 		print("colision");
@@ -32,8 +32,15 @@ public class Monedas : MonoBehaviour
 		{
 			//sumamos moneda
 			DatosGuardar.Monedas++;
-			//destruimos moneda
-			Destroy(gameObject);
+
+            //Ejecutamos la animacion de partículas correspondiente
+            GameObject ParticulasRecogerMoneda = Instantiate(particulasRecogerMoneda, transform.position, Quaternion.identity);
+
+            //Y hacemos sonar el sonido de "recogerMoneda"
+            audioMoneda.Play();
+
+            //destruimos moneda
+            Destroy(gameObject);
 		}
 	}
 }
