@@ -113,8 +113,12 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void GastarMonedas(int monedas)
     {
-        DatosGuardar.Monedas -= monedas;
-        VolverAJugar();
+        if(DatosGuardar.Monedas>=2)
+        {
+            DatosGuardar.Monedas -= monedas;
+            VolverAJugar();
+        }
+
     }
 
     public void VerAnuncio()
@@ -143,7 +147,7 @@ public class Ctrl_Botones : MonoBehaviour
 
         GameObject.Find("ctrl_CuentaAtras").GetComponent<Ctrl_CAtras>().iniciarCuenta();
 
-        timer.ReanuadarTiempo();
+        //timer.ReanuadarTiempo();
 
         //menu fin de partida
         personaje.Finpartida.SetActive(false);

@@ -18,9 +18,11 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Text Texto_Score;
     public Text Texto_BestScore;
     public GameObject NewScore;
+    public Text MonedasTotales;
 
     Timer tiempo;
     Ctrl_oleadas Oleadas;
+    DatosGuardados DatosGuardar;
 
     public GameObject PantallaGuardar;
 
@@ -42,6 +44,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        DatosGuardar =GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         tiempo = GameObject.Find("Timer").GetComponent<Timer>();
         Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
         //Actualizar_enemigos();
@@ -117,6 +120,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         FinTextos = false;
         Puntuacion_final();
         MostrarTexto(texto);
+        MonedasTotales.text = "TIENES " + DatosGuardar.Monedas.ToString() + " MONEDAS";
     }
 
     void Puntuacion_final()

@@ -51,7 +51,7 @@ public class Ctrl_oleadas : MonoBehaviour
     public float TiempoDescanso;
     float WaveCountdown;
 
-    private SpawnState Estado = SpawnState.COUNTING;
+    public SpawnState Estado = SpawnState.COUNTING;
     public SpawnState estado
     {
         get { return Estado; }
