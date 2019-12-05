@@ -27,6 +27,7 @@ TagManager:
   - Link2
   - Link3
   - SoundEffects
+  - particulasSuperSayan
   layers:
   - Default
   - TransparentFX

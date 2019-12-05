@@ -52,6 +52,9 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     BoxCollider colliderPajarita;
 
+    public GameObject particulasSuperSayan_Cuerpo;
+    public GameObject particulasSuperSayan_Pajarita;
+
 
     // Use this for initialization
     void Start ()
@@ -270,5 +273,9 @@ public class Ctrl_Habilidades : MonoBehaviour
         DañoBasico = 100;
         MaterialPajarita.color = ColorPajarita;
         tiempo=tiempoDañoExtra;
+
+        //Desactivamos las particulas del Prota
+        particulasSuperSayan_Cuerpo.SetActive(false);
+        particulasSuperSayan_Pajarita.SetActive(false);
     }
 }
