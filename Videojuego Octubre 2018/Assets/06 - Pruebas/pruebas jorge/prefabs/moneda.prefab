@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671bd8aeb30baa5498b6c3f81ce5079a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FuerzaExplosion: 8
+  FuerzaExplosion: 40
   particulasRecogerMoneda: {fileID: 1757237917585404, guid: 0bc93bb6ea0501b40993587e141aa546,
     type: 2}
 --- !u!135 &135098016138511302
@@ -214,7 +214,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1332504836155120}
   m_Material: {fileID: 13400000, guid: 4dfd322af60b25949a21ebd03e762474, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

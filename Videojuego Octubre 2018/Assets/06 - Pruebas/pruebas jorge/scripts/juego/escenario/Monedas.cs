@@ -17,13 +17,13 @@ public class Monedas : MonoBehaviour
 	{
 		DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
 
-		Vector3 Vo = new Vector3(Random.Range(-FuerzaExplosion,FuerzaExplosion),FuerzaExplosion*20f,0);
+		Vector3 Vo = new Vector3(Random.Range(-FuerzaExplosion,FuerzaExplosion),FuerzaExplosion*5f,0);
 		//RBMoneda.velocity = Vo;
         gameObject.GetComponent<Rigidbody>().AddForce(Vo, ForceMode.Impulse);
 
         audioMoneda = GameObject.Find("SonidoMoneda").GetComponent<AudioSource>();
 
-		Invoke("hacerCollider",1);
+		Invoke("hacerCollider",1.0f);
     }
 
  
