@@ -838,6 +838,7 @@ MonoBehaviour:
   Texto_Score: {fileID: 1596949145}
   Texto_BestScore: {fileID: 1596949144}
   NewScore: {fileID: 1852567681}
+  MonedasTotales: {fileID: 0}
   PantallaGuardar: {fileID: 849702826}
   Nombre: {fileID: 2021325666}
   Ranking: {fileID: 62138724}
@@ -44320,9 +44321,9 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -48848,12 +48849,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869792007}
-  m_LocalRotation: {x: 0.120774776, y: -0.6967162, z: -0.6967162, w: -0.120774776}
-  m_LocalPosition: {x: -89.9, y: -53.98, z: -29.24}
-  m_LocalScale: {x: 1.5150163, y: 1.5150183, z: 1.5150188}
+  m_LocalRotation: {x: 0.6967162, y: 0.120774776, z: 0.120774776, w: -0.6967162}
+  m_LocalPosition: {x: -0.14324012, y: 0.12414569, z: 0.30559108}
+  m_LocalScale: {x: 0.7233999, y: 0.7234009, z: 0.723401}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_Father: {fileID: 613715070}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &874262703
 GameObject:
@@ -49688,6 +49689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1067253566}
   Musica: {fileID: 2048797374}
+  CuentaAtras: {fileID: 0}
 --- !u!1 &927216592
 GameObject:
   m_ObjectHideFlags: 0
@@ -51932,6 +51934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   Musica: {fileID: 0}
+  CuentaAtras: {fileID: 0}
 --- !u!114 &1067253569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64012,6 +64015,7 @@ MonoBehaviour:
   Vidas: 5
   T_Vidas: {fileID: 1211560371}
   velocidad: 80
+  velocidad_fin: 0
   Finpartida: {fileID: 584273809}
   atacando: 0
   isGrounded: 0
@@ -64060,7 +64064,7 @@ MonoBehaviour:
   DireccionProta: 0
   Irderecha: {fileID: 143986678}
   Irizquierda: {fileID: 1641620262}
-  panelBloqueoControles: {fileID: 0}
+  panelBloqueoControles: {fileID: 2093710162}
 --- !u!65 &1232494663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78612,6 +78616,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2093710162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093710165}
+  - component: {fileID: 2093710164}
+  - component: {fileID: 2093710163}
+  m_Layer: 5
+  m_Name: PanelBloqueoControles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2093710163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093710162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.41509432, g: 0.15076537, b: 0.15076537, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2093710164
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093710162}
+  m_CullTransparentMesh: 0
+--- !u!224 &2093710165
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093710162}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.59485, y: 0.59485, z: 0.59485}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 642.5596, y: 87.05818}
+  m_SizeDelta: {x: 3148.7102, y: 292.60663}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2098327616
 Prefab:
   m_ObjectHideFlags: 0
@@ -78936,6 +79009,7 @@ MonoBehaviour:
   NumeroEnemigos: 5
   ContadorOleadas: 0
   TiempoDescanso: 5
+  Estado: 2
   TextoOleadas: {fileID: 1191418058}
   jugador: {fileID: 1232494666}
   PlayerState: 0
