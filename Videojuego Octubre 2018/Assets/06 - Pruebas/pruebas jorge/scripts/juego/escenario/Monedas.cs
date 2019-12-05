@@ -22,6 +22,8 @@ public class Monedas : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().AddForce(Vo, ForceMode.Impulse);
 
         audioMoneda = GameObject.Find("SonidoMoneda").GetComponent<AudioSource>();
+
+		Invoke("hacerCollider",1);
     }
 
  
@@ -42,5 +44,10 @@ public class Monedas : MonoBehaviour
             //destruimos moneda
             Destroy(gameObject);
 		}
+	}
+
+	void hacerCollider()
+	{
+		gameObject.GetComponent<Collider>().isTrigger = false;
 	}
 }
