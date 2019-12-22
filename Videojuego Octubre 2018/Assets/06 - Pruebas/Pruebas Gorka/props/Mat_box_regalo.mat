@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Mat_box_regalo
   m_Shader: {fileID: 4800000, guid: 8baca54962328ac46a382f4ff1830d1a, type: 3}
   m_ShaderKeywords: 
