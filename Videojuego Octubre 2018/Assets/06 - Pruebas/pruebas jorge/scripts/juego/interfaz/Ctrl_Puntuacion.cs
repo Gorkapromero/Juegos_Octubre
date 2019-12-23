@@ -18,7 +18,6 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Text Texto_Score;
     public Text Texto_BestScore;
     public GameObject NewScore;
-    public Text MonedasTotales;
 
     Timer tiempo;
     Ctrl_oleadas Oleadas;
@@ -120,7 +119,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         FinTextos = false;
         Puntuacion_final();
         MostrarTexto(texto);
-        MonedasTotales.text = "TIENES " + DatosGuardar.Monedas.ToString() + " MONEDAS";
+        //MonedasTotales.text = "TIENES " + DatosGuardar.Monedas.ToString() + " MONEDAS";
     }
 
     void Puntuacion_final()
@@ -200,6 +199,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         NewScore.SetActive(false);
         texto = 1;
         Valor = ValorInicial;
+        ValorFinal = 0;
     }
 
     void MostrarTexto(int x)

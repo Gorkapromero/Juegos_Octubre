@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class movimiento_personaje : MonoBehaviour
 {
     public int Vidas;
-    public Text T_Vidas;
+    public GameObject[] G_Vidas;
 
     protected Joystick joystick;
     //public float velocidad_inicial = 100f;
@@ -87,7 +87,7 @@ public class movimiento_personaje : MonoBehaviour
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
         //model.sharedMesh = null;
         //model.SetActive(!model.activeSelf);
-        ActualizarVidas();
+        ActualizarVidasInicio();
         
         rb = GetComponent<Rigidbody>();
         /*if (GameObject.FindGameObjectWithTag("lavadora")) {
@@ -386,7 +386,7 @@ public class movimiento_personaje : MonoBehaviour
     {
         if (immunedTime <= 0)
         {
-            Vidas--;
+            quitarVida();
 
             //Reproducimos el sonido de quitar vida
             sonidoQuitarVida.Play();
@@ -443,14 +443,26 @@ public class movimiento_personaje : MonoBehaviour
                Instantiate(FloatingLive, transform.position, Quaternion.identity);
                Recolectables.reducirTiempo();
             }
-
-            ActualizarVidas();
         }
     }
 
-    public void ActualizarVidas()
+    public void ActualizarVidasInicio()
     {
-        T_Vidas.text = "HP." + Vidas.ToString();
+        for(int i = 0;i<Vidas;i++)
+        {
+            G_Vidas[i].SetActive(true);
+        }
+    }
+    public void quitarVida()
+    {
+        Vidas--;
+        G_Vidas[Vidas].SetActive(false);
+    }
+
+    public void GanarVida()
+    {
+        Vidas++;
+        G_Vidas[Vidas-1].SetActive(true);
     }
 
     void Reaparecr()

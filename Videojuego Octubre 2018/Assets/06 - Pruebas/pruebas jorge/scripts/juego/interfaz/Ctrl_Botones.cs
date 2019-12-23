@@ -160,7 +160,9 @@ public class Ctrl_Botones : MonoBehaviour
 
         //Reseteamos las vidas del jugador
         personaje.Vidas = 3;
-        personaje.ActualizarVidas();
+        personaje.ActualizarVidasInicio();
+
+        Puntuacion.ApagarTextos();
 
     }
 }
