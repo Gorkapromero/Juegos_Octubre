@@ -123,7 +123,7 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void VerAnuncio()
     {
-
+        VolverAJugar();
     }
 
     void VolverAJugar()
