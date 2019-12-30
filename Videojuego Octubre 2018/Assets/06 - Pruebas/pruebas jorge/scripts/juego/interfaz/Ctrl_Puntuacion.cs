@@ -26,7 +26,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public GameObject PantallaGuardar;
 
     public InputField Nombre;
-    public RankingManager Ranking;
+    //public RankingManager Ranking;
 
     int BestScore;
 
@@ -39,6 +39,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     bool B_tiempo = true;
     bool FinTextos = true;
     public int texto = 1;
+
 
     // Use this for initialization
     void Start ()
@@ -130,8 +131,9 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     void Guardar()
     {
-        Ranking.BorrarPuntos(1);
-        Ranking.InsertarMejorPuntuacion(1, P_Final);
+        DatosGuardar.puntuacion = P_Final;
+        /*Ranking.BorrarPuntos(1);
+        Ranking.InsertarMejorPuntuacion(1, P_Final);*/
     }
 
     void Mostrartiempo()
@@ -175,7 +177,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     }
     void MostrarBestscore()
     {
-        BestScore = Ranking.ObtenerPuntuacion();
+        BestScore = DatosGuardar.puntuacion;
         if (P_Final > BestScore)
         {
             Guardar();

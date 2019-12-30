@@ -24,10 +24,12 @@ public class Ctrl_Skins : MonoBehaviour
 	{
 		public string Nombre;
 		public GameObject Skin;
+		public GameObject TextoNombre;
 	}
 	public List <Skins> TablaSkins = new List<Skins>();
 
 	public string SkinActivada;
+	string SkinSeleccionada;
 
 	DatosGuardados DatosGuardados;
 
@@ -40,6 +42,8 @@ public class Ctrl_Skins : MonoBehaviour
 	float posinicial;
 	public float velocidad;
 
+
+	int NumeroSkin;
 	// Use this for initialization
 	void Start () 
 	{
@@ -80,11 +84,11 @@ public class Ctrl_Skins : MonoBehaviour
 			}
 		}
 
-		if(SkinActivada == "Normal")
+		if(SkinSeleccionada == "Normal")
 		{
 			colores.SetActive(true);
 		}
-		else if(SkinActivada != "Normal"&&colores)
+		else if(SkinSeleccionada!="Normal"&&colores)
 		{
 			colores.SetActive(false);
 		}
@@ -123,7 +127,7 @@ public class Ctrl_Skins : MonoBehaviour
 		if(scroll)
 		{
 			scroll=false;
-			int NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/12));
+			NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/12));
 
 			//Posicion.x = -NumeroSkin*12;
 			posinicial = GrupoSkins.transform.position.x;
@@ -131,10 +135,15 @@ public class Ctrl_Skins : MonoBehaviour
 			Posicion.x=posinicial;
 			drop = true;
 			//GrupoSkins.transform.position = Posicion;
-			SkinActivada = TablaSkins[NumeroSkin].Nombre;
-			TablaSkins[NumeroSkin].Skin.GetComponent<Animator>().Play("LevantarDeCaidaAtras");
-			DatosGuardados.Skin = SkinActivada;
-			
+			//CAMBIAMOS TEXTO SKIN
+			for(int x = 0; x<TablaSkins.Count;x++)
+			{
+				TablaSkins[x].TextoNombre.SetActive(false);
+			}
+			TablaSkins[NumeroSkin].TextoNombre.SetActive(true);
+
+			SkinSeleccionada = TablaSkins[NumeroSkin].Nombre;
+
 		}
 		
        // print(SkinActivada);
@@ -158,6 +167,7 @@ public class Ctrl_Skins : MonoBehaviour
 			SkinActivada = DatosGuardados.Skin;
 		}
 
+		ActualizarNombre();
 		for (int i = 0; i < TablaSkins.Count; i++)
 		{
 			if(TablaSkins[i].Nombre == SkinActivada)
@@ -178,5 +188,23 @@ public class Ctrl_Skins : MonoBehaviour
 		}
 		
 
+	}
+
+	public void seleccionarSkin()
+	{
+		TablaSkins[NumeroSkin].Skin.GetComponent<Animator>().Play("LevantarDeCaidaAtras");
+		DatosGuardados.Skin = SkinActivada;
+	}
+
+	void ActualizarNombre()
+	{
+		for(int i = 0;i<TablaSkins.Count;i++)
+		{
+			TablaSkins[i].TextoNombre.SetActive(false);
+			if(TablaSkins[i].Nombre == SkinActivada)
+			{
+				TablaSkins[i].TextoNombre.SetActive(true);
+			}
+		}
 	}
 }

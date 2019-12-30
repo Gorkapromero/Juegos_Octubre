@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class ControlBotonesMenu : MonoBehaviour 
 {
-    RankingManager Ranking;
+    //RankingManager Ranking;
     public Text TextoScore;
-    int Bestscore;
+	int Bestscore;
+
+	DatosGuardados DatosGuardados;
     // Use this for initialization
     void Start () 
 	{
-        Ranking = gameObject.GetComponent<RankingManager>();
+        //Ranking = gameObject.GetComponent<RankingManager>();
+		DatosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         BestScore();
 	}
 
@@ -52,7 +55,7 @@ public class ControlBotonesMenu : MonoBehaviour
 	}
     void BestScore()
     {
-        Bestscore = Ranking.ObtenerPuntuacion();
+        Bestscore = DatosGuardados.puntuacion;
         //print(Bestscore);
         TextoScore.text = Bestscore.ToString();
     }

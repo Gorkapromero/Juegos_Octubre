@@ -856,7 +856,6 @@ GameObject:
   m_Component:
   - component: {fileID: 62138723}
   - component: {fileID: 62138722}
-  - component: {fileID: 62138724}
   m_Layer: 0
   m_Name: C_Puntuacion
   m_TagString: Untagged
@@ -885,7 +884,6 @@ MonoBehaviour:
   NewScore: {fileID: 1596949150}
   PantallaGuardar: {fileID: 0}
   Nombre: {fileID: 0}
-  Ranking: {fileID: 62138724}
   VelocidadAnimacion: 1
   texto: 1
 --- !u!4 &62138723
@@ -902,23 +900,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &62138724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62138721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a21c33430eaaa4aa2a1a398a03d7d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nombreDB: RankingDB.db
-  puntosPREF: {fileID: 0}
-  PuntosPadre: {fileID: 0}
-  topRank: 10
-  LimiteRanking: 20
 --- !u!1 &64636027
 GameObject:
   m_ObjectHideFlags: 0
@@ -16240,6 +16221,7 @@ GameObject:
   - component: {fileID: 452379801}
   - component: {fileID: 452379800}
   - component: {fileID: 452379799}
+  - component: {fileID: 452379802}
   m_Layer: 5
   m_Name: B_Musica
   m_TagString: Untagged
@@ -16322,6 +16304,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 452379802}
+        m_MethodName: Switching
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &452379800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16358,6 +16351,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452379797}
   m_CullTransparentMesh: 0
+--- !u!114 &452379802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452379797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f4ec5011e996f42956a148938e3a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 1
+  toggleBgImage: {fileID: 452379800}
+  toggle: {fileID: 452379798}
+  handle: {fileID: 555247489}
+  handleOffset: 5
+  speed: 3
 --- !u!1 &456386811
 GameObject:
   m_ObjectHideFlags: 0
@@ -33306,8 +33317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb47a150d3d5db44abe7a17ebb78ef44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Skin: 
+  Skin: Normal
   Monedas: 0
+  puntuacion: 0
 --- !u!4 &1159440214
 Transform:
   m_ObjectHideFlags: 0
@@ -54619,6 +54631,7 @@ GameObject:
   - component: {fileID: 2055760334}
   - component: {fileID: 2055760333}
   - component: {fileID: 2055760332}
+  - component: {fileID: 2055760335}
   m_Layer: 5
   m_Name: B_Efectos
   m_TagString: Untagged
@@ -54701,6 +54714,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2055760335}
+        m_MethodName: Switching
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2055760333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54737,6 +54761,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055760330}
   m_CullTransparentMesh: 0
+--- !u!114 &2055760335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055760330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f4ec5011e996f42956a148938e3a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOn: 1
+  toggleBgImage: {fileID: 2055760333}
+  toggle: {fileID: 2055760331}
+  handle: {fileID: 2130419387}
+  handleOffset: 5
+  speed: 5
 --- !u!1 &2056756062
 GameObject:
   m_ObjectHideFlags: 0

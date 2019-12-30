@@ -5,8 +5,9 @@ using UnityEngine;
 public class DatosGuardados : MonoBehaviour 
 {
 	public static DatosGuardados cont;
-	public string Skin;
+	public string Skin = "Normal";
 	public int Monedas;
+	public int puntuacion;
 
 	private void Start() 
 	{
@@ -25,6 +26,7 @@ public class DatosGuardados : MonoBehaviour
 		{
 			Skin = data.Skin;
 			Monedas = data.Monedas;
+			puntuacion = data.Puntuacion;
 		}
 
 	}
