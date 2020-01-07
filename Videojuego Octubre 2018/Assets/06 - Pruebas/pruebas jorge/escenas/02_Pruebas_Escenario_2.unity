@@ -2011,7 +2011,7 @@ GameObject:
   - component: {fileID: 135920345}
   - component: {fileID: 135920344}
   - component: {fileID: 135920343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pared_izq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2026,8 +2026,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135920341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0857, y: -0.0211, z: -0.0081}
-  m_LocalScale: {x: 0.0035008327, y: 0.10244758, z: 0.060253}
+  m_LocalPosition: {x: 0.0857, y: -0.0211, z: -0.00876}
+  m_LocalScale: {x: 0.0035008327, y: 0.10244758, z: 0.058925025}
   m_Children: []
   m_Father: {fileID: 606202553}
   m_RootOrder: 1
@@ -18944,7 +18944,7 @@ GameObject:
   - component: {fileID: 548986750}
   - component: {fileID: 548986749}
   - component: {fileID: 548986748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pared_der
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18959,8 +18959,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548986746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0673, y: -0.0211, z: -0.0085}
-  m_LocalScale: {x: 0.0035008327, y: 0.10244758, z: 0.060253}
+  m_LocalPosition: {x: -0.0673, y: -0.0211, z: -0.01002}
+  m_LocalScale: {x: 0.0035008327, y: 0.10244758, z: 0.057218675}
   m_Children: []
   m_Father: {fileID: 606202553}
   m_RootOrder: 0
@@ -56578,7 +56578,7 @@ MonoBehaviour:
     - nombre: Enemigo pegajoso
       enemigo: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396,
         type: 3}
-      rareza: 500
+      rareza: 8
   - nombre: Oleada bomba
     numeroOleada: 0
     enemigos:
