@@ -56,6 +56,8 @@ public class movimiento_objetos : MonoBehaviour
     public GameObject FloatingLifePega;
 
     public GameObject particulasHitEnemigos;
+    public GameObject particulasRastroCuerpo_Pegajoso;
+    
 
     public GameObject Moneda;
     public int NumeroMonedas;
@@ -175,6 +177,10 @@ public class movimiento_objetos : MonoBehaviour
                         animatorEnemigo.SetBool("enElAire", false);
                         break;
                     case "E_Pega(Clone)":
+
+                        //Activamos las partículas de "Dejar Rastro"
+                        particulasRastroCuerpo_Pegajoso.SetActive(true);
+
                         /*Vector3 PosPoff = new Vector3(transform.position.x, -54f, transform.position.z);
                         //vision = 0;
                         GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
@@ -312,6 +318,19 @@ public class movimiento_objetos : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Suelo":                           //El enemigo despega del suelo
+                if (gameObject.name == "E_Pega(Clone)")
+                {
+                    print("PEGAJOSO EN EL AIRE");
+                   // particulasRastroCuerpo_Pegajoso.SetActive(false);
+                }
+                break;
+        }
+    }
 
     private void OnDrawGizmos()
     {

@@ -455,8 +455,11 @@ public class movimiento_personaje : MonoBehaviour
     }
     public void quitarVida()
     {
-        Vidas--;
-        G_Vidas[Vidas].SetActive(false);
+        if (Vidas > 0)
+        {
+            Vidas--;
+            G_Vidas[Vidas].SetActive(false);
+        }
     }
 
     public void GanarVida()
