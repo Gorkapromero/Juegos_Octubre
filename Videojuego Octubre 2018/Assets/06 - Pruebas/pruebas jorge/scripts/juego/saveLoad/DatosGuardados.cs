@@ -8,6 +8,8 @@ public class DatosGuardados : MonoBehaviour
 	public string Skin = "Normal";
 	public int Monedas;
 	public int puntuacion;
+	public bool musica;
+	public bool fx;
 
 	private void Start() 
 	{
@@ -27,6 +29,8 @@ public class DatosGuardados : MonoBehaviour
 			Skin = data.Skin;
 			Monedas = data.Monedas;
 			puntuacion = data.Puntuacion;
+			musica = data.Musica;
+			fx = data.Fx;
 		}
 
 	}

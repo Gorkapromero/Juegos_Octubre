@@ -38,8 +38,9 @@ public class movimiento_personaje : MonoBehaviour
 
     public float blink;
     public float immuned;
-    public SkinnedMeshRenderer[] modelRender;
-    public Mesh[] Geometrias;
+    //public SkinnedMeshRenderer[] modelRender;
+    //public Mesh[] Geometrias;
+    public GameObject Geometria;
     //public SkinnedMeshRenderer model;
     //public Mesh mesh;
     private float blinkTime = 0.1f;
@@ -230,9 +231,10 @@ public class movimiento_personaje : MonoBehaviour
 
             if (blinkTime <= 0)
             {
-                //model.enabled = !model.enabled;
+                Geometria.SetActive(!Geometria.activeSelf);
+                
                 //model.SetActive(!model.activeSelf);
-                for (int i = 0; i < modelRender.Length; i++)
+                /*for (int i = 0; i < modelRender.Length; i++)
                 {
                     if (modelRender[i].sharedMesh != null)
                     {
@@ -242,16 +244,17 @@ public class movimiento_personaje : MonoBehaviour
                     {
                         modelRender[i].sharedMesh = Geometrias[i];
                     }
-                }
+                }*/
                 blinkTime = blink;
             }
             if(immunedTime <=0)
             {
-                for (int i = 0; i < modelRender.Length; i++)
+                /*for (int i = 0; i < modelRender.Length; i++)
                 {
                     modelRender[i].sharedMesh = Geometrias[i];
-                }
+                }*/
                 //model.enabled = true;
+                Geometria.SetActive(true);
             }
         }
 
@@ -435,10 +438,10 @@ public class movimiento_personaje : MonoBehaviour
                 immunedTime = immuned;
                 //model.enabled = false;
                //modelRender1.enabled = false;
-               for (int i = 0; i < modelRender.Length; i++)
+               /*for (int i = 0; i < modelRender.Length; i++)
                {
                     modelRender[i].sharedMesh = null;
-               }
+               }*/
                blinkTime = blink;
                Instantiate(FloatingLive, transform.position, Quaternion.identity);
                Recolectables.reducirTiempo();

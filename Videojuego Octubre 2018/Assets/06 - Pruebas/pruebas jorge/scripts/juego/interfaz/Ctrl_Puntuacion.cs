@@ -19,6 +19,8 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Text Texto_BestScore;
     public GameObject NewScore;
 
+    public Text MonedasRecojidas;
+
     Timer tiempo;
     Ctrl_oleadas Oleadas;
     DatosGuardados DatosGuardar;
@@ -39,6 +41,8 @@ public class Ctrl_Puntuacion : MonoBehaviour
     bool B_tiempo = true;
     bool FinTextos = true;
     public int texto = 1;
+
+    public int monedasRecojidas;
 
 
     // Use this for initialization
@@ -231,5 +235,11 @@ public class Ctrl_Puntuacion : MonoBehaviour
                 Invoke("MostrarBestscore", 0.5f);
                 break;
         }
+    }
+
+    public void ActualizarMonedas()
+    {
+        monedasRecojidas++;
+        MonedasRecojidas.text = monedasRecojidas.ToString();
     }
 }

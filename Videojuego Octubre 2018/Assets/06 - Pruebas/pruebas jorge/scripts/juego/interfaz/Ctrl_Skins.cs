@@ -180,12 +180,11 @@ public class Ctrl_Skins : MonoBehaviour
 
 	public void CambiarColor()
 	{
-		if(SkinActivada == "Normal")
-		{
-			Color ColorElejido = EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color;
+		
+		Color ColorElejido = EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color;
 
-			MaterialPajarita.color = ColorElejido;
-		}
+		MaterialPajarita.color = ColorElejido;
+		
 		
 
 	}

@@ -5,10 +5,12 @@ using UnityEngine;
 public class Monedas : MonoBehaviour 
 {
 	DatosGuardados DatosGuardar;
+	Ctrl_Puntuacion Puntuacion;
 	Rigidbody RBMoneda;
 
 	public float FuerzaExplosion;
     public GameObject particulasRecogerMoneda;
+	public float TiempoDestruir;
 
     AudioSource audioMoneda;
 
@@ -16,6 +18,7 @@ public class Monedas : MonoBehaviour
 	void Start () 
 	{
 		DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
+		Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
         
 		Vector3 Vo = new Vector3(Random.Range(-FuerzaExplosion,FuerzaExplosion),FuerzaExplosion*3f,0);
 		//RBMoneda.velocity = Vo;
@@ -24,6 +27,7 @@ public class Monedas : MonoBehaviour
         audioMoneda = GameObject.Find("SonidoMoneda").GetComponent<AudioSource>();
 
 		Invoke("hacerCollider",0.4f);
+		Invoke("DestruirMoneda", TiempoDestruir);
     }
 
  
@@ -34,6 +38,8 @@ public class Monedas : MonoBehaviour
 		{
 			//sumamos moneda
 			DatosGuardar.Monedas++;
+
+			Puntuacion.ActualizarMonedas();
 
             //Ejecutamos la animacion de partículas correspondiente
             GameObject ParticulasRecogerMoneda = Instantiate(particulasRecogerMoneda, transform.position, Quaternion.identity);
@@ -49,5 +55,10 @@ public class Monedas : MonoBehaviour
 	void hacerCollider()
 	{
 		gameObject.GetComponent<Collider>().isTrigger = false;
+	}
+
+	void DestruirMoneda()
+	{
+		Destroy(gameObject);
 	}
 }

@@ -15,6 +15,7 @@ public class Ctrl_Botones : MonoBehaviour
     public GameObject pauseMenuUI;
 
     public AudioSource Musica;
+    bool FX;
 
     DatosGuardados DatosGuardar;
     movimiento_personaje personaje;
@@ -27,6 +28,10 @@ public class Ctrl_Botones : MonoBehaviour
 
     Timer timer;
     public Ctrl_CAtras CuentaAtras;
+
+    GameObject[] Efectos;
+    public GameObject BMusica;
+    public GameObject BFX;
 	// Use this for initialization
 	void Start ()
     {
@@ -44,7 +49,15 @@ public class Ctrl_Botones : MonoBehaviour
         sonidoMuerte = GameObject.Find("SonidoMuerte").GetComponent<AudioSource>();
         sonidoMuerte_02 = GameObject.Find("SonidoMuerte_02").GetComponent<AudioSource>();
 
-
+        BMusica.GetComponent<ToggleController>().isOn = DatosGuardar.musica;
+        Musica.mute = DatosGuardar.musica;
+        Efectos = GameObject.FindGameObjectsWithTag("SoundEffects");
+        BFX.GetComponent<ToggleController>().isOn = DatosGuardar.fx;
+        FX = DatosGuardar.fx;
+        for(int i = 0; i<Efectos.Length; i++)
+        {
+            Efectos[i].GetComponent<AudioSource>().mute = DatosGuardar.fx;
+        }
     }
 	
 
@@ -100,15 +113,17 @@ public class Ctrl_Botones : MonoBehaviour
     public void QuitarMusica()
     {
         Musica.mute = !Musica.mute;
+        DatosGuardar.musica = Musica.mute;
     }
 
     public void QuitarEfectos()
     {
-        GameObject[] Efectos = GameObject.FindGameObjectsWithTag("SoundEffects");
+        FX = !FX;
         for(int i = 0; i<Efectos.Length; i++)
         {
             Efectos[i].GetComponent<AudioSource>().mute = !Efectos[i].GetComponent<AudioSource>().mute;
         }
+        DatosGuardar.fx = FX;
     }
 
     public void GastarMonedas(int monedas)

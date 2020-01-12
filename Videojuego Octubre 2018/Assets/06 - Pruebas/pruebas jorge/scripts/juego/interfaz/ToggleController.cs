@@ -112,7 +112,7 @@ public class ToggleController : MonoBehaviour
 	Vector3 SmoothMove(GameObject toggleHandle, float startPosX, float endPosX)
 	{
 		
-		Vector3 position = new Vector3 (Mathf.Lerp(startPosX, endPosX, t += speed * Time.deltaTime), 5.2f, 0f);
+		Vector3 position = new Vector3 (Mathf.Lerp(startPosX, endPosX, t += speed /** Time.deltaTime*/), 5.2f, 0f);
 		StopSwitching();
 		return position;
 	}
