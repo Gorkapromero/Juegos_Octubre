@@ -10,6 +10,7 @@ public class DatosGuardados : MonoBehaviour
 	public int puntuacion;
 	public bool musica;
 	public bool fx;
+	public bool[] skinsdesbloqueadas;
 
 	private void Start() 
 	{
@@ -31,6 +32,7 @@ public class DatosGuardados : MonoBehaviour
 			puntuacion = data.Puntuacion;
 			musica = data.Musica;
 			fx = data.Fx;
+			skinsdesbloqueadas = data.SkinsDesbloqueadas;
 		}
 
 	}

@@ -10,6 +10,7 @@ public class PlayerData
 	public int Puntuacion;
 	public bool Musica;
 	public bool Fx;
+	public bool[] SkinsDesbloqueadas;
 
 	public PlayerData(DatosGuardados Datos)
 	{
@@ -18,6 +19,7 @@ public class PlayerData
 		Puntuacion = Datos.puntuacion;
 		Musica = Datos.musica;
 		Fx = Datos.fx;
+		SkinsDesbloqueadas = Datos.skinsdesbloqueadas;
 	}
 	
 }

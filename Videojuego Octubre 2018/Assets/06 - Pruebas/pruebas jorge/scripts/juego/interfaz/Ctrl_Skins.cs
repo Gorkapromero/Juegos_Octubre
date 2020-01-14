@@ -25,6 +25,7 @@ public class Ctrl_Skins : MonoBehaviour
 		public string Nombre;
 		public GameObject Skin;
 		public GameObject TextoNombre;
+		public int Precio;
 	}
 	public List <Skins> TablaSkins = new List<Skins>();
 
@@ -44,6 +45,10 @@ public class Ctrl_Skins : MonoBehaviour
 
 
 	int NumeroSkin;
+
+	public GameObject BotonSelec;
+	public GameObject BotonComprar;
+	public Text T_Precio;
 	// Use this for initialization
 	void Start () 
 	{
@@ -82,6 +87,8 @@ public class Ctrl_Skins : MonoBehaviour
 					drop = false;
 				}
 			}
+
+			Desbloqueo();
 		}
 
 		if(SkinSeleccionada == "Normal")
@@ -192,7 +199,9 @@ public class Ctrl_Skins : MonoBehaviour
 	public void seleccionarSkin()
 	{
 		TablaSkins[NumeroSkin].Skin.GetComponent<Animator>().Play("LevantarDeCaidaAtras");
+		SkinActivada = TablaSkins[NumeroSkin].Nombre;
 		DatosGuardados.Skin = SkinActivada;
+
 	}
 
 	void ActualizarNombre()
@@ -204,6 +213,31 @@ public class Ctrl_Skins : MonoBehaviour
 			{
 				TablaSkins[i].TextoNombre.SetActive(true);
 			}
+		}
+	}
+
+	void Desbloqueo()
+	{
+		if(DatosGuardados.skinsdesbloqueadas[NumeroSkin])
+		{
+			BotonSelec.SetActive(true);
+			BotonComprar.SetActive(false);
+		}
+		else
+		{
+			T_Precio.text = TablaSkins[NumeroSkin].Precio.ToString() + "\nmonedas";
+			BotonSelec.SetActive(false);
+			BotonComprar.SetActive(true);
+		}
+	}
+
+	public void ComprarSkin()
+	{
+		if(DatosGuardados.Monedas>=TablaSkins[NumeroSkin].Precio)
+		{
+			DatosGuardados.Monedas-=TablaSkins[NumeroSkin].Precio;
+			DatosGuardados.skinsdesbloqueadas[NumeroSkin] = true;
+			Desbloqueo();
 		}
 	}
 }

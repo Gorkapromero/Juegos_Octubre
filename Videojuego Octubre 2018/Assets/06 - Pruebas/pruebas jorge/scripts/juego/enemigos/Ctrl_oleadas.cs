@@ -88,6 +88,8 @@ public class Ctrl_oleadas : MonoBehaviour
                 GameObject[] Enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
                 for (int i = 0; i < Enemigos.Length; i++)
                 {
+                    Vector3 PosicionParticulas = new Vector3(Enemigos[i].transform.position.x, -52.77079f, Enemigos[i].transform.position.z);
+                    GameObject ParticulasDead = Instantiate(Enemigos[i].GetComponent<movimiento_objetos>().ParticulasMuerte, PosicionParticulas, Quaternion.identity);
                     Destroy(Enemigos[i]);
                 }
             }

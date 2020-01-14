@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21484,7 +21484,7 @@ PrefabInstance:
     - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 3}
       propertyPath: tablahabilidades.Array.data[2].Energia_necesaria
-      value: 900
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 114919917729770996, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 3}
@@ -39177,7 +39177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VelocidadAnimacion: 2
-  VelocidadGastoEscudo: 100
+  VelocidadGastoEscudo: 50
   Energia: 0
   EnergiaFinal: 0
   EnergiaInicial: 0
@@ -43139,7 +43139,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7740177293146383721, guid: 898764c26dc6f184a99a3a95d61eb706, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 898764c26dc6f184a99a3a95d61eb706, type: 3}
 --- !u!224 &1596949144 stripped
 RectTransform:
