@@ -173,6 +173,7 @@ public class Ctrl_Skins : MonoBehaviour
 		{
 			SkinActivada = DatosGuardados.Skin;
 		}
+		SkinSeleccionada = SkinActivada;
 
 		ActualizarNombre();
 		for (int i = 0; i < TablaSkins.Count; i++)
@@ -180,6 +181,8 @@ public class Ctrl_Skins : MonoBehaviour
 			if(TablaSkins[i].Nombre == SkinActivada)
 			{
 				GrupoSkins.transform.position = new Vector3((-i*12),GrupoSkins.transform.position.y,GrupoSkins.transform.position.z);
+				NumeroSkin = i;
+				Desbloqueo();
 				return;
 			}
 		}
@@ -192,8 +195,6 @@ public class Ctrl_Skins : MonoBehaviour
 
 		MaterialPajarita.color = ColorElejido;
 		
-		
-
 	}
 
 	public void seleccionarSkin()

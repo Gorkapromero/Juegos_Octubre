@@ -11,6 +11,7 @@ public class PlayerData
 	public bool Musica;
 	public bool Fx;
 	public bool[] SkinsDesbloqueadas;
+	public string LastRewardOpen;
 
 	public PlayerData(DatosGuardados Datos)
 	{
@@ -20,6 +21,7 @@ public class PlayerData
 		Musica = Datos.musica;
 		Fx = Datos.fx;
 		SkinsDesbloqueadas = Datos.skinsdesbloqueadas;
+		LastRewardOpen = Datos.lastrewardOpen;
 	}
 	
 }

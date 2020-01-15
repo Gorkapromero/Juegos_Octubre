@@ -33752,6 +33752,8 @@ MonoBehaviour:
   puntuacion: 0
   musica: 0
   fx: 0
+  skinsdesbloqueadas: 
+  lastrewardOpen: 0
 --- !u!4 &1159440214
 Transform:
   m_ObjectHideFlags: 0
@@ -42919,6 +42921,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925913237}
     m_Modifications:
+    - target: {fileID: 642468639161267515, guid: 898764c26dc6f184a99a3a95d61eb706,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 925913238}
+    - target: {fileID: 642468639161267515, guid: 898764c26dc6f184a99a3a95d61eb706,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GastarMonedas
+      objectReference: {fileID: 0}
     - target: {fileID: 1748789992316648387, guid: 898764c26dc6f184a99a3a95d61eb706,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -43138,6 +43150,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740122862809306145, guid: 898764c26dc6f184a99a3a95d61eb706,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 925913238}
+    - target: {fileID: 7740122862809306145, guid: 898764c26dc6f184a99a3a95d61eb706,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CargarMenu
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7740177293146383721, guid: 898764c26dc6f184a99a3a95d61eb706, type: 3}

@@ -8,9 +8,10 @@ public class DatosGuardados : MonoBehaviour
 	public string Skin = "Normal";
 	public int Monedas;
 	public int puntuacion;
-	public bool musica;
+	public bool musica = true;
 	public bool fx;
 	public bool[] skinsdesbloqueadas;
+	public string lastrewardOpen = "0";
 
 	private void Start() 
 	{
@@ -33,6 +34,7 @@ public class DatosGuardados : MonoBehaviour
 			musica = data.Musica;
 			fx = data.Fx;
 			skinsdesbloqueadas = data.SkinsDesbloqueadas;
+			lastrewardOpen = data.LastRewardOpen;
 		}
 
 	}

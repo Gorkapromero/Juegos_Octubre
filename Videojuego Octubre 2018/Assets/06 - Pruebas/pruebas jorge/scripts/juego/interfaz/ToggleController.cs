@@ -31,7 +31,7 @@ public class ToggleController : MonoBehaviour
 
 	private bool switching = false;
 
-
+	DatosGuardados DatosGuardar;
 	void Awake()
 	{
 		handleTransform = handle.GetComponent<RectTransform>();
@@ -46,6 +46,16 @@ public class ToggleController : MonoBehaviour
 
 	void Start()
 	{
+		DatosGuardar =GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
+		if(this.gameObject.name == "B_Musica")
+		{
+			isOn = DatosGuardar.musica;
+		}
+		else if(this.gameObject.name == "B_Efectos")
+		{
+			isOn = DatosGuardar.fx;
+		}
+		
 		if(isOn)
 		{
 			//toggleBgImage.color = onColorBg;
