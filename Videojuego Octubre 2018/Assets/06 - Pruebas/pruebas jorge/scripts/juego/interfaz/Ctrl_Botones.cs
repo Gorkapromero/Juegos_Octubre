@@ -144,12 +144,12 @@ public class Ctrl_Botones : MonoBehaviour
     void VolverAJugar()
     {
         //resetear valores
-        //Reproducimos el sonido de "MUERTE"
+        //Paramos la cancion de "MUERTE"
         sonidoMuerte.Stop();
         sonidoMuerte_02.Stop();
 
-        //Y bajamos el sonido de la musica de fondo
-        musicaDeFondo.volume = 0.4f;
+        //Y subimos el sonido de la musica de fondo
+        musicaDeFondo.volume = 0.9f;
 
         animatorProta.Play("LevantarDeCaidaAtras", -1,0);
 
