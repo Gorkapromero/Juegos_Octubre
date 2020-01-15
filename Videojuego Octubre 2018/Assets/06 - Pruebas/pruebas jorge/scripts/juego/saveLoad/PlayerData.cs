@@ -11,7 +11,7 @@ public class PlayerData
 	public bool Musica;
 	public bool Fx;
 	public bool[] SkinsDesbloqueadas;
-	public string LastRewardOpen;
+	public ulong LastRewardOpen;
 
 	public PlayerData(DatosGuardados Datos)
 	{

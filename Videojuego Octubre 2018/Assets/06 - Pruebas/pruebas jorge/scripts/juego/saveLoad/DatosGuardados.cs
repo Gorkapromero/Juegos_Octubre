@@ -11,7 +11,7 @@ public class DatosGuardados : MonoBehaviour
 	public bool musica = true;
 	public bool fx;
 	public bool[] skinsdesbloqueadas;
-	public string lastrewardOpen = "0";
+	public ulong lastrewardOpen;
 
 	private void Start() 
 	{
