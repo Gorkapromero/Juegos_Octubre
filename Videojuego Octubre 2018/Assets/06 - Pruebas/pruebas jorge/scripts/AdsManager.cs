@@ -68,7 +68,7 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
 
     void IRewardedVideoAdListener.onRewardedVideoFinished(double amount, string name)
     {
-        anuncioVisto = true;
+      anuncioVisto = true;
     }
 
     void IRewardedVideoAdListener.onRewardedVideoClosed(bool finished)
@@ -79,7 +79,8 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
         switch(Escena.name)
         {
           case "Menu":
-            //premio
+            //iniciamos tiempo y damos recompensa
+            GameObject.Find("RecompensaDiaria").GetComponent<RecompensaDiaria>().ClickRecompensa();
           break;
 
           case "02_Pruebas_Escenario_2":

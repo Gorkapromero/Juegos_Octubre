@@ -313,6 +313,7 @@ public class movimiento_objetos : MonoBehaviour
             case "caida":
                 Puntuacion.Enemigos_Eliminados++;
                 textoEnergia();
+                energia.AñadirEnergia(50);
                 Muerte();
                 break;
         }

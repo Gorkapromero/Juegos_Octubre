@@ -86,6 +86,7 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void CargarMenu()
     {
+        DatosGuardar.Monedas+=Puntuacion.monedasRecojidas;
         if(Time.timeScale == 0f)
         {
             Time.timeScale = 1f;

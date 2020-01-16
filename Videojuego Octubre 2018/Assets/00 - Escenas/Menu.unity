@@ -6281,10 +6281,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 03923a7c5c97f0e498e5b6a53899ec78, type: 3}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 9b9c0f7435fb5674aa38121c3c79ac3b, type: 3}
+    m_FontSize: 11
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
@@ -6293,7 +6293,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ver anuncio
+  m_Text: 11h 59m 59s
 --- !u!222 &315493604
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12869,7 +12869,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 03923a7c5c97f0e498e5b6a53899ec78, type: 3}
+    m_Font: {fileID: 12800000, guid: 9b9c0f7435fb5674aa38121c3c79ac3b, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -34167,7 +34167,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 654018024}
-        m_MethodName: ShowInterstitial
+        m_MethodName: ShowRewarded
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35475,7 +35475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextoScore: {fileID: 291700072}
-  TextoMonedas: {fileID: 0}
+  TextoMonedas: {fileID: 655171585}
 --- !u!4 &1564918930
 Transform:
   m_ObjectHideFlags: 0
@@ -38312,8 +38312,8 @@ MonoBehaviour:
   Skin: Normal
   Monedas: 0
   puntuacion: 0
-  musica: 0
-  fx: 0
+  musica: 1
+  fx: 1
   skinsdesbloqueadas: 01000000000000
   lastrewardOpen: 0
 --- !u!4 &1745722190

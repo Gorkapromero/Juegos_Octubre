@@ -35,6 +35,7 @@ public class Enegia : MonoBehaviour {
             EnergiaFinal = 0;
             EnergiaInicial = 0;
             Energia -= VelocidadGastoEscudo * Time.deltaTime;
+            BarraEnergia.value = Energia;
             if(Energia<=0)
             {
                 Energia = 0;

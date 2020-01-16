@@ -54,6 +54,7 @@ public class Ctrl_Habilidades : MonoBehaviour
 
     public GameObject particulasSuperSayan_Cuerpo;
     public GameObject particulasSuperSayan_Pajarita;
+    public GameObject particulasBarraEnergia;
 
 
     // Use this for initialization
@@ -242,6 +243,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         {
             escudoActivado = true;
             tablahabilidades[3].habilidad.SetActive(true);
+            particulasBarraEnergia.SetActive(true);
             //Invoke("escudooff",tiempoEscudo);
             //GameObject.Find("Escudo").GetComponent<Button>().enabled = false;
             //gastamos energia
@@ -259,6 +261,8 @@ public class Ctrl_Habilidades : MonoBehaviour
         escudoActivado = false;
         tablahabilidades[3].habilidad.SetActive(false);
         GameObject.Find("Escudo").GetComponent<Button>().enabled = true;
+        particulasBarraEnergia.SetActive(false);
+        Energia_Total.EnergiaFinal = Energia_Total.Energia;
     }
 
     void move()

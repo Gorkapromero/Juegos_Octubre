@@ -16,7 +16,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Text Texto_Oleadas;
     public Text Texto_Enemigos;
     public Text Texto_Score;
-    public Text Texto_BestScore;
+    public Text Texto_Monedas;
     public GameObject NewScore;
 
     public Text MonedasRecojidas;
@@ -30,7 +30,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public InputField Nombre;
     //public RankingManager Ranking;
 
-    int BestScore;
+    int monedas;
 
     public float VelocidadAnimacion;
     float Valor;
@@ -179,20 +179,15 @@ public class Ctrl_Puntuacion : MonoBehaviour
         ValorFinal = P_Final;
         //Texto_Score.text = P_Final.ToString("f0");
     }
-    void MostrarBestscore()
+    void MostrarMonedas()
     {
-        BestScore = DatosGuardar.puntuacion;
-        if (P_Final > BestScore)
-        {
-            Guardar();
-            //new Score(actualizamos texto bestscore)
-            Texto_BestScore.text = P_Final.ToString("f0");
-            NewScore.SetActive(true);
-        }
-        else
-        {
-            Texto_BestScore.text = BestScore.ToString();
-        }
+        monedas = DatosGuardar.Monedas;
+        print("monedas");
+        //B_tiempo = false;
+        //FinTextos = false;
+        Valor = ValorInicial;
+        Texto = Texto_Monedas;
+        ValorFinal = DatosGuardar.Monedas + monedasRecojidas;
     }
 
     public void ApagarTextos()
@@ -201,7 +196,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         Texto_Oleadas.text = null;
         Texto_Enemigos.text = null;
         Texto_Score.text = null;
-        Texto_BestScore.text = null;
+        Texto_Monedas.text = DatosGuardar.Monedas.ToString();
         NewScore.SetActive(false);
         texto = 1;
         Valor = ValorInicial;
@@ -232,7 +227,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
                 break;
             case 5:
                 FinTextos = true;
-                Invoke("MostrarBestscore", 0.5f);
+                Invoke("MostrarMonedas", 0.5f);
                 break;
         }
     }

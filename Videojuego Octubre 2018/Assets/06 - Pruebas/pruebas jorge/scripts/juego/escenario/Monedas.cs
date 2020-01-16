@@ -37,7 +37,7 @@ public class Monedas : MonoBehaviour
 		if(other.gameObject.tag == "Jugador")
 		{
 			//sumamos moneda
-			DatosGuardar.Monedas++;
+			//DatosGuardar.Monedas++;
 
 			Puntuacion.ActualizarMonedas();
 
