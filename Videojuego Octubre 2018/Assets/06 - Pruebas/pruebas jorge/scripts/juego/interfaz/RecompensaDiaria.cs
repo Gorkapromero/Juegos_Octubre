@@ -9,20 +9,18 @@ public class RecompensaDiaria : MonoBehaviour
     DatosGuardados DatosGuardar;
     public Button BotonRecompensa;
     public Text TextTiempoRecompensa;
-    ulong LastRewardOpen;
+    public ulong chestOpen;
 
     public float TiempoEnHoras = 12.0f;
-    private float msToWait;
+    public float msToWait;
 
     private void Start() 
     {
         DatosGuardar = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
-        LastRewardOpen = ulong.Parse(DatosGuardar.lastrewardOpen);
 
         msToWait = TiempoEnHoras * 3600000.0f;
 
-        if(!RecompensaLista())
-            BotonRecompensa.interactable = false;
+        Invoke("ComprobarRecompensa",0.00001f);
     }
     private void Update() 
     {
@@ -35,7 +33,7 @@ public class RecompensaDiaria : MonoBehaviour
             }
 
             //ponemos tiempo
-            ulong dif = ((ulong)DateTime.Now.Ticks - LastRewardOpen);
+            ulong dif = ((ulong)DateTime.Now.Ticks - chestOpen);
             ulong m = dif / TimeSpan.TicksPerMillisecond;
 
             float secondsLeft = (float)(msToWait -m) / 1000.0f;
@@ -45,30 +43,29 @@ public class RecompensaDiaria : MonoBehaviour
             r += ((int)secondsLeft / 3600).ToString() + "h ";
             secondsLeft -= ((int)secondsLeft / 3600) * 3600;
             //minutes
-            r += (secondsLeft / 60).ToString("00") + "m ";
+            r += ((int)secondsLeft / 60).ToString("00") + "m ";
             //segundos
-            r += (secondsLeft % 60).ToString("00") + "m ";
+            r += (secondsLeft % 60).ToString("00") + "s ";
 
             TextTiempoRecompensa.text = r;
         }
     }
     public void ClickRecompensa()
     {
-        LastRewardOpen = (ulong)DateTime.Now.Ticks;
-        DatosGuardar.lastrewardOpen = DateTime.Now.Ticks.ToString();
+        chestOpen = (ulong)DateTime.Now.Ticks;
+        DatosGuardar.lastrewardOpen = chestOpen;
         BotonRecompensa.interactable = false;
         TextTiempoRecompensa.enabled = true;
 
         //iniciar anuncio
     }
 
-    public bool RecompensaLista()
+    bool RecompensaLista()
     {
-        ulong dif = ((ulong)DateTime.Now.Ticks - LastRewardOpen);
+        ulong dif = ((ulong)DateTime.Now.Ticks - chestOpen);
         ulong m = dif / TimeSpan.TicksPerMillisecond;
 
-        float secondsLeft = (float)(msToWait -m) / 1000.0f;
-
+        float secondsLeft = (float)(msToWait - m) / 1000.0f;
         if(secondsLeft<0)
         {
             //TextTiempoRecompensa.text = "Ready!";
@@ -79,8 +76,12 @@ public class RecompensaDiaria : MonoBehaviour
         return false;
     }
 
-    public void VerHora()
+    public void ComprobarRecompensa()
     {
+                
+        chestOpen = DatosGuardar.lastrewardOpen;      
 
+        if(!RecompensaLista())
+            BotonRecompensa.interactable = false;
     }
 }

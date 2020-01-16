@@ -9,6 +9,7 @@ public class ControlBotonesMenu : MonoBehaviour
 {
     //RankingManager Ranking;
     public Text TextoScore;
+	public Text TextoMonedas;
 	int Bestscore;
 
 	DatosGuardados DatosGuardados;
@@ -59,4 +60,9 @@ public class ControlBotonesMenu : MonoBehaviour
         //print(Bestscore);
         TextoScore.text = Bestscore.ToString();
     }
+
+	void VerMonedas()
+	{
+		TextoMonedas.text = DatosGuardados.Monedas.ToString();
+	}
 }
