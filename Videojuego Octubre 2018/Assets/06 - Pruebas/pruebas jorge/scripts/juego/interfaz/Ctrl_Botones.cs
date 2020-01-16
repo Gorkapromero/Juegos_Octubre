@@ -49,15 +49,14 @@ public class Ctrl_Botones : MonoBehaviour
         sonidoMuerte = GameObject.Find("SonidoMuerte").GetComponent<AudioSource>();
         sonidoMuerte_02 = GameObject.Find("SonidoMuerte_02").GetComponent<AudioSource>();
 
-        BMusica.GetComponent<ToggleController>().isOn = DatosGuardar.musica;
-        Musica.mute = DatosGuardar.musica;
+        Musica.mute = !DatosGuardar.musica;
         Efectos = GameObject.FindGameObjectsWithTag("SoundEffects");
-        BFX.GetComponent<ToggleController>().isOn = DatosGuardar.fx;
         FX = DatosGuardar.fx;
         for(int i = 0; i<Efectos.Length; i++)
         {
-            Efectos[i].GetComponent<AudioSource>().mute = DatosGuardar.fx;
+            Efectos[i].GetComponent<AudioSource>().mute = !DatosGuardar.fx;
         }
+        
     }
 	
 
@@ -114,7 +113,7 @@ public class Ctrl_Botones : MonoBehaviour
     public void QuitarMusica()
     {
         Musica.mute = !Musica.mute;
-        DatosGuardar.musica = Musica.mute;
+        DatosGuardar.musica = !DatosGuardar.musica;
     }
 
     public void QuitarEfectos()

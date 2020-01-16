@@ -34195,8 +34195,8 @@ MonoBehaviour:
   Skin: Normal
   Monedas: 0
   puntuacion: 0
-  musica: 1
-  fx: 1
+  musica: 0
+  fx: 0
   skinsdesbloqueadas: 
   lastrewardOpen: 0
 --- !u!4 &1159440214

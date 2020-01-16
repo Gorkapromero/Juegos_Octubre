@@ -46,16 +46,7 @@ public class ToggleController : MonoBehaviour
 
 	void Start()
 	{
-		DatosGuardar =GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
-		if(this.gameObject.name == "B_Musica")
-		{
-			isOn = DatosGuardar.musica;
-		}
-		else if(this.gameObject.name == "B_Efectos")
-		{
-			isOn = DatosGuardar.fx;
-		}
-		
+		actualizarBotones();
 		if(isOn)
 		{
 			//toggleBgImage.color = onColorBg;
@@ -162,6 +153,19 @@ public class ToggleController : MonoBehaviour
 				break;
 			}
 
+		}
+	}
+
+	public void actualizarBotones()
+	{
+		DatosGuardar =GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
+		if(this.gameObject.name == "B_Musica")
+		{
+			isOn = DatosGuardar.musica;
+		}
+		else if(this.gameObject.name == "B_Efectos")
+		{
+			isOn = DatosGuardar.fx;
 		}
 	}
 
