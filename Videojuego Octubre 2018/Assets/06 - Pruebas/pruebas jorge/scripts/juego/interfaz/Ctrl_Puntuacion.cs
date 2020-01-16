@@ -40,6 +40,9 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     bool B_tiempo = true;
     bool FinTextos = true;
+    bool restarmonedas = false;
+    float ValorMonedas;
+    int MonedasInicio;
     public int texto = 1;
 
     public int monedasRecojidas;
@@ -58,6 +61,17 @@ public class Ctrl_Puntuacion : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if(restarmonedas)
+        {
+            ValorMonedas -= (VelocidadAnimacion * Time.deltaTime)*(monedasRecojidas);
+            
+            if(ValorMonedas<=0)
+            {
+                ValorMonedas = 0;
+                restarmonedas=false;
+            }
+            MonedasRecojidas.text = ValorMonedas.ToString("f0");
+        }
         if (Valor != ValorFinal)
         {
             if (ValorInicial < ValorFinal)
@@ -187,6 +201,8 @@ public class Ctrl_Puntuacion : MonoBehaviour
         //FinTextos = false;
         Valor = ValorInicial;
         Texto = Texto_Monedas;
+        ValorMonedas = monedasRecojidas;
+        restarmonedas = true;
         ValorFinal = DatosGuardar.Monedas + monedasRecojidas;
     }
 
@@ -201,6 +217,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         texto = 1;
         Valor = ValorInicial;
         ValorFinal = 0;
+        MonedasRecojidas.text = monedasRecojidas.ToString();
     }
 
     void MostrarTexto(int x)

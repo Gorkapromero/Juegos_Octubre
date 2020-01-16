@@ -39781,7 +39781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VelocidadAnimacion: 2
   VelocidadGastoEscudo: 50
-  Energia: 500
+  Energia: 0
   EnergiaFinal: 0
   EnergiaInicial: 0
   BarraEnergia: {fileID: 1117439037}
