@@ -83,6 +83,8 @@ public class movimiento_personaje : MonoBehaviour
     AudioSource sonidoQuitarVida;
     AudioSource sonidoDisparo;
 
+    public bool resucitado;
+
     void Start()
     {
         //SkinnedMeshRenderer render = GetComponent<SkinnedMeshRenderer>();
@@ -526,5 +528,9 @@ public class movimiento_personaje : MonoBehaviour
     {
         Finpartida.SetActive(true);
         GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Mostrar_Textos();
+        if(resucitado)
+        {
+            GameObject.Find("seguirJugando").SetActive(false);
+        }
     }
 }

@@ -980,6 +980,9 @@ MonoBehaviour:
   VelocidadAnimacion: 1
   texto: 1
   monedasRecojidas: 0
+  moneda: {fileID: 3417791469472786747, guid: 293a7bf2e6444094895546735e9ac81b, type: 3}
+  start: {fileID: 186414937}
+  Parent: {fileID: 925913237}
 --- !u!4 &62138723
 Transform:
   m_ObjectHideFlags: 0
@@ -35835,6 +35838,7 @@ MonoBehaviour:
   Irderecha: {fileID: 143986678}
   Irizquierda: {fileID: 1641620262}
   panelBloqueoControles: {fileID: 2050233827}
+  resucitado: 0
 --- !u!65 &1232494663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43622,6 +43626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013477352148731978, guid: 898764c26dc6f184a99a3a95d61eb706,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7629157078001599603, guid: 898764c26dc6f184a99a3a95d61eb706,
         type: 3}

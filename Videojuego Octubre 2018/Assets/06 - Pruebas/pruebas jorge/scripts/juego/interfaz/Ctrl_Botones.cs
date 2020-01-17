@@ -179,5 +179,7 @@ public class Ctrl_Botones : MonoBehaviour
 
         Puntuacion.ApagarTextos();
 
+        personaje.resucitado = true;
+
     }
 }

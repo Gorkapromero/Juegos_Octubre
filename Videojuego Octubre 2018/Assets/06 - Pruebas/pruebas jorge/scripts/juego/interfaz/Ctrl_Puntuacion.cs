@@ -46,7 +46,9 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public int texto = 1;
 
     public int monedasRecojidas;
-
+    public GameObject moneda;
+    public Transform start;
+    public Transform Parent;
 
     // Use this for initialization
     void Start ()
@@ -64,7 +66,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         if(restarmonedas)
         {
             ValorMonedas -= (VelocidadAnimacion * Time.deltaTime)*(monedasRecojidas);
-            
+            //Invoke("CrearMoneda",(VelocidadAnimacion * Time.deltaTime)*(monedasRecojidas));
             if(ValorMonedas<=0)
             {
                 ValorMonedas = 0;
@@ -204,6 +206,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         ValorMonedas = monedasRecojidas;
         restarmonedas = true;
         ValorFinal = DatosGuardar.Monedas + monedasRecojidas;
+        StartCoroutine("CrearMoneda");
     }
 
     public void ApagarTextos()
@@ -253,5 +256,14 @@ public class Ctrl_Puntuacion : MonoBehaviour
     {
         monedasRecojidas++;
         MonedasRecojidas.text = monedasRecojidas.ToString();
+    }
+
+    IEnumerator CrearMoneda()
+    {
+        for (int i = 0; i < monedasRecojidas; i++)
+        {
+            Instantiate(moneda,start.position,Quaternion.identity,Parent);
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 }
