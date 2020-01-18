@@ -13,6 +13,9 @@ public class RecompensaDiaria : MonoBehaviour
 
     public float TiempoEnHoras = 12.0f;
     public float msToWait;
+    public GameObject RecompensaRecivida;
+    public Text TRecompensa;
+    public int recompensa;
 
     private void Start() 
     {
@@ -57,7 +60,10 @@ public class RecompensaDiaria : MonoBehaviour
         BotonRecompensa.interactable = false;
         TextTiempoRecompensa.enabled = true;
 
-        //iniciar anuncio
+        //dar recompensa
+        RecompensaRecivida.SetActive(true);
+        TRecompensa.text = recompensa.ToString();
+        DatosGuardar.Monedas += recompensa;
     }
 
     bool RecompensaLista()
@@ -83,5 +89,10 @@ public class RecompensaDiaria : MonoBehaviour
 
         if(!RecompensaLista())
             BotonRecompensa.interactable = false;
+    }
+
+    public void recompensaOK()
+    {
+        RecompensaRecivida.SetActive(false);
     }
 }
