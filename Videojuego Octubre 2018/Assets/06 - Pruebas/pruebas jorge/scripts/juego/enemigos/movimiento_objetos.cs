@@ -307,7 +307,7 @@ public class movimiento_objetos : MonoBehaviour
 
             case "explosion":
                 Puntuacion.Enemigos_Eliminados++;
-                Destroy(this.gameObject);
+                Muerte();
                 break;
 
             case "caida":

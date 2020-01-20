@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Mat_varios_04
   m_Shader: {fileID: 4800000, guid: 8baca54962328ac46a382f4ff1830d1a, type: 3}
   m_ShaderKeywords: 
@@ -70,7 +71,7 @@ Material:
     - _MKEditorShowMainBehavior: 1
     - _MKEditorShowOutlineBehavior: 1
     - _MKEditorShowReflectionBehavior: 0
-    - _MKEditorShowRenderBehavior: 0
+    - _MKEditorShowRenderBehavior: 1
     - _MKEditorShowRimBehavior: 1
     - _MKEditorShowShadowBehavior: 1
     - _MKEditorShowSketchBehavior: 0
@@ -84,7 +85,7 @@ Material:
     - _RimIntensity: 0.34
     - _RimSize: 1.14
     - _RimSmoothness: 0.73
-    - _ShadowIntensity: 1
+    - _ShadowIntensity: 0.383
     - _Shininess: 0.25
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -94,7 +95,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+    - _EmissionColor: {r: 0.049509805, g: 0.049509805, b: 0.049509805, a: 0}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}

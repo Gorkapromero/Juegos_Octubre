@@ -219,6 +219,32 @@ public class Ctrl_Skins : MonoBehaviour
 
 	void Desbloqueo()
 	{
+
+        for (int i = 0; i < DatosGuardados.skinsdesbloqueadas.Length; i++)
+        {
+            if (DatosGuardados.skinsdesbloqueadas[i])
+            {
+                //Activamos la geometría de la skin correspondiente
+                print("Desactivar Skin OFF : " + TablaSkins[i].Nombre);
+                if (GameObject.Find(TablaSkins[i].Nombre + "_OFF"))
+                {
+                    GameObject.Find(TablaSkins[i].Nombre + "_OFF").SetActive(false);
+                }
+
+                TablaSkins[i].Skin.SetActive(true);
+            }
+
+            else
+            {
+                if (GameObject.Find(TablaSkins[i].Nombre + "_OFF"))
+                {
+                    GameObject.Find(TablaSkins[i].Nombre + "_OFF").SetActive(true);
+                }
+
+                TablaSkins[i].Skin.SetActive(false);
+            }
+        }
+
 		if(DatosGuardados.skinsdesbloqueadas[NumeroSkin])
 		{
 			BotonSelec.SetActive(true);
@@ -227,7 +253,17 @@ public class Ctrl_Skins : MonoBehaviour
 		else
 		{
 			T_Precio.text = TablaSkins[NumeroSkin].Precio.ToString() + "\nmonedas";
-			BotonSelec.SetActive(false);
+
+            if (DatosGuardados.Monedas < TablaSkins[NumeroSkin].Precio)
+            {
+                T_Precio.color = new Color(0.5f, 0.0f, 0.0f);
+            }
+            else
+            {
+                T_Precio.color = new Color(0.3f, 0.3f, 0.3f);
+
+            }
+            BotonSelec.SetActive(false);
 			BotonComprar.SetActive(true);
 		}
 	}
@@ -238,7 +274,12 @@ public class Ctrl_Skins : MonoBehaviour
 		{
 			DatosGuardados.Monedas-=TablaSkins[NumeroSkin].Precio;
 			DatosGuardados.skinsdesbloqueadas[NumeroSkin] = true;
-			Desbloqueo();
+
+            
+
+            Desbloqueo();
 		}
 	}
+
+
 }
