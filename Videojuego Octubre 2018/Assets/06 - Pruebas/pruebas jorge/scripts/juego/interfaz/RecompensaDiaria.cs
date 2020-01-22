@@ -64,6 +64,7 @@ public class RecompensaDiaria : MonoBehaviour
         RecompensaRecivida.SetActive(true);
         TRecompensa.text = recompensa.ToString();
         DatosGuardar.Monedas += recompensa;
+        GameObject.Find("Controlador").GetComponent<ControlBotonesMenu>().VerMonedas();
     }
 
     bool RecompensaLista()
@@ -74,8 +75,8 @@ public class RecompensaDiaria : MonoBehaviour
         float secondsLeft = (float)(msToWait - m) / 1000.0f;
         if(secondsLeft<0)
         {
-            //TextTiempoRecompensa.text = "Ready!";
-            TextTiempoRecompensa.enabled = false;
+            TextTiempoRecompensa.text = "Ready!";
+            //TextTiempoRecompensa.enabled = false;
             return true;
         }
             

@@ -19,6 +19,7 @@ public class ControlBotonesMenu : MonoBehaviour
         //Ranking = gameObject.GetComponent<RankingManager>();
 		DatosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         BestScore();
+		VerMonedas();
 	}
 
 
@@ -61,7 +62,7 @@ public class ControlBotonesMenu : MonoBehaviour
         TextoScore.text = Bestscore.ToString();
     }
 
-	void VerMonedas()
+	public void VerMonedas()
 	{
 		TextoMonedas.text = DatosGuardados.Monedas.ToString();
 	}
