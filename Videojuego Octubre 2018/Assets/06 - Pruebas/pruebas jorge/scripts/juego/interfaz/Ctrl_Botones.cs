@@ -181,5 +181,7 @@ public class Ctrl_Botones : MonoBehaviour
 
         personaje.resucitado = true;
 
+        GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>().enabled = true;
+        GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Fuego>().enabled = true;
     }
 }

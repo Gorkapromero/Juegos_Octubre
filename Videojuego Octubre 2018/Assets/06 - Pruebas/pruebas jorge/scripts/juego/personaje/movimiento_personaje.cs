@@ -427,6 +427,10 @@ public class movimiento_personaje : MonoBehaviour
                 //Destruimos enemigos
                 GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.muerto;
 
+                //quitamos cajas y fuego
+                Recolectables.enabled = false;
+                GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Fuego>().enabled = false;
+
                 //menu fin de partida
                 Invoke("ActivarFinPartida",2);
                 

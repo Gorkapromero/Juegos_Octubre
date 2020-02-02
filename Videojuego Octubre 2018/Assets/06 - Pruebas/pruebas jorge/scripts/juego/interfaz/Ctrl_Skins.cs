@@ -275,7 +275,7 @@ public class Ctrl_Skins : MonoBehaviour
 			DatosGuardados.Monedas-=TablaSkins[NumeroSkin].Precio;
 			DatosGuardados.skinsdesbloqueadas[NumeroSkin] = true;
 
-            
+            GameObject.Find("Controlador").GetComponent<ControlBotonesMenu>().VerMonedas();
 
             Desbloqueo();
 		}
