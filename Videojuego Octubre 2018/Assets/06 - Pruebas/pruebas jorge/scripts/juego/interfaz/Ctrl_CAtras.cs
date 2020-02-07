@@ -33,9 +33,13 @@ public class Ctrl_CAtras : MonoBehaviour {
 
             if (Tiempo <= 0)
             {
-                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = true;
-                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.Vivo;
-                GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().Estado = Ctrl_oleadas.SpawnState.COUNTING;
+                if(GameObject.Find("creador_objetos"))
+                {
+                    GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = true;
+                    GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.Vivo;
+                    GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().Estado = Ctrl_oleadas.SpawnState.COUNTING;
+                }
+                
                 Grupo_cuenta.SetActive(false);
                 pararcuenta();
                 tiempo.ReanuadarTiempo();
@@ -52,7 +56,11 @@ public class Ctrl_CAtras : MonoBehaviour {
     {   
         Grupo_cuenta.SetActive(true);
         Cuenta = Time.time + InicioCuenta;
-        GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
+        if(GameObject.Find("creador_objetos"))
+        {
+            GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = false;
+        }
+        
         ActivarCuenta = true;
     }
 }
