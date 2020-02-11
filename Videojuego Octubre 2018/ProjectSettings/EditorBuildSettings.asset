@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/06 - Pruebas/Pruebas Gorka/Escenas/Opening.unity
+    guid: 2c10a103ad0d0034c90955736a579878
+  - enabled: 1
     path: Assets/00 - Escenas/Menu.unity
     guid: e2bb1e2e4be2a1542bfdbf8e725be1df
   - enabled: 1
