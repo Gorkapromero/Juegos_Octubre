@@ -55,7 +55,11 @@ public class Ctrl_Puntuacion : MonoBehaviour
     {
         DatosGuardar =GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         tiempo = GameObject.Find("Timer").GetComponent<Timer>();
-        Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
+        if(GameObject.Find("creador_objetos"))
+        {
+            Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
+        }
+        
         //Actualizar_enemigos();
         ApagarTextos();
 	}

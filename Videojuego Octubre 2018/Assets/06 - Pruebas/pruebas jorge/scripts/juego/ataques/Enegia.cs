@@ -59,6 +59,8 @@ public class Enegia : MonoBehaviour {
                     if(Energia>energiaMax)
                     {
                         Energia = energiaMax;
+                        EnergiaFinal =energiaMax;
+                        EnergiaInicial=energiaMax;
                     }
                 }
                 else
@@ -77,7 +79,7 @@ public class Enegia : MonoBehaviour {
 
     public void AñadirEnergia(float Valor)
     {
-        if (EnergiaFinal < energiaMax&&Habilidades.escudoActivado==false)
+        if (Energia < energiaMax&&Habilidades.escudoActivado==false)
         {
             EnergiaInicial = Energia;
             EnergiaFinal += Valor;

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/06 - Pruebas/pruebas jorge/escenas/02_Pruebas_Escenario_2.unity
     guid: c88caaa812b2ab24b9ce1713a6ba132c
+  - enabled: 1
+    path: Assets/00 - Escenas/02_escenario_tutorial.unity
+    guid: 84b09e4c0cd0a9643bcceade0a602e85
   m_configObjects: {}

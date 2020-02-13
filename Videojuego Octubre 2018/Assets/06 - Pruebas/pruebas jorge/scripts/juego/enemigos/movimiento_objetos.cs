@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class movimiento_objetos : MonoBehaviour
 {
@@ -83,7 +84,11 @@ public class movimiento_objetos : MonoBehaviour
         Vidas = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         //Velocidad = nav.speed;
         animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
-        Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
+        if(GameObject.Find("creador_objetos"))
+        {
+            Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();           
+            VidaEnemigo += (Oleadas.ContadorOleadas * 10);
+        }
         Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
         
         if (gameObject.name == "E_Bomb(Clone)")
@@ -93,7 +98,6 @@ public class movimiento_objetos : MonoBehaviour
             animatorEnemigo.SetBool("enElAire", true);
         }
 
-        VidaEnemigo += (Oleadas.ContadorOleadas * 10);
 
         //Variables Sonidos
         SonidoRecibirPajaritazoEnemigo = GameObject.Find("SonidoRecibirPajaritazoEnemigo").GetComponent<AudioSource>();
@@ -120,7 +124,7 @@ public class movimiento_objetos : MonoBehaviour
         //target = new Vector3(jugador.position.x,jugador.position.y,this.transform.position.z);
         target = jugador.position;
         dist = Vector3.Distance(jugador.position, transform.position);
-        if (nav.enabled)
+        if (nav.enabled&&SceneManager.GetActiveScene().name != "02_escenario_tutorial")
         {
             if (gameObject.name == "E_Bomb(Clone)")
             {
@@ -194,7 +198,7 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "Jugador":                       //objeto toca personaje
-                if (!Habilidades.sprint)
+                if (!Habilidades.sprint&&SceneManager.GetActiveScene().name != "02_escenario_tutorial")
                 {
                     switch (gameObject.name)
                     {
@@ -241,7 +245,7 @@ public class movimiento_objetos : MonoBehaviour
                         break;
 
                     default:
-                        if (Ataque == false&&Habilidades.AtaqueBasico==true)
+                        if (Ataque == false&&Habilidades.AtaqueBasico==true&&SceneManager.GetActiveScene().name == "02_Pruebas_Escenario_2")
                         {
                             Ataque = true;
                             VidaEnemigo -= Habilidades.DañoBasico;
@@ -277,21 +281,32 @@ public class movimiento_objetos : MonoBehaviour
                             }
                             Invoke("ActivarAtaque", 0.5f);
                         }
+                        else if(Ataque == false&&Habilidades.AtaqueBasico==true&&SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+                        {
+                            Ataque = true;
+                            VidaEnemigo -= Habilidades.DañoBasico;
+
+                            //Animacion de recibir daño para el enemigo
+                            animatorEnemigo.Play("RecibirGolpe",-1,0);
+
+                            //Sonido de recibir daño para el enemigo
+                            SonidoRecibirPajaritazoEnemigo.Play();
+
+                            posicionParticulasHit = new Vector3(transform.position.x, -47.6f, transform.position.z);
+                            Instantiate(particulasHitEnemigos, posicionParticulasHit, Quaternion.identity);
+
+                            nav.speed = 0;
+                            //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.VelocityChange);
+
+                            Invoke("recuperarVelocidadMalvaNormal", 1.5f);
+                            print("desruimos enemigo");
+                            Muerte();
+                            
+                            Invoke("ActivarAtaque", 0.5f);
+
+                            GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(4);
+                        }
                         break;
-                    /*case "E_Bomb(Clone)":
-                        print("desruimos enemigo");
-                        Puntuacion.Enemigos_Eliminados++;
-                        Muerte();
-                        //sumamos energia
-                        energia.AñadirEnergia(50);
-                        break;
-                    case "E_Normal(Clone)":
-                        print("desruimos enemigo");
-                        Puntuacion.Enemigos_Eliminados++;
-                        Muerte();
-                        //sumamos energia
-                        energia.AñadirEnergia(50);
-                        break;*/
 
                 }
                 break;

@@ -12,6 +12,8 @@ public class DatosGuardados : MonoBehaviour
 	public bool fx;
 	public bool[] skinsdesbloqueadas;
 	public ulong lastrewardOpen;
+	public bool tutorialCompletado;
+	public bool videovisto;
 
 	private void Start() 
 	{
@@ -39,6 +41,8 @@ public class DatosGuardados : MonoBehaviour
 				skinsdesbloqueadas[i] = data.SkinsDesbloqueadas[i];
 			}
 			lastrewardOpen = data.LastRewardOpen;
+			tutorialCompletado = data.TutorialCompletado;
+			videovisto = data.Videovisto;
 		}
 
 	}

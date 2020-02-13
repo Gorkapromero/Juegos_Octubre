@@ -12,6 +12,8 @@ public class PlayerData
 	public bool Fx;
 	public bool[] SkinsDesbloqueadas;
 	public ulong LastRewardOpen;
+	public bool TutorialCompletado;
+	public bool Videovisto;
 
 	public PlayerData(DatosGuardados Datos)
 	{
@@ -22,6 +24,8 @@ public class PlayerData
 		Fx = Datos.fx;
 		SkinsDesbloqueadas = Datos.skinsdesbloqueadas;
 		LastRewardOpen = Datos.lastrewardOpen;
+		TutorialCompletado = Datos.tutorialCompletado;
+		Videovisto = Datos.videovisto;
 	}
 	
 }

@@ -70,17 +70,7 @@ public class Ctrl_Botones : MonoBehaviour
 
         DatosGuardar.Save();
 
-        SceneManager.LoadScene(1);
-    }
-
-    public void pantallaAjustes()
-    {
         SceneManager.LoadScene(2);
-    }
-
-    public void pantallaRanking()
-    {
-        SceneManager.LoadScene(3);
     }
 
     public void CargarMenu()
@@ -93,7 +83,7 @@ public class Ctrl_Botones : MonoBehaviour
 
         DatosGuardar.Save();
         
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void pausa()
@@ -131,17 +121,17 @@ public class Ctrl_Botones : MonoBehaviour
         if(DatosGuardar.Monedas>=2)
         {
             DatosGuardar.Monedas -= monedas;
-            VolverAJugar();
+            SeguirJugando();
         }
 
     }
 
     public void VerAnuncio()
     {
-        VolverAJugar();
+        SeguirJugando();
     }
 
-    void VolverAJugar()
+    void SeguirJugando()
     {
         //resetear valores
         //Paramos la cancion de "MUERTE"
