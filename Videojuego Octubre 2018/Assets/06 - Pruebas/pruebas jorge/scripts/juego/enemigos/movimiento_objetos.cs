@@ -326,9 +326,12 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "caida":
+            if(SceneManager.GetActiveScene().name != "02_escenario_tutorial")
+            {
                 Puntuacion.Enemigos_Eliminados++;
                 textoEnergia();
                 energia.AñadirEnergia(50);
+            }
                 Muerte();
                 break;
         }
@@ -390,13 +393,27 @@ public class movimiento_objetos : MonoBehaviour
 
     void Muerte()
     {
-        //float text
-        Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
-        Instantiate(FloatingGhost, Posiciontextos, Quaternion.identity);
+        if(Habilidades.AtaqueBasico!=true&&SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().faseActual==4)
+        {
+            Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
+            Instantiate(FloatingGhost, Posiciontextos, Quaternion.identity);
 
-        Vector3 PosicionParticulas = new Vector3(transform.position.x, -52.77079f, transform.position.z);
-        GameObject ParticulasDead = Instantiate(ParticulasMuerte, PosicionParticulas, Quaternion.identity);
-        Destroy(this.gameObject);
+            Vector3 PosicionParticulas = new Vector3(transform.position.x, -52.77079f, transform.position.z);
+            GameObject ParticulasDead = Instantiate(ParticulasMuerte, PosicionParticulas, Quaternion.identity);
+            Destroy(this.gameObject);
+
+            GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().EsperarRespawn();
+        }
+        else
+        {
+            //float text
+            Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
+            Instantiate(FloatingGhost, Posiciontextos, Quaternion.identity);
+
+            Vector3 PosicionParticulas = new Vector3(transform.position.x, -52.77079f, transform.position.z);
+            GameObject ParticulasDead = Instantiate(ParticulasMuerte, PosicionParticulas, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
     }
 
     void ActivarAtaque()

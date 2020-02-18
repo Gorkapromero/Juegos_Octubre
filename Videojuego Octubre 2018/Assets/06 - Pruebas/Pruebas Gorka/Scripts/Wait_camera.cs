@@ -13,15 +13,7 @@ public class Wait_camera : MonoBehaviour
     void Start()
     {
         datosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
-
-        if(datosGuardados.videovisto)
-        {
-            BotonSkip.SetActive(true);
-        }
-        else
-        {
-            BotonSkip.SetActive(false);
-        }
+        Invoke("activarSkip", 1f);
         StartCoroutine(Wait());
     }
 
@@ -53,6 +45,18 @@ public class Wait_camera : MonoBehaviour
         {
             GameObject.Find("LevelLoader").GetComponent<Loader>().LoadLevel(3);
             //SceneManager.LoadScene(3);
+        }
+    }
+
+    void activarSkip()
+    {
+        if(datosGuardados.videovisto)
+        {
+            BotonSkip.SetActive(true);
+        }
+        else
+        {
+            BotonSkip.SetActive(false);
         }
     }
 }

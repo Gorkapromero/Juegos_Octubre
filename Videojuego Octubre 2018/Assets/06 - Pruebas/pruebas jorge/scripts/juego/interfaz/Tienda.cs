@@ -3,20 +3,61 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using UnityEngine.Purchasing;
+using UnityEngine.EventSystems;
 
 public class Tienda : MonoBehaviour
 {
+    public GameObject clickScreen;
     public Text txtMessage;
     string textFailureReason;
     List<PayoutDefinition> listPayouts = new List<PayoutDefinition> ();
 
+    public GameObject destello1;
+    public GameObject destello2;
+    public GameObject destello3;
+
+    bool cofre1;
+    bool cofre2;
+    bool cofre3;
+
+    public GameObject particulasCofre;
+    public Transform PosicionParticulas;
+    public GameObject GrupoTexto;
+    public Text Texto;
+
+    Product Producto;
+
     #region Dynamic Product - Se completan automaticamente con el Product ID
     public void Purchase_Consumable(Product _product)
     {
+        Producto = _product;
+        print("BOTON PULSADO: "+_product.definition.id);
+        //iniciar animaciones cofres
+        switch(_product.definition.id)
+        {
+            case "500_coins":
+                clickScreen.SetActive(true);
+                GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_1");
+                destello1.SetActive(true);
+            break;
+
+            case "1500_coins":
+                clickScreen.SetActive(true);
+                GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_2");
+                destello2.SetActive(true);
+            break;
+
+            case "5000_coins":
+                clickScreen.SetActive(true);
+                GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_3");
+                destello3.SetActive(true);
+            break;
+        }
         print("Has recibido: " + _product.definition.payout.quantity + " " + _product.definition.payout.subtype);
         txtMessage.text = "Has recibido: " + _product.definition.payout.quantity + " " + _product.definition.payout.subtype;
         GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().Monedas += (int)_product.definition.payout.quantity;
         GameObject.Find("Controlador").GetComponent<ControlBotonesMenu>().VerMonedas();
+        GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().Save();
     }
 
     public void Purchase_Failed ( Product _product,PurchaseFailureReason _failureReason)
@@ -72,4 +113,67 @@ public class Tienda : MonoBehaviour
 	}
 
     #endregion
+
+    public void ClickOnScreen()
+    {
+        switch(Producto.definition.id)
+        {
+            case "500_coins":
+                GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_preapertura_01");
+                //Invoke("IniciarParticulas",1f);
+                IniciarParticulas();
+            break;
+
+            case "1500_coins":
+                GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_preapertura_02");
+                //Invoke("IniciarParticulas",1f);
+                IniciarParticulas();
+            break;
+
+            case "5000_coins":
+                GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_preapertura_03");
+                //Invoke("IniciarParticulas",1f);
+                IniciarParticulas();
+            break;
+        }
+    }
+
+    public void IniciarParticulas()
+    {
+        Instantiate(particulasCofre,PosicionParticulas);
+        Invoke("textoFinal",2f);
+    }
+
+    void textoFinal()
+    {
+        GrupoTexto.SetActive(true);
+        Texto.text = "Has recibido: " + Producto.definition.payout.quantity + " " + Producto.definition.payout.subtype;
+    }
+
+    public void ClickTexto()
+    {
+        GrupoTexto.SetActive(false);
+        switch(Producto.definition.id)
+        {
+            case "500_coins":
+                GameObject.Find("cofre_01").GetComponent<Animator>().Play("New State");
+                //Invoke("IniciarParticulas",1f);
+                destello1.SetActive(false);
+            break;
+
+            case "1500_coins":
+                GameObject.Find("cofre_02").GetComponent<Animator>().Play("New State");
+                //Invoke("IniciarParticulas",1f);
+                destello1.SetActive(false);
+            break;
+
+            case "5000_coins":
+                GameObject.Find("cofre_03").GetComponent<Animator>().Play("New State");
+                //Invoke("IniciarParticulas",1f);
+                destello1.SetActive(false);
+            break;
+        }
+        clickScreen.SetActive(false);
+
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Ctrl_Tutorial : MonoBehaviour
 {
-    int faseActual = 1;
+    public int faseActual = 1;
     public bool[] Fases;
 
     public GameObject MarcadorBoton;
@@ -82,9 +82,10 @@ public class Ctrl_Tutorial : MonoBehaviour
             break;
 
             case 6: //explosion
+            GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>().escudooff();
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().Energia = 0;
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
-            TextoInfo.text = "Elimina a todos los enemigos";
+            TextoInfo.text = "Elimina a todos los enemigos con el ataque especial";
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
@@ -140,5 +141,17 @@ public class Ctrl_Tutorial : MonoBehaviour
         {
             FaseCompletada(2);
         }
+    }
+
+    public void EsperarRespawn()
+    {
+        Invoke("Respawn",1f);
+    }
+    void Respawn()
+    {
+        //particulas aparece enemigo
+        Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
+        //enemigo
+        Instantiate(enemigo,PosicionEnemigos[1].position,Quaternion.identity);
     }
 }

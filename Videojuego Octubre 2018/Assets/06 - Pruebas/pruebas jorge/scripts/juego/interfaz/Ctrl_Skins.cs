@@ -266,6 +266,7 @@ public class Ctrl_Skins : MonoBehaviour
             BotonSelec.SetActive(false);
 			BotonComprar.SetActive(true);
 		}
+		DatosGuardados.Save();
 	}
 
 	public void ComprarSkin()

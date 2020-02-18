@@ -43,6 +43,7 @@ public class Loader : MonoBehaviour
     {
         GameObject.Find("Canvas").GetComponent<Animator>().Play("VolverMenu");
         GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("CerrarSkins");
+        GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().Save();
     }
 
     void cargarSkin()

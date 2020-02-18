@@ -70,7 +70,14 @@ public class Ctrl_Botones : MonoBehaviour
 
         DatosGuardar.Save();
 
-        SceneManager.LoadScene(2);
+        if(SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+        {
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void CargarMenu()

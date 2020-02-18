@@ -34212,7 +34212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1127842627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52924,6 +52924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044c2e8c4f148664a88f5d60cb5a69e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faseActual: 1
   Fases: 000000000000
   MarcadorBoton: {fileID: 0}
   PosicionEnemigos:
