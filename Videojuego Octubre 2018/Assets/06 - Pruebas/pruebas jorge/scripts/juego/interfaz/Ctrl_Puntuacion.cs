@@ -50,6 +50,10 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Transform start;
     public Transform Parent;
 
+    public Button BotonAnuncio;
+    public Button BotonGastarMonedas;
+    public int CrearMonedas;
+
     // Use this for initialization
     void Start ()
     {
@@ -75,6 +79,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
             {
                 ValorMonedas = 0;
                 restarmonedas=false;
+                ActivarBotones();
             }
             MonedasRecojidas.text = ValorMonedas.ToString("f0");
         }
@@ -201,7 +206,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     }
     void MostrarMonedas()
     {
-        monedas = DatosGuardar.Monedas;
+        ValorInicial = DatosGuardar.Monedas;
         print("monedas");
         //B_tiempo = false;
         //FinTextos = false;
@@ -269,5 +274,11 @@ public class Ctrl_Puntuacion : MonoBehaviour
             Instantiate(moneda,start.position,Quaternion.identity,Parent);
             yield return new WaitForSeconds(0.2f);
         }
+    }
+
+    void ActivarBotones()
+    {
+        BotonAnuncio.enabled = true;
+        BotonGastarMonedas.enabled = true;
     }
 }
