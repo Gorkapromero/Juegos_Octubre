@@ -67,6 +67,11 @@ public class Ctrl_oleadas : MonoBehaviour
     public float rangoDistancia;
 
     public GameObject TextoOleadaCompletada;
+
+    public GameObject[] TextosDificultad;
+    public GameObject cofre;
+    public Vector3 PosicionCofre;
+    public GameObject ParticulasCofre;
     //public float distA;
     // Use this for initialization
     void Start()
@@ -174,6 +179,7 @@ public class Ctrl_oleadas : MonoBehaviour
         ActualizarTextoOleadas();
         TextoOleadaCompletada.SetActive(true);
         Invoke("DesactibarTexto", 3);
+
     }
 
     public void crear(oleada _Oleada)
@@ -283,6 +289,7 @@ public class Ctrl_oleadas : MonoBehaviour
     public void ActualizarTextoOleadas()
     {
         TextoOleadas.text = (ContadorOleadas + 1).ToString();
+        TextosProgresion();
     }
 
     private void OnDrawGizmos()
@@ -297,5 +304,54 @@ public class Ctrl_oleadas : MonoBehaviour
     void DesactibarTexto()
     {
         TextoOleadaCompletada.SetActive(false);
+    }
+
+    void TextosProgresion()
+    {
+        int Texto;
+        switch(ContadorOleadas)
+        {
+            case 5:
+            Texto = 0;
+            TextosDificultad[Texto].SetActive(true);
+            StartCoroutine(ApagarTexto(Texto,3f));
+            Recompensa();
+            break;
+
+            case 10:
+            Texto = 1;
+            TextosDificultad[Texto].SetActive(true);
+            StartCoroutine(ApagarTexto(Texto,3f));
+            Recompensa();
+            break;
+
+            case 15:
+            Texto = 2;
+            TextosDificultad[Texto].SetActive(true);
+            StartCoroutine(ApagarTexto(Texto,3f));
+            Recompensa();
+            break;
+
+            case 20:
+            Texto = 3;
+            TextosDificultad[Texto].SetActive(true);
+            StartCoroutine(ApagarTexto(Texto,3f));
+            Recompensa();
+            break;
+        }
+    }
+
+    IEnumerator ApagarTexto(int _Texto, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        TextosDificultad[_Texto].SetActive(false);
+    }
+
+    void Recompensa()
+    {
+        //Vector3 PosicionObjeto = new Vector3(GameObject.FindGameObjectWithTag("Jugador").GetComponent<Transform>().position.x+PosicionCofre.x,PosicionCofre.y,PosicionCofre.z);
+        Instantiate(ParticulasCofre,PosicionCofre,Quaternion.identity);
+        Instantiate(cofre,PosicionCofre,Quaternion.identity);
     }
 }
