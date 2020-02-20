@@ -36,7 +36,11 @@ public class Recolectable : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Invoke("Destruir", DestroyTime);
+        if(DestroyTime>0)
+        {
+            Invoke("Destruir", DestroyTime);
+        }
+            
         Jugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
         Recolectables = GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>();

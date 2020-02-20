@@ -117,7 +117,7 @@ public class Ctrl_Tutorial : MonoBehaviour
         
     public void FaseCompletada(int fase)
     {
-        if(Fases[fase-1]==false)
+        if(Fases[fase-1]==true&&Fases[fase])
         {
             Fases[fase-1] = true;
             Invoke("SiguienteFase",2f);
