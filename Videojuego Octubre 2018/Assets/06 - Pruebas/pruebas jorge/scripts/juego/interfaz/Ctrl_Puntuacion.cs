@@ -156,6 +156,10 @@ public class Ctrl_Puntuacion : MonoBehaviour
     {
         tiempo.PararTiempo();
         P_Final = (Enemigos_Eliminados * 10) + (Oleadas.ContadorOleadas*100);
+        if(P_Final>DatosGuardar.puntuacion)
+        {
+            Guardar();
+        }
     }
 
     void Guardar()
@@ -269,10 +273,22 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     IEnumerator CrearMoneda()
     {
-        for (int i = 0; i < monedasRecojidas; i++)
+        if(monedasRecojidas>CrearMonedas)
         {
-            Instantiate(moneda,start.position,Quaternion.identity,Parent);
-            yield return new WaitForSeconds(0.2f);
+            for (int i = 0; i < CrearMonedas; i++)
+            {
+                Instantiate(moneda,start.position,Quaternion.identity,Parent);
+                yield return new WaitForSeconds(0.2f);
+            }
+            
+        }
+        else
+        {
+            for (int i = 0; i < monedasRecojidas; i++)
+            {
+                Instantiate(moneda,start.position,Quaternion.identity,Parent);
+                yield return new WaitForSeconds(0.2f);
+            }
         }
     }
 

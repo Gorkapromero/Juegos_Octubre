@@ -15,6 +15,7 @@ public class Ctrl_Tutorial : MonoBehaviour
     public GameObject enemigo;
     public Text TextoInfo;
     public GameObject botonFinTutorial;
+    public GameObject parche;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +75,7 @@ public class Ctrl_Tutorial : MonoBehaviour
             case 5: //escudo
             TextoInfo.text = "activa el escudo para protejerte";
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
+            parche.SetActive(true);
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
@@ -82,6 +84,7 @@ public class Ctrl_Tutorial : MonoBehaviour
             break;
 
             case 6: //explosion
+            parche.SetActive(false);
             GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>().escudooff();
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().Energia = 0;
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
@@ -117,9 +120,10 @@ public class Ctrl_Tutorial : MonoBehaviour
         
     public void FaseCompletada(int fase)
     {
-        if(Fases[fase-1]==true&&Fases[fase])
+        if(Fases[fase]==false&&Fases[fase-1]==true)
         {
-            Fases[fase-1] = true;
+            TextoInfo.text = "Fase "+fase+" Completada!";
+            Fases[fase] = true;
             Invoke("SiguienteFase",2f);
         }
     }
@@ -137,7 +141,7 @@ public class Ctrl_Tutorial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.tag == "Jugador")
+        if(other.tag == "Jugador"&&faseActual == 2)
         {
             FaseCompletada(2);
         }
@@ -149,9 +153,11 @@ public class Ctrl_Tutorial : MonoBehaviour
     }
     void Respawn()
     {
-        //particulas aparece enemigo
-        Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
-        //enemigo
-        Instantiate(enemigo,PosicionEnemigos[1].position,Quaternion.identity);
+        if(GameObject.FindGameObjectWithTag("Enemigo"))
+        {
+            Instantiate(particulasmuerte,GameObject.FindGameObjectWithTag("Enemigo").GetComponent<Transform>().position,Quaternion.identity);
+            Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
+        }
+        ControlFase();
     }
 }

@@ -33,6 +33,8 @@ public class Recolectable : MonoBehaviour {
 
     public Color ColorMasDaño;
 
+    public GameObject MenuPremios;
+
     // Use this for initialization
     void Start()
     {
@@ -56,7 +58,15 @@ public class Recolectable : MonoBehaviour {
     {
         if (other.gameObject.tag == "Jugador")
         {
-            claculateLoot();
+            if(gameObject.name == "Recolectable_Caja")
+            {
+                claculateLoot();
+            }
+            else
+            {
+                premio();
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -130,5 +140,10 @@ public class Recolectable : MonoBehaviour {
             }
         }
 
+    }
+
+    void premio()
+    {
+        Recolectables.Premios();
     }
 }

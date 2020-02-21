@@ -15,6 +15,8 @@ public class Ctrl_Recolectables : MonoBehaviour
 
     movimiento_personaje Jugador;
     public bool SiguienteCaja = true;
+
+    public GameObject MenuPremios;
     // Use this for initialization
     void Start () 
     {
@@ -70,5 +72,15 @@ public class Ctrl_Recolectables : MonoBehaviour
         {
             tiempo -= (CreationTimeMax-CreationTimeMin)/4;
         }
+    }
+
+    public void Premios()
+    {
+        if(Time.timeScale == 1f)
+        {
+            Time.timeScale = 0f;
+        }
+
+        MenuPremios.SetActive(true);
     }
 }

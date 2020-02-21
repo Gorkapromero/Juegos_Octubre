@@ -70,6 +70,7 @@ public class movimiento_objetos : MonoBehaviour
     //Variables Sonidos
     AudioSource SonidoRecibirPajaritazoEnemigo;
 
+    bool Muertexplosion = false;
 
     // Use this for initialization
     void Start ()
@@ -322,6 +323,7 @@ public class movimiento_objetos : MonoBehaviour
 
             case "explosion":
                 Puntuacion.Enemigos_Eliminados++;
+                Muertexplosion = true;
                 Muerte();
                 break;
 
@@ -393,8 +395,10 @@ public class movimiento_objetos : MonoBehaviour
 
     void Muerte()
     {
-        if(Habilidades.AtaqueBasico!=true&&SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().faseActual==4)
+        if(SceneManager.GetActiveScene().name == "02_escenario_tutorial")
         {
+            Ctrl_Tutorial tutorial=GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>();
+            
             Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
             Instantiate(FloatingGhost, Posiciontextos, Quaternion.identity);
 
@@ -402,7 +406,17 @@ public class movimiento_objetos : MonoBehaviour
             GameObject ParticulasDead = Instantiate(ParticulasMuerte, PosicionParticulas, Quaternion.identity);
             Destroy(this.gameObject);
 
-            GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().EsperarRespawn();
+            switch(tutorial.faseActual)
+            {
+                case 4:
+                    if(Habilidades.AtaqueBasico!=true) GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().EsperarRespawn();    
+                break;
+
+                case 6:
+                    if(Muertexplosion!=true) GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().EsperarRespawn();
+                break;
+            }
+            
         }
         else
         {

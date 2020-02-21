@@ -164,13 +164,13 @@ public class Tienda : MonoBehaviour
             case "1500_coins":
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("New State");
                 //Invoke("IniciarParticulas",1f);
-                destello1.SetActive(false);
+                destello2.SetActive(false);
             break;
 
             case "5000_coins":
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("New State");
                 //Invoke("IniciarParticulas",1f);
-                destello1.SetActive(false);
+                destello3.SetActive(false);
             break;
         }
         clickScreen.SetActive(false);
