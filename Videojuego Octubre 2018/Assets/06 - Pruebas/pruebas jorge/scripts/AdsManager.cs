@@ -2,6 +2,7 @@
 using AppodealAds.Unity.Api;
 using AppodealAds.Unity.Common;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
 	
@@ -12,6 +13,8 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
   bool anuncioVisto;
 
   Ctrl_Botones Botones;
+
+  string BotonClicked;
  
  // Use this for initialization
  void Start () 
@@ -48,6 +51,7 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
  
     public void ShowRewarded()
     { 
+      BotonClicked = EventSystem.current.currentSelectedGameObject.name;
        // Manager.ShowText("Cargamos video");
         if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
             Appodeal.show(Appodeal.REWARDED_VIDEO);
@@ -84,7 +88,14 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
           break;
 
           case "02_Pruebas_Escenario_2":
-            Botones.VerAnuncio();
+            if (BotonClicked == "B_Anuncio")
+            {
+              Botones.VerAnuncio();
+            }
+            else
+            {
+              GameObject.Find("Recolctables").GetComponent<Premios>().PremiumLoot();
+            }
             anuncioVisto = false;
           break;
         }

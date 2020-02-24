@@ -33,7 +33,7 @@ public class Recolectable : MonoBehaviour {
 
     public Color ColorMasDaño;
 
-    public GameObject MenuPremios;
+    //public GameObject MenuPremios;
 
     // Use this for initialization
     void Start()
@@ -145,5 +145,10 @@ public class Recolectable : MonoBehaviour {
     void premio()
     {
         Recolectables.Premios();
+    }
+
+    void DañoExtra()
+    {
+        
     }
 }

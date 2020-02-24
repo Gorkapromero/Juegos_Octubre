@@ -311,7 +311,7 @@ public class Ctrl_oleadas : MonoBehaviour
         int Texto;
         switch(ContadorOleadas)
         {
-            case 5:
+            case 1:
             Texto = 0;
             TextosDificultad[Texto].SetActive(true);
             StartCoroutine(ApagarTexto(Texto,3f));
