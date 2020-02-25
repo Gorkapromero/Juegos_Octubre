@@ -58,7 +58,7 @@ public class Recolectable : MonoBehaviour {
     {
         if (other.gameObject.tag == "Jugador")
         {
-            if(gameObject.name == "Recolectable_Caja")
+            if(this.gameObject.name == "Recolectable_Caja(Clone)")
             {
                 claculateLoot();
             }

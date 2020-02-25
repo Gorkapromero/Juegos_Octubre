@@ -14,7 +14,7 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
 
   Ctrl_Botones Botones;
 
-  string BotonClicked;
+  public string BotonClicked;
  
  // Use this for initialization
  void Start () 

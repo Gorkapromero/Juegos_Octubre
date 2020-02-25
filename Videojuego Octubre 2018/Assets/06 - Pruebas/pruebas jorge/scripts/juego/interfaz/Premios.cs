@@ -139,6 +139,7 @@ public class Premios : MonoBehaviour
             {
                 if(randomValue <= LootTablePremium[j].Porcentaje)
                 {
+                    Instantiate(LootTablePremium[j].objeto,Parent);
                     //sacamositem
                     switch(LootTablePremium[j].Nombre.ToString())
                     {
@@ -151,6 +152,7 @@ public class Premios : MonoBehaviour
                             {
                                 VidasGanadas++;
                             }
+                            ActualizarPremios();
                             break;
                         case "Daño":
                         if (LootTablePremium[j].x2)
@@ -161,6 +163,7 @@ public class Premios : MonoBehaviour
                             {
                                 PowerUpsGanados++;
                             }
+                            ActualizarPremios();
                             break;
                         case "Monedas":
                             if (LootTablePremium[j].x2)
@@ -171,6 +174,7 @@ public class Premios : MonoBehaviour
                             {
                                 datosGuardados.Monedas += Monedas;
                             }
+                            ActualizarPremios();
                             break;
                         case "Default":
                             break;
