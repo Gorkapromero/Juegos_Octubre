@@ -26,7 +26,9 @@ public class Ctrl_Skins : MonoBehaviour
 		public GameObject Skin;
 		public GameObject TextoNombre;
 		public int Precio;
-	}
+
+        public GameObject imagenTarjeta;
+    }
 	public List <Skins> TablaSkins = new List<Skins>();
 
 	public string SkinActivada;
@@ -43,13 +45,15 @@ public class Ctrl_Skins : MonoBehaviour
 	float posinicial;
 	public float velocidad;
 
-
 	int NumeroSkin;
 
 	public GameObject BotonSelec;
 	public GameObject BotonComprar;
-	public Text T_Precio;
-	// Use this for initialization
+    public GameObject Boton_SkinSeleccionada;
+
+    public Text T_Precio;
+	
+    // Use this for initialization
 	void Start () 
 	{
 		ScrollMax = (TablaSkins.Count-1)*12;
@@ -63,8 +67,8 @@ public class Ctrl_Skins : MonoBehaviour
 	{
 		if(drop)
 		{
-			print("posicion inicial: " + posinicial);
-			print("posicion final: " + posfinal);
+			//print("posicion inicial: " + posinicial);
+			//print("posicion final: " + posfinal);
 			if(posfinal>posinicial)
 			{
 				Posicion.x += (velocidad *Time.deltaTime);
@@ -139,7 +143,7 @@ public class Ctrl_Skins : MonoBehaviour
 			//Posicion.x = -NumeroSkin*12;
 			posinicial = GrupoSkins.transform.position.x;
 			posfinal = -NumeroSkin*12;
-			Posicion.x=posinicial;
+			Posicion.x= posinicial;
 			drop = true;
 			//GrupoSkins.transform.position = Posicion;
 			//CAMBIAMOS TEXTO SKIN
@@ -149,9 +153,10 @@ public class Ctrl_Skins : MonoBehaviour
 			}
 			TablaSkins[NumeroSkin].TextoNombre.SetActive(true);
 
-			SkinSeleccionada = TablaSkins[NumeroSkin].Nombre;
 
-		}
+			SkinSeleccionada = TablaSkins[NumeroSkin].Nombre;
+                        
+        }
 		
        // print(SkinActivada);
 		
@@ -176,14 +181,18 @@ public class Ctrl_Skins : MonoBehaviour
 		SkinSeleccionada = SkinActivada;
 
 		ActualizarNombre();
-		for (int i = 0; i < TablaSkins.Count; i++)
+
+        for (int i = 0; i < TablaSkins.Count; i++)
 		{
 			if(TablaSkins[i].Nombre == SkinActivada)
 			{
 				GrupoSkins.transform.position = new Vector3((-i*12),GrupoSkins.transform.position.y,GrupoSkins.transform.position.z);
 				NumeroSkin = i;
-				Desbloqueo();
-				return;
+
+                cambiarTarjetaMenu();
+                Desbloqueo();
+
+                return;
 			}
 		}
 	}
@@ -198,14 +207,32 @@ public class Ctrl_Skins : MonoBehaviour
 	}
 
 	public void seleccionarSkin()
-	{
-		TablaSkins[NumeroSkin].Skin.GetComponent<Animator>().Play("LevantarDeCaidaAtras");
+	{		   
+        //TablaSkins[NumeroSkin].Skin.GetComponent<Animator>().Play("LevantarDeCaidaAtras");
 		SkinActivada = TablaSkins[NumeroSkin].Nombre;
-		DatosGuardados.Skin = SkinActivada;
 
+		DatosGuardados.Skin = SkinActivada;
+        
+        cambiarTarjetaMenu();
 	}
 
-	void ActualizarNombre()
+    void cambiarTarjetaMenu()
+    {
+        //Desactivamos todas las imagenes de la tarjeta de Skins
+        for (int i = 0; i < TablaSkins.Count; i++)
+        {
+            TablaSkins[i].imagenTarjeta.SetActive(false);
+        }
+
+        //Activamos la imagen de la skin seleccionada
+        TablaSkins[NumeroSkin].imagenTarjeta.SetActive(true);
+
+        //Desactivamos el boton de seleccionar a traves del void "Desbloqueo"
+        Invoke("Desbloqueo",0.5f);
+    }
+
+
+    void ActualizarNombre()
 	{
 		for(int i = 0;i<TablaSkins.Count;i++)
 		{
@@ -225,7 +252,7 @@ public class Ctrl_Skins : MonoBehaviour
             if (DatosGuardados.skinsdesbloqueadas[i])
             {
                 //Activamos la geometría de la skin correspondiente
-                print("Desactivar Skin OFF : " + TablaSkins[i].Nombre);
+                //print("Desactivar Skin OFF : " + TablaSkins[i].Nombre);
                 if (GameObject.Find(TablaSkins[i].Nombre + "_OFF"))
                 {
                     GameObject.Find(TablaSkins[i].Nombre + "_OFF").SetActive(false);
@@ -247,12 +274,24 @@ public class Ctrl_Skins : MonoBehaviour
 
 		if(DatosGuardados.skinsdesbloqueadas[NumeroSkin])
 		{
-			BotonSelec.SetActive(true);
-			BotonComprar.SetActive(false);
-		}
+            BotonComprar.SetActive(false);
+
+            if (SkinSeleccionada == SkinActivada)
+            {
+                BotonSelec.SetActive(false);
+                Boton_SkinSeleccionada.SetActive(true);
+            }
+            else
+            {
+                BotonSelec.SetActive(true);
+                Boton_SkinSeleccionada.SetActive(false);
+            }
+        }
 		else
 		{
-			T_Precio.text = TablaSkins[NumeroSkin].Precio.ToString() + "\nmonedas";
+            Boton_SkinSeleccionada.SetActive(false);
+
+            T_Precio.text = TablaSkins[NumeroSkin].Precio.ToString() + "\nmonedas";
 
             if (DatosGuardados.Monedas < TablaSkins[NumeroSkin].Precio)
             {
@@ -266,7 +305,11 @@ public class Ctrl_Skins : MonoBehaviour
             BotonSelec.SetActive(false);
 			BotonComprar.SetActive(true);
 		}
-		DatosGuardados.Save();
+
+        print("Skin Activada: " + SkinActivada);
+        print("Skin Seleccionada: " + SkinSeleccionada);
+
+        DatosGuardados.Save();
 	}
 
 	public void ComprarSkin()
@@ -279,8 +322,11 @@ public class Ctrl_Skins : MonoBehaviour
             GameObject.Find("Controlador").GetComponent<ControlBotonesMenu>().VerMonedas();
 
             Desbloqueo();
-		}
-	}
+
+           TablaSkins[NumeroSkin].Skin.GetComponent<Animator>().Play("AnimDesbloqueoSkin_Tienda");
+
+        }
+    }
 
 
 }
