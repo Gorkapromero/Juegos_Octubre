@@ -44370,6 +44370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appKey: 7cbc55e6ba43bf2cbc9b226db9714de0c5f6686b329f1d37
+  BotonClicked: 
 --- !u!4 &1583463665
 Transform:
   m_ObjectHideFlags: 0
@@ -45217,6 +45218,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738504759536579129, guid: 898764c26dc6f184a99a3a95d61eb706,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 925913238}
+    - target: {fileID: 7738504759536579129, guid: 898764c26dc6f184a99a3a95d61eb706,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: volverJugar
       objectReference: {fileID: 0}
     - target: {fileID: 7738587770592750789, guid: 898764c26dc6f184a99a3a95d61eb706,
         type: 3}
