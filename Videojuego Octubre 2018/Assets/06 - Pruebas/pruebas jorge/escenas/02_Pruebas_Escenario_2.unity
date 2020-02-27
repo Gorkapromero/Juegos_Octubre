@@ -40977,6 +40977,81 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1596949143}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1440854513
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1596282008}
+    m_Modifications:
+    - target: {fileID: 1972455552851435555, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_Name
+      value: Particulas_ProtaEscudo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.285
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6631354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.24545997
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.24546021
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.66313654
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60c1ff4278c7e2a4d91a0d73d21fe341, type: 3}
+--- !u!4 &1440854514 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1972455552851435556, guid: 60c1ff4278c7e2a4d91a0d73d21fe341,
+    type: 3}
+  m_PrefabInstance: {fileID: 1440854513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1441809992
 GameObject:
   m_ObjectHideFlags: 0
@@ -44824,12 +44899,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596282004}
-  m_LocalRotation: {x: 0.14998043, y: -0.10707446, z: -0.69101816, w: -0.69895273}
-  m_LocalPosition: {x: -1.8108245, y: 0.027843356, z: -0.093300134}
-  m_LocalScale: {x: 7.8541393, y: 7.8541374, z: 7.854136}
-  m_Children: []
-  m_Father: {fileID: 141734900}
-  m_RootOrder: 1
+  m_LocalRotation: {x: 0.0000007841735, y: -0.18185182, z: -0.000000014435498, w: -0.98332596}
+  m_LocalPosition: {x: 0.06000639, y: 5.7400017, z: 0.039999403}
+  m_LocalScale: {x: 16.924858, y: 16.924837, z: 16.924843}
+  m_Children:
+  - {fileID: 1440854514}
+  m_Father: {fileID: 613715070}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -879.045, y: 176.464, z: -90}
 --- !u!54 &1596282009
 Rigidbody:
@@ -59241,7 +59317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PosicionParacas: {fileID: 1386242726}
-  OffsetCaida: {x: 50, y: 0, z: 0}
+  OffsetCaida: {x: 100, y: 0, z: 0}
   zonaAgua: {fileID: 1876734915}
   "Tama\xF1oZonaAgua": {x: 70, y: 10, z: 0}
   ZonaDerecha: {fileID: 2038385458}

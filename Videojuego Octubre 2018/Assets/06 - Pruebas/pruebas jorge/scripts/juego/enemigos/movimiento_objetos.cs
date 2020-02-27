@@ -253,6 +253,8 @@ public class movimiento_objetos : MonoBehaviour
 
                             //Animacion de recibir daño para el enemigo
                             animatorEnemigo.Play("RecibirGolpe",-1,0);
+                            //gameObject.GetComponent<Rigidbody>().AddForce(0, 0, 50.0f, ForceMode.Impulse);
+
 
                             //Sonido de recibir daño para el enemigo
                             SonidoRecibirPajaritazoEnemigo.Play();
@@ -261,7 +263,7 @@ public class movimiento_objetos : MonoBehaviour
                             Instantiate(particulasHitEnemigos, posicionParticulasHit, Quaternion.identity);
 
                             nav.speed = 0;
-                            //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.VelocityChange);
+                            GetComponent<Rigidbody>().AddForce(transform.forward * -80, ForceMode.VelocityChange);
 
                             Invoke("recuperarVelocidadMalvaNormal", 1.5f);
 
