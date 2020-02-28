@@ -83,7 +83,8 @@ public class movimiento_personaje : MonoBehaviour
     AudioSource sonidoQuitarVida;
     AudioSource sonidoDisparo;
 
-    public bool resucitado;
+    public int resucitado;
+    public bool resucitadoAnuncio;
 
     void Start()
     {
@@ -532,9 +533,9 @@ public class movimiento_personaje : MonoBehaviour
     {
         Finpartida.SetActive(true);
         GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().Mostrar_Textos();
-        if(resucitado)
+        if(resucitadoAnuncio)
         {
-            GameObject.Find("seguirJugando").SetActive(false);
+            GameObject.Find("B_Anuncio").SetActive(false);
         }
     }
 }

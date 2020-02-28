@@ -32,6 +32,8 @@ public class Ctrl_Botones : MonoBehaviour
     GameObject[] Efectos;
     public GameObject BMusica;
     public GameObject BFX;
+
+    public int MonedasResucitar;
 	// Use this for initialization
 	void Start ()
     {
@@ -123,11 +125,11 @@ public class Ctrl_Botones : MonoBehaviour
         DatosGuardar.fx = FX;
     }
 
-    public void GastarMonedas(int monedas)
+    public void GastarMonedas()
     {
-        if(DatosGuardar.Monedas>=2)
+        if(DatosGuardar.Monedas>=MonedasResucitar)
         {
-            DatosGuardar.Monedas -= monedas;
+            DatosGuardar.Monedas -= MonedasResucitar;
             SeguirJugando();
         }
 
@@ -135,6 +137,7 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void VerAnuncio()
     {
+        personaje.resucitadoAnuncio = true;
         SeguirJugando();
     }
 
@@ -176,7 +179,8 @@ public class Ctrl_Botones : MonoBehaviour
 
         Puntuacion.ApagarTextos();
 
-        personaje.resucitado = true;
+        personaje.resucitado++;
+        MonedasResucitar = personaje.resucitado*50;
 
         GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>().enabled = true;
         GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Fuego>().enabled = true;

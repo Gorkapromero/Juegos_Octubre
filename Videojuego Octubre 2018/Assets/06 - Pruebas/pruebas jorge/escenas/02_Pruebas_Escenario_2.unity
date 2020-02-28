@@ -18677,7 +18677,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 03923a7c5c97f0e498e5b6a53899ec78, type: 3}
+    m_Font: {fileID: 12800000, guid: 9b9c0f7435fb5674aa38121c3c79ac3b, type: 3}
     m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 1
@@ -29072,6 +29072,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836426724}
   m_Mesh: {fileID: 4300316, guid: 7b7a31ad697f5804f9a3f34a40773a9e, type: 3}
+--- !u!1 &841414437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5093361316956825800, guid: b9acdaec08e2dfb40994d67334d23a33,
+    type: 3}
+  m_PrefabInstance: {fileID: 1618163543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &847230932
 GameObject:
   m_ObjectHideFlags: 0
@@ -30506,6 +30512,7 @@ MonoBehaviour:
   CuentaAtras: {fileID: 1884024997}
   BMusica: {fileID: 452379797}
   BFX: {fileID: 2055760330}
+  MonedasResucitar: 20
 --- !u!1 &926096169
 GameObject:
   m_ObjectHideFlags: 0
@@ -36632,6 +36639,7 @@ MonoBehaviour:
   Irizquierda: {fileID: 1641620262}
   panelBloqueoControles: {fileID: 2050233827}
   resucitado: 0
+  resucitadoAnuncio: 0
 --- !u!65 &1232494663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45812,7 +45820,7 @@ PrefabInstance:
     - target: {fileID: 5093361316956825800, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5093361316956825804, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}
@@ -55220,6 +55228,7 @@ MonoBehaviour:
   Grupo_cuenta: {fileID: 1792753373}
   T_Timer: {fileID: 510381205}
   Tiempo: 0
+  GO: {fileID: 841414437}
   InicioCuenta: 3
 --- !u!4 &1884024998
 Transform:

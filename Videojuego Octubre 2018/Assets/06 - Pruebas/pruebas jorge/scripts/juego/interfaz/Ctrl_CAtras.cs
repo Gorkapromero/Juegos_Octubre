@@ -8,6 +8,7 @@ public class Ctrl_CAtras : MonoBehaviour {
     public Text T_Timer;
 
     public float Tiempo;
+    public GameObject GO;
 
     private bool ActivarCuenta = false;
     public float InicioCuenta;
@@ -38,6 +39,9 @@ public class Ctrl_CAtras : MonoBehaviour {
                     GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().enabled = true;
                     GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().PlayerState = EstadoJugador.Vivo;
                     GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>().Estado = Ctrl_oleadas.SpawnState.COUNTING;
+                    GO.SetActive(true);
+
+                    Invoke("ApagarTexto",3f);
                 }
                 
                 Grupo_cuenta.SetActive(false);
@@ -53,7 +57,8 @@ public class Ctrl_CAtras : MonoBehaviour {
     }
 
     public void iniciarCuenta()
-    {   
+    {  
+        GO.SetActive(false); 
         Grupo_cuenta.SetActive(true);
         Cuenta = Time.time + InicioCuenta;
         if(GameObject.Find("creador_objetos"))
@@ -62,5 +67,10 @@ public class Ctrl_CAtras : MonoBehaviour {
         }
         
         ActivarCuenta = true;
+    }
+
+    void ApagarTexto()
+    {
+        GO.SetActive(false);
     }
 }
