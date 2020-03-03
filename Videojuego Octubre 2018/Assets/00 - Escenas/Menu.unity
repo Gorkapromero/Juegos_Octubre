@@ -5317,7 +5317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: 5000_coins
+  productId: 5000.coins
   buttonType: 0
   consumePurchase: 1
   onPurchaseComplete:
@@ -5348,7 +5348,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  titleText: {fileID: 1648319250}
+  titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 1470928651}
 --- !u!1 &184289532
@@ -8311,7 +8311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: 500_coins
+  productId: 500.coins
   buttonType: 0
   consumePurchase: 1
   onPurchaseComplete:
@@ -8342,7 +8342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  titleText: {fileID: 421082655}
+  titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 2022482797}
 --- !u!1 &315055487
@@ -21568,7 +21568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 320.00018}
+  m_AnchoredPosition: {x: 0, y: 320.00012}
   m_SizeDelta: {x: 0, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &794924507
@@ -39640,7 +39640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: 1500_coins
+  productId: 1500.coins
   buttonType: 0
   consumePurchase: 1
   onPurchaseComplete:
@@ -39671,7 +39671,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  titleText: {fileID: 1970466114}
+  titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 972134939}
 --- !u!1 &1304374833

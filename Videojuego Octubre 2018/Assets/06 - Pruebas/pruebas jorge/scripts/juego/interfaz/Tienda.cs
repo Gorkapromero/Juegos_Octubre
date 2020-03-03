@@ -35,19 +35,19 @@ public class Tienda : MonoBehaviour
         //iniciar animaciones cofres
         switch(_product.definition.id)
         {
-            case "500_coins":
+            case "500.coins":
                 clickScreen.SetActive(true);
                 GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_1");
                 destello1.SetActive(true);
             break;
 
-            case "1500_coins":
+            case "1500.coins":
                 clickScreen.SetActive(true);
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_2");
                 destello2.SetActive(true);
             break;
 
-            case "5000_coins":
+            case "5000.coins":
                 clickScreen.SetActive(true);
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_3");
                 destello3.SetActive(true);
@@ -118,19 +118,19 @@ public class Tienda : MonoBehaviour
     {
         switch(Producto.definition.id)
         {
-            case "500_coins":
+            case "500.coins":
                 GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_preapertura_01");
                 //Invoke("IniciarParticulas",1f);
                 IniciarParticulas();
             break;
 
-            case "1500_coins":
+            case "1500.coins":
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_preapertura_02");
                 //Invoke("IniciarParticulas",1f);
                 IniciarParticulas();
             break;
 
-            case "5000_coins":
+            case "5000.coins":
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_preapertura_03");
                 //Invoke("IniciarParticulas",1f);
                 IniciarParticulas();
@@ -155,19 +155,19 @@ public class Tienda : MonoBehaviour
         GrupoTexto.SetActive(false);
         switch(Producto.definition.id)
         {
-            case "500_coins":
+            case "500.coins":
                 GameObject.Find("cofre_01").GetComponent<Animator>().Play("New State");
                 //Invoke("IniciarParticulas",1f);
                 destello1.SetActive(false);
             break;
 
-            case "1500_coins":
+            case "1500.coins":
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("New State");
                 //Invoke("IniciarParticulas",1f);
                 destello2.SetActive(false);
             break;
 
-            case "5000_coins":
+            case "5000.coins":
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("New State");
                 //Invoke("IniciarParticulas",1f);
                 destello3.SetActive(false);
