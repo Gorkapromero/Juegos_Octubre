@@ -39,6 +39,7 @@ public class Premios : MonoBehaviour
     public int Monedas;
 
     public int VidasGanadas;
+    public GameObject[] VidasExtra;
     public Text TextoVidasRecojidas;
     public int PowerUpsGanados;
     public Text TextoPowerRecojidos;
@@ -94,7 +95,7 @@ public class Premios : MonoBehaviour
                     {
                         case "Vida":
                             //guardamos vida
-                            VidasGanadas++;
+                            Jugador.GanarVida(1);
                             ActualizarPremios();
                             break;
                         case "Daño":
@@ -149,16 +150,16 @@ public class Premios : MonoBehaviour
                         case "Vida":
                             if (LootTablePremium[j].x2)
                             {
-                                VidasGanadas += 2;
+                                Jugador.GanarVida(2);
                             }
                             else
                             {
-                                VidasGanadas++;
+                                Jugador.GanarVida(1);
                             }
                             ActualizarPremios();
                             break;
                         case "Daño":
-                        if (LootTablePremium[j].x2)
+                            if (LootTablePremium[j].x2)
                             {
                                 PowerUpsGanados += 2;
                             }
@@ -192,18 +193,7 @@ public class Premios : MonoBehaviour
 
     void ActualizarPremios()
     {
-        TextoVidasRecojidas.text = VidasGanadas.ToString();
         TextoPowerRecojidos.text = PowerUpsGanados.ToString();
-    }
-
-    public void GastarVida()
-    {
-        if (Jugador.Vidas<5&&VidasGanadas>0)
-        {
-            VidasGanadas--;
-            Jugador.GanarVida();
-            ActualizarPremios();
-        }
     }
 
     public void GastarPowerUp()

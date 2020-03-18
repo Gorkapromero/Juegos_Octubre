@@ -458,9 +458,16 @@ public class movimiento_personaje : MonoBehaviour
 
     public void ActualizarVidasInicio()
     {
-        for(int i = 0;i<Vidas;i++)
+        for(int i = 0;i<G_Vidas.Length;i++)
         {
-            G_Vidas[i].SetActive(true);
+            if (i < Vidas)
+            {
+                G_Vidas[i].SetActive(true);
+            }
+            else
+            {
+                G_Vidas[i].SetActive(false);
+            }
         }
     }
     public void quitarVida()
@@ -472,10 +479,17 @@ public class movimiento_personaje : MonoBehaviour
         }
     }
 
-    public void GanarVida()
+    public void GanarVida(int vida)
     {
-        Vidas++;
-        G_Vidas[Vidas-1].SetActive(true);
+        for (int i = 1; i < vida; i++)
+        {
+            if (Vidas < G_Vidas.Length)
+            {
+                Vidas++;
+                G_Vidas[Vidas - 1].SetActive(true);
+            }
+        }
+        
     }
 
     void Reaparecr()

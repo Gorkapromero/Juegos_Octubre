@@ -108,7 +108,7 @@ public class Recolectable : MonoBehaviour {
                     switch(LootTable[j].Nombre.ToString())
                     {
                         case "Vida":
-                            Jugador.GanarVida();
+                            Jugador.GanarVida(1);
                             Vector3 PosicionParticulasVida = new Vector3(transform.position.x, -24f, transform.position.z);
                             Instantiate(LootTable[j].Particulas, PosicionParticulasVida, Quaternion.identity);
                             Destruir();

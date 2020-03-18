@@ -76,11 +76,11 @@ public class Ctrl_Recolectables : MonoBehaviour
 
     public void Premios()
     {
-        if(Time.timeScale == 1f)
+        MenuPremios.SetActive(true);
+
+        if (Time.timeScale == 1f)
         {
             Time.timeScale = 0f;
         }
-
-        MenuPremios.SetActive(true);
     }
 }
