@@ -20572,7 +20572,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 594013972}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583463664}
+        m_MethodName: ShowRewarded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &594013972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22076,7 +22087,7 @@ RectTransform:
   - {fileID: 818620269}
   - {fileID: 1420168084}
   m_Father: {fileID: 925913237}
-  m_RootOrder: 16
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29223,7 +29234,7 @@ GameObject:
   - component: {fileID: 818620271}
   - component: {fileID: 818620270}
   m_Layer: 5
-  m_Name: Button_check_yes
+  m_Name: Button_check_yesContinue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29291,7 +29302,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 818620271}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583463664}
+        m_MethodName: ShowRewarded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &818620271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31194,13 +31216,13 @@ RectTransform:
   - {fileID: 1067253567}
   - {fileID: 81073142}
   - {fileID: 541803711}
-  - {fileID: 669656380}
   - {fileID: 581223260}
   - {fileID: 412462074}
   - {fileID: 1476499622}
   - {fileID: 914393670}
-  - {fileID: 1596949144}
   - {fileID: 1618163544}
+  - {fileID: 1596949144}
+  - {fileID: 669656380}
   - {fileID: 37408013}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -39099,6 +39121,8 @@ MonoBehaviour:
   PowerUpsGanados: 0
   TextoPowerRecojidos: {fileID: 1147882246}
   Parent: {fileID: 925913237}
+  CuadroAnuncioPremio: {fileID: 37408012}
+  CuadroAnuncioJugar: {fileID: 669656379}
 --- !u!1 &1315810072
 GameObject:
   m_ObjectHideFlags: 0
@@ -41290,7 +41314,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420168086}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1312987156}
+        m_MethodName: noVerAnuncio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1420168086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43754,8 +43789,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1583463664}
-        m_MethodName: ShowRewarded
+      - m_Target: {fileID: 1312987156}
+        m_MethodName: Premium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46409,11 +46444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1583463664}
+      objectReference: {fileID: 1312987156}
     - target: {fileID: 5133664890560781578, guid: 898764c26dc6f184a99a3a95d61eb706,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowRewarded
+      value: SeguirJugandoAnuncio
       objectReference: {fileID: 0}
     - target: {fileID: 5133664890560781578, guid: 898764c26dc6f184a99a3a95d61eb706,
         type: 3}
@@ -47675,7 +47710,7 @@ PrefabInstance:
     - target: {fileID: 5093361316956825807, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5093361316956825807, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}
@@ -49671,7 +49706,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1715719590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1312987156}
+        m_MethodName: noVerAnuncio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1715719590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62288,7 +62334,7 @@ PrefabInstance:
     - target: {fileID: 1251386119910563958, guid: 3cb0907fc4a12ce49b6b05ad6ef15f8f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1251386119910563958, guid: 3cb0907fc4a12ce49b6b05ad6ef15f8f,
         type: 3}
@@ -62507,7 +62553,7 @@ PrefabInstance:
     - target: {fileID: 4842240916129730221, guid: 99a506286f74a8540ae304841e7e9a13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4842240916129730221, guid: 99a506286f74a8540ae304841e7e9a13,
         type: 3}
@@ -62641,7 +62687,7 @@ PrefabInstance:
     - target: {fileID: 5093361316956825807, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5093361316956825807, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}
@@ -63154,7 +63200,7 @@ PrefabInstance:
     - target: {fileID: 7956286712108966758, guid: e5b5dc42bc923604480e42c2dacf77ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7956286712108966758, guid: e5b5dc42bc923604480e42c2dacf77ee,
         type: 3}

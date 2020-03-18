@@ -44,6 +44,9 @@ public class Premios : MonoBehaviour
     public Text TextoPowerRecojidos;
 
     public Transform Parent;
+
+    public GameObject CuadroAnuncioPremio;
+    public GameObject CuadroAnuncioJugar;
     // Start is called before the first frame update
     void Start()
     {
@@ -223,6 +226,27 @@ public class Premios : MonoBehaviour
             //activamos tiempo daño extra
             Habilidades.DañoExtra = true;
             ActualizarPremios();
+        }
+    }
+
+    public void SeguirJugandoAnuncio()
+    {
+        CuadroAnuncioJugar.SetActive(true);
+    }
+
+    public void Premium()
+    {
+        CuadroAnuncioPremio.SetActive(true);
+    }
+    public void noVerAnuncio()
+    {
+        if (CuadroAnuncioPremio)
+        {
+            CuadroAnuncioPremio.SetActive(false);
+        }
+        else if (CuadroAnuncioJugar)
+        {
+            CuadroAnuncioJugar.SetActive(false);
         }
     }
 }

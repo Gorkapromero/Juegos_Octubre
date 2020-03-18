@@ -85,16 +85,19 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
           case "Menu":
             //iniciamos tiempo y damos recompensa
             GameObject.Find("RecompensaDiaria").GetComponent<RecompensaDiaria>().ClickRecompensa();
+            GameObject.Find("Controlador").GetComponent<ControlBotonesMenu>().cuadroAnuncio.SetActive(false);
           break;
 
           case "02_Pruebas_Escenario_2":
-            if (BotonClicked == "B_Anuncio")
+            if (BotonClicked == "Button_check_yesContinue")
             {
               Botones.VerAnuncio();
+              GameObject.Find("Recolctables").GetComponent<Premios>().CuadroAnuncioJugar.SetActive(false);
             }
             else
             {
               GameObject.Find("Recolctables").GetComponent<Premios>().PremiumLoot();
+              GameObject.Find("Recolctables").GetComponent<Premios>().CuadroAnuncioPremio.SetActive(false);
             }
             anuncioVisto = false;
           break;

@@ -12,6 +12,8 @@ public class ControlBotonesMenu : MonoBehaviour
 	public Text TextoMonedas;
 	int Bestscore;
 
+	public GameObject cuadroAnuncio;
+
 	DatosGuardados DatosGuardados;
     // Use this for initialization
     void Start () 
@@ -65,5 +67,14 @@ public class ControlBotonesMenu : MonoBehaviour
 	public void VerMonedas()
 	{
 		TextoMonedas.text = DatosGuardados.Monedas.ToString();
+	}
+
+	public void Recompensa()
+	{
+		cuadroAnuncio.SetActive(true);
+	}
+	public void NoVerAnuncio()
+	{
+		cuadroAnuncio.SetActive(false);
 	}
 }

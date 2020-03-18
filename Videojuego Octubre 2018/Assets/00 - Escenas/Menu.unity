@@ -26684,7 +26684,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 961461750}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 654018024}
+        m_MethodName: ShowRewarded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &961461750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51733,8 +51744,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 654018024}
-        m_MethodName: ShowRewarded
+      - m_Target: {fileID: 1564918929}
+        m_MethodName: Recompensa
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53749,6 +53760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextoScore: {fileID: 291700072}
   TextoMonedas: {fileID: 655171585}
+  cuadroAnuncio: {fileID: 652774755}
 --- !u!4 &1564918930
 Transform:
   m_ObjectHideFlags: 0
@@ -54614,7 +54626,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1597931998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1564918929}
+        m_MethodName: NoVerAnuncio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1597931998
 MonoBehaviour:
   m_ObjectHideFlags: 0
