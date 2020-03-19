@@ -27,6 +27,7 @@ public class Ctrl_Skins : MonoBehaviour
 		public GameObject TextoNombre;
 		public int Precio;
 
+
         public GameObject imagenTarjeta;
     }
 	public List <Skins> TablaSkins = new List<Skins>();
@@ -34,7 +35,10 @@ public class Ctrl_Skins : MonoBehaviour
 	public string SkinActivada;
 	string SkinSeleccionada;
 
-	DatosGuardados DatosGuardados;
+    public int offsetScroll;
+
+
+    DatosGuardados DatosGuardados;
 
 	public Material MaterialPajarita;
 	public GameObject colores;
@@ -46,8 +50,9 @@ public class Ctrl_Skins : MonoBehaviour
 	public float velocidad;
 
 	int NumeroSkin;
+    float posicionOnMouseDown;
 
-	public GameObject BotonSelec;
+    public GameObject BotonSelec;
 	public GameObject BotonComprar;
     public GameObject Boton_SkinSeleccionada;
 
@@ -131,6 +136,8 @@ public class Ctrl_Skins : MonoBehaviour
 		myCoors = camara.WorldToScreenPoint(GrupoSkins.transform.position).y;
 
 		mOffset = GrupoSkins.transform.position - GetMouseAsWorldPoint();
+
+        posicionOnMouseDown = GrupoSkins.transform.position.x;
 	}
 
 	public void Drop()
@@ -138,15 +145,24 @@ public class Ctrl_Skins : MonoBehaviour
 		if(scroll)
 		{
 			scroll=false;
-			NumeroSkin = Mathf.Abs(Mathf.RoundToInt(GrupoSkins.transform.position.x/12));
 
-			//Posicion.x = -NumeroSkin*12;
-			posinicial = GrupoSkins.transform.position.x;
+            if(posicionOnMouseDown >= GrupoSkins.transform.position.x)
+            {
+                NumeroSkin = Mathf.Abs(Mathf.RoundToInt((GrupoSkins.transform.position.x - offsetScroll) / 12));
+            }
+            else
+            {
+                NumeroSkin = Mathf.Abs(Mathf.RoundToInt((GrupoSkins.transform.position.x + offsetScroll) / 12));
+            }
+
+            //Posicion.x = -NumeroSkin*12;
+            posinicial = GrupoSkins.transform.position.x;
 			posfinal = -NumeroSkin*12;
 			Posicion.x= posinicial;
 			drop = true;
 			//GrupoSkins.transform.position = Posicion;
-			//CAMBIAMOS TEXTO SKIN
+			
+            //CAMBIAMOS TEXTO SKIN
 			for(int x = 0; x<TablaSkins.Count;x++)
 			{
 				TablaSkins[x].TextoNombre.SetActive(false);
