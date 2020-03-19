@@ -740,7 +740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &57875568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30205,6 +30205,7 @@ MonoBehaviour:
   CuentaAtras: {fileID: 1884024997}
   BMusica: {fileID: 452379797}
   BFX: {fileID: 2055760330}
+  MonedasResucitar: 0
 --- !u!95 &925913239
 Animator:
   serializedVersion: 3
@@ -35904,6 +35905,7 @@ MonoBehaviour:
   Irizquierda: {fileID: 1641620262}
   panelBloqueoControles: {fileID: 2050233827}
   resucitado: 0
+  resucitadoAnuncio: 0
 --- !u!65 &1232494663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43048,7 +43050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1578370664
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53417,6 +53419,7 @@ MonoBehaviour:
   Grupo_cuenta: {fileID: 1792753373}
   T_Timer: {fileID: 510381205}
   Tiempo: 0
+  GO: {fileID: 0}
   InicioCuenta: 3
 --- !u!4 &1884024998
 Transform:

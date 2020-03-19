@@ -106,7 +106,7 @@ public class movimiento_objetos : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void FixedUpdate ()
     {
         //ANIMACIONES**********//
         //if (gameObject.name != "E_Normal(Clone)")
@@ -150,7 +150,7 @@ public class movimiento_objetos : MonoBehaviour
             float fixedSpeed = Velocidad_caidaBomba * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position,jugador.position,fixedSpeed);
         }
-        Debug.DrawLine(transform.position, target, Color.green);
+        //Debug.DrawLine(transform.position, target, Color.green);
 
         if (gameObject.name == "E_Bomb(Clone)")
         {
@@ -321,12 +321,14 @@ public class movimiento_objetos : MonoBehaviour
 
             case "escudo":
                 Muerte();
+                CrearMoneda();
                 break;
 
             case "explosion":
                 Puntuacion.Enemigos_Eliminados++;
                 Muertexplosion = true;
                 Muerte();
+                CrearMoneda();
                 break;
 
             case "caida":
