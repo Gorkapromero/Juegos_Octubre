@@ -321,14 +321,20 @@ public class movimiento_objetos : MonoBehaviour
 
             case "escudo":
                 Muerte();
-                CrearMoneda();
+                if (SceneManager.GetActiveScene().name == "02_Pruebas_Escenario_2")
+                {
+                    CrearMoneda();
+                }
                 break;
 
             case "explosion":
                 Puntuacion.Enemigos_Eliminados++;
                 Muertexplosion = true;
                 Muerte();
-                CrearMoneda();
+                if (SceneManager.GetActiveScene().name == "02_Pruebas_Escenario_2")
+                {
+                    CrearMoneda();
+                }
                 break;
 
             case "caida":
