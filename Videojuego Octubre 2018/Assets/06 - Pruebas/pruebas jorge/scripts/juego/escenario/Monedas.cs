@@ -33,7 +33,7 @@ public class Monedas : MonoBehaviour
  
 	private void OnCollisionEnter(Collision other) 
 	{
-		print("colision");
+		//print("colision");
 		if(other.gameObject.tag == "Jugador")
 		{
 			//sumamos moneda

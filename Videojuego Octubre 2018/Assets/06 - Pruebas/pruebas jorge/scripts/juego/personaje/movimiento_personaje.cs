@@ -237,6 +237,22 @@ public class movimiento_personaje : MonoBehaviour
 
     }
 
+    public void saltoAdelante()
+    {
+        //Saltando = true;
+        //print("Saltando = TRUE");
+
+    }
+
+
+    public void finSaltoAdelante()
+    {
+        //Saltando = false;
+        //print("Saltando = FALSE");
+        rb.velocity = new Vector3(0, 0, 0);
+        animatorProta.SetBool("Salto", false);
+        activarSalto = false;
+    }
 
     public void Stop()
     {
@@ -381,7 +397,7 @@ public class movimiento_personaje : MonoBehaviour
 
     public void GanarVida(int vida)
     {
-        for (int i = 1; i < vida; i++)
+        for (int i = 0; i < vida; i++)
         {
             if (Vidas < G_Vidas.Length)
             {

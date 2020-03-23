@@ -132,7 +132,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         //ACTIVAMOS ESCUDO SI TENEMOS ENERGIA
         if (tablahabilidades[3].Energia_necesaria <= Energia_Total.Energia)
         {
-            print("tiempo escudo on");
+            //print("tiempo escudo on");
             if (tablahabilidades[3].tiempo.activeSelf == true)
             {
                 print("activamos");
