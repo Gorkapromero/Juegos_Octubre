@@ -14,6 +14,8 @@ public class ControlBotonesMenu : MonoBehaviour
 
 	public GameObject cuadroAnuncio;
 
+	public Sprite[] Rangos;
+	public GameObject Rango;
 	DatosGuardados DatosGuardados;
     // Use this for initialization
     void Start () 
@@ -22,6 +24,7 @@ public class ControlBotonesMenu : MonoBehaviour
 		DatosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         BestScore();
 		VerMonedas();
+		ActualizarRango();
 	}
 
 
@@ -76,5 +79,10 @@ public class ControlBotonesMenu : MonoBehaviour
 	public void NoVerAnuncio()
 	{
 		cuadroAnuncio.SetActive(false);
+	}
+
+	void ActualizarRango()
+	{
+		Rango.GetComponent<Image>().sprite = Rangos[DatosGuardados.rango];
 	}
 }

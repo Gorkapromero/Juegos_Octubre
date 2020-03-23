@@ -83,7 +83,7 @@ public class AgentLinkMover : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        print("trigger "+ other.gameObject.tag);
+        //print("trigger "+ other.gameObject.tag);
         switch (other.gameObject.tag)
         {
 

@@ -72,6 +72,8 @@ public class Ctrl_oleadas : MonoBehaviour
     public GameObject cofre;
     public Vector3 PosicionCofre;
     public GameObject ParticulasCofre;
+
+    DatosGuardados DatosGuardados;
     //public float distA;
     // Use this for initialization
     void Start()
@@ -79,6 +81,7 @@ public class Ctrl_oleadas : MonoBehaviour
         //Enemigos = gameObject.GetComponent<crar_objeto>();
         //WaveCountdown = TiempoDescanso;
         //jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
+        DatosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         ActualizarTextoOleadas();
     }
 
@@ -123,19 +126,19 @@ public class Ctrl_oleadas : MonoBehaviour
                         {
                             if (oleadas[s].numeroOleada == ContadorOleadas + 1)  //miramos si alguna coincide con la oleada actual
                             {
-                                print("oleada personalizada");
+                                //print("oleada personalizada");
                                 StartCoroutine(SpawnOleada(oleadas[s]));
                             }
                             else
                             {
-                                print("oleada normal");
+                                //print("oleada normal");
                                 StartCoroutine(SpawnOleada(oleadas[0]));
                             }
                         }
                     }
                     else
                     {
-                        print("oleada normal");
+                        //print("oleada normal");
                         StartCoroutine(SpawnOleada(oleadas[0]));
                     }
 
@@ -152,7 +155,7 @@ public class Ctrl_oleadas : MonoBehaviour
 
     IEnumerator SpawnOleada(oleada _oleada)
     {
-        Debug.Log("Spawn Oleada: " + (ContadorOleadas+1));
+        //Debug.Log("Spawn Oleada: " + (ContadorOleadas+1));
         Estado = SpawnState.SPAWNING;
 
         for (int i = 0; i < NumeroEnemigos; i++)
@@ -169,8 +172,6 @@ public class Ctrl_oleadas : MonoBehaviour
 
     void OleadaCompletada()
     {
-        Debug.Log("Oleada completada!!");
-
         Estado = SpawnState.COUNTING;
         WaveCountdown = TiempoDescanso;
 
@@ -206,13 +207,12 @@ public class Ctrl_oleadas : MonoBehaviour
                 PosicionesActivas.Add(posiciones[x]);
             }*/
         }
-        print("enemigo");
+
         total = 0;
         for (int i = 0; i < _Oleada.enemigos.Length; i++)
         {
             total += _Oleada.enemigos[i].rareza;
         }
-        print("total " + total);
 
         float randomPoint = Random.value * total;
 
@@ -314,27 +314,39 @@ public class Ctrl_oleadas : MonoBehaviour
             case 1:
             Texto = 0;
             TextosDificultad[Texto].SetActive(true);
-            StartCoroutine(ApagarTexto(Texto,3f));
+            DatosGuardados.rango = 1;
+            StartCoroutine(ApagarTexto(Texto,5f));
             Recompensa();
             break;
 
             case 10:
             Texto = 1;
             TextosDificultad[Texto].SetActive(true);
-            StartCoroutine(ApagarTexto(Texto,3f));
+            DatosGuardados.rango = 2;
+            StartCoroutine(ApagarTexto(Texto,5f));
             Recompensa();
             break;
 
             case 15:
             Texto = 2;
             TextosDificultad[Texto].SetActive(true);
-            StartCoroutine(ApagarTexto(Texto,3f));
+            DatosGuardados.rango = 3;
+            StartCoroutine(ApagarTexto(Texto,5f));
             Recompensa();
             break;
 
             case 20:
             Texto = 3;
             TextosDificultad[Texto].SetActive(true);
+            DatosGuardados.rango = 4;
+            StartCoroutine(ApagarTexto(Texto,5f));
+            Recompensa();
+            break;
+
+            case 25:
+            Texto = 4;
+            TextosDificultad[Texto].SetActive(true);
+            DatosGuardados.rango = 5;
             StartCoroutine(ApagarTexto(Texto,3f));
             Recompensa();
             break;

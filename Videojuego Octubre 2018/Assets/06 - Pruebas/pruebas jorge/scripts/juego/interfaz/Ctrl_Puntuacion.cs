@@ -50,8 +50,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     public Transform start;
     public Transform Parent;
 
-    public Button BotonAnuncio;
-    public Button BotonGastarMonedas;
+    public GameObject CuadroContinue;
     public int CrearMonedas;
 
     // Use this for initialization
@@ -79,7 +78,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
             {
                 ValorMonedas = 0;
                 restarmonedas=false;
-                ActivarBotones();
+                Invoke("ActivarBotones",1f);
             }
             MonedasRecojidas.text = ValorMonedas.ToString("f0");
         }
@@ -234,6 +233,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         Valor = ValorInicial;
         ValorFinal = 0;
         MonedasRecojidas.text = monedasRecojidas.ToString();
+        CuadroContinue.SetActive(false);
     }
 
     void MostrarTexto(int x)
@@ -294,7 +294,6 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     void ActivarBotones()
     {
-        BotonAnuncio.enabled = true;
-        BotonGastarMonedas.enabled = true;
+        CuadroContinue.SetActive(true);
     }
 }

@@ -234,7 +234,7 @@ public class Premios : MonoBehaviour
         {
             CuadroAnuncioPremio.SetActive(false);
         }
-        else if (CuadroAnuncioJugar)
+        if (CuadroAnuncioJugar)
         {
             CuadroAnuncioJugar.SetActive(false);
         }

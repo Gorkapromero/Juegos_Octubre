@@ -94,7 +94,7 @@ public class movimiento_objetos : MonoBehaviour
         
         if (gameObject.name == "E_Bomb(Clone)")
         {
-            print(gameObject.name); 
+            //print(gameObject.name); 
             animatorEnemigo = gameObject.transform.GetChild(0).GetComponent<Animator>();
             animatorEnemigo.SetBool("enElAire", true);
         }
@@ -172,7 +172,7 @@ public class movimiento_objetos : MonoBehaviour
 
                 nav.enabled = true;
  
-                print("chocamos con suelo");
+                //print("chocamos con suelo");
                 switch (gameObject.name)
                 {
                     case "E_Normal(Clone)":
@@ -182,14 +182,8 @@ public class movimiento_objetos : MonoBehaviour
                         animatorEnemigo.SetBool("enElAire", false);
                         break;
                     case "E_Pega(Clone)":
-
                         //Activamos las partículas de "Dejar Rastro"
                         particulasRastroCuerpo_Pegajoso.SetActive(true);
-
-                        /*Vector3 PosPoff = new Vector3(transform.position.x, -54f, transform.position.z);
-                        //vision = 0;
-                        GameObject poff = Instantiate(MalvaPoff, PosPoff, Quaternion.identity);
-                        //Destroy(this.gameObject);*/
                         break;
                 }
                 break;
@@ -204,7 +198,6 @@ public class movimiento_objetos : MonoBehaviour
                     switch (gameObject.name)
                     {
                         case "E_Normal(Clone)":
-                            print("quitamos vida");
                             Vidas.quitarvida_Vida();
                             Muerte();
                             //Destroy(this.gameObject);
@@ -228,8 +221,6 @@ public class movimiento_objetos : MonoBehaviour
             switch (gameObject.name)
                 {
                     case "E_Bomb(Clone)":
-                        print("desruimos enemigo");
-
 
                         //Sonido de recibir daño para el enemigo
                         SonidoRecibirPajaritazoEnemigo.Play();
@@ -269,7 +260,6 @@ public class movimiento_objetos : MonoBehaviour
 
                             if (VidaEnemigo <= 0)
                             {
-                                print("desruimos enemigo");
                                 Puntuacion.Enemigos_Eliminados++;
                                 Muerte();
                                 textoEnergia();
@@ -302,7 +292,7 @@ public class movimiento_objetos : MonoBehaviour
                             //GetComponent<Rigidbody>().AddForce(transform.forward * -30, ForceMode.VelocityChange);
 
                             Invoke("recuperarVelocidadMalvaNormal", 1.5f);
-                            print("desruimos enemigo");
+                            //print("desruimos enemigo");
                             Muerte();
                             
                             Invoke("ActivarAtaque", 0.5f);
@@ -349,20 +339,6 @@ public class movimiento_objetos : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case "Suelo":                           //El enemigo despega del suelo
-                if (gameObject.name == "E_Pega(Clone)")
-                {
-                    print("PEGAJOSO EN EL AIRE");
-                   // particulasRastroCuerpo_Pegajoso.SetActive(false);
-                }
-                break;
-        }
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -372,13 +348,6 @@ public class movimiento_objetos : MonoBehaviour
     void recuperarVelocidadMalvaNormal()
     {
         nav.speed = 25;
-    }
-
-    void saltar()
-    {
-        Debug.DrawLine(transform.position, target, Color.green);
-        
-        print("saltamos");
     }
 
     void explosion()

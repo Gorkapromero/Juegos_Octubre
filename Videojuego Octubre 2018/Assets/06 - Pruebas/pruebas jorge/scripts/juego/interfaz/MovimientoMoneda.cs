@@ -27,7 +27,7 @@ public class MovimientoMoneda : MonoBehaviour
             transform.localScale = Vector3.Lerp(maxScale,minScale,i);
         }
         transform.position = Vector3.MoveTowards(gameObject.transform.position,Destino.position,(Time.deltaTime*speed)*GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>().monedasRecojidas);
-        if(Vector3.Distance(gameObject.transform.position, Destino.position)<=0)
+        if(Vector3.Distance(gameObject.transform.position, Destino.position)<=0.05)
         {
             Destroy(gameObject);
         }

@@ -141,7 +141,7 @@ public class movimiento_personaje : MonoBehaviour
         }
         else
         {
-            print("movimiento desactivado");
+            //print("movimiento desactivado");
 
             GetComponent<Animator>().SetFloat("Speed", 0.0f);
 
@@ -177,7 +177,7 @@ public class movimiento_personaje : MonoBehaviour
 
                 if (!DobleSalto)
                 {
-                    print("Doble Salto");
+                    //print("Doble Salto");
                     animatorProta.Play("DobleSalto",-1,0);
                     GameObject ParticulasDobleSalto = Instantiate(ParticulasAterrizaje, transform.position, Quaternion.identity);
 
@@ -189,15 +189,6 @@ public class movimiento_personaje : MonoBehaviour
                 DobleSalto = true;
 
             }
-            //ATAQUE AEREO
-            /*if (Input.GetKeyDown(KeyCode.LeftControl) || script_ctl_habilidades.AtaqueBasico)
-            {
-                GameObject P_AtaqueAereo = Instantiate(ParticulasAtaqueAereo, transform.position, Quaternion.identity);
-                animatorProta.Play("AtaqueAereo");
-
-                script_ctl_habilidades.AtaqueBasico = false;
-
-            }*/
             animatorProta.SetBool("Salto", false);
 
         }
@@ -236,59 +227,16 @@ public class movimiento_personaje : MonoBehaviour
             {
                 Geometria.SetActive(!Geometria.activeSelf);
                 
-                //model.SetActive(!model.activeSelf);
-                /*for (int i = 0; i < modelRender.Length; i++)
-                {
-                    if (modelRender[i].sharedMesh != null)
-                    {
-                        modelRender[i].sharedMesh = null;
-                    }
-                    else
-                    {
-                        modelRender[i].sharedMesh = Geometrias[i];
-                    }
-                }*/
                 blinkTime = blink;
             }
             if(immunedTime <=0)
             {
-                /*for (int i = 0; i < modelRender.Length; i++)
-                {
-                    modelRender[i].sharedMesh = Geometrias[i];
-                }*/
-                //model.enabled = true;
                 Geometria.SetActive(true);
             }
         }
 
-        if(!EnMiel&&bloquearControl&&!recibiendoGolpe)
-        {
-            //desbloquearControles();
-
-        }
     }
 
-    public void saltoAdelante()
-    {
-        //Saltando = true;
-        //print("Saltando = TRUE");
-
-    }
-
-    public void lanzarCafé()
-    {
-        animatorProta.Play("Habilidad_LanzarCafé");
-
-    }
-
-    public void finSaltoAdelante()
-    {
-        //Saltando = false;
-        //print("Saltando = FALSE");
-        rb.velocity = new Vector3(0, 0, 0);
-        animatorProta.SetBool("Salto", false);
-        activarSalto = false;
-    }
 
     public void Stop()
     {
@@ -336,53 +284,11 @@ public class movimiento_personaje : MonoBehaviour
     {
         switch (other.gameObject.tag)
         {
-            case "Fuego":
-                if (!DentroFuego)
-                {
-                    //quitarvida_Vida();
-                }
-                break;
-
-            /*case "lavadora":
-                if (Lavadora.LavadoraActivada)
-                {
-                    velocidad_fin = 50;
-                }
-                break;*/
-
-            case "miel":
-                //bloquearControles();
-                EnMiel = true;
-                animatorProta.SetBool("AndarPegajoso", true);
-                velocidad_fin = 30;
-                bloquearControles();
-                break;
-
             case "agua":
                 Vector3 PosicionParticulas = new Vector3(transform.position.x, -56f, transform.position.z);
                 Instantiate(ParticulasTeHundes, PosicionParticulas, Quaternion.identity);
                 quitarvida_Vida();
                 Reaparecr();
-                break;
-
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case "lavadora":
-                velocidad_fin = velocidad;
-                break;
-
-            case "miel":
-                EnMiel = false;
-                animatorProta.SetBool("AndarPegajoso", false);
-                velocidad_fin = velocidad;
-                //desbloquearControles();
-                //Invoke("desbloquearControles", 0.15f);
-
                 break;
 
         }
@@ -441,14 +347,8 @@ public class movimiento_personaje : MonoBehaviour
                 Invoke("desbloquearControles", 1.0f);
 
                 animatorProta.Play("RecibirDaño");
-                print("blink");
+                //print("blink");
                 immunedTime = immuned;
-                //model.enabled = false;
-               //modelRender1.enabled = false;
-               /*for (int i = 0; i < modelRender.Length; i++)
-               {
-                    modelRender[i].sharedMesh = null;
-               }*/
                blinkTime = blink;
                Instantiate(FloatingLive, transform.position, Quaternion.identity);
                Recolectables.reducirTiempo();
@@ -495,10 +395,6 @@ public class movimiento_personaje : MonoBehaviour
     void Reaparecr()
     {
         transform.position = puntoReaparicion.position;
-
-        //resetearElEstropajo
-        //Ctrl_Estropajo.resetearEstropajo();
-
     }
 
     void caidaDobleSalto()

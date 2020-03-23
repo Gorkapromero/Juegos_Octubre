@@ -14,6 +14,7 @@ public class DatosGuardados : MonoBehaviour
 	public ulong lastrewardOpen;
 	public bool tutorialCompletado;
 	public bool videovisto;
+	public int rango;
 
 	private void Start() 
 	{
@@ -43,6 +44,7 @@ public class DatosGuardados : MonoBehaviour
 			lastrewardOpen = data.LastRewardOpen;
 			tutorialCompletado = data.TutorialCompletado;
 			videovisto = data.Videovisto;
+			rango = data.Rango;
 		}
 
 	}

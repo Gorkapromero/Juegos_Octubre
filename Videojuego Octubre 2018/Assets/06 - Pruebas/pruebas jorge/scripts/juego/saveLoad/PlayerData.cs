@@ -14,6 +14,7 @@ public class PlayerData
 	public ulong LastRewardOpen;
 	public bool TutorialCompletado;
 	public bool Videovisto;
+	public int Rango;
 
 	public PlayerData(DatosGuardados Datos)
 	{
@@ -26,6 +27,7 @@ public class PlayerData
 		LastRewardOpen = Datos.lastrewardOpen;
 		TutorialCompletado = Datos.tutorialCompletado;
 		Videovisto = Datos.videovisto;
+		Rango = Datos.rango;
 	}
 	
 }
