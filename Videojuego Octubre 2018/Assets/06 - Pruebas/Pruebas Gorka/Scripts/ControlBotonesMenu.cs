@@ -14,6 +14,12 @@ public class ControlBotonesMenu : MonoBehaviour
 
 	public GameObject cuadroAnuncio;
 
+    public GameObject gOBJ_LevelLoader;
+
+    public GameObject Canvas;
+    public GameObject FondoOpening;
+
+
 	public Sprite[] Rangos;
 	public GameObject Rango;
 	DatosGuardados DatosGuardados;
@@ -25,26 +31,26 @@ public class ControlBotonesMenu : MonoBehaviour
         BestScore();
 		VerMonedas();
 		ActualizarRango();
+
 	}
 
 
     public void CargarescenaPlay(string juego)
     {
-		SceneManager.LoadScene(1); 
+        //Ejecutamos la animacion de "Despejar Pantalla" y la animacion de Play del Opening
+        Canvas.GetComponent<Animator>().Play("Anim_DespejarCanvas");
+        FondoOpening.GetComponent<Animator>().Play("AnimOpening_Play");
+
+        Invoke("ArrancarJuego", 2.0f);
     }
-	public void CargarescenaRanking(string Ranking)
-	{
-		SceneManager.LoadScene(3); 
-	}
-	public void CargarescenaAjustes(string Ajustes)
-	{
-		SceneManager.LoadScene(2); 
-	}
-	public void CargarescenaCreditos(string Creditos)
-	{
-		SceneManager.LoadScene(4); 
-	}
-	public void cargarInstagram ()
+    public void ArrancarJuego()
+    {
+        // SceneManager.LoadScene(1);
+        gOBJ_LevelLoader.GetComponent<Loader>().LoadLevel(2);
+
+    }
+
+    public void cargarInstagram ()
 	{
 		Application.OpenURL ("https://www.instagram.com/studios_ikki/?hl=es");
 	}
