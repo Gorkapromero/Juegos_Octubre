@@ -17646,56 +17646,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.0072388835
       objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322115, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0311551
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322115, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9508501
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322115, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9508501
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322129, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322129, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322129, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.9148343
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322131, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322131, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322131, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4035269638516322131, guid: 25458e7fa5cdb244a8347370a01b66a1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 5800562032341325801, guid: 25458e7fa5cdb244a8347370a01b66a1,
         type: 3}
       propertyPath: m_IsActive
@@ -57742,7 +57692,6 @@ GameObject:
   - component: {fileID: 2060330077}
   - component: {fileID: 2060330076}
   - component: {fileID: 2060330075}
-  - component: {fileID: 2060330078}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -57870,25 +57819,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060330073}
   m_CullTransparentMesh: 0
---- !u!95 &2060330078
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060330073}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09ed172525d5e0b47a5b1cb2d9c6d150, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2061651466
 GameObject:
   m_ObjectHideFlags: 0
@@ -58771,14 +58701,13 @@ GameObject:
   - component: {fileID: 2103512606}
   - component: {fileID: 2103512605}
   - component: {fileID: 2103512604}
-  - component: {fileID: 2103512607}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2103512604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58835,25 +58764,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: -52}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &2103512607
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103512603}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09ed172525d5e0b47a5b1cb2d9c6d150, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2103717724
 GameObject:
   m_ObjectHideFlags: 0
