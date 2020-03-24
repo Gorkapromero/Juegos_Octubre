@@ -13,7 +13,7 @@ public class Ctrl_Tutorial : MonoBehaviour
     public GameObject particulasEnemigo;
     public GameObject particulasmuerte;
     public GameObject enemigo;
-    public Text TextoInfo;
+    public GameObject[] TextosInfo;
     public GameObject botonFinTutorial;
     public GameObject parche;
 
@@ -40,13 +40,14 @@ public class Ctrl_Tutorial : MonoBehaviour
         {
             case 1: //movimiento
             //texto
-            TextoInfo.text = "Utiliza las flechas de movimiento para desplazarte";
+            TextosInfo[0].SetActive(true);
             //marcamos botones
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
             break;
 
             case 2: //salto+doble
-            TextoInfo.text = "realiza un salto y un doble salto";
+            TextosInfo[0].SetActive(false);
+            TextosInfo[1].SetActive(true);
             //marcamos boton
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
             //activamos collider salto
@@ -54,7 +55,8 @@ public class Ctrl_Tutorial : MonoBehaviour
 
             case 3: //Dash
             //texto
-            TextoInfo.text = "utiliza el boton para moverte rapidamente hacia delante";
+            TextosInfo[1].SetActive(false);
+            TextosInfo[2].SetActive(true);
             //boton
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
             //particulas aparece enemigo
@@ -64,7 +66,8 @@ public class Ctrl_Tutorial : MonoBehaviour
             break;
 
             case 4: //Disparo
-            TextoInfo.text = "elimina al enemigo lanzando tu pajarita";
+            TextosInfo[2].SetActive(false);
+            TextosInfo[3].SetActive(true);
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
@@ -73,7 +76,8 @@ public class Ctrl_Tutorial : MonoBehaviour
             break;
 
             case 5: //escudo
-            TextoInfo.text = "activa el escudo para protejerte";
+            TextosInfo[3].SetActive(false);
+            TextosInfo[4].SetActive(true);
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
             parche.SetActive(true);
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
@@ -88,7 +92,8 @@ public class Ctrl_Tutorial : MonoBehaviour
             GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>().escudooff();
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().Energia = 0;
             GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
-            TextoInfo.text = "Elimina a todos los enemigos con el ataque especial";
+            TextosInfo[4].SetActive(false);
+            TextosInfo[5].SetActive(true);
             GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
@@ -102,7 +107,8 @@ public class Ctrl_Tutorial : MonoBehaviour
 
             case 7: 
             GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().tutorialCompletado = true;
-            TextoInfo.text = "Enhorabuena! \n has completado el tutorial";
+            TextosInfo[5].SetActive(false);
+            TextosInfo[6].SetActive(true);
             //activar boton empezar partida
             botonFinTutorial.SetActive(true);
             break;
@@ -122,7 +128,7 @@ public class Ctrl_Tutorial : MonoBehaviour
     {
         if(Fases[fase]==false&&Fases[fase-1]==true)
         {
-            TextoInfo.text = "Fase "+fase+" Completada!";
+            //TextoInfo.text = "Fase "+fase+" Completada!";
             Fases[fase] = true;
             Invoke("SiguienteFase",2f);
         }

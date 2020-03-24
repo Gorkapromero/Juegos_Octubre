@@ -928,7 +928,7 @@ MonoBehaviour:
   Texto_Score: {fileID: 1596949146}
   Texto_Monedas: {fileID: 1298305437}
   NewScore: {fileID: 1596949150}
-  MonedasRecojidas: {fileID: 0}
+  MonedasRecojidas: {fileID: 1292010495}
   PantallaGuardar: {fileID: 0}
   Nombre: {fileID: 0}
   VelocidadAnimacion: 1
@@ -937,8 +937,7 @@ MonoBehaviour:
   moneda: {fileID: 3417791469472786747, guid: 293a7bf2e6444094895546735e9ac81b, type: 3}
   start: {fileID: 0}
   Parent: {fileID: 925913237}
-  BotonAnuncio: {fileID: 0}
-  BotonGastarMonedas: {fileID: 0}
+  CuadroContinue: {fileID: 1596949151}
   CrearMonedas: 0
 --- !u!4 &62138723
 Transform:
@@ -15508,6 +15507,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 77.59969, y: 22.154573, z: 20.137316}
   m_Center: {x: 0.75005513, y: 7.5652857, z: -28.02035}
+--- !u!1 &392676107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8871522466793307280, guid: ed673afa3138cd9489c38e8345244cec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1072741361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &393273440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20096,7 +20101,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d6daacb8fe0ec654d8c5af3cfb0e3c72, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -20907,7 +20912,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Grupo_cuenta
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1792753373}
     - target: {fileID: 4412395390345511411, guid: 71dafe8ba22495445a91b906d32e8e68,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -21280,7 +21285,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3f2d0e29289f65f428816982e4cd7986, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -22184,7 +22189,7 @@ PrefabInstance:
         type: 3}
       propertyPath: particulasBarraEnergia
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 392676107}
     - target: {fileID: 224448777849231944, guid: a2ad94a543deda746a5cb81f5b543601,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35122,10 +35127,11 @@ MonoBehaviour:
   puntuacion: 0
   musica: 0
   fx: 0
-  skinsdesbloqueadas: 
+  skinsdesbloqueadas: 00000000000000
   lastrewardOpen: 0
   tutorialCompletado: 0
   videovisto: 0
+  rango: 0
 --- !u!4 &1159440214
 Transform:
   m_ObjectHideFlags: 0
@@ -36442,11 +36448,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vidas: 5
   G_Vidas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2072291600}
+  - {fileID: 1582336737}
+  - {fileID: 830136027}
+  - {fileID: 1275382302}
+  - {fileID: 982597743}
+  - {fileID: 2068830432}
+  - {fileID: 2041873319}
+  - {fileID: 1796961889}
+  - {fileID: 1959381382}
+  - {fileID: 1607955962}
   velocidad: 80
   velocidad_fin: 0
   Finpartida: {fileID: 1596949151}
@@ -37678,6 +37689,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1292010495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6691548648097962768, guid: abe2fa3477ff05248b78846265d4de1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1011614922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1293919371
 GameObject:
   m_ObjectHideFlags: 0
@@ -40954,7 +40977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 944, y: -11.256989}
+  m_AnchoredPosition: {x: 944, y: -11.256958}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1456851315
@@ -42432,7 +42455,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6830c05a31b0f8e42a87bf09c2582ed6, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -43686,7 +43709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1578370664
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43755,7 +43778,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 06c498de6f04c7d4f8449e736cad5ee6, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -47429,7 +47452,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 151c3d165662a2a41b378d1b4c84bb0e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -53835,7 +53858,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8ef54667000481e47b5d685351512fcd, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -54157,7 +54180,14 @@ MonoBehaviour:
   particulasmuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
     type: 3}
   enemigo: {fileID: 1340248824946342, guid: 12cf407eba09fea44b0770eb362b916f, type: 3}
-  TextoInfo: {fileID: 57875569}
+  TextosInfo:
+  - {fileID: 1578370663}
+  - {fileID: 660938204}
+  - {fileID: 1774467436}
+  - {fileID: 1532232687}
+  - {fileID: 610671076}
+  - {fileID: 1835367318}
+  - {fileID: 0}
   botonFinTutorial: {fileID: 2103512603}
   parche: {fileID: 277193528}
 --- !u!4 &1858987371

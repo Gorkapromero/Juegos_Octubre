@@ -37,12 +37,9 @@ public class Premios : MonoBehaviour
     public int dropChance;
 
     public int Monedas;
-
-    public int VidasGanadas;
-    public GameObject[] VidasExtra;
-    public Text TextoVidasRecojidas;
     public int PowerUpsGanados;
     public Text TextoPowerRecojidos;
+    public Button botonPower;
 
     public Transform Parent;
 
@@ -193,7 +190,16 @@ public class Premios : MonoBehaviour
 
     void ActualizarPremios()
     {
-        TextoPowerRecojidos.text = PowerUpsGanados.ToString();
+        if(PowerUpsGanados>0)
+        {
+            TextoPowerRecojidos.text = PowerUpsGanados.ToString();
+            botonPower.interactable = true;
+        }
+        else
+        {
+            TextoPowerRecojidos.text = null;
+            botonPower.interactable = false;
+        }
     }
 
     public void GastarPowerUp()
@@ -203,17 +209,11 @@ public class Premios : MonoBehaviour
             PowerUpsGanados--;
             //aumentamos daño
             Habilidades.DañoBasico += 50;
-            //cambiamos color pajarita
-            //Habilidades.MaterialPajarita.color = ColorMasDaño;
 
             //Y activamos las partículas de "Prota super sayan"
             Habilidades.particulasSuperSayan_Cuerpo.SetActive(true);
             Habilidades.particulasSuperSayan_Pajarita.SetActive(true);
 
-            //indicamos que hemos conseguido mas daño
-            //Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -54f, transform.position.z);
-            //Instantiate(particulasDaño, PosicionParticulasDaño, Quaternion.Euler(-90f,0,0));
-            //activamos tiempo daño extra
             Habilidades.DañoExtra = true;
             ActualizarPremios();
         }
