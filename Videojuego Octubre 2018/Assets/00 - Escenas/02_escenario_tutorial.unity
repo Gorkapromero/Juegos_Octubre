@@ -53914,6 +53914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: text_move_finalTuto
       objectReference: {fileID: 0}
+    - target: {fileID: 321798464126574476, guid: 2f51d03230d101040b7b02dc5c863b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 321798464126574483, guid: 2f51d03230d101040b7b02dc5c863b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54313,7 +54318,7 @@ MonoBehaviour:
   - {fileID: 1532232687}
   - {fileID: 610671076}
   - {fileID: 1835367318}
-  - {fileID: 0}
+  - {fileID: 1923453105}
   botonFinTutorial: {fileID: 2103512603}
   parche: {fileID: 277193528}
 --- !u!4 &1858987371
@@ -55304,6 +55309,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a0707505611674ea4541f1676cb76e, type: 3}
+--- !u!1 &1923453105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 321798464126574476, guid: 2f51d03230d101040b7b02dc5c863b70,
+    type: 3}
+  m_PrefabInstance: {fileID: 1836481686}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928527379
 GameObject:
   m_ObjectHideFlags: 0
