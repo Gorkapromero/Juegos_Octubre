@@ -307,8 +307,8 @@ public class Ctrl_Skins : MonoBehaviour
 		{
             Boton_SkinSeleccionada.SetActive(false);
 
-            T_Precio.text = TablaSkins[NumeroSkin].Precio.ToString() + "\nmonedas";
-
+            T_Precio.text = TablaSkins[NumeroSkin].Precio.ToString() + "\ncoins";
+			
             if (DatosGuardados.Monedas < TablaSkins[NumeroSkin].Precio)
             {
                 T_Precio.color = new Color(0.5f, 0.0f, 0.0f);
