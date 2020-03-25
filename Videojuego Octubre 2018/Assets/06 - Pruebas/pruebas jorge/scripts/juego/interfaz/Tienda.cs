@@ -25,6 +25,7 @@ public class Tienda : MonoBehaviour
     public GameObject GrupoTexto;
     public Sprite[] ImagenMonedasConseguidas;
     int NCofre;
+    public GameObject parent;
     //public Text Texto;
 
     Product Producto;
@@ -39,6 +40,7 @@ public class Tienda : MonoBehaviour
         {
             case "500.coins":
                 clickScreen.SetActive(true);
+                GameObject.Find("gpr_cofre_01").transform.parent = parent.transform;
                 GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_1");
                 destello1.SetActive(true);
                 NCofre = 0;
@@ -46,6 +48,7 @@ public class Tienda : MonoBehaviour
 
             case "1500.coins":
                 clickScreen.SetActive(true);
+                GameObject.Find("gpr_cofre_02").transform.parent = parent.transform;
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_2");
                 destello2.SetActive(true);
                 NCofre = 1;
@@ -53,6 +56,7 @@ public class Tienda : MonoBehaviour
 
             case "5000.coins":
                 clickScreen.SetActive(true);
+                GameObject.Find("gpr_cofre_03").transform.parent = parent.transform;
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_3");
                 destello3.SetActive(true);
                 NCofre = 2;
@@ -163,18 +167,21 @@ public class Tienda : MonoBehaviour
         {
             case "500.coins":
                 GameObject.Find("cofre_01").GetComponent<Animator>().Play("New State");
+                GameObject.Find("gpr_cofre_01").transform.parent = GameObject.Find("Paquete1").transform;
                 //Invoke("IniciarParticulas",1f);
                 destello1.SetActive(false);
             break;
 
             case "1500.coins":
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("New State");
+                GameObject.Find("gpr_cofre_02").transform.parent = GameObject.Find("Paquete2").transform;
                 //Invoke("IniciarParticulas",1f);
                 destello2.SetActive(false);
             break;
 
             case "5000.coins":
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("New State");
+                GameObject.Find("gpr_cofre_03").transform.parent = GameObject.Find("Paquete3").transform;
                 //Invoke("IniciarParticulas",1f);
                 destello3.SetActive(false);
             break;

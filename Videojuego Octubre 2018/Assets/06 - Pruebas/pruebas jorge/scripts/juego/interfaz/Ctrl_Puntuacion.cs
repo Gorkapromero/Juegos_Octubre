@@ -34,8 +34,8 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     public float VelocidadAnimacion;
     float Valor;
-    float ValorFinal;
-    float ValorInicial = 0;
+    public float ValorFinal;
+    public float ValorInicial = 0;
     Text Texto;
 
     bool B_tiempo = true;
@@ -145,6 +145,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
 
     public void Mostrar_Textos()
     {
+        print("revivir");
         FinTextos = false;
         Puntuacion_final();
         MostrarTexto(texto);
@@ -171,10 +172,13 @@ public class Ctrl_Puntuacion : MonoBehaviour
     void Mostrartiempo()
     {
         print("tiempo");
+        
         B_tiempo = true;
         Valor = ValorInicial;
         Texto = Texto_Tiempo;
         ValorFinal = tiempo.Tiempo;
+        print(ValorFinal);
+        print(ValorInicial);
         //Texto_Tiempo.text = tiempo.T_Timer.text;
     }
     void Mostraroleadas()
@@ -211,7 +215,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     {
         ValorInicial = DatosGuardar.Monedas;
         print("monedas");
-        //B_tiempo = false;
+        B_tiempo = false;
         //FinTextos = false;
         Valor = ValorInicial;
         Texto = Texto_Monedas;
@@ -230,6 +234,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         Texto_Monedas.text = DatosGuardar.Monedas.ToString();
         NewScore.SetActive(false);
         texto = 1;
+        ValorInicial = 0;
         Valor = ValorInicial;
         ValorFinal = 0;
         MonedasRecojidas.text = monedasRecojidas.ToString();

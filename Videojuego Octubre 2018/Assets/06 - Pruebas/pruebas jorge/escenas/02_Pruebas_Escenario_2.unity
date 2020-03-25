@@ -1155,6 +1155,8 @@ MonoBehaviour:
   PantallaGuardar: {fileID: 0}
   Nombre: {fileID: 0}
   VelocidadAnimacion: 1
+  ValorFinal: 0
+  ValorInicial: 0
   texto: 1
   monedasRecojidas: 0
   moneda: {fileID: 3417791469472786747, guid: 293a7bf2e6444094895546735e9ac81b, type: 3}
@@ -18501,10 +18503,10 @@ RectTransform:
   m_Father: {fileID: 478484158}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57, y: -37}
-  m_SizeDelta: {x: -157.5, y: -129.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.0000038146973}
+  m_SizeDelta: {x: 230.5, y: 242.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &478484157
 GameObject:
