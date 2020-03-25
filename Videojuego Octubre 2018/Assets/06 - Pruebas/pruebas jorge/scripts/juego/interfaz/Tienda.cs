@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class Tienda : MonoBehaviour
 {
     public GameObject clickScreen;
-    public Text txtMessage;
+    //public Text txtMessage;
     string textFailureReason;
     List<PayoutDefinition> listPayouts = new List<PayoutDefinition> ();
 
@@ -23,7 +23,9 @@ public class Tienda : MonoBehaviour
     public GameObject particulasCofre;
     public Transform PosicionParticulas;
     public GameObject GrupoTexto;
-    public Text Texto;
+    public Sprite[] ImagenMonedasConseguidas;
+    int NCofre;
+    //public Text Texto;
 
     Product Producto;
 
@@ -39,22 +41,25 @@ public class Tienda : MonoBehaviour
                 clickScreen.SetActive(true);
                 GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_1");
                 destello1.SetActive(true);
+                NCofre = 0;
             break;
 
             case "1500.coins":
                 clickScreen.SetActive(true);
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_2");
                 destello2.SetActive(true);
+                NCofre = 1;
             break;
 
             case "5000.coins":
                 clickScreen.SetActive(true);
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_3");
                 destello3.SetActive(true);
+                NCofre = 2;
             break;
         }
         print("Has recibido: " + _product.definition.payout.quantity + " " + _product.definition.payout.subtype);
-        txtMessage.text = "Has recibido: " + _product.definition.payout.quantity + " " + _product.definition.payout.subtype;
+        //txtMessage.text = "Has recibido: " + _product.definition.payout.quantity + " " + _product.definition.payout.subtype;
         GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().Monedas += (int)_product.definition.payout.quantity;
         GameObject.Find("Controlador").GetComponent<ControlBotonesMenu>().VerMonedas();
         GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().Save();
@@ -94,12 +99,12 @@ public class Tienda : MonoBehaviour
         if(_product != null)
         {
             print("ERROR: " + textFailureReason + " / Producto: " + _product.definition.id);
-            txtMessage.text = "ERROR: " + textFailureReason + " / Producto: " + _product.definition.id;
+            //txtMessage.text = "ERROR: " + textFailureReason + " / Producto: " + _product.definition.id;
         }
         else
         {
             print ("Cargando el producto...");
-            txtMessage.text = "Cargando el producto...";
+            //txtMessage.text = "Cargando el producto...";
         }
     }
 
@@ -109,7 +114,7 @@ public class Tienda : MonoBehaviour
     public void Custom_Consumable (int _product) 
     {
 		print ("Has recibido: " + _product.ToString () + " monedas");
-		txtMessage.text = "Has recibido: " + _product.ToString () + " monedas";
+		//txtMessage.text = "Has recibido: " + _product.ToString () + " monedas";
 	}
 
     #endregion
@@ -147,7 +152,8 @@ public class Tienda : MonoBehaviour
     void textoFinal()
     {
         GrupoTexto.SetActive(true);
-        Texto.text = "Has recibido: " + Producto.definition.payout.quantity + " " + Producto.definition.payout.subtype;
+        GrupoTexto.GetComponent<Image>().sprite = ImagenMonedasConseguidas[NCofre];
+        //Texto.text = "Has recibido: " + Producto.definition.payout.quantity + " " + Producto.definition.payout.subtype;
     }
 
     public void ClickTexto()
