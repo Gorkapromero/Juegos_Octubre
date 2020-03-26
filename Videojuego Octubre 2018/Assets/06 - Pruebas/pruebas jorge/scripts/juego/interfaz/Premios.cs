@@ -45,6 +45,8 @@ public class Premios : MonoBehaviour
 
     public GameObject CuadroAnuncioPremio;
     public GameObject CuadroAnuncioJugar;
+
+    Button PremioSeleccionado;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,9 @@ public class Premios : MonoBehaviour
 
     public void NormalLoot()
     {
+        PremioSeleccionado = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+        PremioSeleccionado.enabled = false;
+
         int calc_dropChance = Random.Range(0,101);
 
         if(calc_dropChance > dropChance)
@@ -113,10 +118,15 @@ public class Premios : MonoBehaviour
 
             }
         }
+
+        Invoke("ActivarBoton",5f);
     }
 
     public void PremiumLoot()
     {
+        PremioSeleccionado = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+        PremioSeleccionado.enabled = false;
+
         int calc_dropChance = Random.Range(0,101);
 
         if(calc_dropChance > dropChance)
@@ -186,6 +196,8 @@ public class Premios : MonoBehaviour
 
             }
         }
+
+        Invoke("ActivarBoton",5f);
     }
 
     void ActualizarPremios()
@@ -238,5 +250,10 @@ public class Premios : MonoBehaviour
         {
             CuadroAnuncioJugar.SetActive(false);
         }
+    }
+
+    void ActivarBoton()
+    {
+        PremioSeleccionado.enabled = true;
     }
 }

@@ -932,6 +932,8 @@ MonoBehaviour:
   PantallaGuardar: {fileID: 0}
   Nombre: {fileID: 0}
   VelocidadAnimacion: 1
+  ValorFinal: 0
+  ValorInicial: 0
   texto: 1
   monedasRecojidas: 0
   moneda: {fileID: 3417791469472786747, guid: 293a7bf2e6444094895546735e9ac81b, type: 3}
@@ -19747,10 +19749,10 @@ RectTransform:
   m_Father: {fileID: 1073519022}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -361, y: 0}
-  m_SizeDelta: {x: 722, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 822, y: 499.5}
+  m_SizeDelta: {x: 722, y: 999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597471342
 MonoBehaviour:
@@ -30563,6 +30565,7 @@ MonoBehaviour:
   BMusica: {fileID: 452379797}
   BFX: {fileID: 2055760330}
   MonedasResucitar: 0
+  TextoGastarMonedas: {fileID: 0}
 --- !u!95 &925913239
 Animator:
   serializedVersion: 3
@@ -33804,8 +33807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160.4, y: 0}
-  m_SizeDelta: {x: 320, y: 0}
+  m_AnchoredPosition: {x: 226.4, y: 0}
+  m_SizeDelta: {x: 452, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072777854
 MonoBehaviour:
@@ -44367,13 +44370,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596282004}
-  m_LocalRotation: {x: 0.14998043, y: -0.10707446, z: -0.69101816, w: -0.69895273}
-  m_LocalPosition: {x: -1.8108245, y: 0.027843356, z: -0.093300134}
-  m_LocalScale: {x: 7.8541393, y: 7.8541374, z: 7.854136}
+  m_LocalRotation: {x: 0.0000007841735, y: -0.18185182, z: -0.000000014435498, w: -0.98332596}
+  m_LocalPosition: {x: 0.06000639, y: 5.7400017, z: 0.039999403}
+  m_LocalScale: {x: 16.924858, y: 16.924837, z: 16.924843}
   m_Children:
   - {fileID: 1576720159}
-  m_Father: {fileID: 141734900}
-  m_RootOrder: 1
+  m_Father: {fileID: 613715070}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -879.045, y: 176.464, z: -90}
 --- !u!54 &1596282009
 Rigidbody:
@@ -45363,7 +45366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -32.1, y: 78.6}
+  m_AnchoredPosition: {x: 54, y: 78.6}
   m_SizeDelta: {x: 226.52, y: 143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641620262
