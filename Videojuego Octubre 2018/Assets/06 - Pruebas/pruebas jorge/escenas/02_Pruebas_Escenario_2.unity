@@ -40111,15 +40111,15 @@ MonoBehaviour:
   - Nombre: Vida
     objeto: {fileID: 4711284854119725418, guid: c6a70b99f01c24845a7af91121a3f285,
       type: 3}
-    Porcentaje: 100
+    Porcentaje: 30
   - Nombre: "Da\xF1o"
     objeto: {fileID: 2945634344343379306, guid: e47f72e3dae3b9a47ab5512aefbcc43a,
       type: 3}
-    Porcentaje: 0
+    Porcentaje: 50
   - Nombre: Monedas
     objeto: {fileID: 3077608247131714383, guid: deab39648ffd9dc4a8987eca37f9035f,
       type: 3}
-    Porcentaje: 0
+    Porcentaje: 70
   LootTablePremium:
   - Nombre: Vida
     objeto: {fileID: 4711284854119725418, guid: c6a70b99f01c24845a7af91121a3f285,

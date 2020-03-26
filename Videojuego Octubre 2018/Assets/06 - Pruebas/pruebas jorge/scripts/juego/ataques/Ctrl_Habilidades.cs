@@ -97,7 +97,7 @@ public class Ctrl_Habilidades : MonoBehaviour
             //print("tiempo chorro on");
             if(tablahabilidades[1].tiempo.activeSelf == true)
             {
-                print("activamos sprint");
+                //print("activamos sprint");
                 tablahabilidades[1].tiempo.SetActive(false);
                 tablahabilidades[1].Boton.enabled = true;
             }           
@@ -113,10 +113,10 @@ public class Ctrl_Habilidades : MonoBehaviour
         if (tablahabilidades[2].Energia_necesaria <= Energia_Total.Energia)
         {
 		 
-            print("tiempo explosion on");
+            //print("tiempo explosion on");
             if (tablahabilidades[2].tiempo.activeSelf == true)
             {
-                print("activamos");
+                //print("activamos");
                 tablahabilidades[2].tiempo.SetActive(false);
                 tablahabilidades[2].Boton.enabled = true;
 
@@ -135,21 +135,10 @@ public class Ctrl_Habilidades : MonoBehaviour
             //print("tiempo escudo on");
             if (tablahabilidades[3].tiempo.activeSelf == true)
             {
-                print("activamos");
+                //print("activamos");
                 tablahabilidades[3].tiempo.SetActive(false);
                 tablahabilidades[3].Boton.enabled = true;
             }
-            /*
-            tablahabilidades[3].tiempo_texto.text = t3.ToString("f0");
-            t3 -= Time.deltaTime;
-            //print(t1);
-            if (t3 <= 0)
-            {
-                t_escudo = false;
-                t3 = tablahabilidades[1].T_enfriamiento;
-                tablahabilidades[3].tiempo.SetActive(false);
-                GameObject.Find("Escudo").GetComponent<Button>().enabled = true;
-            }*/
 
         }
         else
@@ -162,12 +151,12 @@ public class Ctrl_Habilidades : MonoBehaviour
         {
             if(Player.GetComponent<movimiento_personaje>().DireccionProta == -1)
             {
-                print("saltamos izquierda");
+                //print("saltamos izquierda");
                 RBplayer.velocity = Vector3.right * -FuerzaSprint;  
             }
             else if (Player.GetComponent<movimiento_personaje>().DireccionProta == 1)
             {
-                print("saltamos derecha");
+                //print("saltamos derecha");
                 RBplayer.velocity = Vector3.right * FuerzaSprint;
             }
             GameObject.FindGameObjectWithTag("Jugador").GetComponent<Animator>().Play("Salto+Adelante");
