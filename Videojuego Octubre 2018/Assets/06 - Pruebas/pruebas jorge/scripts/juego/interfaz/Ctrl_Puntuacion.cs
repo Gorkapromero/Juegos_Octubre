@@ -281,7 +281,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
             for (int i = 0; i < CrearMonedas; i++)
             {
                 Instantiate(moneda,start.position,Quaternion.identity,Parent);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.1f);
             }
             
         }
@@ -290,7 +290,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
             for (int i = 0; i < monedasRecojidas; i++)
             {
                 Instantiate(moneda,start.position,Quaternion.identity,Parent);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.1f);
             }
         }
     }
