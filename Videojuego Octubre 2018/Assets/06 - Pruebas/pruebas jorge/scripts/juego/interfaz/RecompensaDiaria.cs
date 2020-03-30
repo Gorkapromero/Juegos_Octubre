@@ -17,6 +17,8 @@ public class RecompensaDiaria : MonoBehaviour
     public Text TRecompensa;
     public int recompensa;
 
+    public GameObject textoDailyGift;
+
     private void Start() 
     {
         DatosGuardar = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
@@ -29,12 +31,16 @@ public class RecompensaDiaria : MonoBehaviour
     {
         if(!BotonRecompensa.IsInteractable())
         {
-            if(RecompensaLista())
+            textoDailyGift.SetActive(false);
+
+            if (RecompensaLista())
             {
                 BotonRecompensa.interactable = true;
+                textoDailyGift.SetActive(true);
+
                 return;
             }
-
+            
             //ponemos tiempo
             ulong dif = ((ulong)DateTime.Now.Ticks - chestOpen);
             ulong m = dif / TimeSpan.TicksPerMillisecond;
@@ -52,6 +58,13 @@ public class RecompensaDiaria : MonoBehaviour
 
             TextTiempoRecompensa.text = r;
         }
+
+       /* else if(textoDailyGift)
+        {
+            textoDailyGift.SetActive(false);
+
+        }*/
+
     }
     public void ClickRecompensa()
     {

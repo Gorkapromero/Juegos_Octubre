@@ -86,6 +86,10 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
             //iniciamos tiempo y damos recompensa
             GameObject.Find("RecompensaDiaria").GetComponent<RecompensaDiaria>().ClickRecompensa();
             GameObject.Find("Controlador").GetComponent<ControlBotonesMenu>().cuadroAnuncio.SetActive(false);
+
+            //Activamos la animacion de recoger texto "Daily Gift"
+            GameObject.Find("texto_daily").GetComponent<Animator>().SetBool("recogerTexto", true);
+
           break;
 
           case "02_Pruebas_Escenario_2":
