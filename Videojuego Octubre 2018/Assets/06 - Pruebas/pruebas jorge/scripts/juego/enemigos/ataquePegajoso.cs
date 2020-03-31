@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ataquePegajoso : MonoBehaviour 
 {
@@ -40,7 +41,14 @@ public class ataquePegajoso : MonoBehaviour
 		switch(other.gameObject.tag)
 		{
 			case "Jugador":
-			Personaje.quitarvida_Vida();
+			if(SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&Personaje.Vidas>1)
+			{
+				Personaje.quitarvida_Vida();
+			}
+			else if (SceneManager.GetActiveScene().name != "02_escenario_tutorial")
+			{
+				Personaje.quitarvida_Vida();
+			}
 			Destroy(this.gameObject);
 			break;
 
@@ -51,6 +59,10 @@ public class ataquePegajoso : MonoBehaviour
 			break;
 
 			case "escudo":
+			if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+			{
+				GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(5);
+			}
 			Destroy(this.gameObject);
 			break;
 		}

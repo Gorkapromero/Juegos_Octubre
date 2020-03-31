@@ -17713,6 +17713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gpr_microwave
       objectReference: {fileID: 0}
+    - target: {fileID: 7329586705363946260, guid: 25458e7fa5cdb244a8347370a01b66a1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9119008708644248183, guid: 25458e7fa5cdb244a8347370a01b66a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46420,17 +46425,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1858987370}
-          m_MethodName: FaseCompletada
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 5
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1001 &1708729079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54404,7 +54398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faseActual: 1
   Fases: 01000000000000
-  MarcadorBoton: {fileID: 0}
   PosicionEnemigos:
   - {fileID: 2123812144}
   - {fileID: 993209709}
@@ -54413,6 +54406,7 @@ MonoBehaviour:
   particulasmuerte: {fileID: 1824795761530210, guid: aa19ba48fdf8c674e93834248aaf47e9,
     type: 3}
   enemigo: {fileID: 1340248824946342, guid: 12cf407eba09fea44b0770eb362b916f, type: 3}
+  enemigo2: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396, type: 3}
   TextosInfo:
   - {fileID: 1578370663}
   - {fileID: 660938204}

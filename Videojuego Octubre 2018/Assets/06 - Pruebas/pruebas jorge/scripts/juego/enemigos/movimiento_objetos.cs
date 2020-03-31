@@ -125,7 +125,7 @@ public class movimiento_objetos : MonoBehaviour
         //target = new Vector3(jugador.position.x,jugador.position.y,this.transform.position.z);
         target = jugador.position;
         dist = Vector3.Distance(jugador.position, transform.position);
-        if (nav.enabled&&SceneManager.GetActiveScene().name != "02_escenario_tutorial")
+        if (nav.enabled)
         {
             if (gameObject.name == "E_Bomb(Clone)")
             {
@@ -135,7 +135,7 @@ public class movimiento_objetos : MonoBehaviour
                     Invoke("explosion", tiempoExplosion);
                 }
             }
-            else
+            else if(SceneManager.GetActiveScene().name != "02_escenario_tutorial")
             {
                 nav.SetDestination(target);
             }

@@ -60,7 +60,10 @@ public class Ctrl_Botones : MonoBehaviour
             Efectos[i].GetComponent<AudioSource>().mute = !DatosGuardar.fx;
         }
 
-        ActualizarTextoMonedas();
+        if (SceneManager.GetActiveScene().name != "02_escenario_tutorial")
+        {
+            ActualizarTextoMonedas();
+        }
         
     }
 	

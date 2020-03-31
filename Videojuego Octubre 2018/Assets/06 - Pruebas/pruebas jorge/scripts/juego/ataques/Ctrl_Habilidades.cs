@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Ctrl_Habilidades : MonoBehaviour
 {
@@ -233,10 +234,6 @@ public class Ctrl_Habilidades : MonoBehaviour
             escudoActivado = true;
             tablahabilidades[3].habilidad.SetActive(true);
             particulasBarraEnergia.SetActive(true);
-            //Invoke("escudooff",tiempoEscudo);
-            //GameObject.Find("Escudo").GetComponent<Button>().enabled = false;
-            //gastamos energia
-            //Energia_Total.RestarEnergia(tablahabilidades[3].Energia_necesaria);
         }
         else
         {
@@ -252,6 +249,10 @@ public class Ctrl_Habilidades : MonoBehaviour
         GameObject.Find("Escudo").GetComponent<Button>().enabled = true;
         particulasBarraEnergia.SetActive(false);
         Energia_Total.EnergiaFinal = Energia_Total.Energia;
+        if(SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+        {
+            GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(5);
+        }
     }
 
     void move()
