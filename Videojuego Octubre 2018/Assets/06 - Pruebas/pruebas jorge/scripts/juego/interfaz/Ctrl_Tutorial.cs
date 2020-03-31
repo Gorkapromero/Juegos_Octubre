@@ -8,11 +8,11 @@ public class Ctrl_Tutorial : MonoBehaviour
     public int faseActual = 1;
     public bool[] Fases;
 
-    public GameObject MarcadorBoton;
     public Transform[] PosicionEnemigos;
     public GameObject particulasEnemigo;
     public GameObject particulasmuerte;
     public GameObject enemigo;
+    public GameObject enemigo2;
     public GameObject[] TextosInfo;
     public GameObject botonFinTutorial;
     public GameObject parche;
@@ -84,7 +84,7 @@ public class Ctrl_Tutorial : MonoBehaviour
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
             //enemigo
-            Instantiate(enemigo,PosicionEnemigos[0].position,Quaternion.identity);
+            Instantiate(enemigo2,PosicionEnemigos[0].position,Quaternion.identity);
             break;
 
             case 6: //explosion
