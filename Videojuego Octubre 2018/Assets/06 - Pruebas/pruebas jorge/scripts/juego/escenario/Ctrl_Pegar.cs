@@ -18,12 +18,6 @@ public class Ctrl_Pegar : MonoBehaviour
 
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
-
     private void OnTriggerEnter(Collider other) 
     {
         switch (other.gameObject.tag)

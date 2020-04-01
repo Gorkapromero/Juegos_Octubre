@@ -53,7 +53,7 @@ public class ataquePegajoso : MonoBehaviour
 			break;
 
 			case "Suelo":
-			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y+3f, transform.position.z);
+			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
             GameObject poff = Instantiate(prefabPoff, PosPoff, Quaternion.identity);
             Destroy(this.gameObject);
 			break;
@@ -92,12 +92,12 @@ public class ataquePegajoso : MonoBehaviour
 
 	Vector3 CalculateVelocity(Vector3 objetivo, Vector3 origen, float _velocidad)
 	{
-		//definimos destancia x e y
+		//definimos distancia x e y
 		Vector3 distancia = objetivo - origen;
 		Vector3 distanciaXZ = distancia;
 		distanciaXZ.y = 0f;
 
-		//creamos float representado la siatncia
+		//creamos float representado la distancia
 		float Sy = distancia.y;
 		
 		float Sxz = distanciaXZ.magnitude;

@@ -23,11 +23,6 @@ public class Ctrl_Tutorial : MonoBehaviour
         ControlFase();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void ControlFase()
     {
@@ -62,7 +57,7 @@ public class Ctrl_Tutorial : MonoBehaviour
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
             //enemigo
-            Instantiate(enemigo,PosicionEnemigos[0].position,Quaternion.identity);
+            Instantiate(enemigo,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
             break;
 
             case 4: //Disparo
@@ -72,7 +67,7 @@ public class Ctrl_Tutorial : MonoBehaviour
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
             //enemigo
-            Instantiate(enemigo,PosicionEnemigos[1].position,Quaternion.identity);
+            Instantiate(enemigo,PosicionEnemigos[1].position, PosicionEnemigos[1].rotation);
             break;
 
             case 5: //escudo
@@ -84,7 +79,7 @@ public class Ctrl_Tutorial : MonoBehaviour
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
             //enemigo
-            Instantiate(enemigo2,PosicionEnemigos[0].position,Quaternion.identity);
+            Instantiate(enemigo2,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
             break;
 
             case 6: //explosion
@@ -98,11 +93,11 @@ public class Ctrl_Tutorial : MonoBehaviour
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
             //enemigo
-            Instantiate(enemigo,PosicionEnemigos[0].position,Quaternion.identity);
+            Instantiate(enemigo,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
             //enemigo
-            Instantiate(enemigo,PosicionEnemigos[1].position,Quaternion.identity);
+            Instantiate(enemigo,PosicionEnemigos[1].position, PosicionEnemigos[1].rotation);
             break;
 
             case 7: 

@@ -37,11 +37,15 @@ public class Loader : MonoBehaviour
     {
         GameObject.Find("Canvas").GetComponent<Animator>().Play("AbrirSkins");
         GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("VerSkins");
+
+        GameObject.Find("gpr_estrellas").GetComponent<Animator>().Play("Standby");
+
         //Invoke("cargarSkin",0.3f);
     }
     public void abrirRateUs()
     {
         GameObject.Find("Canvas").GetComponent<Animator>().Play("anim_RateUs");
+        GameObject.Find("gpr_estrellas").GetComponent<Animator>().Play("animator_estrellas_rateUs");
         //GameObject.Find("GrupoAnimacion").GetComponent<Animator>().Play("VerSkins");
         //Invoke("cargarSkin",0.3f);
     }
