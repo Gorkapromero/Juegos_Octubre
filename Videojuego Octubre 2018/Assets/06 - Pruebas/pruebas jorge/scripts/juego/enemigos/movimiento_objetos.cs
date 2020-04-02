@@ -193,6 +193,7 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "Jugador":                       //objeto toca personaje
+                print("jugador");
                 if (!Habilidades.sprint&&SceneManager.GetActiveScene().name != "02_escenario_tutorial")
                 {
                     switch (gameObject.name)
@@ -274,7 +275,7 @@ public class movimiento_objetos : MonoBehaviour
                             }
                             Invoke("ActivarAtaque", 0.5f);
                         }
-                        else if(Ataque == false&&Habilidades.AtaqueBasico==true&&SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+                        else if(Ataque == false&&Habilidades.AtaqueBasico==true&&SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&gameObject.name != "E_Pega(Clone)")
                         {
                             Ataque = true;
                             VidaEnemigo -= Habilidades.DañoBasico;
@@ -305,11 +306,13 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "A_chorro":
+                print("chorro");
                 Puntuacion.Enemigos_Eliminados++;
                 Muerte();
                 break;
 
             case "escudo":
+                print("escudo");
                 Muerte();
                 if (SceneManager.GetActiveScene().name == "02_Pruebas_Escenario_2")
                 {
@@ -318,6 +321,7 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "explosion":
+                print("explosion");
                 Puntuacion.Enemigos_Eliminados++;
                 Muertexplosion = true;
                 Muerte();
@@ -328,6 +332,7 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "caida":
+                print("caida");
             if(SceneManager.GetActiveScene().name != "02_escenario_tutorial")
             {
                 Puntuacion.Enemigos_Eliminados++;
