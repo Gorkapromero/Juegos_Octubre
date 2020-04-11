@@ -13,7 +13,7 @@ public class Wait_camera : MonoBehaviour
     void Start()
     {
         datosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
-        Invoke("activarSkip", 1f);
+        Invoke("activarSkip", 1.0f);
         StartCoroutine(Wait());
     }
 
