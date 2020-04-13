@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215b91b9e1ea5264ca6fd99af752089a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wait_time: 30
+  wait_time: 33
   BotonSkip: {fileID: 1650209211}
 --- !u!1 &1300167363
 GameObject:
@@ -1260,6 +1260,7 @@ MonoBehaviour:
   lastrewardOpen: 0
   tutorialCompletado: 0
   videovisto: 0
+  rango: 0
 --- !u!4 &2093163858
 Transform:
   m_ObjectHideFlags: 0
