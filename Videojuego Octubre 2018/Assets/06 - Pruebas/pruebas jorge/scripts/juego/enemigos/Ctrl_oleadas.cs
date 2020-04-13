@@ -316,7 +316,7 @@ public class Ctrl_oleadas : MonoBehaviour
             TextosDificultad[Texto].SetActive(true);
             DatosGuardados.rango = 1;
             StartCoroutine(ApagarTexto(Texto,5f));
-            Recompensa();
+ 
             break;
 
             case 10:
@@ -324,7 +324,7 @@ public class Ctrl_oleadas : MonoBehaviour
             TextosDificultad[Texto].SetActive(true);
             DatosGuardados.rango = 2;
             StartCoroutine(ApagarTexto(Texto,5f));
-            Recompensa();
+
             break;
 
             case 15:
@@ -332,7 +332,7 @@ public class Ctrl_oleadas : MonoBehaviour
             TextosDificultad[Texto].SetActive(true);
             DatosGuardados.rango = 3;
             StartCoroutine(ApagarTexto(Texto,5f));
-            Recompensa();
+
             break;
 
             case 20:
@@ -340,7 +340,7 @@ public class Ctrl_oleadas : MonoBehaviour
             TextosDificultad[Texto].SetActive(true);
             DatosGuardados.rango = 4;
             StartCoroutine(ApagarTexto(Texto,5f));
-            Recompensa();
+
             break;
 
             case 25:
@@ -348,7 +348,7 @@ public class Ctrl_oleadas : MonoBehaviour
             TextosDificultad[Texto].SetActive(true);
             DatosGuardados.rango = 5;
             StartCoroutine(ApagarTexto(Texto,3f));
-            Recompensa();
+            
             break;
         }
     }
@@ -358,6 +358,7 @@ public class Ctrl_oleadas : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         TextosDificultad[_Texto].SetActive(false);
+        Recompensa();
     }
 
     void Recompensa()

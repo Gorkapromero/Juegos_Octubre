@@ -35,6 +35,7 @@ public class Ctrl_Botones : MonoBehaviour
 
     public int MonedasResucitar;
     public Text TextoGastarMonedas;
+    public Text TextMonedasActuales;
 	// Use this for initialization
 	void Start ()
     {
@@ -58,11 +59,6 @@ public class Ctrl_Botones : MonoBehaviour
         for(int i = 0; i<Efectos.Length; i++)
         {
             Efectos[i].GetComponent<AudioSource>().mute = !DatosGuardar.fx;
-        }
-
-        if (SceneManager.GetActiveScene().name != "02_escenario_tutorial")
-        {
-            ActualizarTextoMonedas();
         }
         
     }
@@ -194,8 +190,18 @@ public class Ctrl_Botones : MonoBehaviour
         GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Fuego>().enabled = true;
     }
 
-    void ActualizarTextoMonedas()
+    public void ActualizarTextoMonedas()
     {
         TextoGastarMonedas.text = MonedasResucitar.ToString();
+        TextMonedasActuales.text = DatosGuardar.Monedas.ToString() +" Coins";
+        if (DatosGuardar.Monedas >= MonedasResucitar)
+        {
+            GameObject.Find("B_Monedas").GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            GameObject.Find("B_Monedas").GetComponent<Button>().interactable = false;
+        }
+
     }
 }

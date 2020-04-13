@@ -24,6 +24,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
     Timer tiempo;
     Ctrl_oleadas Oleadas;
     DatosGuardados DatosGuardar;
+    Ctrl_Botones Botones;
 
     public GameObject PantallaGuardar;
 
@@ -62,9 +63,10 @@ public class Ctrl_Puntuacion : MonoBehaviour
         {
             Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
         }
-        
+
+        Botones = GameObject.Find("Canvas").GetComponent<Ctrl_Botones>();
         //Actualizar_enemigos();
-        ApagarTextos();
+        Invoke("ApagarTextos", 1f);
 	}
 	
 	// Update is called once per frame
@@ -220,6 +222,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         ValorMonedas = monedasRecojidas;
         restarmonedas = true;
         ValorFinal = DatosGuardar.Monedas + monedasRecojidas;
+        DatosGuardar.Monedas =+ monedasRecojidas;
         StartCoroutine("CrearMoneda");
     }
 
@@ -289,8 +292,9 @@ public class Ctrl_Puntuacion : MonoBehaviour
         {
             for (int i = 0; i < monedasRecojidas; i++)
             {
-                Instantiate(moneda,start.position,Quaternion.identity,Parent);
-                yield return new WaitForSeconds(0.1f);
+                GameObject Moneda = Instantiate(moneda,start.position,Quaternion.identity,Parent);
+                Moneda.GetComponent<MovimientoMoneda>().speed = 300;
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }
@@ -298,5 +302,6 @@ public class Ctrl_Puntuacion : MonoBehaviour
     void ActivarBotones()
     {
         CuadroContinue.SetActive(true);
+        Botones.ActualizarTextoMonedas();
     }
 }
