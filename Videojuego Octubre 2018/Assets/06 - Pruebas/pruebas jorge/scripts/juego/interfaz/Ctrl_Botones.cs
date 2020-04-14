@@ -192,9 +192,10 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void ActualizarTextoMonedas()
     {
+        int monedasTotales = DatosGuardar.Monedas + Puntuacion.monedasRecojidas;
         TextoGastarMonedas.text = MonedasResucitar.ToString();
-        TextMonedasActuales.text = DatosGuardar.Monedas.ToString() +" Coins";
-        if (DatosGuardar.Monedas >= MonedasResucitar)
+        TextMonedasActuales.text = monedasTotales.ToString() +" Coins";
+        if (monedasTotales >= MonedasResucitar)
         {
             GameObject.Find("B_Monedas").GetComponent<Button>().interactable = true;
         }

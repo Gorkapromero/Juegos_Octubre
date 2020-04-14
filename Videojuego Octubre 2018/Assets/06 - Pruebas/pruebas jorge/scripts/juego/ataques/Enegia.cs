@@ -92,7 +92,14 @@ public class Enegia : MonoBehaviour {
 
     public void RestarEnergia(float Valor)
     {
-        EnergiaInicial = Energia;
-        EnergiaFinal += -Valor;
+        if(Habilidades.escudoActivado)
+        {
+            Energia-=Valor;
+        }
+        else
+        {
+            EnergiaInicial = Energia;
+            EnergiaFinal += -Valor;
+        }
     }
 }

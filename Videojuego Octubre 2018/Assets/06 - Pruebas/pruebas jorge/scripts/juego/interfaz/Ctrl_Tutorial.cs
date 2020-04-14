@@ -79,7 +79,9 @@ public class Ctrl_Tutorial : MonoBehaviour
             //particulas aparece enemigo
             Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
             //enemigo
-            Instantiate(enemigo2,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
+            GameObject Pegajoso = Instantiate(enemigo2,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
+            Pegajoso.GetComponent<Ctrl_AtaquePegajoso>().FrecuenciaAtaque = 2;
+            Pegajoso.GetComponent<Ctrl_AtaquePegajoso>().PersonajeVisto = true;
             break;
 
             case 6: //explosion

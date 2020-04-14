@@ -222,7 +222,6 @@ public class Ctrl_Puntuacion : MonoBehaviour
         ValorMonedas = monedasRecojidas;
         restarmonedas = true;
         ValorFinal = DatosGuardar.Monedas + monedasRecojidas;
-        DatosGuardar.Monedas =+ monedasRecojidas;
         StartCoroutine("CrearMoneda");
     }
 
