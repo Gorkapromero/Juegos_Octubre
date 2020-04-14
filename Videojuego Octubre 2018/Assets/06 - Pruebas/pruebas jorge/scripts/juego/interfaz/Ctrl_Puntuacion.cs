@@ -237,6 +237,7 @@ public class Ctrl_Puntuacion : MonoBehaviour
         ValorInicial = 0;
         Valor = ValorInicial;
         ValorFinal = 0;
+        monedasRecojidas = 0;
         MonedasRecojidas.text = monedasRecojidas.ToString();
         CuadroContinue.SetActive(false);
     }
@@ -302,5 +303,6 @@ public class Ctrl_Puntuacion : MonoBehaviour
     {
         CuadroContinue.SetActive(true);
         Botones.ActualizarTextoMonedas();
+        DatosGuardar.Save();
     }
 }

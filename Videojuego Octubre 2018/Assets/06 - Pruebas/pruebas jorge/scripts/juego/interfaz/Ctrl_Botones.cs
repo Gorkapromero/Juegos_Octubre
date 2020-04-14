@@ -129,11 +129,9 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void GastarMonedas()
     {
-        if(DatosGuardar.Monedas>=MonedasResucitar)
-        {
-            DatosGuardar.Monedas -= MonedasResucitar;
-            SeguirJugando();
-        }
+
+        DatosGuardar.Monedas -= MonedasResucitar;
+        SeguirJugando();
 
     }
 
@@ -184,18 +182,16 @@ public class Ctrl_Botones : MonoBehaviour
         personaje.resucitado++;
         MonedasResucitar = personaje.resucitado*50;
 
-        ActualizarTextoMonedas();
-
         GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>().enabled = true;
         GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Fuego>().enabled = true;
     }
 
     public void ActualizarTextoMonedas()
     {
-        int monedasTotales = DatosGuardar.Monedas + Puntuacion.monedasRecojidas;
+        DatosGuardar.Monedas += Puntuacion.monedasRecojidas;
         TextoGastarMonedas.text = MonedasResucitar.ToString();
-        TextMonedasActuales.text = monedasTotales.ToString() +" Coins";
-        if (monedasTotales >= MonedasResucitar)
+        TextMonedasActuales.text = DatosGuardar.Monedas.ToString() +" Coins";
+        if (DatosGuardar.Monedas >= MonedasResucitar)
         {
             GameObject.Find("B_Monedas").GetComponent<Button>().interactable = true;
         }

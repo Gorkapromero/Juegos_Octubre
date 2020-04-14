@@ -103,7 +103,7 @@ RectTransform:
   m_GameObject: {fileID: 3077608247131714383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9249945, y: 0.9249945, z: 0.9249945}
   m_Children:
   - {fileID: 2746946834167443449}
   - {fileID: 4668565817962698849}
@@ -286,7 +286,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200
+  m_Text: 100
 --- !u!1 &8658227805386095883
 GameObject:
   m_ObjectHideFlags: 0
