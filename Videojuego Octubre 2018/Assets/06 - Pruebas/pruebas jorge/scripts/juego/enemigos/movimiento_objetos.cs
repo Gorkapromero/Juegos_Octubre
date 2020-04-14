@@ -139,8 +139,12 @@ public class movimiento_objetos : MonoBehaviour
             {
                 nav.SetDestination(target);
             }
+            else if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+            {
+                gameObject.transform.LookAt(target);
+            }
 
-            if(gameObject.name == "E_Pega(Clone)"&&dist<vision)
+            if (gameObject.name == "E_Pega(Clone)"&&dist<vision)
             {
                 gameObject.GetComponent<Ctrl_AtaquePegajoso>().PersonajeVisto=true;
             }
@@ -313,6 +317,12 @@ public class movimiento_objetos : MonoBehaviour
 
             case "escudo":
                 print("escudo");
+
+                if (SceneManager.GetActiveScene().name == "02_escenario_tutorial" && gameObject.name == "E_Pega(Clone)")
+                {
+                    GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(5);
+                }
+
                 Muerte();
                 if (SceneManager.GetActiveScene().name == "02_Pruebas_Escenario_2")
                 {
@@ -395,6 +405,10 @@ public class movimiento_objetos : MonoBehaviour
                 case 4:
                     if(Habilidades.AtaqueBasico!=true) GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().EsperarRespawn();    
                 break;
+
+                case 5:
+                    GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().EsperarRespawn();
+                    break;
 
                 case 6:
                     if(Muertexplosion!=true) GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().EsperarRespawn();

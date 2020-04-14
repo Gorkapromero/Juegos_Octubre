@@ -34,81 +34,88 @@ public class Ctrl_Tutorial : MonoBehaviour
         switch(faseActual)
         {
             case 1: //movimiento
-            //texto
-            TextosInfo[0].SetActive(true);
-            //marcamos botones
-            GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
-            break;
+                //texto
+                TextosInfo[0].SetActive(true);
+                //marcamos botones
+                GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
+                break;
 
             case 2: //salto+doble
-            TextosInfo[0].SetActive(false);
-            TextosInfo[1].SetActive(true);
-            //marcamos boton
-            GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
-            //activamos collider salto
-            break;
+                TextosInfo[0].SetActive(false);
+                TextosInfo[1].SetActive(true);
+                //marcamos boton
+                GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
+                //activamos collider salto
+                break;
 
             case 3: //Dash
-            //texto
-            TextosInfo[1].SetActive(false);
-            TextosInfo[2].SetActive(true);
-            //boton
-            GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
-            //particulas aparece enemigo
-            Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
-            //enemigo
-            Instantiate(enemigo,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
-            break;
+                //texto
+                TextosInfo[1].SetActive(false);
+                TextosInfo[2].SetActive(true);
+                //boton
+                GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
+                //particulas aparece enemigo
+                Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
+                //enemigo
+                Instantiate(enemigo,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
+                break;
 
             case 4: //Disparo
-            TextosInfo[2].SetActive(false);
-            TextosInfo[3].SetActive(true);
-            GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
-            //particulas aparece enemigo
-            Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
-            //enemigo
-            Instantiate(enemigo,PosicionEnemigos[1].position, PosicionEnemigos[1].rotation);
-            break;
+
+                TextosInfo[2].SetActive(false);
+                TextosInfo[3].SetActive(true);
+                GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
+                //particulas aparece enemigo
+                Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
+                //enemigo
+                Instantiate(enemigo,PosicionEnemigos[1].position, PosicionEnemigos[1].rotation);
+                break;
 
             case 5: //escudo
-            TextosInfo[3].SetActive(false);
-            TextosInfo[4].SetActive(true);
-            GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
-            parche.SetActive(true);
-            GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
-            //particulas aparece enemigo
-            Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
-            //enemigo
-            GameObject Pegajoso = Instantiate(enemigo2,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
-            Pegajoso.GetComponent<Ctrl_AtaquePegajoso>().FrecuenciaAtaque = 2;
-            Pegajoso.GetComponent<Ctrl_AtaquePegajoso>().PersonajeVisto = true;
-            break;
+                TextosInfo[3].SetActive(false);
+                TextosInfo[4].SetActive(true);
+                GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
+                parche.SetActive(true);
+                GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
+                //particulas aparece enemigo
+                Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
+                //enemigo
+                GameObject Pegajoso = Instantiate(enemigo2,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
+
+                Pegajoso.GetComponent<Ctrl_AtaquePegajoso>().PersonajeVisto = true;
+                Pegajoso.GetComponent<Ctrl_AtaquePegajoso>().tiempoCargaAtaque = 0.5f;
+                Pegajoso.GetComponent<Ctrl_AtaquePegajoso>().FrecuenciaAtaque = 2.0f;
+                break;
 
             case 6: //explosion
-            parche.SetActive(false);
-            GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>().escudooff();
-            GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().Energia = 0;
-            GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
-            TextosInfo[4].SetActive(false);
-            TextosInfo[5].SetActive(true);
-            GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
-            //particulas aparece enemigo
-            Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
-            //enemigo
-            Instantiate(enemigo,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
-            //particulas aparece enemigo
-            Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
-            //enemigo
-            Instantiate(enemigo,PosicionEnemigos[1].position, PosicionEnemigos[1].rotation);
-            break;
+                parche.SetActive(false);
+                GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>().escudooff();
+                GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().Energia = 0;
+                GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);
+                TextosInfo[4].SetActive(false);
+                TextosInfo[5].SetActive(true);
+                GameObject.Find("Canvas").GetComponent<Animator>().Play("Animboton"+faseActual);
+                //particulas aparece enemigo
+                Instantiate(particulasEnemigo,PosicionEnemigos[0].position,Quaternion.identity);
+                //enemigo
+                Instantiate(enemigo,PosicionEnemigos[0].position, PosicionEnemigos[0].rotation);
+                //particulas aparece enemigo
+                Instantiate(particulasEnemigo,PosicionEnemigos[1].position,Quaternion.identity);
+                //enemigo
+                Instantiate(enemigo,PosicionEnemigos[1].position, PosicionEnemigos[1].rotation);
+                break;
 
             case 7: 
-            GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().tutorialCompletado = true;
-            TextosInfo[5].SetActive(false);
-            TextosInfo[6].SetActive(true);
-            //activar boton empezar partida
-            botonFinTutorial.SetActive(true);
-            break;
+                GameObject.Find("Datosguardados").GetComponent<DatosGuardados>().tutorialCompletado = true;
+                TextosInfo[5].SetActive(false);
+                TextosInfo[6].SetActive(true);
+                //activar boton empezar partida
+                botonFinTutorial.SetActive(true);
+
+                GameObject.Find("Canvas").GetComponent<Animator>().Play("Standby");
+
+
+                break;
         }
     }
 

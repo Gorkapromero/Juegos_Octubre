@@ -108,8 +108,10 @@ public class movimiento_personaje : MonoBehaviour
         animatorCamara = GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>();
         //joystick = FindObjectOfType<Joystick>();
 
-        Recolectables = GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>();
-
+        if (GameObject.Find("Recolctables"))
+        {
+            Recolectables = GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>();
+        }
         tempColortrans = Irderecha.color;
         tempColoropac = Irizquierda.color;
         tempColortrans.a = 0.5f;

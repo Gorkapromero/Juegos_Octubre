@@ -226,7 +226,7 @@ public class Ctrl_oleadas : MonoBehaviour
                     //SpawnPosition = this.transform.position + Random.onUnitSphere * RangoCreacion;
                     SpawnPosition = new Vector3(jugador.position.x, PosicionParacas.position.y, jugador.position.z);
 
-                    GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, Quaternion.identity);
+                    GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, _Oleada.enemigos[j].enemigo.transform.rotation);
                 }
                 else
                 {
@@ -249,21 +249,22 @@ public class Ctrl_oleadas : MonoBehaviour
                                 SpawnPosition = new Vector3(jugador.position.x+OffsetCaida.x, PosicionParacas.position.y, jugador.position.z);
                             }
                             
-                            GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, Quaternion.identity);
+                            GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, _Oleada.enemigos[j].enemigo.transform.rotation);
                         }
                         else//si estamos en el agua
                         {
                             float DistDer = Vector3.Distance(PositionSpawn,ZonaDerecha.position);
                             float DistIzq = Vector3.Distance(PositionSpawn,ZonaIzquierda.position);
+
                             if(DistDer<DistIzq)//si estamos a la derecha del agua
                             {
                                 SpawnPosition = new Vector3(ZonaDerecha.position.x, PosicionParacas.position.y, jugador.position.z);
-                                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo,SpawnPosition , Quaternion.identity);
+                                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo,SpawnPosition , _Oleada.enemigos[j].enemigo.transform.rotation);
                             }
                             else if(DistIzq<=DistDer)//si estamos en la izquierda del agua
                             {
                                 SpawnPosition = new Vector3(ZonaIzquierda.position.x, PosicionParacas.position.y, jugador.position.z);
-                                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo,SpawnPosition , Quaternion.identity);
+                                GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo,SpawnPosition , _Oleada.enemigos[j].enemigo.transform.rotation);
                             }
 
                         }
@@ -271,7 +272,7 @@ public class Ctrl_oleadas : MonoBehaviour
                     }
                     else
                     {
-                        GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, PosicionesActivas[spawnPoint].position, Quaternion.identity);
+                        GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, PosicionesActivas[spawnPoint].position, _Oleada.enemigos[j].enemigo.transform.rotation);
                     }
                 }
                     //float dist = Vector3.Distance(posiciones[spawnPoint].position, jugador.position);

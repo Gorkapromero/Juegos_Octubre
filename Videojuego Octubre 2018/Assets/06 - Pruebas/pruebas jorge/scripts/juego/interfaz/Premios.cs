@@ -57,11 +57,6 @@ public class Premios : MonoBehaviour
         ActualizarPremios();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void NormalLoot()
     {
