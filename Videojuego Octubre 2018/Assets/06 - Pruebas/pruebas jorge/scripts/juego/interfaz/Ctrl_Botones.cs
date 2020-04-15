@@ -137,7 +137,8 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void VerAnuncio()
     {
-        personaje.resucitadoAnuncio = true;
+        //personaje.resucitadoAnuncio = true;
+        GameObject.Find("B_Anuncio").GetComponent<Button>().enabled = false;
         SeguirJugando();
     }
 

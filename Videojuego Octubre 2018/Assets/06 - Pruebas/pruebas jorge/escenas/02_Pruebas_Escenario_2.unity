@@ -38894,7 +38894,6 @@ MonoBehaviour:
   Irizquierda: {fileID: 1641620262}
   panelBloqueoControles: {fileID: 2050233827}
   resucitado: 0
-  resucitadoAnuncio: 0
 --- !u!65 &1232494663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63223,7 +63222,7 @@ MonoBehaviour:
   - {fileID: 1176634440}
   - {fileID: 1891053745}
   PosicionesActivas: []
-  tiempoCreacion: 1.5
+  tiempoCreacion: 2
   oleadas:
   - nombre: Oleada aleatoria
     numeroOleada: 0

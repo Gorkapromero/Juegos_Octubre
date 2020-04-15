@@ -210,8 +210,8 @@ public class movimiento_objetos : MonoBehaviour
 
                         case "E_Bomb(Clone)":
                             Vidas.quitarvida_Vida();
-                            explosion();
-                            //Destroy(this.gameObject);
+                            GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
+                            Destroy(this.gameObject);
                             break;
 
                         case "E_Pega(Clone)":
