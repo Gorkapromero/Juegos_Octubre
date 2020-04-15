@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26572755, g: 0.2714364, b: 0.25494513, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.26572725, g: 0.27143627, b: 0.25494534, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1627,36 +1627,36 @@ MonoBehaviour:
     TextoNombre: {fileID: 806406228}
     Precio: 0
     imagenTarjeta: {fileID: 966493863}
-  - Nombre: Mexicano
-    Skin: {fileID: 911856773}
-    TextoNombre: {fileID: 666619627}
-    Precio: 50
-    imagenTarjeta: {fileID: 823718732}
   - Nombre: Rabbit
     Skin: {fileID: 998268127}
     TextoNombre: {fileID: 1491389761}
-    Precio: 100
+    Precio: 150
     imagenTarjeta: {fileID: 1759138244}
   - Nombre: Space
     Skin: {fileID: 143511280}
     TextoNombre: {fileID: 1671413279}
-    Precio: 200
-    imagenTarjeta: {fileID: 1458182803}
-  - Nombre: Playista
-    Skin: {fileID: 832420110}
-    TextoNombre: {fileID: 865544027}
     Precio: 300
-    imagenTarjeta: {fileID: 883556594}
+    imagenTarjeta: {fileID: 1458182803}
   - Nombre: Presidente
     Skin: {fileID: 1050461395}
     TextoNombre: {fileID: 620609178}
-    Precio: 400
+    Precio: 600
     imagenTarjeta: {fileID: 126687385}
   - Nombre: Santa
     Skin: {fileID: 2055963477}
     TextoNombre: {fileID: 688163587}
-    Precio: 500
+    Precio: 900
     imagenTarjeta: {fileID: 1753716602}
+  - Nombre: Mexicano
+    Skin: {fileID: 911856773}
+    TextoNombre: {fileID: 666619627}
+    Precio: 1200
+    imagenTarjeta: {fileID: 823718732}
+  - Nombre: Playista
+    Skin: {fileID: 832420110}
+    TextoNombre: {fileID: 865544027}
+    Precio: 2000
+    imagenTarjeta: {fileID: 883556594}
   SkinActivada: Normal
   offsetScroll: 3
   MaterialPajarita: {fileID: 2100000, guid: 6430045639ca14d4887dbf89570d8c19, type: 2}
@@ -4680,7 +4680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143511280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -24, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1246203402}
@@ -5443,7 +5443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -238, y: 10.9}
+  m_AnchoredPosition: {x: -177.45001, y: 0.000005722046}
   m_SizeDelta: {x: 354.9, y: 479.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181813399
@@ -7397,7 +7397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244740350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -12, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1062445485}
@@ -8754,7 +8754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 10}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 354.9, y: 479.3}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &315007230
@@ -9583,7 +9583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330186968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -36, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 130622395}
@@ -14740,7 +14740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512878471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -48, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 969896214}
@@ -15645,7 +15645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547650089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -24, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 294419825}
@@ -17391,7 +17391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.402344, y: -39}
+  m_AnchoredPosition: {x: 1.2000122, y: -22.700012}
   m_SizeDelta: {x: 127.4, y: 105.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &631326768
@@ -17466,7 +17466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e327cdc8749fa6e4ab54f135923bd18d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35f4dfe1138c6834ab84601f58629c4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23728,7 +23728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832420110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -72, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 2130018876}
@@ -25915,7 +25915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911856773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -60, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 270130009}
@@ -28770,7 +28770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998268127}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -12, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1369771860}
@@ -30294,7 +30294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050461395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -36, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 732265913}
@@ -42045,7 +42045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139471546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -60, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 833557195}
@@ -45494,7 +45494,7 @@ MonoBehaviour:
   msToWait: 0
   RecompensaRecivida: {fileID: 765454122}
   TRecompensa: {fileID: 866643592}
-  recompensa: 1000
+  recompensa: 150
   textoDailyGift: {fileID: 0}
 --- !u!4 &1264192894
 Transform:
@@ -46271,7 +46271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8, y: 12}
+  m_AnchoredPosition: {x: -0.0000030994415, y: 0}
   m_SizeDelta: {x: 355, y: 479.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301858709
@@ -52154,7 +52154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486430949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -72, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 635538440}
@@ -64485,7 +64485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1500 \nCoins"
+  m_Text: "2000 \nCoins"
 --- !u!222 &1970466115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -66803,7 +66803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055963477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72, y: -6.6, z: -13.199997}
+  m_LocalPosition: {x: -48, y: -6.6, z: -13.199997}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1074202467}

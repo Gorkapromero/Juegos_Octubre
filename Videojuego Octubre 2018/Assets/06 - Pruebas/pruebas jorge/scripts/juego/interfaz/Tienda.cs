@@ -174,14 +174,14 @@ public class Tienda : MonoBehaviour
 
             case "1500.coins":
                 GameObject.Find("cofre_02").GetComponent<Animator>().Play("New State");
-                GameObject.Find("gpr_cofre_02").transform.parent = GameObject.Find("Paquete2").transform;
+                GameObject.Find("gpr_cofre_02").transform.parent = GameObject.Find("paquete2").transform;
                 //Invoke("IniciarParticulas",1f);
                 destello2.SetActive(false);
             break;
 
             case "5000.coins":
                 GameObject.Find("cofre_03").GetComponent<Animator>().Play("New State");
-                GameObject.Find("gpr_cofre_03").transform.parent = GameObject.Find("Paquete3").transform;
+                GameObject.Find("gpr_cofre_03").transform.parent = GameObject.Find("paquete3").transform;
                 //Invoke("IniciarParticulas",1f);
                 destello3.SetActive(false);
             break;
