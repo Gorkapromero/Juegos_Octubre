@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Rigging_Mug_v1_1_mat_ba\xF1ista_skinOff"
+  m_Name: "Rigging_Mug_v1_1_mat_ba\xF1ista_skkinOff"
   m_Shader: {fileID: 4800000, guid: 8baca54962328ac46a382f4ff1830d1a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1bf6440582326d143b710bbfa456c24d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 86745688963f35946bff6c42ff71de26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,8 +63,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _LightSmoothness: 0.375
-    - _LightThreshold: 0.044
+    - _LightSmoothness: 0.466
+    - _LightThreshold: 0.166
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
@@ -73,18 +73,18 @@ Material:
     - _MKEditorShowReflectionBehavior: 0
     - _MKEditorShowRenderBehavior: 0
     - _MKEditorShowRimBehavior: 1
-    - _MKEditorShowShadowBehavior: 0
+    - _MKEditorShowShadowBehavior: 1
     - _MKEditorShowSketchBehavior: 0
     - _MKEditorShowSpecularBehavior: 1
     - _MKEditorShowTranslucentBehavior: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 0.1
+    - _OutlineSize: 0.08
     - _Parallax: 0.02
     - _RimIntensity: 0
     - _RimSize: 0
-    - _RimSmoothness: 0.3
+    - _RimSmoothness: 0
     - _ShadowIntensity: 1
     - _Shininess: 0.01
     - _SmoothnessTextureChannel: 0
@@ -94,10 +94,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.047169805, g: 0.047169805, b: 0.047169805, a: 0}
+    - _Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
+    - _EmissionColor: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 0}
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0.5}
