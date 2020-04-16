@@ -24883,7 +24883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -24901,7 +24901,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 100
 --- !u!222 &866643593
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45495,7 +45495,7 @@ MonoBehaviour:
   RecompensaRecivida: {fileID: 765454122}
   TRecompensa: {fileID: 866643592}
   recompensa: 150
-  textoDailyGift: {fileID: 0}
+  textoDailyGift: {fileID: 1487063678}
 --- !u!4 &1264192894
 Transform:
   m_ObjectHideFlags: 0
