@@ -119,8 +119,6 @@ public class Premios : MonoBehaviour
 
     public void PremiumLoot()
     {
-        PremioSeleccionado = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
-        PremioSeleccionado.enabled = false;
 
         int calc_dropChance = Random.Range(0,101);
 

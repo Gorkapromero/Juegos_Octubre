@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ctrl_Recolectables : MonoBehaviour 
 {
@@ -86,6 +87,7 @@ public class Ctrl_Recolectables : MonoBehaviour
     public void Premios()
     {
         MenuPremios.SetActive(true);
+        GameObject.Find("Premio_Normal").GetComponent<Button>().enabled = true;
 
         if (Time.timeScale == 1f)
         {
