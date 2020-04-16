@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632eba96175fed54e9b9e83810dc10d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyTime: 10
+  DestroyTime: 15
   Velocidad: 100
   LootTable:
   - Nombre: 1

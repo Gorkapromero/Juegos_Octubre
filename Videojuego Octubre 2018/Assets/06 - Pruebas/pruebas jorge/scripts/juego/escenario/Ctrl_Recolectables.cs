@@ -35,8 +35,17 @@ public class Ctrl_Recolectables : MonoBehaviour
         }
         else if(tiempo <= 0&&SiguienteCaja)
         {
-            //print("sacamos caja");
-            Vector3 PosicionObjeto = new Vector3(Random.Range(-RandomizePosition.x, RandomizePosition.x), RandomizePosition.y , transform.position.z);
+            //print("sacamos caja");43-443
+            Vector3 PosicionObjeto;
+            int ladoFregadero = Random.Range(1, 2);
+            if(ladoFregadero==1)
+            { 
+                PosicionObjeto = new Vector3(Random.Range(-RandomizePosition.x, RandomizePosition.x), RandomizePosition.y , transform.position.z);
+            }
+            else
+            {
+                PosicionObjeto = new Vector3(Random.Range(45.0f, 443.0f), RandomizePosition.y, transform.position.z);
+            }
             GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
             Indicadores.Target = Recolectable;
 
