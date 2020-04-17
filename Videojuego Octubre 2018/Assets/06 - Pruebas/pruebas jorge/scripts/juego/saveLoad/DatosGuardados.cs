@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class DatosGuardados : MonoBehaviour 
@@ -45,6 +44,10 @@ public class DatosGuardados : MonoBehaviour
 			tutorialCompletado = data.TutorialCompletado;
 			videovisto = data.Videovisto;
 			rango = data.Rango;
+		}
+		else
+		{
+			lastrewardOpen = (ulong)DateTime.Now.Ticks;
 		}
 
 	}

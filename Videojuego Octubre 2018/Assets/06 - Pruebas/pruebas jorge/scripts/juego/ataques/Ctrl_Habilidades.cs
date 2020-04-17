@@ -251,6 +251,7 @@ public class Ctrl_Habilidades : MonoBehaviour
         Energia_Total.EnergiaFinal = Energia_Total.Energia;
         if(SceneManager.GetActiveScene().name == "02_escenario_tutorial")
         {
+            Time.timeScale = 1;
             GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(5);
         }
     }

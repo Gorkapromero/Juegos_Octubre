@@ -320,7 +320,7 @@ public class movimiento_objetos : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name == "02_escenario_tutorial" && gameObject.name == "E_Pega(Clone)")
                 {
-                    GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(5);
+                    GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().textoEscudo();
                 }
 
                 Muerte();

@@ -61,7 +61,7 @@ public class ataquePegajoso : MonoBehaviour
 			case "escudo":
 			if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
 			{
-				GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(5);
+				GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().textoEscudo();
 			}
 			Destroy(this.gameObject);
 			break;

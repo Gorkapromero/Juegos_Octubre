@@ -16,6 +16,7 @@ public class Ctrl_Tutorial : MonoBehaviour
     public GameObject[] TextosInfo;
     public GameObject botonFinTutorial;
     public GameObject parche;
+    public GameObject TextEscudo;
 
     // Start is called before the first frame update
     void Start()
@@ -134,7 +135,14 @@ public class Ctrl_Tutorial : MonoBehaviour
         {
             //TextoInfo.text = "Fase "+fase+" Completada!";
             Fases[fase] = true;
-            Invoke("SiguienteFase",2f);
+            if (fase == 5)
+            {
+                SiguienteFase();
+            }
+            else
+            {
+                Invoke("SiguienteFase", 2f);
+            }
         }
     }
 
@@ -169,5 +177,15 @@ public class Ctrl_Tutorial : MonoBehaviour
             Destroy(GameObject.FindGameObjectWithTag("Enemigo"));
         }
         ControlFase();
+    }
+
+    public void textoEscudo()
+    {
+        Invoke("TEscudo", 2.0f);
+    }
+    void TEscudo()
+    {
+        Time.timeScale = 0;
+        TextEscudo.SetActive(true);
     }
 }
