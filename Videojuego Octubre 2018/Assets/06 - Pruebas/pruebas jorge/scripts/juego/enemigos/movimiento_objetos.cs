@@ -309,11 +309,11 @@ public class movimiento_objetos : MonoBehaviour
                 }
                 break;
 
-            case "A_chorro":
+            /*case "A_chorro":
                 print("chorro");
                 Puntuacion.Enemigos_Eliminados++;
                 Muerte();
-                break;
+                break;*/
 
             case "escudo":
                 print("escudo");
@@ -418,6 +418,7 @@ public class movimiento_objetos : MonoBehaviour
         }
         else
         {
+            Oleadas.SliderOleada.value++;
             //float text
             Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
             Instantiate(FloatingGhost, Posiciontextos, Quaternion.identity);

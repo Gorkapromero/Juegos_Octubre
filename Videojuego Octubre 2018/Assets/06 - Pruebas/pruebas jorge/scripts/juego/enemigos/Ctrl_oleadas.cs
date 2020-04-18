@@ -74,6 +74,9 @@ public class Ctrl_oleadas : MonoBehaviour
     public GameObject ParticulasCofre;
 
     DatosGuardados DatosGuardados;
+
+    public Slider SliderOleada;
+    int enemigos;
     //public float distA;
     // Use this for initialization
     void Start()
@@ -157,6 +160,8 @@ public class Ctrl_oleadas : MonoBehaviour
     {
         //Debug.Log("Spawn Oleada: " + (ContadorOleadas+1));
         Estado = SpawnState.SPAWNING;
+        SliderOleada.value = 0;
+        SliderOleada.maxValue = NumeroEnemigos;
 
         for (int i = 0; i < NumeroEnemigos; i++)
         {

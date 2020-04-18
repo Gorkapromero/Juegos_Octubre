@@ -107,7 +107,7 @@ public class movimiento_personaje : MonoBehaviour
       //  Ctrl_Estropajo = GameObject.Find("Elementos_Escenario").GetComponent<Ctrl_Estropajo1>();
 
         animatorCamara = GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>();
-        //joystick = FindObjectOfType<Joystick>();
+        joystick = FindObjectOfType<Joystick>();
 
         if (GameObject.Find("Recolctables"))
         {
@@ -134,9 +134,21 @@ public class movimiento_personaje : MonoBehaviour
         if (script_ctl_habilidades.AtaqueBasico == false && bloquearControl == false)
         {
             //velocidad_fin = vidas.value * 20;
+            if(joystick.Horizontal<0)
+            {
+                movimiento = -1;
+            }
+            else if(joystick.Horizontal>0)
+            {
+                movimiento = 1;
+            }
+            else if(joystick.Horizontal == 0)
+            {
+                movimiento = 0;
+            }
             rb.velocity = new Vector3(/*joystick.Horizontal*/movimiento * velocidad_fin,
-                                         rb.velocity.y,
-                                         0);
+                                        rb.velocity.y,
+                                        0);
             GetComponent<Animator>().SetFloat("Speed", movimiento);
             //GetComponent<Rigidbody>().isKinematic = false;
 
