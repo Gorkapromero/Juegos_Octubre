@@ -121,6 +121,8 @@ MonoBehaviour:
   FuerzaLanzamiento: 200
   prefabPoff: {fileID: 1574349157374176, guid: 0e755caf1dffc344fa6cd2c0ca7ed09c, type: 3}
   Velocidad: 100
+  ImagenObjetivo: {fileID: 1574349157374176, guid: 6292bcb9dbbcd2e49aefd4cc7f7584f3,
+    type: 3}
 --- !u!54 &54820222203885270
 Rigidbody:
   m_ObjectHideFlags: 0

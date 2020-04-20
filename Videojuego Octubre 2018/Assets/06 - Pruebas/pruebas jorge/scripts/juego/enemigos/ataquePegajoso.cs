@@ -17,6 +17,8 @@ public class ataquePegajoso : MonoBehaviour
 	public float Velocidad;
 	//public Vector3 distancia;
 
+	public GameObject ImagenObjetivo;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -49,13 +51,15 @@ public class ataquePegajoso : MonoBehaviour
 			{
 				Personaje.quitarvida_Vida();
 			}
+			Destroy(GameObject.Find("AnimTarget(Clone)"));
 			Destroy(this.gameObject);
 			break;
 
 			case "Suelo":
 			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
             GameObject poff = Instantiate(prefabPoff, PosPoff, Quaternion.identity);
-            Destroy(this.gameObject);
+			Destroy(GameObject.Find("AnimTarget(Clone)"));
+			Destroy(this.gameObject);
 			break;
 
 			case "escudo":
@@ -63,6 +67,8 @@ public class ataquePegajoso : MonoBehaviour
 			{
 				GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().textoEscudo();
 			}
+
+			Destroy(GameObject.Find("AnimTarget(Clone)"));
 			Destroy(this.gameObject);
 			break;
 		}
@@ -70,6 +76,7 @@ public class ataquePegajoso : MonoBehaviour
 
 	IEnumerator ataque(Vector3 objetivo,Vector3 origen,float altura,float velocidad)
 	{
+		
 		Vector3 StartPos = transform.position;
 		Vector3 endPos = objetivo;
 		float Dist = Vector3.Distance(StartPos,endPos);
@@ -92,6 +99,8 @@ public class ataquePegajoso : MonoBehaviour
 
 	Vector3 CalculateVelocity(Vector3 objetivo, Vector3 origen, float _velocidad)
 	{
+		Instantiate(ImagenObjetivo, objetivo, ImagenObjetivo.transform.rotation);
+
 		//definimos distancia x e y
 		Vector3 distancia = objetivo - origen;
 		Vector3 distanciaXZ = distancia;

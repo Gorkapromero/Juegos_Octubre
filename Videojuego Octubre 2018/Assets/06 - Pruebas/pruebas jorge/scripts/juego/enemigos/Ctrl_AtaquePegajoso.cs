@@ -17,6 +17,8 @@ public class Ctrl_AtaquePegajoso : MonoBehaviour
 	public bool PersonajeVisto;
 	NavMeshAgent agente;
 
+	public bool DañoRecibido;
+
     // Use this for initialization
 	void Start () 
 	{
@@ -50,12 +52,19 @@ public class Ctrl_AtaquePegajoso : MonoBehaviour
 
     void lanzarPelota()
     {
-        //instanciar ataque
-        PosicionAtaque = new Vector3(transform.position.x, -34.9f, transform.position.z);
-        Instantiate(PrefabAtaque, PosicionAtaque, Quaternion.identity);
+		if(!DañoRecibido)
+		{ 
+			//instanciar ataque
+			PosicionAtaque = new Vector3(transform.position.x, -34.9f, transform.position.z);
+			Instantiate(PrefabAtaque, PosicionAtaque, Quaternion.identity);
 
-        //reanudamos el tiempo y volvemos a hacer andar al personaje
-        gameObject.GetComponent<NavMeshAgent>().speed = 15;
+			//reanudamos el tiempo y volvemos a hacer andar al personaje
+			gameObject.GetComponent<NavMeshAgent>().speed = 15;
 
+		}
+		else
+		{
+			DañoRecibido = false;
+		}
     }
 }

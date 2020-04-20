@@ -18,6 +18,8 @@ public class Ctrl_Tutorial : MonoBehaviour
     public GameObject parche;
     public GameObject TextEscudo;
 
+    bool Activado;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -181,7 +183,11 @@ public class Ctrl_Tutorial : MonoBehaviour
 
     public void textoEscudo()
     {
-        Invoke("TEscudo", 2.0f);
+        if(!Activado)
+        {
+            Activado = true;
+            Invoke("TEscudo", 2f);
+        }
     }
     void TEscudo()
     {

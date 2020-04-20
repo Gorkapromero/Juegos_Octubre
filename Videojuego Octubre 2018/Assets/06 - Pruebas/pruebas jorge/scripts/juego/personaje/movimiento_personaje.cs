@@ -166,7 +166,9 @@ public class movimiento_personaje : MonoBehaviour
         else
         {
             //print("movimiento desactivado");
-
+            rb.velocity = new Vector3(/*joystick.Horizontal*/movimiento * velocidad_fin,
+                                        rb.velocity.y,
+                                        0);
             GetComponent<Animator>().SetFloat("Speed", 0.0f);
 
         }
@@ -281,6 +283,7 @@ public class movimiento_personaje : MonoBehaviour
     public void Stop()
     {
         velocidad_fin=0;
+        movimiento = 0;
         bloquearControles();
         //animatorProta.Play("Caida_Atras");
     }
@@ -353,7 +356,9 @@ public class movimiento_personaje : MonoBehaviour
 
 
             if (Vidas == 0)
-            {                   
+            {
+                movimiento = 0;
+
                 //Reproducimos el sonido de "MUERTE"
                 sonidoMuerte.Play();
                 sonidoMuerte_02.Play();

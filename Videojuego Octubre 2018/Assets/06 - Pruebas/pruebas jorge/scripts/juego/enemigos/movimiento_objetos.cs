@@ -193,6 +193,7 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "agua":
+                Oleadas.SliderOleada.value++;
                 Destroy(this.gameObject);
                 break;
 
@@ -209,6 +210,7 @@ public class movimiento_objetos : MonoBehaviour
                             break;
 
                         case "E_Bomb(Clone)":
+                            Oleadas.SliderOleada.value++;
                             Vidas.quitarvida_Vida();
                             GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
                             Destroy(this.gameObject);
@@ -244,6 +246,11 @@ public class movimiento_objetos : MonoBehaviour
                     default:
                         if (Ataque == false&&Habilidades.AtaqueBasico==true&&SceneManager.GetActiveScene().name == "02_Pruebas_Escenario_2")
                         {
+                            if(gameObject.name == "E_Pegajoso(Clone)")
+                            {
+                                gameObject.GetComponent<Ctrl_AtaquePegajoso>().DañoRecibido = true;
+                            }
+
                             Ataque = true;
                             VidaEnemigo -= Habilidades.DañoBasico;
 
@@ -418,7 +425,10 @@ public class movimiento_objetos : MonoBehaviour
         }
         else
         {
-            Oleadas.SliderOleada.value++;
+            if(Oleadas.SliderOleada)
+            {
+                Oleadas.SliderOleada.value++;
+            }
             //float text
             Vector3 Posiciontextos = new Vector3(transform.position.x, -40f, transform.position.z);
             Instantiate(FloatingGhost, Posiciontextos, Quaternion.identity);
