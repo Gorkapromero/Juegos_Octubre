@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class movimiento_personaje : MonoBehaviour
@@ -136,10 +137,18 @@ public class movimiento_personaje : MonoBehaviour
             //velocidad_fin = vidas.value * 20;
             if(joystick.Horizontal<0)
             {
+                if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+                {
+                    GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(1);
+                }
                 movimiento = -1;
             }
             else if(joystick.Horizontal>0)
             {
+                if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+                {
+                    GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().FaseCompletada(1);
+                }
                 movimiento = 1;
             }
             else if(joystick.Horizontal == 0)

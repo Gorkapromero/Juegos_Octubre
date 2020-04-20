@@ -317,7 +317,7 @@ public class Ctrl_oleadas : MonoBehaviour
         int Texto;
         switch(ContadorOleadas)
         {
-            case 1:
+            case 5:
             Texto = 0;
             TextosDificultad[Texto].SetActive(true);
             DatosGuardados.rango = 1;
