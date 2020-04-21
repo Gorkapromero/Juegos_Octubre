@@ -163,14 +163,15 @@ public class movimiento_personaje : MonoBehaviour
 
             
         }
-        else
+        else if(bloquearControl==true)
         {
+            movimiento = 0;
             //print("movimiento desactivado");
             rb.velocity = new Vector3(/*joystick.Horizontal*/movimiento * velocidad_fin,
                                         rb.velocity.y,
                                         0);
-            GetComponent<Animator>().SetFloat("Speed", 0.0f);
 
+            GetComponent<Animator>().SetFloat("Speed", 0.0f);
         }
 
 
