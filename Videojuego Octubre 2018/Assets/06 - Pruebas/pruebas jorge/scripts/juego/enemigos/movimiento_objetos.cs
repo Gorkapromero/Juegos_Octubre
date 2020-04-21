@@ -58,7 +58,9 @@ public class movimiento_objetos : MonoBehaviour
 
     public GameObject particulasHitEnemigos;
     public GameObject particulasRastroCuerpo_Pegajoso;
-    
+
+
+    bool activarExplosion = true;
 
     public GameObject Moneda;
     public int NumeroMonedas;
@@ -130,9 +132,11 @@ public class movimiento_objetos : MonoBehaviour
             if (gameObject.name == "E_Bomb(Clone)")
             {
                 nav.SetDestination(target+OffsetBomba);
-                if (dist < vision)
+                if (dist < vision && activarExplosion)
                 {
                     Invoke("explosion", tiempoExplosion);
+                    activarExplosion = false;
+
                 }
             }
             else if(SceneManager.GetActiveScene().name != "02_escenario_tutorial")
@@ -213,6 +217,10 @@ public class movimiento_objetos : MonoBehaviour
                             Oleadas.SliderOleada.value++;
                             Vidas.quitarvida_Vida();
                             GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
+
+                            //Reproducimos el sonido de explosion del Malva
+                            GameObject.Find("SonidoExplosionMalva").GetComponent<AudioSource>().Play();
+
                             Destroy(this.gameObject);
                             break;
 
@@ -374,16 +382,24 @@ public class movimiento_objetos : MonoBehaviour
 
     void explosion()
     {
+        activarExplosion = true;
+        Oleadas.SliderOleada.value++;
+
         //animacion de Shake de la camara
         GameObject.FindGameObjectWithTag("ShakeCamara").GetComponent<Animator>().Play("animShake_DobleSalto");
 
-
+        //Reproducimos el sonido de explosion del Malva
+        GameObject.Find("SonidoExplosionMalva").GetComponent<AudioSource>().Play();
+    
         colBomb.radius += 25f * Time.deltaTime;
         GameObject ParticulasExplosion = Instantiate(Particulasboom, transform.position, Quaternion.identity);
-        if (colBomb.radius >= 12f)
-        {
+
+        //if (colBomb.radius >= 12f)
+        //{
             Destroy(this.gameObject);
-        }
+        //}
+
+
     }
 
     void velDespuesSalto()

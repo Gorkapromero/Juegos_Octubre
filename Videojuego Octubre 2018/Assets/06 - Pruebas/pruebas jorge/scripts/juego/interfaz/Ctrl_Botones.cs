@@ -50,10 +50,12 @@ public class Ctrl_Botones : MonoBehaviour
 
         //Variables Sonido
         musicaDeFondo = GameObject.Find("MusicaFondo").GetComponent<AudioSource>();
-        sonidoMuerte = GameObject.Find("SonidoMuerte").GetComponent<AudioSource>();
         sonidoMuerte_02 = GameObject.Find("SonidoMuerte_02").GetComponent<AudioSource>();
+        sonidoMuerte = GameObject.Find("SonidoMuerte").GetComponent<AudioSource>();
 
         Musica.mute = !DatosGuardar.musica;
+        sonidoMuerte.mute = !DatosGuardar.musica;
+
         Efectos = GameObject.FindGameObjectsWithTag("SoundEffects");
         FX = DatosGuardar.fx;
         for(int i = 0; i<Efectos.Length; i++)
@@ -63,8 +65,7 @@ public class Ctrl_Botones : MonoBehaviour
         
     }
 	
-
-
+    
     public void volverJugar()
     {
         if(Time.timeScale == 0f)
@@ -114,6 +115,8 @@ public class Ctrl_Botones : MonoBehaviour
     public void QuitarMusica()
     {
         Musica.mute = !Musica.mute;
+        sonidoMuerte.mute = !sonidoMuerte.mute;
+
         DatosGuardar.musica = !DatosGuardar.musica;
     }
 
@@ -194,11 +197,13 @@ public class Ctrl_Botones : MonoBehaviour
         TextMonedasActuales.text = DatosGuardar.Monedas.ToString() +" Coins";
         if (DatosGuardar.Monedas >= MonedasResucitar)
         {
-            GameObject.Find("B_Monedas").GetComponent<Button>().interactable = true;
+            if (GameObject.Find("B_Monedas"))
+                GameObject.Find("B_Monedas").GetComponent<Button>().interactable = true;
         }
         else
         {
-            GameObject.Find("B_Monedas").GetComponent<Button>().interactable = false;
+            if (GameObject.Find("B_Monedas"))
+                GameObject.Find("B_Monedas").GetComponent<Button>().interactable = false;
         }
 
     }

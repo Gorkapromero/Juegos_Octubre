@@ -40,37 +40,48 @@ public class ataquePegajoso : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other) 
 	{
-		switch(other.gameObject.tag)
+        GameObject.Find("SonidoSilbidoPelota").GetComponent<AudioSource>().Stop();
+
+        switch (other.gameObject.tag)
 		{
 			case "Jugador":
-			if(SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&Personaje.Vidas>1)
-			{
-				Personaje.quitarvida_Vida();
-			}
-			else if (SceneManager.GetActiveScene().name != "02_escenario_tutorial")
-			{
-				Personaje.quitarvida_Vida();
-			}
-			Destroy(GameObject.Find("AnimTarget(Clone)"));
-			Destroy(this.gameObject);
-			break;
+			    if(SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&Personaje.Vidas>1)
+			    {
+				    Personaje.quitarvida_Vida();
+			    }
+			    else if (SceneManager.GetActiveScene().name != "02_escenario_tutorial")
+			    {
+				    Personaje.quitarvida_Vida();
+			    }
+			    Destroy(GameObject.Find("AnimTarget(Clone)"));
+			    Destroy(this.gameObject);
+			    break;
 
 			case "Suelo":
-			Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
-            GameObject poff = Instantiate(prefabPoff, PosPoff, Quaternion.identity);
-			Destroy(GameObject.Find("AnimTarget(Clone)"));
-			Destroy(this.gameObject);
-			break;
+                //Reproducimos el sonido de Splash de la pelota
+                GameObject.Find("SonidoSplashPelota").GetComponent<AudioSource>().Play();
+
+                Vector3 PosPoff = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+                GameObject poff = Instantiate(prefabPoff, PosPoff, Quaternion.identity);
+			    Destroy(GameObject.Find("AnimTarget(Clone)"));
+			    Destroy(this.gameObject);
+			    break;
 
 			case "escudo":
-			if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
-			{
-				GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().textoEscudo();
-			}
+			    if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
+			    {
+				    GameObject.Find("Control_Tutorial").GetComponent<Ctrl_Tutorial>().textoEscudo();
+			    }
 
-			Destroy(GameObject.Find("AnimTarget(Clone)"));
-			Destroy(this.gameObject);
-			break;
+			    Destroy(GameObject.Find("AnimTarget(Clone)"));
+			    Destroy(this.gameObject);
+			    break;
+
+            case "agua":
+	
+			    Destroy(GameObject.Find("AnimTarget(Clone)"));
+			    Destroy(this.gameObject);
+			    break;
 		}
 	}
 
@@ -99,10 +110,14 @@ public class ataquePegajoso : MonoBehaviour
 
 	Vector3 CalculateVelocity(Vector3 objetivo, Vector3 origen, float _velocidad)
 	{
+        //Instanciamos el target del ataque
 		Instantiate(ImagenObjetivo, objetivo, ImagenObjetivo.transform.rotation);
 
-		//definimos distancia x e y
-		Vector3 distancia = objetivo - origen;
+        //Silbido de la pelota mientras está en el aire
+        GameObject.Find("SonidoSilbidoPelota").GetComponent<AudioSource>().Play();
+
+        //definimos distancia x e y
+        Vector3 distancia = objetivo - origen;
 		Vector3 distanciaXZ = distancia;
 		distanciaXZ.y = 0f;
 

@@ -183,6 +183,7 @@ public class movimiento_personaje : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || (activarSalto)) {
                 //particulas de salto
                 GameObject ParticulasDobleSalto = Instantiate(ParticulasAterrizaje, transform.position, Quaternion.identity);
+                GameObject.Find("SonidoSalto").GetComponent<AudioSource>().Play();
 
                 rb.velocity = Vector3.up * FuerzaSalto;
                 animatorProta.SetBool("Salto", true);
@@ -457,6 +458,9 @@ public class movimiento_personaje : MonoBehaviour
         GameObject ParticulasCaidadoblesalto = Instantiate(ParticulasCaidaDobleSalto, transform.position, Quaternion.identity);
         CollDobleSalto.enabled = false;
         animatorCamara.Play("animShake_DobleSalto");
+
+        GameObject.Find("SonidoExplosionDobleSalto").GetComponent<AudioSource>().Play();
+
     }
 
     public void IrDerecha()

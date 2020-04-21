@@ -38,7 +38,8 @@ public class Premios : MonoBehaviour
 
     public int Monedas;
     public int PowerUpsGanados;
-    public Text TextoPowerRecojidos;
+    public GameObject TextoPowerRecojidos;
+    public GameObject PanelFondoPowerUp;
     public Button botonPower;
 
     public Transform Parent;
@@ -197,12 +198,16 @@ public class Premios : MonoBehaviour
     {
         if(PowerUpsGanados>0)
         {
-            TextoPowerRecojidos.text = PowerUpsGanados.ToString();
+            TextoPowerRecojidos.SetActive(true);
+            PanelFondoPowerUp.SetActive(true);
+
+            TextoPowerRecojidos.GetComponent<Text>().text = PowerUpsGanados.ToString();
             botonPower.interactable = true;
         }
         else
         {
-            TextoPowerRecojidos.text = null;
+            PanelFondoPowerUp.SetActive(false);
+            TextoPowerRecojidos.SetActive(false);
             botonPower.interactable = false;
         }
     }
