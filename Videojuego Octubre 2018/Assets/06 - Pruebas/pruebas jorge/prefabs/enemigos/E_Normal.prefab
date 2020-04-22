@@ -522,7 +522,7 @@ MonoBehaviour:
   velocidad: 1.2
   velocidadEncimera: 0.4
   AlturaEncimera: 10
-  AlturaEstanterias: 50
+  AlturaEstanterias: 40
   AlturaFregadero: 50
 --- !u!136 &136630998615544974
 CapsuleCollider:

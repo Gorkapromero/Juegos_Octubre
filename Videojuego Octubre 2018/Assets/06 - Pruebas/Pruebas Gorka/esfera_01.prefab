@@ -123,6 +123,9 @@ MonoBehaviour:
   Velocidad: 100
   ImagenObjetivo: {fileID: 1574349157374176, guid: 6292bcb9dbbcd2e49aefd4cc7f7584f3,
     type: 3}
+  layer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!54 &54820222203885270
 Rigidbody:
   m_ObjectHideFlags: 0

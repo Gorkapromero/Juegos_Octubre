@@ -92,6 +92,7 @@ public class Ctrl_Tutorial : MonoBehaviour
 
             case 6: //explosion
                 parche.SetActive(false);
+                TextEscudo.SetActive(false);
                 GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>().escudooff();
                 GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().Energia = 0;
                 GameObject.Find("Elementos_Escenario").GetComponent<Enegia>().AñadirEnergia(1000);

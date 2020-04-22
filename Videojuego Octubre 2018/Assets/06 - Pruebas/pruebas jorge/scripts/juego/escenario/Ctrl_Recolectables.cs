@@ -38,16 +38,18 @@ public class Ctrl_Recolectables : MonoBehaviour
         {
             //print("sacamos caja");43-443
             Vector3 PosicionObjeto;
-            int ladoFregadero = Random.Range(1, 2);
+            int ladoFregadero = Random.Range(1, 3);
             if(ladoFregadero==1)
             { 
-                PosicionObjeto = new Vector3(Random.Range(-RandomizePosition.x, RandomizePosition.x), RandomizePosition.y , transform.position.z);
+                PosicionObjeto = new Vector3(Random.Range(-700f, -70f), RandomizePosition.y , transform.position.z);
+                print("posicion 1: " + PosicionObjeto);
             }
             else
             {
-                PosicionObjeto = new Vector3(Random.Range(45.0f, 443.0f), RandomizePosition.y, transform.position.z);
+                PosicionObjeto = new Vector3(Random.Range(50f, 455.0f), RandomizePosition.y, transform.position.z);
+                print("posicion 2: " + PosicionObjeto);
             }
-            GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
+            GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity,transform);
             Indicadores.Target = Recolectable;
 
             Vector3 PosicionParticulas = new Vector3(PosicionObjeto.x, -54f, transform.position.z);

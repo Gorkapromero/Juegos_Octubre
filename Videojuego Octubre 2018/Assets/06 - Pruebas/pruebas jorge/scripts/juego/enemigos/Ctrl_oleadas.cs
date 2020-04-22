@@ -245,13 +245,19 @@ public class Ctrl_oleadas : MonoBehaviour
                         if(distA>TamañoZonaAgua.x)//No estamos en el agua
                         {
                             float PosicionXEnemigo=Random.Range(-OffsetCaida.x,OffsetCaida.x);
-                            if(PosicionXEnemigo<=0)
+                            if(PosicionXEnemigo<=0)//izq
                             {
                                 SpawnPosition = new Vector3(jugador.position.x-OffsetCaida.x, PosicionParacas.position.y, jugador.position.z);
+                                float DistanciaEnemigoagua = Vector3.Distance(SpawnPosition, zonaAgua.position);
+                                if(DistanciaEnemigoagua<TamañoZonaAgua.x)//cae en el agua
+                                    SpawnPosition = new Vector3(jugador.position.x - (OffsetCaida.x+TamañoZonaAgua.x), PosicionParacas.position.y, jugador.position.z);
                             }
-                            else
+                            else//der
                             {
                                 SpawnPosition = new Vector3(jugador.position.x+OffsetCaida.x, PosicionParacas.position.y, jugador.position.z);
+                                float DistanciaEnemigoagua = Vector3.Distance(SpawnPosition, zonaAgua.position);
+                                if (DistanciaEnemigoagua < TamañoZonaAgua.x)//cae en el agua
+                                    SpawnPosition = new Vector3(jugador.position.x + (OffsetCaida.x + TamañoZonaAgua.x), PosicionParacas.position.y, jugador.position.z);
                             }
                             
                             GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, _Oleada.enemigos[j].enemigo.transform.rotation);
@@ -318,42 +324,47 @@ public class Ctrl_oleadas : MonoBehaviour
         switch(ContadorOleadas)
         {
             case 5:
-            Texto = 0;
-            TextosDificultad[Texto].SetActive(true);
-            DatosGuardados.rango = 1;
+                Texto = 0;
+                TextosDificultad[Texto].SetActive(true);
+                if (DatosGuardados.rango < 1)
+                    subirRango();
             StartCoroutine(ApagarTexto(Texto,5f));
  
             break;
 
             case 10:
-            Texto = 1;
-            TextosDificultad[Texto].SetActive(true);
-            DatosGuardados.rango = 2;
-            StartCoroutine(ApagarTexto(Texto,5f));
+                Texto = 1;
+                TextosDificultad[Texto].SetActive(true);
+                if (DatosGuardados.rango < 2)
+                    subirRango();
+                StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
 
             case 15:
-            Texto = 2;
-            TextosDificultad[Texto].SetActive(true);
-            DatosGuardados.rango = 3;
-            StartCoroutine(ApagarTexto(Texto,5f));
+                Texto = 2;
+                TextosDificultad[Texto].SetActive(true);
+                if(DatosGuardados.rango < 3)
+                    subirRango();
+                StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
 
             case 20:
-            Texto = 3;
-            TextosDificultad[Texto].SetActive(true);
-            DatosGuardados.rango = 4;
-            StartCoroutine(ApagarTexto(Texto,5f));
+                Texto = 3;
+                TextosDificultad[Texto].SetActive(true);
+                if(DatosGuardados.rango < 4)
+                    subirRango();
+                StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
 
             case 25:
-            Texto = 4;
-            TextosDificultad[Texto].SetActive(true);
-            DatosGuardados.rango = 5;
-            StartCoroutine(ApagarTexto(Texto,3f));
+                Texto = 4;
+                TextosDificultad[Texto].SetActive(true);
+                if(DatosGuardados.rango < 5)
+                    subirRango();
+                StartCoroutine(ApagarTexto(Texto,3f));
             
             break;
         }
@@ -372,5 +383,10 @@ public class Ctrl_oleadas : MonoBehaviour
         //Vector3 PosicionObjeto = new Vector3(GameObject.FindGameObjectWithTag("Jugador").GetComponent<Transform>().position.x+PosicionCofre.x,PosicionCofre.y,PosicionCofre.z);
         Instantiate(ParticulasCofre,PosicionCofre,Quaternion.identity);
         Instantiate(cofre,PosicionCofre,Quaternion.identity);
+    }
+
+    void subirRango()
+    {
+        DatosGuardados.rango++;
     }
 }

@@ -29,6 +29,7 @@ public class Tienda : MonoBehaviour
     //public Text Texto;
 
     Product Producto;
+    bool Clicked;
 
     #region Dynamic Product - Se completan automaticamente con el Product ID
     public void Purchase_Consumable(Product _product)
@@ -125,30 +126,35 @@ public class Tienda : MonoBehaviour
 
     public void ClickOnScreen()
     {
-        switch(Producto.definition.id)
+        if (!Clicked)
         {
-            case "500.coins":
-                GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_preapertura_01");
-                //Invoke("IniciarParticulas",1f);
-                IniciarParticulas();
-            break;
+            switch (Producto.definition.id)
+            {
+                case "500.coins":
+                    GameObject.Find("cofre_01").GetComponent<Animator>().Play("animation_cofre_preapertura_01");
+                    //Invoke("IniciarParticulas",1f);
+                    IniciarParticulas();
+                    break;
 
-            case "1500.coins":
-                GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_preapertura_02");
-                //Invoke("IniciarParticulas",1f);
-                IniciarParticulas();
-            break;
+                case "1500.coins":
+                    GameObject.Find("cofre_02").GetComponent<Animator>().Play("animation_cofre_preapertura_02");
+                    //Invoke("IniciarParticulas",1f);
+                    IniciarParticulas();
+                    break;
 
-            case "5000.coins":
-                GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_preapertura_03");
-                //Invoke("IniciarParticulas",1f);
-                IniciarParticulas();
-            break;
+                case "5000.coins":
+                    GameObject.Find("cofre_03").GetComponent<Animator>().Play("animation_cofre_preapertura_03");
+                    //Invoke("IniciarParticulas",1f);
+                    IniciarParticulas();
+                    break;
+            }
+            Clicked = true;
         }
     }
 
     public void IniciarParticulas()
     {
+        
         Instantiate(particulasCofre,PosicionParticulas);
         Invoke("textoFinal",2f);
     }
@@ -187,6 +193,7 @@ public class Tienda : MonoBehaviour
             break;
         }
         clickScreen.SetActive(false);
+        Clicked = false;
 
     }
 }

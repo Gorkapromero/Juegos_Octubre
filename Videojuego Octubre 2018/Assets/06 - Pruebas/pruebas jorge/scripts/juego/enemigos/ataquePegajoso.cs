@@ -18,7 +18,9 @@ public class ataquePegajoso : MonoBehaviour
 	//public Vector3 distancia;
 
 	public GameObject ImagenObjetivo;
+	Vector3 Objetivo;
 
+	public LayerMask layer;
 	// Use this for initialization
 	void Start () 
 	{
@@ -34,6 +36,8 @@ public class ataquePegajoso : MonoBehaviour
 		}*/
 		Vector3 Vo = CalculateVelocity(jugador.position,transform.position, Velocidad);
 		Rb.velocity = Vo;
+
+		//VisualizarPosicion(Vo, Objetivo);
 	}
 	
 	    
@@ -110,9 +114,14 @@ public class ataquePegajoso : MonoBehaviour
 
 	Vector3 CalculateVelocity(Vector3 objetivo, Vector3 origen, float _velocidad)
 	{
-        //Instanciamos el target del ataque
-		Instantiate(ImagenObjetivo, objetivo, ImagenObjetivo.transform.rotation);
+		Objetivo = objetivo;
+		
+		Ray ray = new Ray(objetivo, -Vector3.up);
+		RaycastHit hit;
 
+		if(Physics.Raycast(ray,out hit, 100f, layer))
+			Instantiate(ImagenObjetivo, hit.point, ImagenObjetivo.transform.rotation);
+			
         //Silbido de la pelota mientras está en el aire
         GameObject.Find("SonidoSilbidoPelota").GetComponent<AudioSource>().Play();
 

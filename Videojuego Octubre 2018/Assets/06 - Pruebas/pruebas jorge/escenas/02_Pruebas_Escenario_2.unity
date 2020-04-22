@@ -5230,7 +5230,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e7fbb0742488e41459a7f9eaebc39444, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1.2
   Loop: 0
   Mute: 0
@@ -17010,8 +17010,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 77.59969, y: 22.154573, z: 20.137316}
-  m_Center: {x: 0.75005513, y: 7.5652857, z: -28.02035}
+  m_Size: {x: 77.59969, y: 22.154573, z: 38.12037}
+  m_Center: {x: 0.7500552, y: 7.5652857, z: -28.180882}
 --- !u!1001 &393273440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25280,7 +25280,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63cc6e4653441b94fb5b54f4a653dda5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -34498,7 +34498,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb9c46c2c090cb940aec5322c7f00291, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -44852,6 +44852,7 @@ MonoBehaviour:
   Irizquierda: {fileID: 1641620262}
   panelBloqueoControles: {fileID: 2050233827}
   resucitado: 0
+  posicionEnSuelo: {x: 0, y: 0, z: 0}
 --- !u!65 &1232494663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55771,8 +55772,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 78.202415, y: 22.574905, z: 27.454563}
-  m_Center: {x: -0.08518382, y: 8.269351, z: -28.51575}
+  m_Size: {x: 78.202415, y: 22.574905, z: 41.436806}
+  m_Center: {x: -0.08518383, y: 8.269351, z: -28.840914}
 --- !u!1 &1697628356
 GameObject:
   m_ObjectHideFlags: 0
@@ -63246,7 +63247,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb9c46c2c090cb940aec5322c7f00291, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.35
   m_Pitch: 2.5
   Loop: 0
   Mute: 0
@@ -68910,7 +68911,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fd65e6a8e6437a840ad23c9764b5ca9f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -69798,7 +69799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2122099536
 Transform:
   m_ObjectHideFlags: 0

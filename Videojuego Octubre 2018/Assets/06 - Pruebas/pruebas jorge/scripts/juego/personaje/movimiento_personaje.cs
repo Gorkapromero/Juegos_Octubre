@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class movimiento_personaje : MonoBehaviour
@@ -85,6 +86,7 @@ public class movimiento_personaje : MonoBehaviour
     AudioSource sonidoDisparo;
 
     public int resucitado;
+    public Vector3 posicionEnSuelo;
     //public bool resucitadoAnuncio;
     //public GameObject botonAnuncio;
 
@@ -132,7 +134,7 @@ public class movimiento_personaje : MonoBehaviour
     void Update()
     {
         //Para las animaciones de movimiento
-        if (script_ctl_habilidades.AtaqueBasico == false && bloquearControl == false)
+        if (script_ctl_habilidades.AtaqueBasico == false && bloquearControl == false&& Time.timeScale == 1)
         {
             //velocidad_fin = vidas.value * 20;
             if(joystick.Horizontal<0)

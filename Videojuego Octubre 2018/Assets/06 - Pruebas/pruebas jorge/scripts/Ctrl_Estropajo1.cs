@@ -17,14 +17,17 @@ public class Ctrl_Estropajo1 : MonoBehaviour
         animatorEstropajo = grupoAnimEstropajo.GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter()
+    private void OnCollisionEnter(Collision coli)
     {
         //contactoEstropajo = true;
-        animatorEstropajo.SetBool("primeraColision", true);
-        if (i)
+        if(coli.collider.tag == "Jugador")
         {
-            GameObject.Find("SonidoSplashEstropajo").GetComponent<AudioSource>().Play();
-            i = false;
+            animatorEstropajo.SetBool("primeraColision", true);
+            if (i)
+            {
+                GameObject.Find("SonidoSplashEstropajo").GetComponent<AudioSource>().Play();
+                i = false;
+            }
         }
             
     }
