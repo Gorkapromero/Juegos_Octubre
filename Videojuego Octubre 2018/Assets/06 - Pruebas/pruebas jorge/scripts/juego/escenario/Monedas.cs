@@ -8,9 +8,13 @@ public class Monedas : MonoBehaviour
 	Ctrl_Puntuacion Puntuacion;
 	Rigidbody RBMoneda;
 
+    GameObject Prota;
+
 	public float FuerzaExplosion;
     public GameObject particulasRecogerMoneda;
 	public float TiempoDestruir;
+
+    public bool iman;
 
     AudioSource audioMoneda;
 
@@ -19,7 +23,9 @@ public class Monedas : MonoBehaviour
 	{
 		DatosGuardar=GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
 		Puntuacion = GameObject.Find("C_Puntuacion").GetComponent<Ctrl_Puntuacion>();
-        
+
+        Prota = GameObject.FindGameObjectWithTag("Jugador");
+
 		Vector3 Vo = new Vector3(Random.Range(-FuerzaExplosion,FuerzaExplosion),FuerzaExplosion*3f,0);
 		//RBMoneda.velocity = Vo;
         gameObject.GetComponent<Rigidbody>().AddForce(Vo, ForceMode.Impulse);
@@ -30,8 +36,17 @@ public class Monedas : MonoBehaviour
 		Invoke("DestruirMoneda", TiempoDestruir);
     }
 
- 
-	private void OnCollisionEnter(Collision other) 
+
+    /*private void FixedUpdate()
+    {
+        if (iman)
+        {
+            transform.position = Vector3.Lerp(transform.position, Prota.transform.position, 2.0f);
+        }
+    }
+    */
+
+    private void OnCollisionEnter(Collision other) 
 	{
 		//print("colision");
 		if(other.gameObject.tag == "Jugador")
@@ -54,6 +69,7 @@ public class Monedas : MonoBehaviour
 
 	void hacerCollider()
 	{
+        //iman = true;
 		gameObject.GetComponent<Collider>().isTrigger = false;
 	}
 

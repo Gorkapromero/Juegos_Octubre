@@ -44,12 +44,16 @@ public class ataquePegajoso : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other) 
 	{
-        GameObject.Find("SonidoSilbidoPelota").GetComponent<AudioSource>().Stop();
+        //GameObject.Find("SonidoSilbidoPelota").GetComponent<AudioSource>().Stop();
+        //Destroy(GameObject.Find("SonidoSilbidoPelota"));
 
         switch (other.gameObject.tag)
 		{
 			case "Jugador":
-			    if(SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&Personaje.Vidas>1)
+                //Reproducimos el sonido de Splash de la pelota
+                GameObject.Find("SonidoSplashPelota").GetComponent<AudioSource>().Play();
+
+                if (SceneManager.GetActiveScene().name == "02_escenario_tutorial"&&Personaje.Vidas>1)
 			    {
 				    Personaje.quitarvida_Vida();
 			    }
@@ -121,9 +125,9 @@ public class ataquePegajoso : MonoBehaviour
 
 		if(Physics.Raycast(ray,out hit, 100f, layer))
 			Instantiate(ImagenObjetivo, hit.point, ImagenObjetivo.transform.rotation);
-			
+
         //Silbido de la pelota mientras está en el aire
-        GameObject.Find("SonidoSilbidoPelota").GetComponent<AudioSource>().Play();
+        //GameObject.Find("SonidoSilbidoPelota").GetComponent<AudioSource>().Play();
 
         //definimos distancia x e y
         Vector3 distancia = objetivo - origen;

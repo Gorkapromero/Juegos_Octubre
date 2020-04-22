@@ -202,7 +202,7 @@ public class movimiento_objetos : MonoBehaviour
                 break;
 
             case "Jugador":                       //objeto toca personaje
-                print("jugador");
+                //print("jugador");
                 if (!Habilidades.sprint&&SceneManager.GetActiveScene().name != "02_escenario_tutorial")
                 {
                     switch (gameObject.name)
