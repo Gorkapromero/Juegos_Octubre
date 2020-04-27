@@ -77,6 +77,8 @@ public class Ctrl_oleadas : MonoBehaviour
 
     public Slider SliderOleada;
     int enemigos;
+    Premios Premios;
+
     //public float distA;
     // Use this for initialization
     void Start()
@@ -85,6 +87,7 @@ public class Ctrl_oleadas : MonoBehaviour
         //WaveCountdown = TiempoDescanso;
         //jugador = GameObject.FindGameObjectWithTag("Jugador").transform;
         DatosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
+        Premios = GameObject.Find("Recolctables").GetComponent<Premios>();
         ActualizarTextoOleadas();
     }
 
@@ -326,7 +329,7 @@ public class Ctrl_oleadas : MonoBehaviour
         int Texto;
         switch(ContadorOleadas)
         {
-            case 5:
+            case 5://plastico
                 Texto = 0;
                 TextosDificultad[Texto].SetActive(true);
                 if (DatosGuardados.rango < 1)
@@ -335,37 +338,41 @@ public class Ctrl_oleadas : MonoBehaviour
  
             break;
 
-            case 10:
+            case 10://Madera
                 Texto = 1;
                 TextosDificultad[Texto].SetActive(true);
+                Premios.Monedas = 250;
                 if (DatosGuardados.rango < 2)
                     subirRango();
                 StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
 
-            case 15:
+            case 15://bronce
                 Texto = 2;
                 TextosDificultad[Texto].SetActive(true);
-                if(DatosGuardados.rango < 3)
+                Premios.Monedas = 500;
+                if (DatosGuardados.rango < 3)
                     subirRango();
                 StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
 
-            case 20:
+            case 20://plata
                 Texto = 3;
                 TextosDificultad[Texto].SetActive(true);
-                if(DatosGuardados.rango < 4)
+                Premios.Monedas = 750;
+                if (DatosGuardados.rango < 4)
                     subirRango();
                 StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
 
-            case 25:
+            case 25://oro
                 Texto = 4;
                 TextosDificultad[Texto].SetActive(true);
-                if(DatosGuardados.rango < 5)
+                Premios.Monedas = 1000;
+                if (DatosGuardados.rango < 5)
                     subirRango();
                 StartCoroutine(ApagarTexto(Texto,3f));
             
@@ -385,7 +392,8 @@ public class Ctrl_oleadas : MonoBehaviour
     {
         //Vector3 PosicionObjeto = new Vector3(GameObject.FindGameObjectWithTag("Jugador").GetComponent<Transform>().position.x+PosicionCofre.x,PosicionCofre.y,PosicionCofre.z);
         Instantiate(ParticulasCofre,PosicionCofre,Quaternion.identity);
-        Instantiate(cofre,PosicionCofre,Quaternion.identity);
+        GameObject premio =Instantiate(cofre,PosicionCofre,Quaternion.identity);
+        GameObject.Find("Window_recolectablePoint").GetComponent<Window_IndicadorRecolectables>().Target2 = premio;
     }
 
     void subirRango()

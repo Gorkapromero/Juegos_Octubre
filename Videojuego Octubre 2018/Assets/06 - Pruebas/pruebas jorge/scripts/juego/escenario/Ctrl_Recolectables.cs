@@ -37,20 +37,29 @@ public class Ctrl_Recolectables : MonoBehaviour
         else if(tiempo <= 0&&SiguienteCaja)
         {
             //print("sacamos caja");43-443
-            Vector3 PosicionObjeto;
-            int ladoFregadero = Random.Range(1, 3);
-            if(ladoFregadero==1)
+            Vector3 PosicionObjeto =new Vector3(0,0,0);
+            int ladoFregadero = Random.Range(0,4);
+            if(ladoFregadero<=1)
             { 
-                PosicionObjeto = new Vector3(Random.Range(-700f, -70f), RandomizePosition.y , transform.position.z);
+                PosicionObjeto = new Vector3(Random.Range(-700f, -306f), RandomizePosition.y , transform.position.z);
+                GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
+                Indicadores.Target = Recolectable;
                 print("posicion 1: " + PosicionObjeto);
             }
-            else
+            if(ladoFregadero == 2)
             {
-                PosicionObjeto = new Vector3(Random.Range(50f, 455.0f), RandomizePosition.y, transform.position.z);
+                PosicionObjeto = new Vector3(Random.Range(-306f,-70f), RandomizePosition.y, transform.position.z);
+                GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
+                Indicadores.Target = Recolectable;
                 print("posicion 2: " + PosicionObjeto);
             }
-            GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity,transform);
-            Indicadores.Target = Recolectable;
+            if (ladoFregadero >= 3)
+            {
+                PosicionObjeto = new Vector3(Random.Range(50f, 455.0f), RandomizePosition.y, transform.position.z);
+                GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
+                Indicadores.Target = Recolectable;
+                print("posicion 3: " + PosicionObjeto);
+            } 
 
             Vector3 PosicionParticulas = new Vector3(PosicionObjeto.x, -54f, transform.position.z);
             Instantiate(ParticulasAparece, PosicionParticulas, Quaternion.Euler(-90f,0,0));   

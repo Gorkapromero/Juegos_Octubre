@@ -68,7 +68,8 @@ public class Ctrl_Botones : MonoBehaviour
     
     public void volverJugar()
     {
-        if(Time.timeScale == 0f)
+        GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnaliticsProgresion(Puntuacion.Texto_Oleadas.text, Puntuacion.Texto_Tiempo.text);
+        if (Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
         }
@@ -87,6 +88,7 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void CargarMenu()
     {
+        GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnaliticsProgresion(Puntuacion.Texto_Oleadas.text, Puntuacion.Texto_Tiempo.text);
         DatosGuardar.Monedas+=Puntuacion.monedasRecojidas;
         if(Time.timeScale == 0f)
         {
@@ -134,6 +136,7 @@ public class Ctrl_Botones : MonoBehaviour
     {
 
         DatosGuardar.Monedas -= MonedasResucitar;
+        GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsRevivir("Monedas", true);
         SeguirJugando();
 
     }
@@ -142,6 +145,7 @@ public class Ctrl_Botones : MonoBehaviour
     {
         //personaje.resucitadoAnuncio = true;
         GameObject.Find("B_Anuncio").GetComponent<Button>().interactable = false;
+        GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsRevivir("Anuncio", true);
         SeguirJugando();
     }
 

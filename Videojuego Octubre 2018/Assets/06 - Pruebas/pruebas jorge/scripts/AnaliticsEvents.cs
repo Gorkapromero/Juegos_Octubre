@@ -5,7 +5,7 @@ using UnityEngine.Analytics;
 
 public class AnaliticsEvents : MonoBehaviour
 {
-    public void AnaliticsProgresion(int Noleada,string tiempo)
+    public void AnaliticsProgresion(string Noleada,string tiempo)
     {
         Analytics.CustomEvent("Oleadas", new Dictionary<string, object>
         {
@@ -45,13 +45,13 @@ public class AnaliticsEvents : MonoBehaviour
     {
         Analytics.CustomEvent("Daily Gift", new Dictionary<string, object>
         {
-            {"Revivido", Estado }
+            {"Premio diario", Estado }
         });
     }
 
     public void AnalyticsHabilidades(string habilidad, bool Estado)
     {
-        Analytics.CustomEvent("Revivir", new Dictionary<string, object>
+        Analytics.CustomEvent("Habilidades", new Dictionary<string, object>
         {
             {"Habilidad", habilidad },
         });

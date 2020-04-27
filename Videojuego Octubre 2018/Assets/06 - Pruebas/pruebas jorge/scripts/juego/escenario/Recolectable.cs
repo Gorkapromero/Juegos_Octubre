@@ -17,6 +17,7 @@ public class Recolectable : MonoBehaviour {
     movimiento_personaje Jugador;
     Ctrl_Habilidades Habilidades;
     Ctrl_Recolectables Recolectables;
+    Premios Premios;
 
     [System.Serializable]
     public class objeto
@@ -46,6 +47,7 @@ public class Recolectable : MonoBehaviour {
         Jugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
         Recolectables = GameObject.Find("Recolctables").GetComponent<Ctrl_Recolectables>();
+        Premios = GameObject.Find("Recolctables").GetComponent<Premios>();
     }
 
     // Update is called once per frame
@@ -114,7 +116,7 @@ public class Recolectable : MonoBehaviour {
                             Destruir();
                             break;
                         case "Daño":
-                            //aumentamos daño
+                            /*//aumentamos daño
                             Habilidades.DañoBasico += 50;
                             //cambiamos color pajarita
                             Habilidades.MaterialPajarita.color = ColorMasDaño;
@@ -127,7 +129,8 @@ public class Recolectable : MonoBehaviour {
                             Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -54f, transform.position.z);
                             Instantiate(LootTable[j].Particulas, PosicionParticulasDaño, Quaternion.Euler(-90f,0,0));
                             //activamos tiempo daño extra
-                            Habilidades.DañoExtra = true;
+                            Habilidades.DañoExtra = true;*/
+                            Premios.PowerUpsGanados++;
                             Destruir();
                             break;
                         case "Default":

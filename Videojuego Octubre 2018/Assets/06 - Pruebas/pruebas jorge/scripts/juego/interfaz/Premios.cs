@@ -246,6 +246,7 @@ public class Premios : MonoBehaviour
         }
         if (CuadroAnuncioJugar)
         {
+            GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsRevivir("Monedas", false);
             CuadroAnuncioJugar.SetActive(false);
         }
     }
