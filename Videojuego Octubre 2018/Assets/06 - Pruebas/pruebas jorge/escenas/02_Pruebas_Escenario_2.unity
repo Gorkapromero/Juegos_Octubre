@@ -19591,7 +19591,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479636987}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c40269bb897180b4c85dac7feaea924a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -69596,7 +69596,7 @@ MonoBehaviour:
       enemigo: {fileID: 1220318009931152, guid: 75cf895a49f3ec74ab46c07a2d40e396,
         type: 3}
       rareza: 100
-  NumeroEnemigos: 5
+  NumeroEnemigos: 32
   ContadorOleadas: 0
   TiempoDescanso: 5
   Estado: 2

@@ -49,7 +49,7 @@ public class Ctrl_Skins : MonoBehaviour
 	float posinicial;
 	public float velocidad;
 
-	int NumeroSkin;
+	public int NumeroSkin;
     float posicionOnMouseDown;
 
     public GameObject BotonSelec;

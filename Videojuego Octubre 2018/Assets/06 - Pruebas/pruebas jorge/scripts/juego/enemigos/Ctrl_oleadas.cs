@@ -94,6 +94,7 @@ public class Ctrl_oleadas : MonoBehaviour
         //distA = (PuntoDePrueba.position-zonaAgua.position).magnitude;
         if (PlayerState.ToString() == "muerto")
         {
+            Estado = SpawnState.COUNTING;
             if (GameObject.FindGameObjectWithTag("Enemigo"))
             {
                 GameObject[] Enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
@@ -161,12 +162,14 @@ public class Ctrl_oleadas : MonoBehaviour
         //Debug.Log("Spawn Oleada: " + (ContadorOleadas+1));
         Estado = SpawnState.SPAWNING;
         SliderOleada.value = 0;
-        SliderOleada.maxValue = NumeroEnemigos;
+        SliderOleada.maxValue = NumeroEnemigos;  
 
         for (int i = 0; i < NumeroEnemigos; i++)
         {
             crear(_oleada);
-            //print("enemigo: " + i);
+            print("enemigo: " + i);
+            if (PlayerState.ToString() == "muerto")
+                yield break;
             yield return new WaitForSecondsRealtime(tiempoCreacion);
         }
 
