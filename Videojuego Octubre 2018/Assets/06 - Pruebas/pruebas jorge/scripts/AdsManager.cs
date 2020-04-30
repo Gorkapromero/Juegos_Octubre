@@ -100,6 +100,7 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
             }
             else
             {
+              GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsPremios("Premio Premium", "recivido");
               GameObject.Find("Recolctables").GetComponent<Premios>().PremiumLoot();
               GameObject.Find("Recolctables").GetComponent<Premios>().CuadroAnuncioPremio.SetActive(false);
             }

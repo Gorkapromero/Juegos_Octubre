@@ -61,6 +61,8 @@ public class Premios : MonoBehaviour
 
     public void NormalLoot()
     {
+        GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsPremios("Premio Normal","recivido");
+
         PremioSeleccionado = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
         PremioSeleccionado.enabled = false;
 
@@ -242,6 +244,7 @@ public class Premios : MonoBehaviour
     {
         if (CuadroAnuncioPremio)
         {
+            GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsPremios("Premio Premium", "Cancelado");
             CuadroAnuncioPremio.SetActive(false);
         }
         if (CuadroAnuncioJugar)

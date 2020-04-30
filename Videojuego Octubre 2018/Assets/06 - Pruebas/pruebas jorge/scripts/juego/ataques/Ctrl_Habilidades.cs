@@ -231,12 +231,14 @@ public class Ctrl_Habilidades : MonoBehaviour
     {
         if(escudoActivado==false)
         {
+            GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsHabilidades("Escudo On");
             escudoActivado = true;
             tablahabilidades[3].habilidad.SetActive(true);
             particulasBarraEnergia.SetActive(true);
         }
         else
         {
+            GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsHabilidades("Escudo Off");
             escudooff();
         }
 

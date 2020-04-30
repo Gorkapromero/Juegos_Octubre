@@ -332,6 +332,8 @@ public class Ctrl_Skins : MonoBehaviour
 	{
 		if(DatosGuardados.Monedas>=TablaSkins[NumeroSkin].Precio)
 		{
+			GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnalyticsComprarSkin(TablaSkins[NumeroSkin].Nombre,TablaSkins[NumeroSkin].Precio);
+
 			DatosGuardados.Monedas-=TablaSkins[NumeroSkin].Precio;
 			DatosGuardados.skinsdesbloqueadas[NumeroSkin] = true;
 

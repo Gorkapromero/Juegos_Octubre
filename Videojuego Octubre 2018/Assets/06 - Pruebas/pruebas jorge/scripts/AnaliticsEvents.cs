@@ -32,7 +32,7 @@ public class AnaliticsEvents : MonoBehaviour
         });
     }
 
-    public void AnalyticsPremios(string Premio, bool Estado)
+    public void AnalyticsPremios(string Premio, string Estado)
     {
         AnalyticsEvent.Custom("Premios", new Dictionary<string, object>
         {
@@ -41,15 +41,15 @@ public class AnaliticsEvents : MonoBehaviour
         });
     }
 
-    public void AnalyticsDailyGift(bool Estado)
+    /*public void AnalyticsDailyGift(bool Estado)
     {
         AnalyticsEvent.Custom("Daily Gift", new Dictionary<string, object>
         {
             {"Premio diario", Estado }
         });
-    }
+    }*/
 
-    public void AnalyticsHabilidades(string habilidad, bool Estado)
+    public void AnalyticsHabilidades(string habilidad)
     {
         AnalyticsEvent.Custom("Habilidades", new Dictionary<string, object>
         {
