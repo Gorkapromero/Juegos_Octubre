@@ -7,16 +7,16 @@ public class AnaliticsEvents : MonoBehaviour
 {
     public void AnaliticsProgresion(string Noleada,string tiempo)
     {
-        Analytics.CustomEvent("Oleadas", new Dictionary<string, object>
+        AnalyticsEvent.Custom("Oleadas", new Dictionary<string, object>
         {
-            {"oleada Nº", Noleada },
+            {"numero oleada", Noleada },
             {"Tiempo Partida", tiempo }
         });
     }
 
     public void AnalyticsComprarSkin(string nombreSkin,int precio)
     {
-        Analytics.CustomEvent("Comprar Skin", new Dictionary<string, object>
+        AnalyticsEvent.Custom("Comprar Skin", new Dictionary<string, object>
         {
             {"Nombre Skin", nombreSkin },
             {"Precio", precio }
@@ -25,7 +25,7 @@ public class AnaliticsEvents : MonoBehaviour
 
     public void AnalyticsRevivir(string modo,bool Estado)
     {
-        Analytics.CustomEvent("Revivir", new Dictionary<string, object>
+        AnalyticsEvent.Custom("Revivir", new Dictionary<string, object>
         {
             {"Modo", modo },
             {"Revivido", Estado }
@@ -34,16 +34,16 @@ public class AnaliticsEvents : MonoBehaviour
 
     public void AnalyticsPremios(string Premio, bool Estado)
     {
-        Analytics.CustomEvent("Premios", new Dictionary<string, object>
+        AnalyticsEvent.Custom("Premios", new Dictionary<string, object>
         {
             {"Premio", Premio },
-            {"Revivido", Estado }
+            {"Recivido", Estado }
         });
     }
 
     public void AnalyticsDailyGift(bool Estado)
     {
-        Analytics.CustomEvent("Daily Gift", new Dictionary<string, object>
+        AnalyticsEvent.Custom("Daily Gift", new Dictionary<string, object>
         {
             {"Premio diario", Estado }
         });
@@ -51,7 +51,7 @@ public class AnaliticsEvents : MonoBehaviour
 
     public void AnalyticsHabilidades(string habilidad, bool Estado)
     {
-        Analytics.CustomEvent("Habilidades", new Dictionary<string, object>
+        AnalyticsEvent.Custom("Habilidades", new Dictionary<string, object>
         {
             {"Habilidad", habilidad },
         });

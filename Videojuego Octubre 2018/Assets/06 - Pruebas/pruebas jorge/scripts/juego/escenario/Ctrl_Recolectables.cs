@@ -44,21 +44,21 @@ public class Ctrl_Recolectables : MonoBehaviour
                 PosicionObjeto = new Vector3(Random.Range(-700f, -306f), RandomizePosition.y , transform.position.z);
                 GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
                 Indicadores.Target = Recolectable;
-                print("posicion 1: " + PosicionObjeto);
+                //print("posicion 1: " + PosicionObjeto);
             }
             if(ladoFregadero == 2)
             {
                 PosicionObjeto = new Vector3(Random.Range(-306f,-70f), RandomizePosition.y, transform.position.z);
                 GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
                 Indicadores.Target = Recolectable;
-                print("posicion 2: " + PosicionObjeto);
+                //print("posicion 2: " + PosicionObjeto);
             }
             if (ladoFregadero >= 3)
             {
                 PosicionObjeto = new Vector3(Random.Range(50f, 455.0f), RandomizePosition.y, transform.position.z);
                 GameObject Recolectable = Instantiate(Objeto, PosicionObjeto, Quaternion.identity, transform);
                 Indicadores.Target = Recolectable;
-                print("posicion 3: " + PosicionObjeto);
+                //print("posicion 3: " + PosicionObjeto);
             } 
 
             Vector3 PosicionParticulas = new Vector3(PosicionObjeto.x, -54f, transform.position.z);

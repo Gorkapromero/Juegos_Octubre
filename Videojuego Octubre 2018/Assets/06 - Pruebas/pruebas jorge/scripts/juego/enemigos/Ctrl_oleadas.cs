@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public enum EstadoJugador 
@@ -170,7 +171,7 @@ public class Ctrl_oleadas : MonoBehaviour
         for (int i = 0; i < NumeroEnemigos; i++)
         {
             crear(_oleada);
-            print("enemigo: " + i);
+            //print("enemigo: " + i);
             if (PlayerState.ToString() == "muerto")
                 yield break;
             yield return new WaitForSecondsRealtime(tiempoCreacion);
@@ -333,8 +334,11 @@ public class Ctrl_oleadas : MonoBehaviour
                 Texto = 0;
                 TextosDificultad[Texto].SetActive(true);
                 if (DatosGuardados.rango < 1)
+                {
+                    AnalyticsEvent.LevelComplete("Plastico");
                     subirRango();
-            StartCoroutine(ApagarTexto(Texto,5f));
+                }
+                StartCoroutine(ApagarTexto(Texto,5f));
  
             break;
 
@@ -343,7 +347,10 @@ public class Ctrl_oleadas : MonoBehaviour
                 TextosDificultad[Texto].SetActive(true);
                 Premios.Monedas = 250;
                 if (DatosGuardados.rango < 2)
+                {
+                    AnalyticsEvent.LevelComplete("Madera");
                     subirRango();
+                }
                 StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
@@ -353,7 +360,10 @@ public class Ctrl_oleadas : MonoBehaviour
                 TextosDificultad[Texto].SetActive(true);
                 Premios.Monedas = 500;
                 if (DatosGuardados.rango < 3)
+                {
+                    AnalyticsEvent.LevelComplete("Bronce");
                     subirRango();
+                }
                 StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
@@ -363,7 +373,10 @@ public class Ctrl_oleadas : MonoBehaviour
                 TextosDificultad[Texto].SetActive(true);
                 Premios.Monedas = 750;
                 if (DatosGuardados.rango < 4)
+                {
+                    AnalyticsEvent.LevelComplete("Plata");
                     subirRango();
+                }
                 StartCoroutine(ApagarTexto(Texto,5f));
 
             break;
@@ -373,7 +386,10 @@ public class Ctrl_oleadas : MonoBehaviour
                 TextosDificultad[Texto].SetActive(true);
                 Premios.Monedas = 1000;
                 if (DatosGuardados.rango < 5)
+                {
+                    AnalyticsEvent.LevelComplete("Oro");
                     subirRango();
+                }
                 StartCoroutine(ApagarTexto(Texto,3f));
             
             break;

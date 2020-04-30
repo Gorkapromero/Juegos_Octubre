@@ -68,7 +68,9 @@ public class Ctrl_Botones : MonoBehaviour
     
     public void volverJugar()
     {
-        GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnaliticsProgresion(Puntuacion.Texto_Oleadas.text, Puntuacion.Texto_Tiempo.text);
+
+        if (GameObject.Find("Analytics"))
+            GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnaliticsProgresion(Puntuacion.Texto_Oleadas.text, Puntuacion.Texto_Tiempo.text);
         if (Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
@@ -88,7 +90,9 @@ public class Ctrl_Botones : MonoBehaviour
 
     public void CargarMenu()
     {
-        GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnaliticsProgresion(Puntuacion.Texto_Oleadas.text, Puntuacion.Texto_Tiempo.text);
+        if(GameObject.Find("Analytics"))
+            GameObject.Find("Analytics").GetComponent<AnaliticsEvents>().AnaliticsProgresion(Puntuacion.Texto_Oleadas.text, Puntuacion.Texto_Tiempo.text);
+        
         DatosGuardar.Monedas+=Puntuacion.monedasRecojidas;
         if(Time.timeScale == 0f)
         {
