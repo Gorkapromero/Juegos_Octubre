@@ -123,14 +123,15 @@ public class Recolectable : MonoBehaviour {
 
                             //Y activamos las partículas de "Prota super sayan"
                             Habilidades.particulasSuperSayan_Cuerpo.SetActive(true);
-                            Habilidades.particulasSuperSayan_Pajarita.SetActive(true);
+                            Habilidades.particulasSuperSayan_Pajarita.SetActive(true);*/
 
                             //indicamos que hemos conseguido mas daño
                             Vector3 PosicionParticulasDaño = new Vector3(transform.position.x, -54f, transform.position.z);
                             Instantiate(LootTable[j].Particulas, PosicionParticulasDaño, Quaternion.Euler(-90f,0,0));
                             //activamos tiempo daño extra
-                            Habilidades.DañoExtra = true;*/
+                            //Habilidades.DañoExtra = true;
                             Premios.PowerUpsGanados++;
+                            Premios.ActualizarPremios();
                             Destruir();
                             break;
                         case "Default":

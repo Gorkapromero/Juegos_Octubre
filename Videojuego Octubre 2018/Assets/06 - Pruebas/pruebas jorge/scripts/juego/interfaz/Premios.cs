@@ -196,7 +196,7 @@ public class Premios : MonoBehaviour
         Invoke("ActivarBoton",5f);
     }
 
-    void ActualizarPremios()
+    public void ActualizarPremios()
     {
         if(PowerUpsGanados>0)
         {

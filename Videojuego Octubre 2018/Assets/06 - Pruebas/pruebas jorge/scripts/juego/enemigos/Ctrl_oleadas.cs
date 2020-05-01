@@ -206,18 +206,6 @@ public class Ctrl_oleadas : MonoBehaviour
             {
                 PosicionesActivas.Add(posiciones[x]);
             }
-            /*if(x<=4&&rangoDistancia>dist)//encimera
-            {
-                /*posicionesActivas[pos] = posiciones[x];
-                pos++;
-                PosicionesActivas.Add(posiciones[x]);
-            }*/
-            /*else if(x>4&&rangoDistancia<dist)
-            {
-                /*posicionesActivas[pos] = posiciones[x];
-                pos++;
-                PosicionesActivas.Add(posiciones[x]);
-            }*/
         }
 
         total = 0;
@@ -248,28 +236,28 @@ public class Ctrl_oleadas : MonoBehaviour
                     {
                         Vector3 SpawnPosition = new Vector3(0, 0, 0);
                         Vector3 PositionSpawn = new Vector3((jugador.position.x+OffsetCaida.x),zonaAgua.position.y,zonaAgua.position.z);
-                        float distA = Vector3.Distance(PositionSpawn,zonaAgua.position);
-                        if(distA>TamañoZonaAgua.x)//No estamos en el agua
-                        {
+                        //float distA = Vector3.Distance(PositionSpawn,zonaAgua.position);
+                        //if(distA>TamañoZonaAgua.x)//No estamos en el agua
+                        //{
                             float PosicionXEnemigo=Random.Range(-OffsetCaida.x,OffsetCaida.x);
                             if(PosicionXEnemigo<=0)//izq
                             {
                                 SpawnPosition = new Vector3(jugador.position.x-OffsetCaida.x, PosicionParacas.position.y, jugador.position.z);
                                 float DistanciaEnemigoagua = Vector3.Distance(SpawnPosition, zonaAgua.position);
                                 if(DistanciaEnemigoagua<TamañoZonaAgua.x)//cae en el agua
-                                    SpawnPosition = new Vector3(jugador.position.x - (OffsetCaida.x+TamañoZonaAgua.x), PosicionParacas.position.y, jugador.position.z);
+                                    SpawnPosition = new Vector3(jugador.position.x - (OffsetCaida.x+(TamañoZonaAgua.x*2)), PosicionParacas.position.y, jugador.position.z);
                             }
                             else//der
                             {
                                 SpawnPosition = new Vector3(jugador.position.x+OffsetCaida.x, PosicionParacas.position.y, jugador.position.z);
                                 float DistanciaEnemigoagua = Vector3.Distance(SpawnPosition, zonaAgua.position);
                                 if (DistanciaEnemigoagua < TamañoZonaAgua.x)//cae en el agua
-                                    SpawnPosition = new Vector3(jugador.position.x + (OffsetCaida.x + TamañoZonaAgua.x), PosicionParacas.position.y, jugador.position.z);
+                                    SpawnPosition = new Vector3(jugador.position.x + (OffsetCaida.x + (TamañoZonaAgua.x*2)), PosicionParacas.position.y, jugador.position.z);
                             }
                             
                             GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo, SpawnPosition, _Oleada.enemigos[j].enemigo.transform.rotation);
-                        }
-                        else//si estamos en el agua
+                        //}
+                        /*else//si estamos en el agua
                         {
                             float DistDer = Vector3.Distance(PositionSpawn,ZonaDerecha.position);
                             float DistIzq = Vector3.Distance(PositionSpawn,ZonaIzquierda.position);
@@ -285,7 +273,7 @@ public class Ctrl_oleadas : MonoBehaviour
                                 GameObject Objeto = Instantiate(_Oleada.enemigos[j].enemigo,SpawnPosition , _Oleada.enemigos[j].enemigo.transform.rotation);
                             }
 
-                        }
+                        }*/
                            
                     }
                     else
