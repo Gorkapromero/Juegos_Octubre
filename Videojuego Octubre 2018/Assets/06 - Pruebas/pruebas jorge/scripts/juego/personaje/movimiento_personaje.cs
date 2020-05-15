@@ -137,7 +137,7 @@ public class movimiento_personaje : MonoBehaviour
         if (script_ctl_habilidades.AtaqueBasico == false && bloquearControl == false&& Time.timeScale == 1)
         {
             //velocidad_fin = vidas.value * 20;
-            if(joystick.Horizontal<0)
+            if(joystick.Horizontal<0 || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
                 {
@@ -145,7 +145,8 @@ public class movimiento_personaje : MonoBehaviour
                 }
                 movimiento = -1;
             }
-            else if(joystick.Horizontal>0)
+            else if(joystick.Horizontal>0 || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+
             {
                 if (SceneManager.GetActiveScene().name == "02_escenario_tutorial")
                 {
@@ -204,7 +205,6 @@ public class movimiento_personaje : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || (activarSalto))
             {
-
                 if (!DobleSalto)
                 {
                     //print("Doble Salto");

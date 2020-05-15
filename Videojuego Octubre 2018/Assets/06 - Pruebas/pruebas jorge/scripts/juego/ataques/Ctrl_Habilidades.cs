@@ -88,6 +88,10 @@ public class Ctrl_Habilidades : MonoBehaviour
         {
             Ataque_Basico();
         }
+        else if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            chorro();
+        }
     }
     // Update is called once per frame
     void Update ()
