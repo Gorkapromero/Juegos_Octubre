@@ -80,6 +80,11 @@ public class ControlBotonesMenu : MonoBehaviour
 
 	public void Recompensa()
 	{
+		if(Application.internetReachability == NetworkReachability.NotReachable)
+		{
+			gameObject.GetComponent<ToastMessage>().crearTexto("Error. Check internet connection!");
+			return;
+		}
 		cuadroAnuncio.SetActive(true);
 	}
 	public void NoVerAnuncio()

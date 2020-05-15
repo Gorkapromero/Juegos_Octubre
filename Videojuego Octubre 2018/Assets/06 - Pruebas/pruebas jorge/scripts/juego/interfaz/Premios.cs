@@ -9,6 +9,7 @@ public class Premios : MonoBehaviour
     DatosGuardados datosGuardados;
     movimiento_personaje Jugador;
     Ctrl_Habilidades Habilidades;
+    Ctrl_oleadas Oleadas;
 
     [System.Serializable]
     public class PremiosNormales
@@ -54,6 +55,7 @@ public class Premios : MonoBehaviour
         datosGuardados = GameObject.Find("Datosguardados").GetComponent<DatosGuardados>();
         Jugador = GameObject.FindGameObjectWithTag("Jugador").GetComponent<movimiento_personaje>();
         Habilidades = GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>();
+        Oleadas = GameObject.Find("creador_objetos").GetComponent<Ctrl_oleadas>();
 
         ActualizarPremios();
     }
@@ -220,7 +222,7 @@ public class Premios : MonoBehaviour
         {
             PowerUpsGanados--;
             //aumentamos daño
-            Habilidades.DañoBasico += 50;
+            Habilidades.DañoBasico += 40+(10*Oleadas.ContadorOleadas);
 
             //Y activamos las partículas de "Prota super sayan"
             Habilidades.particulasSuperSayan_Cuerpo.SetActive(true);
@@ -233,11 +235,21 @@ public class Premios : MonoBehaviour
 
     public void SeguirJugandoAnuncio()
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            gameObject.GetComponent<ToastMessage>().crearTexto("Error. Check internet connection!");
+            return;
+        }
         CuadroAnuncioJugar.SetActive(true);
     }
 
     public void Premium()
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            gameObject.GetComponent<ToastMessage>().crearTexto("Error. Check internet connection!");
+            return;
+        }
         CuadroAnuncioPremio.SetActive(true);
     }
     public void noVerAnuncio()

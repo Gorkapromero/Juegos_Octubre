@@ -18,7 +18,7 @@ PlayerSettings:
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
-  m_ShowUnitySplashLogo: 1
+  m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
@@ -122,7 +122,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.3
+  bundleVersion: 1.5
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -168,7 +168,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.StudiosIkki.Marshattack
   buildNumber: {}
-  AndroidBundleVersionCode: 5
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
@@ -258,7 +258,7 @@ PlayerSettings:
   clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
   templatePackageId: com.unity.3d@1.0.2
   templateDefaultScene: Assets/Scenes/SampleScene.unity
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: '{inproject}: JuegoOctubre.keystore'
@@ -282,7 +282,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 85d7250df970a5d4697896e501fea298, type: 3}
+      m_Icon: {fileID: 0}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -290,107 +290,115 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: 85d7250df970a5d4697896e501fea298, type: 3}
+      - {fileID: 2800000, guid: a82fec852d4677d4693813ac4e262344, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: de77eec61bf4b2e49898ea4725208176, type: 3}
       m_Width: 144
       m_Height: 144
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: 49c615b31f4f5b246988451a2ae79013, type: 3}
       m_Width: 96
       m_Height: 96
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: cebdf005a40b0414dbea59287935da10, type: 3}
       m_Width: 72
       m_Height: 72
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: d8a07b9203c0fb746b80ec71b4e9321c, type: 3}
       m_Width: 48
       m_Height: 48
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: e97b400bb79ed5e4d930b3bd9d5d1f67, type: 3}
       m_Width: 36
       m_Height: 36
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 85d7250df970a5d4697896e501fea298, type: 3}
+      - {fileID: 2800000, guid: a82fec852d4677d4693813ac4e262344, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: de77eec61bf4b2e49898ea4725208176, type: 3}
       m_Width: 144
       m_Height: 144
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: 49c615b31f4f5b246988451a2ae79013, type: 3}
       m_Width: 96
       m_Height: 96
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: cebdf005a40b0414dbea59287935da10, type: 3}
       m_Width: 72
       m_Height: 72
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: d8a07b9203c0fb746b80ec71b4e9321c, type: 3}
       m_Width: 48
       m_Height: 48
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 0}
+      - {fileID: 2800000, guid: e97b400bb79ed5e4d930b3bd9d5d1f67, type: 3}
       m_Width: 36
       m_Height: 36
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 85d7250df970a5d4697896e501fea298, type: 3}
-      - {fileID: 2800000, guid: 85d7250df970a5d4697896e501fea298, type: 3}
+      - {fileID: 2800000, guid: a82fec852d4677d4693813ac4e262344, type: 3}
+      - {fileID: 2800000, guid: a82fec852d4677d4693813ac4e262344, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 85d7250df970a5d4697896e501fea298, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: de77eec61bf4b2e49898ea4725208176, type: 3}
+      - {fileID: 2800000, guid: de77eec61bf4b2e49898ea4725208176, type: 3}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 49c615b31f4f5b246988451a2ae79013, type: 3}
+      - {fileID: 2800000, guid: 49c615b31f4f5b246988451a2ae79013, type: 3}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: cebdf005a40b0414dbea59287935da10, type: 3}
+      - {fileID: 2800000, guid: cebdf005a40b0414dbea59287935da10, type: 3}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: d8a07b9203c0fb746b80ec71b4e9321c, type: 3}
+      - {fileID: 2800000, guid: d8a07b9203c0fb746b80ec71b4e9321c, type: 3}
       m_Width: 108
       m_Height: 108
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: e97b400bb79ed5e4d930b3bd9d5d1f67, type: 3}
+      - {fileID: 2800000, guid: e97b400bb79ed5e4d930b3bd9d5d1f67, type: 3}
       m_Width: 81
       m_Height: 81
       m_Kind: 2
@@ -687,10 +695,10 @@ PlayerSettings:
     29: UNITY_POST_PROCESSING_STACK_V2
   platformArchitecture: {}
   scriptingBackend:
-    Android: 0
+    Android: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel:
-    Android: 2
+    Android: 3
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 

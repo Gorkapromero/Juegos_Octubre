@@ -34,6 +34,11 @@ public class Tienda : MonoBehaviour
     #region Dynamic Product - Se completan automaticamente con el Product ID
     public void Purchase_Consumable(Product _product)
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto("Error. Check internet connection!");
+            return;
+        }
         Producto = _product;
         print("BOTON PULSADO: "+_product.definition.id);
         //iniciar animaciones cofres
@@ -75,29 +80,37 @@ public class Tienda : MonoBehaviour
         switch(_failureReason)
         {
             case PurchaseFailureReason.PurchasingUnavailable:
-            textFailureReason = "Compra no disponible";
-            break;
+                textFailureReason = "Compra no disponible";
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
             case PurchaseFailureReason.ExistingPurchasePending:
 				textFailureReason = "Existencia de compra pendiente";
-				break;
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
 			case PurchaseFailureReason.ProductUnavailable:
 				textFailureReason = "Producto no disponible";
-				break;
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
 			case PurchaseFailureReason.SignatureInvalid:
 				textFailureReason = "Firma invalida";
-				break;
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
 			case PurchaseFailureReason.UserCancelled:
 				textFailureReason = "Usuario cancelado";
-				break;
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
 			case PurchaseFailureReason.PaymentDeclined:
 				textFailureReason = "Pago rechazado";
-				break;
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
 			case PurchaseFailureReason.DuplicateTransaction:
 				textFailureReason = "Transaccion duplicada";
-				break;
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
 			case PurchaseFailureReason.Unknown:
 				textFailureReason = "Desconocido";
-				break;
+                GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto(textFailureReason);
+                break;
         }
 
         //Si el producto ya esta cargado, nos muestra el error, si no muestra el texto "Inicializado"

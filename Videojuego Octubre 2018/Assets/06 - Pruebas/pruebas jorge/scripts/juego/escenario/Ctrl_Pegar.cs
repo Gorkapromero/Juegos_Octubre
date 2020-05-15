@@ -48,7 +48,7 @@ public class Ctrl_Pegar : MonoBehaviour
 
     void Pegar()
     {
-        if(Dentro)
+        if(Dentro&&!GameObject.Find("CTRL_Habilidades").GetComponent<Ctrl_Habilidades>().sprint)
         {
             print("Nos quedamos pegados");
             move.Stop();

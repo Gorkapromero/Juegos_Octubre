@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Mat_nevera
   m_Shader: {fileID: 4800000, guid: 8baca54962328ac46a382f4ff1830d1a, type: 3}
   m_ShaderKeywords: 
@@ -63,10 +64,10 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _LightSmoothness: 0
-    - _LightThreshold: 0.3
+    - _LightThreshold: 0.01
     - _MKEditorShowDetailBehavior: 0
     - _MKEditorShowDissolveBehavior: 0
-    - _MKEditorShowLightBehavior: 0
+    - _MKEditorShowLightBehavior: 1
     - _MKEditorShowMainBehavior: 1
     - _MKEditorShowOutlineBehavior: 1
     - _MKEditorShowReflectionBehavior: 0
@@ -85,7 +86,7 @@ Material:
     - _RimSize: 1.5
     - _RimSmoothness: 0.667
     - _ShadowIntensity: 1
-    - _Shininess: 0.178
+    - _Shininess: 0.01
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularIntensity: 0
