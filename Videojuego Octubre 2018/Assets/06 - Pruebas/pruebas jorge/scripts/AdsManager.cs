@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
 	
-  public string appKey = "Put your app key here.";
+  private const string appKey = "7cbc55e6ba43bf2cbc9b226db9714de0c5f6686b329f1d37";
 	//ManagerScript Manager;
   int timesTriedToShowInterstitial = 0;
 
@@ -15,17 +15,14 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
   Ctrl_Botones Botones;
 
   public string BotonClicked;
+  public GameObject loading;
  
  // Use this for initialization
  void Start () 
- 	{
-		//Manager = gameObject.GetComponent<ManagerScript>();
-    Botones = GameObject.Find("Canvas").GetComponent<Ctrl_Botones>();
-
-        
+ 	{   
         Appodeal.disableLocationPermissionCheck();
-        Appodeal.setTesting(true);
-        Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER | Appodeal.REWARDED_VIDEO);
+        Appodeal.setTesting(false);
+        Appodeal.initialize(appKey, Appodeal.REWARDED_VIDEO);
         Appodeal.setRewardedVideoCallbacks(this);
     }
  
@@ -52,18 +49,28 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
     public void ShowRewarded()
     { 
       BotonClicked = EventSystem.current.currentSelectedGameObject.name;
-       // Manager.ShowText("Cargamos video");
+        // Manager.ShowText("Cargamos video");
         if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
+        {
             Appodeal.show(Appodeal.REWARDED_VIDEO);
+        }
+        else
+        {
+            GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto("video not loaded!!");
+        }
     }
 
     void IRewardedVideoAdListener.onRewardedVideoLoaded(bool precache)
     {
+        if(loading!=null)
+        {
+          loading.SetActive(false);
+        }
     }
 
     void IRewardedVideoAdListener.onRewardedVideoFailedToLoad()
     {
-
+        GameObject.Find("Controlador").GetComponent<ToastMessage>().crearTexto("Failed to load video!!");
     }
 
     void IRewardedVideoAdListener.onRewardedVideoShown()
@@ -95,7 +102,7 @@ public class AdsManager : MonoBehaviour, IRewardedVideoAdListener {
           case "02_Pruebas_Escenario_2":
             if (BotonClicked == "Button_check_yesContinue")
             {
-              Botones.VerAnuncio();
+              GameObject.Find("Canvas").GetComponent<Ctrl_Botones>().VerAnuncio();
               GameObject.Find("Recolctables").GetComponent<Premios>().CuadroAnuncioJugar.SetActive(false);
             }
             else
