@@ -28,6 +28,8 @@ TagManager:
   - Link3
   - SoundEffects
   - particulasSuperSayan
+  - desactivarTrigger
+  - activarTrigger
   layers:
   - Default
   - TransparentFX

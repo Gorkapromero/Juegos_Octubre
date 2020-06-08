@@ -185,12 +185,14 @@ public class movimiento_objetos : MonoBehaviour
                 {
                     case "E_Normal(Clone)":
                         //Muerte(); //PARTÍCULAS TEMPORALES ...
+                        //colBomb.isTrigger = true;
                         break;
                     case "E_Bomb(Clone)":
                         animatorEnemigo.SetBool("enElAire", false);
                         break;
                     case "E_Pega(Clone)":
                         //Activamos las partículas de "Dejar Rastro"
+                        //colBomb.isTrigger = true;
                         particulasRastroCuerpo_Pegajoso.SetActive(true);
                         break;
                 }
@@ -366,7 +368,35 @@ public class movimiento_objetos : MonoBehaviour
             }
                 Muerte();
                 break;
+
+            case "desactivarTrigger":
+                print("Si es un e_normal o un e_pega, desactivamos el triger del enemigo en 0.5segundos");
+                if (gameObject.name != "E_Bomb(Clone)")
+                {
+                    Invoke("desactivarTriggerEnemigo", 0.5f);
+                }
+                break;
+
+            case "activarTrigger":
+                print("Si es un e_normal o un e_pega, activamos el triger del enemigo en 0.3segundos");
+                if (gameObject.name != "E_Bomb(Clone)")
+                {
+                    Invoke("activarTriggerEnemigo", 0.3f);
+                }
+                break;
         }
+    }
+
+    private void desactivarTriggerEnemigo()
+    {
+        gameObject.GetComponent<CapsuleCollider>().isTrigger = false;
+        print("Trigger de " + gameObject.name + " desactivado.");
+    }
+
+    private void activarTriggerEnemigo()
+    {
+        gameObject.GetComponent<CapsuleCollider>().isTrigger = true;
+        print("Trigger de " + gameObject.name + " activado.");
     }
 
     private void OnDrawGizmos()
