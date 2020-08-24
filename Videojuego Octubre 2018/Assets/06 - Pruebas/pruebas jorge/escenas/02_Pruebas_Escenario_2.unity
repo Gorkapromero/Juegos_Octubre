@@ -18056,7 +18056,7 @@ RectTransform:
   - {fileID: 141688216}
   - {fileID: 1258229288}
   m_Father: {fileID: 925913237}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22058,7 +22058,7 @@ RectTransform:
   - {fileID: 839283618}
   - {fileID: 1657996182}
   m_Father: {fileID: 925913237}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -33757,9 +33757,9 @@ RectTransform:
   - {fileID: 1456851314}
   - {fileID: 1792753374}
   - {fileID: 81073142}
-  - {fileID: 1618163544}
   - {fileID: 581223260}
   - {fileID: 412462074}
+  - {fileID: 1618163544}
   - {fileID: 2116705882}
   - {fileID: 1878653165}
   - {fileID: 1896239807}
@@ -47362,17 +47362,17 @@ MonoBehaviour:
     Porcentaje: 100
   LootTablePremium:
   - Nombre: Vida
-    objeto: {fileID: 4711284854119725418, guid: c6a70b99f01c24845a7af91121a3f285,
+    objeto: {fileID: 4711284854119725418, guid: e726e7ae12958824b9dd78dd737d6d71,
       type: 3}
     Porcentaje: 50
     x2: 1
   - Nombre: "Da\xF1o"
-    objeto: {fileID: 2945634344343379306, guid: e47f72e3dae3b9a47ab5512aefbcc43a,
+    objeto: {fileID: 2945634344343379306, guid: c900d90865dac524d8a643f01c7caef3,
       type: 3}
     Porcentaje: 10
     x2: 1
   - Nombre: Monedas
-    objeto: {fileID: 3077608247131714383, guid: deab39648ffd9dc4a8987eca37f9035f,
+    objeto: {fileID: 3077608247131714383, guid: ef031a56b7ce1654395946d6498c1437,
       type: 3}
     Porcentaje: 100
     x2: 1
@@ -49555,7 +49555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0060424805, y: 0.0029907227}
+  m_AnchoredPosition: {x: -0.0059814453, y: 0.0029907227}
   m_SizeDelta: {x: 39.69995, y: -19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1415420264
@@ -55471,7 +55471,7 @@ PrefabInstance:
     - target: {fileID: 5093361316956825807, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5093361316956825807, guid: b9acdaec08e2dfb40994d67334d23a33,
         type: 3}

@@ -22,7 +22,8 @@ public class Ctrl_Premio : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
-        GameObject.Find("Panel_Premios").SetActive(false);
+        if(GameObject.Find("Panel_Premios"))
+            GameObject.Find("Panel_Premios").SetActive(false);
         Destroy(gameObject);
     }
 }
